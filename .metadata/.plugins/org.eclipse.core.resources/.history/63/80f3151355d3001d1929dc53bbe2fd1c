@@ -1,0 +1,5 @@
+package com.thanhle.repository;
+
+public interface AutomobileRepository {
+
+}

@@ -1,0 +1,15 @@
+package com.thanhle.repository;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.thanhle.domain.Hotel;
+
+public interface HotelRepository extends JpaRepository<Hotel, Integer> {
+
+	List<Hotel> findByHotelNameLikeOrAddressLikeOrAddressLikeOrCityLikeOrStateLike(String hotelName,
+			String address, String city, String state); 
+
+}
+

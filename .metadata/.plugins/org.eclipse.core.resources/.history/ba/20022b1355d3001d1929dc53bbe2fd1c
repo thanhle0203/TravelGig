@@ -1,0 +1,5 @@
+package com.thanhle.service;
+
+public interface AutomobileService {
+
+}

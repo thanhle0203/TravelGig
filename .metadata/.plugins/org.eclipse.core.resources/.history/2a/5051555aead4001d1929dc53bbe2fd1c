@@ -1,0 +1,52 @@
+$(document).ready(function(){
+    $("#add-trainer-form").submit(function(event){
+        // Stop form from submitting normally
+        event.preventDefault();
+
+        // Get form data
+        var trainerId = $("#trainerId").val();
+        var trainerName = $("#trainerName").val();
+        var trainerAge = $("#trainerAge").val();
+
+        // Create a new Trainer object
+        var newTrainer = {trainerId: trainerId, trainerName: trainerName, trainerAge: trainerAge};
+
+        // Send the new Trainer object to the server
+        $.ajax({
+            type: "POST",
+            url: "/add-trainer",
+            contentType: "application/json; charset=utf-8",
+            data: JSON.stringify(newTrainer),
+            success: function(response){
+                // Clear the form fields
+                $("#trainerId").val("");
+                $("#trainerName").val("");
+                $("#trainerAge").val("");
+
+                // Show success message
+                alert("Trainer added successfully!");
+
+                // Refresh the trainers list
+                refreshTrainersList();
+            },
+            error: function(error){
+                console.log(error);
+                alert("Error adding trainer.");
+            }
+        });
+    });
+});
+
+function refreshTrainersList(){
+    // Send a request to the server for the list of trainers
+    $.get("/trainers", function(response){
+        // Clear the table body
+        $("#trainersTableBody").empty();
+
+        // Populate the table with the list of trainers
+        for(var i = 0; i < response.length; i++){
+            var trainer = response[i];
+            $("#trainersTableBody").append("<tr><td>" + trainer.trainerId + "</td><td>" + trainer.trainerName + "</td><td>" + trainer.trainerAge + "</td></tr>");
+        }
+    });
+}

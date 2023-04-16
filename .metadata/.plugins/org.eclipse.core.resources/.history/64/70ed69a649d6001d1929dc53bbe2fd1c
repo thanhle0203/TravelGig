@@ -1,0 +1,66 @@
+package com.thanhle.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.thanhle.domain.Building;
+import com.thanhle.domain.Room;
+import com.thanhle.repository.BuildingRepository;
+import com.thanhle.repository.RoomRepository;
+
+@Service
+@Transactional
+public class IBuildingService implements BuildingService {
+	
+	@Autowired
+	BuildingRepository buildingRepository;
+	
+	@Autowired
+	RoomRepository roomRepository;
+
+	@Override
+	public Building saveBuilding(Building building) {
+		// check if building with same name already exists
+		Building existingBuilding = buildingRepository.findByBuName(building.getBuName());
+		
+		if (existingBuilding != null) {
+			// update existing building with new room information
+			existingBuilding.getRoomList().addAll(building.getRoomList());
+			return buildingRepository.save(existingBuilding);
+		}
+		
+		// save new building with its room list
+		Building savedBuilding = buildingRepository.save(building);
+		
+		// set parent building for each room and save
+		for (Room room : building.getRoomList()) {
+			room.setBuilding(savedBuilding);
+			roomRepository.save(room);
+		}
+		
+		return savedBuilding;
+	}
+
+	@Override
+	public List<Building> getBuildingByRoomType(String roomType) {
+		return buildingRepository.findByRoomList_RoomType(roomType);
+	}
+
+	@Override
+	public List<Building> getBuildingByRoomSize(String roomSize) {
+		return buildingRepository.findByRoomList_RoomSize(roomSize);
+	}
+
+	@Override
+	public Building getBuildingByName(String buName) {
+		return buildingRepository.findByBuName(buName);
+	}
+
+	@Override
+	public List<Building> getAllBuildings() {
+		return buildingRepository.findAll();
+	}
+}

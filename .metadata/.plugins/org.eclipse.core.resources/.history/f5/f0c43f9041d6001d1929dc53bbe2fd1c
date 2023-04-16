@@ -1,0 +1,58 @@
+package com.thanhle.service;
+
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.thanhle.domain.Building;
+import com.thanhle.domain.Room;
+import com.thanhle.repository.BuildingRepository;
+import com.thanhle.repository.RoomRepository;
+
+@Service
+public class IBuildingService implements BuildingService {
+
+    @Autowired
+    BuildingRepository buildingRepository;
+
+    @Autowired
+    RoomRepository roomRepository;
+
+    public Building saveBuilding(Building building) {
+        Building persistedBuilding = buildingRepository.findByBuName(building.getBuName());
+        if (persistedBuilding == null) {
+            building = buildingRepository.save(building);
+        } else {
+            building.setBuId(persistedBuilding.getBuId());
+            Set<Room> persistedRooms = persistedBuilding.getRoomList();
+            Set<Room> updatedRooms = new HashSet<>();
+            for (Room room : building.getRoomList()) {
+                Room persistedRoom = null;
+                for (Room r : persistedRooms) {
+                    if (r.getRoomType().equals(room.getRoomType()) && r.getRoomSize().equals(room.getRoomSize())) {
+                        persistedRoom = r;
+                        break;
+                    }
+                }
+                if (persistedRoom == null) {
+                    persistedRoom = roomRepository.save(room);
+                } else {
+                    persistedRoom.setRoomId(persistedRoom.getRoomId());
+                    persistedRoom.setRoomSize(room.getRoomSize());
+                    persistedRoom = roomRepository.save(persistedRoom);
+                }
+                updatedRooms.add(persistedRoom);
+            }
+            building.setRoomList(updatedRooms);
+            building = buildingRepository.save(building);
+        }
+        return building;
+    }
+
+    public List<Building> getBuildingByRoomType(String roomType) {
+        return buildingRepository.findByRoomList_RoomType(roomType);
+    }
+}

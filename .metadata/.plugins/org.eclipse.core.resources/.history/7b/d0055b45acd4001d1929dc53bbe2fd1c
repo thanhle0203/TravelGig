@@ -1,0 +1,58 @@
+$(document).ready(function() {
+			// Add Trainer form submit event
+			$("#add-trainer-form").submit(function(event) {
+				event.preventDefault(); // Prevent default form submission
+				var trainerId = $("#trainerId").val();
+				var trainerName = $("#trainerName").val();
+				var trainerAge = $("#trainerAge").val();
+				var formData = {
+					trainerId: document.getElementById("trainerId").value,
+					trainerName: document.getElementById("trainerName").value,
+					trainerAge: document.getElementById("trainerAge").value
+					};
+					
+					// Send the data to the server
+					var xhr = new XMLHttpRequest();
+					xhr.open("POST", "/saveTrainer");
+					xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+					xhr.onreadystatechange = function () {
+					if (xhr.readyState === 4 && xhr.status === 200) {
+					// Handle successful response
+					alert("Trainer saved successfully");
+					fetchTrainers();
+					} else if (xhr.readyState === 4 && xhr.status !== 200) {
+					// Handle error response
+					alert("Failed to save trainer");
+					}
+					};
+					xhr.send(JSON.stringify(formData));
+					
+					function fetchTrainers() {
+					var xhr = new XMLHttpRequest();
+					xhr.open("GET", "/getTrainers");
+					xhr.onreadystatechange = function () {
+					if (xhr.readyState === 4 && xhr.status === 200) {
+					// Handle successful response
+					var trainers = JSON.parse(xhr.responseText);
+					var trainerTable = document.getElementById("trainerTable");
+					trainerTable.innerHTML = "";
+					for (var i = 0; i < trainers.length; i++) {
+					var row = trainerTable.insertRow();
+					var trainerIdCell = row.insertCell();
+					var trainerNameCell = row.insertCell();
+					var trainerAgeCell = row.insertCell();
+					trainerIdCell.innerHTML = trainers[i].trainerId;
+					trainerNameCell.innerHTML = trainers[i].trainerName;
+					trainerAgeCell.innerHTML = trainers[i].trainerAge;
+					}
+					} else if (xhr.readyState === 4 && xhr.status !== 200) {
+					// Handle error response
+					alert("Failed to fetch trainers");
+					}
+					};
+					xhr.send();
+					}
+					
+					// Call fetchTrainers function when the page loads to display existing trainers
+					fetchTrainers();
+		

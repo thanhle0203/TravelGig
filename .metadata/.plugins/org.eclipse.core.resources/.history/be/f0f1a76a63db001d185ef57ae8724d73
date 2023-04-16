@@ -1,0 +1,11 @@
+$(document).ready(function() {
+	var searchText = $("#searchLocation").val(); // Fix missing "#" to select element by id
+	$('#tblHotel tr').not(':first').remove();
+	$.get("http://localhost:8080archHotel/" + searchText, { // Fix URL to include correct endpoint
+
+	}, function(responseText) {
+		$.each(responseText, function(key1, value1) {
+			$("#tblHotel").append("<tr><td>" + value1.hotelName + "</td><td><img class='hotelImage' src='" + value1.imageURL + "' width='300' height='300'/> </td><td>" + value1.averagePrice + "</td><td>" + value1.starRating + "</td></tr>"); // Fix closing tag for hotelName and remove extra "<>"
+		});
+	});
+});

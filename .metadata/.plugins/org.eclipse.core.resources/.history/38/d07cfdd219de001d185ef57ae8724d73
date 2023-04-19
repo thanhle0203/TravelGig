@@ -1,0 +1,37 @@
+$(document).ready(function() {
+  $("#searchBtn").click(function(){
+    var searchText = $("#searchLocation").val();
+    $('#tblHotel tr').not(':first').remove();
+    $.get("http://localhost:8383/searchHotel/"+ searchText, {}, function(responseText) {
+      $.each(responseText, function(key1, value1) {
+        var row = "<tr><td>" + value1.hotelName + "</td><td><img class='hotelImage' src='" + value1.imageURL + "' width='300' height='300'/></td><td>" + value1.averagePrice + "</td><td>" + value1.starRating + "</td> </tr>";
+        $("#tblHotel").append(row);
+      });
+    });
+  });
+
+  $("#tblHotel").on('click', '.hotelImage', function() {
+    var hotelName = $(this).parent().siblings(":first").text(); // get hotel name from the first cell of the row
+    var hotelRoomTypes = [];
+    var searchText = $("#searchLocation").val();
+    $.get("http://localhost:8383/searchHotel/" + searchText, function(responseText) {
+      $.each(responseText, function(key1, value1) {
+        if (value1.hotelName === hotelName) { // find the hotel in the response that matches the clicked image
+          hotelRoomTypes = value1.roomTypes;
+          return false; // exit the loop early since we found the hotel
+        }
+      });
+      $("#select_roomTypes").empty(); // clear any previous options
+      $.each(hotelRoomTypes, function(key, value) {
+        $("#select_roomTypes").append($("<option></option>").attr("value", value.type.name).text(value.type.name));
+      });
+      $("#myModal").modal();
+      $("#modal_hotelName").val(hotelName);
+      $("#modal_noGuests").val($("#noGuests").val());
+      $("#modal_CheckInDate").val($("#checkInDate").val());
+      $("#modal_CheckOutDate").val($("#checkOutDate").val());
+      $("#modal_noRooms").val($("#noRooms").val());
+      $("#select_roomTypes").prop('selectedIndex', 0); // reset the selected option to the first one
+    });
+  });
+});

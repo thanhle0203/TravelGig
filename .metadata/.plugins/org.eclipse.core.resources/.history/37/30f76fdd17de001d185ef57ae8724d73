@@ -1,0 +1,38 @@
+$(document).ready(function() {
+  $("#searchBtn").click(function(){
+    var searchText = $("#searchLocation").val();
+    $('#tblHotel tr').not(':first').remove();
+    $.get("http://localhost:8383/searchHotel/"+ searchText, {}, function(responseText) {
+      $.each(responseText, function(key1, value1) {
+        var row = "<tr><td>" + value1.hotelName + "</td><td><img class='hotelImage' src='" + value1.imageURL + "' width='300' height='300'/></td><td>" + value1.averagePrice + "</td><td>" + value1.starRating + "</td> </tr>";
+        $("#tblHotel").append(row);
+      });
+    });
+  });
+
+  $("#tblHotel").on('click','.hotelImage', function() {
+    var hotelName = $(this).parent().prevAll().eq(2).text();
+    var searchText = $("#searchLocation").val();
+    $.get("http://localhost:8383/searchHotel/" + searchText, function(responseText) {
+      var hotel = responseText.find(function(hotel) {
+        return hotel.hotelName === hotelName;
+      });
+      if (hotel) {
+        $("#myModal").modal();
+        $("#modal_hotelName").val(hotelName);
+        $("#modal_noGuests").val($("#noGuests").val());
+        $("#modal_CheckInDate").val($("#checkInDate").val());
+        $("#modal_CheckOutDate").val($("#checkOutDate").val());
+        $("#modal_noRooms").val($("#noRooms").val());
+        var selectRoomTypes = $("#select_roomTypes");
+        selectRoomTypes.empty();
+        $.each(hotel.roomTypes, function(key, roomType) {
+          var option = $("<option>").attr("value", roomType.type.name).text(roomType.type.name);
+          selectRoomTypes.append(option);
+        });
+      } else {
+        console.log("Hotel not found: " + hotelName);
+      }
+    });
+  });
+});

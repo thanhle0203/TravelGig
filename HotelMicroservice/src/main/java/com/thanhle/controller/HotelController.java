@@ -18,7 +18,7 @@ public class HotelController {
 	@Autowired
 	IHotelService hotelService;
 	
-	@CrossOrigin(origins = "http://localhost:8080") // Enable CORS for specific origin
+	@CrossOrigin(origins = "http://localhost:8282") // Enable CORS for specific origin
 	@RequestMapping(value = "/searchHotel/{searchString}", method = RequestMethod.GET)
 	public List<Hotel> searchHotel(@PathVariable String searchString){
 		return hotelService.searchHotel(searchString);

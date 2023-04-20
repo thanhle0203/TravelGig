@@ -10,6 +10,12 @@
 <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.13.1/themes/smoothness/jquery-ui.css">
+
+<script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"></script>
+
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="./js/hotel.js"></script>
 </head>
@@ -115,7 +121,7 @@
 	
 	<div id="listHotel">
 		<table border="1" id="tblHotel">
-		<tr><th>HotelName</th><th>Image</th><th>Price</th><th>StarRating</th></tr>
+		<tr><th>HotelName</th><th>Image</th><th>Price</th><th>StarRating</th><th>Amenities</th></tr>
 		</table>
 	</div>
 	

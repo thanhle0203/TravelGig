@@ -23,6 +23,12 @@
 <div class="container" style="margin-left:100px">
 <h1>Welcome to Travel Gig</h1>
 <h2>Search your desired hotel</h2>
+<h3><security:authorize access="isAuthenticated()">
+	Welcome <span id="username" ><security:authentication property="principal.username"/> </span> 
+	<security:authorize access="hasRole('USER')">
+		<button id='question-btn' class="btn " >Questions</button>
+	</security:authorize>
+	</security:authorize>
 </h3>
 </div>
 
@@ -213,7 +219,7 @@
        			<div>Discount: $<span id="booking_discount"></span></div>
        			<div>Total Price: $<span id="booking_price"></span></div>       			
        			<div style='margin-top:20px'>
-       				<button class='btn-confirm-booking btn btn-primary'>Confirm Booking</button>
+       				<button class='btn-confirm-booking btn btn-primary' id="btn_confirmBooking">Confirm Booking</button>
        				<button class='btn btn-primary'>Edit</button>
        			</div>
         	</div>          

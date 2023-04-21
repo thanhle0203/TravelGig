@@ -1,0 +1,5 @@
+package com.thanhle.config;
+
+public class MyCustomDsl {
+
+}

@@ -23,17 +23,10 @@ public class GatewayController {
 	
 	@RequestMapping(value = "/searchHotel/{searchString}", method = RequestMethod.GET)
 	public JsonNode searchHotel(@PathVariable String searchString, Principal principal){
-		System.out.println("Welcome -----------------" + principal.getName());
+		String username = principal.getName();
+		System.out.println("Welcome -----------------" + username);
 		return hotelComponent.findHotelBySearchText(searchString);
 	}
-
-
-	
-
-
-
-
-
 
 	
 }

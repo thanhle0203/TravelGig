@@ -2566,3 +2566,16 @@ org.eclipse.core.runtime.CoreException: Could not resolve artifact org.apache.ta
 2023-04-20 18:29:04,383 [Worker-234: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
 2023-04-20 18:29:15,192 [Worker-241: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
 2023-04-20 18:29:15,204 [Worker-241: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-04-20 18:29:15,210 [Worker-241: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-04-20 18:59:16,400 [Worker-235: Launching gigTravel - GigTravelApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-04-20 18:59:16,417 [Worker-235: Launching gigTravel - GigTravelApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-04-20 18:59:16,423 [Worker-235: Launching gigTravel - GigTravelApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-04-21 22:51:21,735 [Worker-273: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-04-21 22:51:21,736 [Worker-273: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-04-21 22:51:21,745 [Worker-273: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-04-21 22:54:31,281 [Worker-277: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-04-21 22:54:31,377 [Worker-277: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-04-21 22:54:31,382 [Worker-277: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-04-21 22:58:16,026 [Worker-277: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-04-21 22:58:16,182 [Worker-277: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-04-21 22:58:16,194 [Worker-277: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources

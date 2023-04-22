@@ -28,7 +28,7 @@
 	<security:authorize access="hasRole('USER')">
 		<button id='question-btn' class="btn " >Questions</button>
 	</security:authorize>
-	</security:authorize>
+	</security:authorize></h3>
 </h3>
 </div>
 

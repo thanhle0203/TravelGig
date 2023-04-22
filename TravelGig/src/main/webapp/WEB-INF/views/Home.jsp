@@ -6,11 +6,11 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Home Page of Travel Gig</title>
-<script src="jquery-2.1.1.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" type="text/css" href="home.css">
+<!-- <link rel="stylesheet" type="text/css" href="home.css"> -->
 </head>
 <body>
 <div class="container" style="margin-left:100px">

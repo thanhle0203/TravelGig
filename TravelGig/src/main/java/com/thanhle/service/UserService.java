@@ -10,8 +10,11 @@ import com.thanhle.domain.User;
 public interface UserService {
 
 	public List<User> findAll();
-	public User save(User u);
+	public User save(User user);
 	public void deleteUserById(long uId);
 	public User findByUserId(long uId);
 	public User findByUserName(String userName);
+
+
+	
 }

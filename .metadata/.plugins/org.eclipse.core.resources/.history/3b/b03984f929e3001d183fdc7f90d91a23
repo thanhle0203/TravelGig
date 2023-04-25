@@ -1,0 +1,74 @@
+package com.thanhle.controller;
+
+import java.security.Principal;
+
+import com.fasterxml.jackson.databind.JsonNode;
+import com.thanhle.component.HotelComponent;
+import com.thanhle.domain.User;
+import com.thanhle.service.UserService;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+@SessionAttributes("user")
+public class GatewayController {
+
+    @Autowired
+    HotelComponent hotelComponent;
+
+    @Autowired
+    UserService userService;
+
+    //@PostMapping(value = "/save-signup", consumes = "application/json")
+    //@ResponseBody
+    //public String saveSignup(@RequestBody User user) {
+        //try {
+            //BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+            //String hashedPassword = passwordEncoder.encode(user.getUserPassword());
+            //user.setUserPassword(hashedPassword);
+            //userService.save(user);
+            //return "redirect:/login";
+        //} catch (Exception e) {
+            //return "Error saving user: " + e.getMessage();
+        //}
+    //}
+    
+    @PostMapping(value = "/save-signup", consumes = "application/json")
+    public String saveSignup( @RequestParam String userName, @RequestParam String password, @RequestParam String userEmail) {
+        try {
+        	User user = new User();
+        	user.se
+            BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+            String hashedPassword = passwordEncoder.encode(user.getUserPassword());
+            user.setUserPassword(hashedPassword);
+            userService.save(user);
+            return "redirect:/login";
+        } catch (Exception e) {
+            return "Error saving user: " + e.getMessage();
+        }
+    }
+    
+    @GetMapping("/save-signup")
+    public String showSignupPage() {
+        return "signup";
+    }
+
+
+    @RequestMapping(value = "/searchHotel/{searchString}", method = RequestMethod.GET)
+	public JsonNode searchHotel(@PathVariable String searchString, Principal principal){
+		String username = principal.getName();
+		System.out.println("Welcome -----------------" + username);
+		return hotelComponent.findHotelBySearchText(searchString);
+	}
+	
+	// Add this method to handle POST requests to /searchHotel endpoint
+	@PostMapping(value = "/searchHotel")
+	public JsonNode searchHotelPost(@RequestBody String searchString, Principal principal){
+		String username = principal.getName();
+		System.out.println("Welcome -----------------" + username);
+		return hotelComponent.findHotelBySearchText(searchString);
+	}
+
+}

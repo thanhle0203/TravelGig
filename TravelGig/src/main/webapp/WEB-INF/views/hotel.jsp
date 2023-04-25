@@ -23,14 +23,19 @@
 <div class="container" style="margin-left:100px">
 <h1>Welcome to Travel Gig</h1>
 <h2>Search your desired hotel</h2>
-<h3><security:authorize access="isAuthenticated()">
-	Welcome <span id="username" ><security:authentication property="principal.username"/> </span> 
-	<security:authorize access="hasRole('USER')">
-		<button id='question-btn' class="btn " >Questions</button>
-	</security:authorize>
-	</security:authorize></h3>
+<h3>
+    <security:authorize access="isAuthenticated()">
+        Welcome <span id="username"><security:authentication property="principal.username"/></span>
+        <security:authorize access="hasRole('USER')">
+            <button id='question-btn' class="btn">${principal.username}</button>
+        </security:authorize>
+    </security:authorize>
 </h3>
-</div>
+
+  
+  
+
+
 
 <div class="container border rounded" style="margin:auto;padding:50px;margin-top:50px;margin-bottom:50px">
 	<h3>Narrow your search results</h3>

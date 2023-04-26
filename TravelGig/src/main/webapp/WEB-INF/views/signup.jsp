@@ -33,6 +33,7 @@
                     <input class="form-control" type="email" name="email" id="email">
                 </div>
 
+                <div><span class='text-muted'>Have an Account? </span ><a href='/login'>Login</a></div>
                 <input class="btn btn-primary mt-5" type="submit" value="Signup" id="sign-up-btn">
             </form>
         </div>

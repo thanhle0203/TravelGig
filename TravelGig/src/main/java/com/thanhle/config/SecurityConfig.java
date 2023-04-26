@@ -51,7 +51,7 @@ public class SecurityConfig {
 	public SecurityFilterChain apiFilterChain2(HttpSecurity http) throws Exception {
 		http
 		.apply(MyCustomDsl.customDsl()).flag(true).and()
-		.authorizeRequests().requestMatchers("/home/**", "", "/signup").permitAll().and()
+		.authorizeRequests().requestMatchers("/home/**", "", "/signup", "/login").permitAll().and()
 		.authorizeRequests().requestMatchers(("/home")).hasAnyRole("USER", "ADMIN")
 		.and().formLogin().loginPage("/login").defaultSuccessUrl("/welcome").permitAll();
 		return http.build();

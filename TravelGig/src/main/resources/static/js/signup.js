@@ -9,15 +9,15 @@ $(document).ready(function() {
         
         $.ajax({
             type: "POST",
+            contentType: 'application/json',
             url: "http://localhost:8282/signup",
-            headers: {
-                'Content-Type': 'application/json'
-            },
             data: JSON.stringify(user),
             dataType: 'json',
             success: function(result) {
-                alert(result)
-            }
-        })
-    })
-})
+    			alert("Sign up successful!");
+    			//alert(result);
+    			window.location.href = "/login";
+			}
+        });
+    });
+});

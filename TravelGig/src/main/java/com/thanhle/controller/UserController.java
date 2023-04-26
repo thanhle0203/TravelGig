@@ -15,12 +15,16 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Validator;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import org.springframework.web.servlet.view.RedirectView;
 
 import com.thanhle.domain.User;
 import com.thanhle.repository.UserRepository;
@@ -66,37 +70,44 @@ public class UserController {
 
 	}
 
-	//@GetMapping(value = "/signup")
-	//public String signup(@RequestParam String userEmail, @RequestParam String userName, @RequestParam String password) {
-		//return "/login";
-
-	//}
 	
 	@GetMapping(value = "/signup")
-	public String signup(@RequestParam(required = false) String logout, @RequestParam(required = false) String error,
-			HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Model model) {
-		String message = "";
-		if (error != null) {
-			message = "Invalid Credentials";
-		}
+	public String signup(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Model model) {
 		
 	    return "signup";
 	}
 
-	//@PostMapping(value = "/signup", consumes = "application/json")
-	//@ResponseBody
-	//public String saveSignup(@RequestBody User user, Model model) {
-	    //try {
-	    	//BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+   //@PostMapping(value = "/signup")
+   //@ResponseBody
+    //public String saveSignup(@RequestBody User user) {
+        //try {
+            //BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
             //String hashedPassword = passwordEncoder.encode(user.getUserPassword());
             //user.setUserPassword(hashedPassword);
-	        //userService.save(user);
-	       // return "redirect:/login";
-	    //} catch (Exception e) {
-	        //model.addAttribute("errorMessage", "Error saving user.");
-	        //return "signup";
-	    //}
-	//}
+            //userService.save(user);
+            //return "redirect:/login";
+        //} catch (Exception e) {
+           // e.printStackTrace();
+            //return "signup";
+        //}
+    //}
+	
+	@PostMapping(value = "/signup")
+	@ResponseBody
+	public RedirectView saveSignup(@RequestBody User user) {
+	    try {
+	        BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+	        String hashedPassword = passwordEncoder.encode(user.getUserPassword());
+	        user.setUserPassword(hashedPassword);
+	        userService.save(user);
+	        return new RedirectView("/login", true);
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	        return new RedirectView("/signup", true);
+	    }
+	}
+
+
 
 	
 	@PostMapping(value = "/user/{username}")

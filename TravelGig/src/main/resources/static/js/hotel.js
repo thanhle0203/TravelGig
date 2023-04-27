@@ -142,18 +142,107 @@ $(document).ready(function() {
         
         // Display booking hotel room modal
         $("#bookingHotelRoomModal").modal();
+        
+        
+        // Display booking hotel room modal
+        //$("#bookingHotelRoomModal").modal();
+        // Get guest details
+     var guests = [];	
+     $(".guest").each(function() {
+            var guest = {
+              firstName: $(this).find(".guest-firstName").val(),
+              lastName: $(this).find(".guest-lastName").val(),
+              age: $(this).find(".guest-age").val(),
+              gender: $(this).find(".guest-gender").val()
+           };
+            
+     	guests.push(guest);
+     	});
+     
+      
+	var roomType = roomTypeObject;
+     //Prepare booking data
+     var status = "upcoming";
+     var bookedOnDate = new Date();
+    var price = totalPrice;
+    var roomType = $("#select_roomTypes").val();
+   var email = "XXXXXXXX@gmail.com";
+	var booking = {"hotelId": hotelId,  "hotelRoomId": hotelRoomId, "noRooms": noRooms,"guests": guests,
+	     "checkInDate": checkInDate, "checkOutDate": checkOutDate, "bookedOnDate": bookedOnDate,
+	     "status": status, "price": price, "discount": discount,
+	     "customerMobile": customerMobile, "roomType": roomType, "email": email};
+  
+  	// Make an AJAX request to submit the guest details
+	$.ajax({
+  			type: "POST",
+            contentType: 'application/json',
+           url: "http://localhost:8484/booking",
+            data: JSON.stringify(booking),
+            dataType: 'json',
+  			success: function(response) {
+    		// Display the booking confirmation modal
+    		$("#bookingConfirmationModal").modal();
+  		},
+  		error: function(jqXHR, textStatus, errorThrown) {
+    	// Display an error message
+    	alert("Failed to submit booking details. Please try again.");
+  		}
+	});
+
     });
     
     
     // Close booking hotel model and close search hotel modal when clicking confirm booking button
     $("#btn_confirmBooking").on('click', function() {
         
-    	alert("Booking confirmed!");
-        $("#bookingHotelRoomModal").modal('hide');
-      	$("#myModal").modal('hide');
+    	//alert("Booking confirmed!");
+        //$("#bookingHotelRoomModal").modal('hide');
+      	//$("#myModal").modal('hide');
+      	
+      
+      	// Open guest details modal
+    	$("#guestDetailsModal").modal();
+   
+    	
+    	
     });
   
+    // Click event handler for Submit button in Guest Details modal
+	$("#submitGuestDetailsBtn").click(function(event) {
+		event.preventDefault();
+	// Get the guest details entered by the user
+		var firstName = $("#guestFirstName").val();
+		var lastName = $("#guestLastName").val();
+		var gender = $("#guestGender").val();
+		var age = $("#guestAge").val();
+		
+	    var guest = {"firstName": firstName, "lastName": lastName, "gender": gender, "age": age};
   
-  
-  });
+  	// Make an AJAX request to submit the guest details
+	$.ajax({
+  			type: "POST",
+            contentType: 'application/json',
+            url: "http://localhost:8484/guest",
+            data: JSON.stringify(guest),
+            dataType: 'json',
+  			success: function(response) {
+    		// Display the booking confirmation modal
+    		$("#bookingConfirmationModal").modal();
+  		},
+  		error: function(jqXHR, textStatus, errorThrown) {
+    	// Display an error message
+    	alert("Failed to submit guest details. Please try again.");
+  		}
+	});
+	
+		
+	
+	
+	
+
+
+	})
+	
+});
+
   

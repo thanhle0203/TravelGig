@@ -239,6 +239,79 @@
   </div>
 </div>
 
+<!-- Booking Confirmation Modal -->
+<div class="modal fade" id="bookingConfirmationModal" tabindex="-1" role="dialog" aria-labelledby="bookingConfirmationModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+	  <div class="modal-content">
+		<div class="modal-header">
+		  <h5 class="modal-title" id="bookingConfirmationModalLabel">Booking Confirmation</h5>
+		  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		  </button>
+		</div>
+		<div class="modal-body">
+		  <p>Your booking has been confirmed. Thank you for choosing TravelGig!</p>
+		</div>
+		<div class="modal-footer">
+		  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+		</div>
+	  </div>
+	</div>
+  </div>
+  
+  <!-- Guest Details Modal -->
+  <div class="modal fade" id="guestDetailsModal" tabindex="-1" role="dialog" aria-labelledby="guestDetailsModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+	  <div class="modal-content">
+		<div class="modal-header">
+		  <h5 class="modal-title" id="guestDetailsModalLabel">Guest Details</h5>
+		  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		  </button>
+		</div>
+		<div class="modal-body">
+		  <form>
+			<div class="form-group">
+			  <label for="guestName">First Name</label>
+			  <input type="text" class="form-control" id="guestFirstName" placeholder="Enter your First name">
+			</div>
+			<div class="form-group">
+				<label for="guestName">Last Name</label>
+				<input type="text" class="form-control" id="guestLastName" placeholder="Enter your Last name">
+			</div>
+			<div class="form-group">
+				<label for="guestGender">Gender</label>
+				<select class="form-control" id="guestGender" required>
+				  <option value="">Select gender</option>
+				  <option value="male">Male</option>
+				  <option value="female">Female</option>
+				  <option value="other">Other</option>
+				</select>
+			</div>
+			<div class="form-group">
+				<label for="guestAge">Age</label>
+				<input type="number" class="form-control" id="guestAge" placeholder="Enter your age">
+			</div>
+			<!-- <div class="form-group">
+			  <label for="guestEmail">Email address</label>
+			  <input type="email" class="form-control" id="guestEmail" aria-describedby="emailHelp" placeholder="Enter your email address">
+			  <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+			</div>
+			<div class="form-group">
+			  <label for="guestPhone">Phone Number</label>
+			  <input type="text" class="form-control" id="guestPhone" placeholder="Enter your phone number">
+			</div> -->
+		  </form>
+		</div>
+		<div class="modal-footer">
+		  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+		  <button type="button" class="btn btn-primary" id="submitGuestDetailsBtn">Submit</button>
+		</div>
+	  </div>
+	</div>
+  </div>
+  
+
 <script>
 var slider = document.getElementById("priceRange");
 var output = document.getElementById("priceValue");

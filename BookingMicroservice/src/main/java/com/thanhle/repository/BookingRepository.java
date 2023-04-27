@@ -1,21 +1,20 @@
 package com.thanhle.repository;
-
-import com.thanhle.domain.Booking;
-import com.thanhle.domain.Guest;
-
 import org.springframework.data.jpa.repository.JpaRepository;
+
 import org.springframework.stereotype.Repository;
 
-import java.util.List;
+import com.thanhle.domain.Booking;
+
+import java.util.Date;
+import java.util.Optional;
+
 
 @Repository
 public interface BookingRepository extends JpaRepository<Booking, Integer> {
 
-    List<Booking> findByCustomerMobile(String mobile);
-    
-    List<Booking> findByStatus(String status);
-
-	List<Guest> findGuestsByBookingId(int bookingId);
+    Booking findByCustomerMobile(String customerMobile);
+    Booking findByBookedOnDate (Date bookedOnDate);
+	Optional<Booking> findGuestsByBookingId(int bookingId);
 
     
 }

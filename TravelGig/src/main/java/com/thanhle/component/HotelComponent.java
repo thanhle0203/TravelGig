@@ -1,9 +1,13 @@
 package com.thanhle.component;
 
-import java.util.List;
-
-
+//import java.util.List;
+//import org.springframework.http.HttpHeaders;
+//import org.springframework.http.HttpEntity;
+//import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
@@ -24,6 +28,24 @@ public class HotelComponent {
 		ObjectMapper mapper = new ObjectMapper();
 		JsonNode returnObj = mapper.convertValue(objects, JsonNode.class);
 		return returnObj;
+	}
+	
+	public Object saveBooking(JsonNode json) {
+
+		HttpHeaders headers = new HttpHeaders();
+
+		headers.setContentType(MediaType.APPLICATION_JSON);		
+
+		HttpEntity<String> request = new HttpEntity<String>(json.toString(), headers);
+
+		RestTemplate restTemplate = new RestTemplate();
+
+		ResponseEntity<Object> responseEntity = restTemplate.postForEntity("http://localhost:8484/booking", request, Object.class);
+
+		Object object = responseEntity.getBody();
+
+		return object;
+		
 	}
 	
 }

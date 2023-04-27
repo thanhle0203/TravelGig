@@ -1,12 +1,14 @@
 package com.thanhle.service;
+import java.util.List;
 
-import com.thanhle.domain.Booking;
-import com.thanhle.domain.Guest;
-import com.thanhle.repository.BookingRepository;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+import com.thanhle.domain.Booking;
+import com.thanhle.repository.BookingRepository;
+
 
 @Service
 public class BookingServiceImp implements BookingService {
@@ -14,21 +16,38 @@ public class BookingServiceImp implements BookingService {
 	@Autowired
     private BookingRepository bookingRepository;
 
+	@Override
+	public List<Booking> getAll() {
+		
+		return bookingRepository.findAll();
+	}
 
-    @Override
-    public List<Booking> findByCustomerMobile(String mobile) {
-        return bookingRepository.findByCustomerMobile(mobile);
-    }
+	@Override
+	public Booking saveBooking(Booking b) {
+		Booking booking = bookingRepository.save(b);
+		return booking;
+	}
 
-    @Override
-    public List<Booking> findByStatus(String status) {
-        return bookingRepository.findByStatus(status);
-    }
+	@Override
+	public Booking findByCustomerMobile(String customerMobile) {
 
-    @Override
-    public List<Guest> findGuestsByBookingId(int bookingId) {
-        return bookingRepository.findGuestsByBookingId(bookingId);
-    }
+		return bookingRepository.findByCustomerMobile(customerMobile);
+	}
 
+	@Override
+	public void deleteBooking(int bookingId) {
+		Optional<Booking> optionalBooking = bookingRepository.findGuestsByBookingId(bookingId);
+		
+		if (optionalBooking.isPresent()) {
+			bookingRepository.delete(optionalBooking.get());
+		}
+		else {
+			throw new RuntimeException("Booking with id " + bookingId + " not found");
+		}
+		
+	}
+
+
+    
 	
 }

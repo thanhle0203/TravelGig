@@ -1,9 +1,0 @@
-package com.thanhle.service;
-
-import com.thanhle.domain.Automobile;
-
-public interface AutomobileService {
-
-	public Automobile saveAutomobile(Automobile automobile);
-	
-}

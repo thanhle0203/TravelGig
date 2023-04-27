@@ -28,8 +28,8 @@ public class Guest {
 	public int getGuestId() {
 		return guestId;
 	}
-	public void setGuestId(int guestId) {
-		this.guestId = guestId;
+	public void setGuestId(int id) {
+		this.guestId = id;
 	}
 	public String getFirstName() {
 		return firstName;

@@ -35,8 +35,6 @@
     		<version>10.1.4</version>
 		</dependency>
 
-
-	
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
@@ -45,6 +43,11 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+		
+		<dependency>
+  			<groupId>org.springframework</groupId>
+  			<artifactId>spring-web</artifactId>
 		</dependency>
 		
 		<dependency>
@@ -91,13 +94,29 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		
+		<dependency>
+        	<groupId>org.springframework</groupId>
+        		<artifactId>spring-context-support</artifactId>
+    	</dependency>
 
+		<dependency>
+			<groupId>com.thanhle</groupId>
+			<artifactId>BookingMicroservice</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>com.thanhle</groupId>
+			<artifactId>HotelMicroservice</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 	</dependencies>
 
 	<build>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
+			
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 		</plugins>

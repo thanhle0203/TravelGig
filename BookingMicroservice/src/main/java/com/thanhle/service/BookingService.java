@@ -5,16 +5,8 @@ import com.thanhle.domain.Booking;
 import com.thanhle.domain.Guest;
 
 public interface BookingService {
-    //List<Booking> getAllBookings();
-
-    public List<Booking> findByCustomerMobile(String mobile);
-    public List<Booking> findByStatus(String status);
-    public List<Guest> findGuestsByBookingId(int bookingId);
-  
-    
-    //Booking getBookingById(int bookingId);
-    //Booking addBooking(int hotelId, int hotelRoomId, int noRooms, Set<Guest> guests, String customerMobile,
-    //String roomType, String email, float price, float discount);
-    //Booking updateBookingStatus(int bookingId, String status);
-    //void deleteBookingById(int bookingId);
+    List<Booking> getAll();
+	public Booking saveBooking(Booking booking);
+	public Booking findByCustomerMobile(String customerMobile);
+	public void deleteBooking(int bookingId);
 }

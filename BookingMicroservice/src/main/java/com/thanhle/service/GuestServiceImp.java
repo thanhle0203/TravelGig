@@ -50,14 +50,20 @@ public class GuestServiceImp implements GuestService {
 
 	@Override
 	public void deleteGuest(int guestId) {
-		Optional<Guest> optionalGuest = guestRepository.findByGuestId(guestId);
-	    if (optionalGuest.isPresent()) {
-	        Guest guest = optionalGuest.get();
-	        guestRepository.delete(guest);
-	    } else {
-	        throw new RuntimeException("Guest with id " + guestId + " not found");
-	    }
+		//Guest optionalGuest = guestRepository.findByGuestId(guestId);
+	    //if (optionalGuest.isPresent()) {
+	        //Guest guest = optionalGuest.get();
+	        //guestRepository.delete(guest);
+	    //} else {
+	       // throw new RuntimeException("Guest with id " + guestId + " not found");
+	    //}
 		
+	}
+
+	@Override
+	public Guest getGuestById(int guestId) {
+		// TODO Auto-generated method stub
+		return guestRepository.findByGuestId(guestId);
 	}
 
 }

@@ -11,5 +11,5 @@ import com.thanhle.domain.Guest;
 public interface GuestRepository extends JpaRepository<Guest, Long> {
 	Guest findByFirstName(String firstName);
 
-	Optional<Guest> findByGuestId(int guestId);
+	Guest findByGuestId(int guestId);
 }

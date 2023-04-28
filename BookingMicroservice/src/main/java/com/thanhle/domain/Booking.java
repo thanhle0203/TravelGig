@@ -105,9 +105,7 @@ public class Booking {
 	public Set<Guest> getGuests() {
 		return guests;
 	}
-	public void setGuests(Set<Guest> guests) {
-		this.guests = guests;
-	}
+	
 	public Date getCheckInDate() {
 		return checkInDate;
 	}
@@ -149,5 +147,9 @@ public class Booking {
 	}
 	public void setCustomerMobile(String customerMobile) {
 		this.customerMobile = customerMobile;
+	}
+	public void setGuests(Set<Guest> guests) {
+		this.guests = guests;
+		
 	}
 }

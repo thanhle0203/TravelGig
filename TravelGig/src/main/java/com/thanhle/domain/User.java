@@ -27,6 +27,8 @@ public class User {
 	@JoinTable(name="user_role")
 	private Set<Role> roles = new HashSet<>();
 
+	private String mobile;
+
 	public long getUserId() {
 		return userId;
 	}
@@ -70,11 +72,20 @@ public class User {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-
+	
+	public String getMobile() {
+		return this.mobile;
+	}
+	
+	public void setMobile(String mobile) {
+		this.mobile = mobile;
+	}
 
 	public User() {
 		super();
 	}
+
+
 	
 }
 

@@ -72,5 +72,9 @@ public class Guest {
 		return "Guest [guestId=" + guestId + ", firstName=" + firstName + ", lastName=" + lastName + ", gender="
 				+ gender + ", age=" + age + "]";
 	}
+	public boolean isPresent() {
+		// TODO Auto-generated method stub
+		return true;
+	}
 	
 }

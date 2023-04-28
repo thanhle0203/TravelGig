@@ -12,6 +12,7 @@ import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
 
+import com.fasterxml.jackson.databind.JsonNode;
 import com.thanhle.dto.EmailDetails;
 
 //Annotation
@@ -88,4 +89,25 @@ public class EmailServiceImpl implements EmailService {
 			return "Error while sending mail!!!";
 		}
 	}
+
+	public void sendBookingConfirmationEmail(String email, JsonNode json) {
+	    try {
+	        // Creating a mime message
+	        MimeMessage mimeMessage = javaMailSender.createMimeMessage();
+	        MimeMessageHelper mimeMessageHelper = new MimeMessageHelper(mimeMessage, true);
+
+	        // Setting up necessary details
+	        mimeMessageHelper.setFrom(sender);
+	        mimeMessageHelper.setTo(email);
+	        mimeMessageHelper.setSubject("Booking Confirmation");
+	        String bookingDetails = "Booking Details: " + json.toString();
+	        mimeMessageHelper.setText(bookingDetails);
+
+	        // Sending the mail
+	        javaMailSender.send(mimeMessage);
+	    } catch (MessagingException e) {
+	        e.printStackTrace();
+	    }
+	}
+
 }

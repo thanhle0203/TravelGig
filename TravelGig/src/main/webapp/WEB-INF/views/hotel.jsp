@@ -161,7 +161,7 @@
         	<select class="form-control" id="select_roomTypes">
         	</select>
         	No. Rooms: <input class="form-control" type="number" id="modal_noRooms"/>
-        	<input style="margin-top:25px" class="btn btn-searchHotelRooms form-control btn-primary" type="button" id="" value="SEARCH"/>       	
+        	<input style="margin-top:25px" class="btn btn-searchHotelRooms form-control btn-primary" type="button" id="btn_SearchHotelRooms" value="SEARCH"/>       	
         </div>
         
       </div>

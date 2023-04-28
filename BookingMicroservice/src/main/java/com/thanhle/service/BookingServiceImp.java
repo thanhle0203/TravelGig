@@ -2,11 +2,13 @@ package com.thanhle.service;
 import java.util.List;
 
 import java.util.Optional;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.thanhle.domain.Booking;
+import com.thanhle.domain.Guest;
 import com.thanhle.repository.BookingRepository;
 
 
@@ -23,7 +25,8 @@ public class BookingServiceImp implements BookingService {
 	}
 
 	@Override
-	public Booking saveBooking(Booking b) {
+	public Booking saveBookings(Booking b, Set<Guest> g) {
+		b.setGuests(g);
 		Booking booking = bookingRepository.save(b);
 		return booking;
 	}
@@ -46,6 +49,14 @@ public class BookingServiceImp implements BookingService {
 		}
 		
 	}
+
+	@Override
+	public Booking saveBooking(Booking booking) {
+		// TODO Auto-generated method stub
+		return bookingRepository.save(booking);
+	}
+
+	
 
 
     

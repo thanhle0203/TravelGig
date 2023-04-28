@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 
 import com.thanhle.domain.User;
 
-@Service
+
 public interface UserService {
 
 	public List<User> findAll();
@@ -14,6 +14,7 @@ public interface UserService {
 	public void deleteUserById(long uId);
 	public User findByUserId(long uId);
 	public User findByUserName(String userName);
-	//public User findByUserEmail(String email);
+	public User findByEmail(String email);
+	
 	
 }

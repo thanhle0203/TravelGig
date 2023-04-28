@@ -162,7 +162,6 @@ $(document).ready(function() {
     // Close booking hotel model and close search hotel modal when clicking confirm booking button
     $("#btn_confirmBooking").on('click', function() {
         customerMobile = $("#booking_customerMobile").val();
-        console.log(customerMobile);
       	// Open guest details modal
     	$("#guestDetailsModal").modal();  	
     	

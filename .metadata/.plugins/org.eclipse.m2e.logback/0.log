@@ -4653,3 +4653,37 @@ Caused by: org.codehaus.plexus.util.xml.pull.XmlPullParserException: Duplicated 
 2023-04-27 18:55:45,804 [Worker-254: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 2 resources
 2023-04-27 18:55:45,814 [Worker-254: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
 2023-04-27 19:05:56,056 [Worker-261: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-04-27 19:05:56,085 [Worker-261: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 2 resources
+2023-04-27 19:05:56,093 [Worker-261: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-04-27 21:08:14,631 [Worker-278: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-04-27 21:08:14,656 [Worker-278: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 2 resources
+2023-04-27 21:08:14,664 [Worker-278: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-04-27 21:14:35,063 [Worker-277: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-04-27 21:14:35,106 [Worker-277: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 2 resources
+2023-04-27 21:14:35,147 [Worker-277: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-04-27 21:25:59,375 [Worker-283: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-04-27 21:25:59,395 [Worker-283: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 2 resources
+2023-04-27 21:25:59,403 [Worker-283: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-04-27 21:26:13,633 [Worker-285: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-04-27 21:26:13,687 [Worker-285: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 2 resources
+2023-04-27 21:26:13,702 [Worker-285: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-04-28 10:32:26,476 [Worker-292: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-04-28 10:32:26,478 [Worker-292: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-04-28 10:32:26,486 [Worker-292: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-04-28 11:31:27,200 [Worker-302: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-04-28 11:31:27,514 [Worker-302: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 2 resources
+2023-04-28 11:31:27,525 [Worker-302: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-04-28 11:53:23,264 [Worker-299: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-04-28 11:53:23,279 [Worker-299: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 2 resources
+2023-04-28 11:53:23,287 [Worker-299: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-04-28 12:24:59,438 [Worker-312: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-04-28 12:24:59,478 [Worker-312: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 2 resources
+2023-04-28 12:24:59,487 [Worker-312: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-04-28 12:25:53,638 [Worker-312: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.thanhle:gigTravel:0.0.1-SNAPSHOT @ C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\pom.xml.
+2023-04-28 12:25:57,576 [Worker-312: Building] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/BookingMicroservice: com.thanhle:BookingMicroservice:0.0.1-SNAPSHOT with classifier  to /BookingMicroservice/target/classes
+2023-04-28 12:25:57,577 [Worker-312: Building] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/HotelMicroservice: com.thanhle:HotelMicroservice:0.0.1-SNAPSHOT with classifier  to /HotelMicroservice/target/classes
+2023-04-28 12:25:59,593 [Worker-312: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-04-28 12:25:59,594 [Worker-312: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-04-28 12:25:59,601 [Worker-312: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-04-28 12:27:37,587 [Worker-317: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-04-28 12:27:37,753 [Worker-317: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 2 resources

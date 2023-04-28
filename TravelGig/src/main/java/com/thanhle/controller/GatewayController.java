@@ -59,7 +59,7 @@ public class GatewayController {
     public String sendMail(@RequestBody EmailDetails emailDetails) {
     	return emailService.sendSimpleMail(emailDetails);
     }
-	
     
+   
 
 }

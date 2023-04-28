@@ -1,6 +1,8 @@
 package com.thanhle.service;
 
 //Importing required classes
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 import java.io.File;
 import jakarta.mail.MessagingException;
 import jakarta.mail.internet.MimeMessage;
@@ -13,7 +15,10 @@ import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
 
 import com.fasterxml.jackson.databind.JsonNode;
+import com.thanhle.domain.Booking;
+import com.thanhle.domain.User;
 import com.thanhle.dto.EmailDetails;
+import com.thanhle.repository.BookingRepository;
 
 //Annotation
 @Service
@@ -90,24 +95,30 @@ public class EmailServiceImpl implements EmailService {
 		}
 	}
 
-	public void sendBookingConfirmationEmail(String email, JsonNode json) {
-	    try {
-	        // Creating a mime message
-	        MimeMessage mimeMessage = javaMailSender.createMimeMessage();
-	        MimeMessageHelper mimeMessageHelper = new MimeMessageHelper(mimeMessage, true);
+	@Override
+    public void sendBookingConfirmationEmail(String email, JsonNode json) {
+		
+        EmailDetails details = new EmailDetails();
+      
+        Booking booking = new Booking();
+     // Convert booking object to JsonNode
+        ObjectMapper objectMapper = new ObjectMapper();
+        json = objectMapper.valueToTree(booking);
+        
+        User user = new User();
+        email = user.getEmail();
+        details.setRecipient(email);
+        details.setSubject("Booking Confirmation");
+        String msgBody = "Dear " + user.getUserName() + ", your booking for Room " + booking.getNoRooms()
+        + " at " + booking.getBookingId() + " from " + booking.getCheckInDate() + " to "
+        + booking.getCheckOutDate() + " has been confirmed. Your booking reference is " + booking.getBookingId(); 
 
-	        // Setting up necessary details
-	        mimeMessageHelper.setFrom(sender);
-	        mimeMessageHelper.setTo(email);
-	        mimeMessageHelper.setSubject("Booking Confirmation");
-	        String bookingDetails = "Booking Details: " + json.toString();
-	        mimeMessageHelper.setText(bookingDetails);
+        details.setMsgBody(msgBody);
+        details.setAttachment("NA");
+        sendSimpleMail(details);
+        
+   
 
-	        // Sending the mail
-	        javaMailSender.send(mimeMessage);
-	    } catch (MessagingException e) {
-	        e.printStackTrace();
-	    }
-	}
+    }
 
 }

@@ -8,6 +8,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
 import com.fasterxml.jackson.databind.JsonNode;
+import com.thanhle.dto.EmailDetails;
 
 @Component
 public class BookingComponent {
@@ -46,4 +47,19 @@ public class BookingComponent {
 		return object;
 		
 	}
+	
+	public String sendMail(EmailDetails emailDetails) {
+	    HttpHeaders headers = new HttpHeaders();
+	    headers.setContentType(MediaType.APPLICATION_JSON);
+
+	    // Set the email details in the request body
+	    HttpEntity<EmailDetails> request = new HttpEntity<>(emailDetails, headers);
+
+	    RestTemplate restTemplate = new RestTemplate();
+	    ResponseEntity<String> response = restTemplate.postForEntity("http://localhost:8282/sendMail", request, String.class);
+	    String result = response.getBody();
+
+	    return result;
+	}
+
 }

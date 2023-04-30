@@ -103,13 +103,16 @@ $(document).ready(function() {
         var hotelRoomTypes = responseText[0].hotelRooms;
         hotelRoomId = hotelRoomTypes.find(room => room.type.name === $("#select_roomTypes").val()).hotelRoomId;
         
-        noGuests = $("#modal_noGuests").val();
+        //noGuests = $("#modal_noGuests").val();
+        noGuests = parseInt($("#modal_noGuests").val());
         noRooms = parseInt($("#modal_noRooms").val(), 10);
         checkInDate = moment($("#modal_checkInDate").val(), "YYYY-MM-DD");
         checkOutDate = moment($("#modal_checkOutDate").val(), "YYYY-MM-DD");
     
     
         var roomType = $("#select_roomTypes").val();
+        
+        
     
         // Validate check-in and check-out dates
         if (moment(checkOutDate).isBefore(checkInDate)) {
@@ -162,8 +165,13 @@ $(document).ready(function() {
     // Close booking hotel model and close search hotel modal when clicking confirm booking button
     $("#btn_confirmBooking").on('click', function() {
         customerMobile = $("#booking_customerMobile").val();
+        console.log(noGuests);
+        // Display guest details modals
+  		for (var i = 0; i < noGuests; i++) {
+    		$("#guestDetailsModal").modal();
+  		}
       	// Open guest details modal
-    	$("#guestDetailsModal").modal();  	
+    	//$("#guestDetailsModal").modal();  	
     	
     });
   
@@ -199,30 +207,46 @@ $(document).ready(function() {
 	     "customerMobile": customerMobile, "roomType": roomType, "email": email};
 	     
 	console.log(booking);
-  
-  	// Make an AJAX request to submit the guest details
-	$.ajax({
-  			type: "POST",
-            contentType: 'application/json',
-           url: "http://localhost:8484/booking",
-            data: JSON.stringify(booking),
-            dataType: 'json',
-  			success: function(response) {
-    		// Display the booking confirmation modal
-    		$("#bookingConfirmationModal").modal();
-    		$("#guestDetailsModal").modal('hide');
-    		$("#bookingHotelRoomModal").modal('hide');
-    		$("#myModal").modal('hide');
+	
+// define bookingId variable here
+	// define bookingId variable here
+var bookingId;
+
+$.ajax({
+    type: "POST",
+    contentType: 'application/json',
+    url: "http://localhost:8484/booking",
+    data: JSON.stringify(booking),
+    dataType: 'json',
+    success: function(response) {
+        // set bookingId from response
+        bookingId = parseInt(response.bookingId);
+        console.log("BookingId: " + bookingId);
         
-    		
-  		},
-  		error: function(jqXHR, textStatus, errorThrown) {
-    	// Display an error message
-    	alert("Failed to submit booking details. Please try again.");
-  		}
-	});
+        // Display the booking confirmation modal
+        $("#bookingConfirmationModal").modal();
+        $("#guestDetailsModal").modal('hide');
+        $("#bookingHotelRoomModal").modal('hide');
+        $("#myModal").modal('hide');
 
+        // Send booking details
+        $.post("http://localhost:8282/sendBookingDetails/" + bookingId, {}, function(response) {
+            // Handle the response from the server
+            console.log(response);
+        }).fail(function(jqXHR, textStatus, errorThrown) {
+            // Handle the error case
+            console.log("Failed to send booking details: " + errorThrown);
+        });
+    
+    },
+    error: function(jqXHR, textStatus, errorThrown) {
+        // Display an error message
+        alert("Failed to submit booking details. Please try again.");
+    }
+});
 
-	});
+   
+
+});
 	
 });

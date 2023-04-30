@@ -86,6 +86,13 @@ public class User {
 	}
 
 
+
+	public User orElse(Object object) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
 	
 }
 

@@ -95,24 +95,27 @@ public class EmailServiceImpl implements EmailService {
 		}
 	}
 
-	@Override
-    public void sendBookingConfirmationEmail(String email, JsonNode json) {
+	
+    public void sendBookingConfirmationEmail(EmailDetails details) {
 		
-        EmailDetails details = new EmailDetails();
+//        EmailDetails details = new EmailDetails();
       
         Booking booking = new Booking();
      // Convert booking object to JsonNode
         ObjectMapper objectMapper = new ObjectMapper();
-        json = objectMapper.valueToTree(booking);
+       // JsonNode json = objectMapper.valueToTree(booking);
         
         User user = new User();
-        email = user.getEmail();
+        String email = user.getEmail();
         details.setRecipient(email);
         details.setSubject("Booking Confirmation");
+        String msgBody = "Dear Sr,  your booking has been confirm";
+        /*
         String msgBody = "Dear " + user.getUserName() + ", your booking for Room " + booking.getNoRooms()
         + " at " + booking.getBookingId() + " from " + booking.getCheckInDate() + " to "
         + booking.getCheckOutDate() + " has been confirmed. Your booking reference is " + booking.getBookingId(); 
-
+		*/
+        
         details.setMsgBody(msgBody);
         details.setAttachment("NA");
         sendSimpleMail(details);
@@ -120,5 +123,6 @@ public class EmailServiceImpl implements EmailService {
    
 
     }
+
 
 }

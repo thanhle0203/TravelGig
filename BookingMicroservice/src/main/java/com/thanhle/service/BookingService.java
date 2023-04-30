@@ -13,4 +13,5 @@ public interface BookingService {
 	public void deleteBooking(int bookingId);
 	Booking saveBookings(Booking booking, Set<Guest>  guest);
 	Booking saveBooking(Booking booking);
+	public Booking findByBookingId(int bId);
 }

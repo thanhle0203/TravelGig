@@ -55,10 +55,11 @@ public class GatewayController {
     	return new ResponseEntity<>(booking, HttpStatus.OK);
     }
     
-    @RequestMapping(value = "/sendMail", method = RequestMethod.POST)
-    public String sendMail(@RequestBody EmailDetails emailDetails) {
-    	return emailService.sendSimpleMail(emailDetails);
-    }
+   @RequestMapping(value = "/sendMailBooking", method = RequestMethod.POST)
+    public ResponseEntity<JsonNode> sendMailBooking(@RequestBody JsonNode json) {
+	   	JsonNode sendbooking = bookingComponent.saveMailBooking(json);
+    	return new ResponseEntity<>(sendbooking, HttpStatus.OK);
+   }
     
    
 

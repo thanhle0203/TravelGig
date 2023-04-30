@@ -30,41 +30,7 @@ public class HotelComponent {
 		return returnObj;
 	}
 	
-	public JsonNode saveBooking(JsonNode json) {
-
-		HttpHeaders headers = new HttpHeaders();
-
-		headers.setContentType(MediaType.APPLICATION_JSON);		
-
-		HttpEntity<String> request = new HttpEntity<String>(json.toString(), headers);
-
-		RestTemplate restTemplate = new RestTemplate();
-
-		ResponseEntity<Object> responseEntity = restTemplate.postForEntity("http://localhost:8484/booking", request, Object.class);
-
-		Object object = (JsonNode) responseEntity.getBody();
-
-		return (JsonNode) object;
-		
-	}
 	
-	public JsonNode saveGuest(JsonNode json) {
-
-		HttpHeaders headers = new HttpHeaders();
-
-		headers.setContentType(MediaType.APPLICATION_JSON);		
-
-		HttpEntity<String> request = new HttpEntity<String>(json.toString(), headers);
-
-		RestTemplate restTemplate = new RestTemplate();
-
-		ResponseEntity<Object> responseEntity = restTemplate.postForEntity("http://localhost:8484/guest", request, Object.class);
-
-		JsonNode object = (JsonNode) responseEntity.getBody();
-
-		return object;
-		
-	}
 	
 	
 	

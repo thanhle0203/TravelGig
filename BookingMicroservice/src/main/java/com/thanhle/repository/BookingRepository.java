@@ -15,6 +15,7 @@ public interface BookingRepository extends JpaRepository<Booking, Integer> {
     Booking findByCustomerMobile(String customerMobile);
     Booking findByBookedOnDate (Date bookedOnDate);
 	Optional<Booking> findGuestsByBookingId(int bookingId);
+	Optional<Booking> findByBookingId(int bId);
 
     
 }

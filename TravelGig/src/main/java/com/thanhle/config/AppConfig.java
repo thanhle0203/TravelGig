@@ -13,8 +13,22 @@ import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
 
+import com.thanhle.domain.Booking;
+import com.thanhle.domain.User;
+import com.thanhle.repository.BookingRepository;
+
 @Configuration
 public class AppConfig {
+	
+	@Bean
+    public Booking booking() {
+        return new Booking();
+    }
+	
+	@Bean
+    public User user() {
+        return new User();
+    }
 	
 	@Bean
 	public InternalResourceViewResolver viewResolver() {

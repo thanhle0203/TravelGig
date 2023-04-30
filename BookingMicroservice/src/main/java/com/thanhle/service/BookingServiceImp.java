@@ -36,6 +36,16 @@ public class BookingServiceImp implements BookingService {
 
 		return bookingRepository.findByCustomerMobile(customerMobile);
 	}
+	
+	@Override
+	public Booking findByBookingId(int bId) {
+		Optional<Booking> b = bookingRepository.findByBookingId(bId);
+		if(b.isPresent()) {
+			return b.get();
+		}else {
+			return null;
+		}
+	}
 
 	@Override
 	public void deleteBooking(int bookingId) {

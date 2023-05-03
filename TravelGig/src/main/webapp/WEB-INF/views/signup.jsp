@@ -33,6 +33,11 @@
                     <input class="form-control" type="email" name="email" id="email">
                 </div>
 
+                <div class="form-group">
+                    <label>Please Enter Phone Number:</label>
+                    <input class="form-control" type="text" name="mobile" id="mobile">
+                </div>
+
                 <div><span class='text-muted'>Have an Account? </span ><a href='/login'>Login</a></div>
                 <input class="btn btn-primary mt-5" type="submit" value="Signup" id="sign-up-btn">
             </form>

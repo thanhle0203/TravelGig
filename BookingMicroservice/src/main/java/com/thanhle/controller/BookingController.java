@@ -22,14 +22,14 @@ public class BookingController {
     @Autowired
     GuestService guestService;
 
-	@PostMapping(value = "/bookings")
-	@ResponseBody
-	public Booking saveBookings(@RequestBody Booking booking, @RequestParam Set<Guest> guests) {
+	//@PostMapping(value = "/bookings")
+	//@ResponseBody
+	//public Booking saveBookings(@RequestBody Booking booking, @RequestParam Set<Guest> guests) {
 		//Guest guest = guestService.getGuestById(guestId);
-		return bookingService.saveBookings(booking, guests);
-	}
+		//return bookingService.saveBookings(booking, guests);
+	//}
 	
-	@PostMapping(value = "/booking")
+	@PostMapping(value = "/bookings")
 	@ResponseBody
 	public Booking saveBooking(@RequestBody Booking booking) {
 		//Guest guest = guestService.getGuestById(guestId);
@@ -42,7 +42,13 @@ public class BookingController {
 	    return bookingService.getAll();
 	}
 	
-	@DeleteMapping(value = "/booking/{id}")
+	@GetMapping(value = "/bookings/{customerMobile}")
+	@ResponseBody
+	public List<Booking> getBookingsByMobile(@PathVariable String customerMobile) {
+	    return bookingService.findByCustomerMobile(customerMobile);
+	}
+	
+	@DeleteMapping(value = "/bookings/{id}")
 	@ResponseBody
 	public void deleteBooking(@PathVariable int id) {
 		bookingService.deleteBooking(id);
@@ -54,4 +60,49 @@ public class BookingController {
 		//booking.setBookingId(id);
 		//return bookingService.saveBooking(booking, guests);
 	//}
+	
+	@PostMapping(value = "/bookings/upcoming")
+	@ResponseBody
+	public Booking saveUpcomingBooking(@RequestBody Booking booking) {
+	    // save the booking to the upcoming bookings list
+	    return bookingService.saveUpcomingBooking(booking);
+	}
+
+	@PostMapping(value = "/bookings/completed")
+	@ResponseBody
+	public Booking saveCompletedBooking(@RequestBody Booking booking) {
+	    // save the booking to the completed bookings list
+	    return bookingService.saveCompletedBooking(booking);
+	}
+
+	@PostMapping(value = "/bookings/cancelled")
+	@ResponseBody
+	public Booking saveCancelledBooking(@RequestBody Booking booking) {
+	    // save the booking to the cancelled bookings list
+	    return bookingService.saveCancelledBooking(booking);
+	}
+
+	@GetMapping(value = "/bookings/upcoming")
+	@ResponseBody
+	public List<Booking> getUpcomingBookings() {
+	    // return a list of upcoming bookings
+	    return bookingService.getUpcomingBookings();
+	}
+
+	@GetMapping(value = "/bookings/completed")
+	@ResponseBody
+	public List<Booking> getCompletedBookings() {
+	    // return a list of completed bookings
+	    return bookingService.getCompletedBookings();
+	}
+
+	@GetMapping(value = "/bookings/cancelled")
+	@ResponseBody
+	public List<Booking> getCancelledBookings() {
+	    // return a list of cancelled bookings
+	    return bookingService.getCancelledBookings();
+	}
+	
+	
+
 }

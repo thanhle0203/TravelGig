@@ -105,6 +105,10 @@ $(document).ready(function() {
         
         //noGuests = $("#modal_noGuests").val();
         noGuests = parseInt($("#modal_noGuests").val());
+        
+
+        
+        
         noRooms = parseInt($("#modal_noRooms").val(), 10);
         checkInDate = moment($("#modal_checkInDate").val(), "YYYY-MM-DD");
         checkOutDate = moment($("#modal_checkOutDate").val(), "YYYY-MM-DD");
@@ -154,7 +158,7 @@ $(document).ready(function() {
         $("#booking_roomType").val(roomType);
         $("#booking_discount").text(discount);
         $("#booking_price").text(totalPrice);
-        
+            
         // Display booking hotel room modal
         $("#bookingHotelRoomModal").modal();
     
@@ -166,19 +170,14 @@ $(document).ready(function() {
     $("#btn_confirmBooking").on('click', function() {
         customerMobile = $("#booking_customerMobile").val();
         console.log(noGuests);
-        // Display guest details modals
-  		for (var i = 0; i < noGuests; i++) {
-    		$("#guestDetailsModal").modal();
-  		}
+       
       	// Open guest details modal
-    	//$("#guestDetailsModal").modal();  	
+    	$("#guestDetailsModal").modal();  	
     	
     });
   
     // Click event handler for Submit button in Guest Details modal
-	$("#submitGuestDetailsBtn").click(function(event) {
-		event.preventDefault();
-		
+	$("#submitGuestDetailsBtn").on('click', function() {
 		// Get the guest details entered by the user
 	
 		var firstName = $("#guestFirstName").val();
@@ -188,34 +187,35 @@ $(document).ready(function() {
 		
 	    var guests = {"firstName": firstName, "lastName": lastName, "gender": gender, "age": age};
   
-  		//var customerMobile = "700000";
- 
-  
-  	
      //Prepare booking data
      var status = "upcoming";
      var bookedOnDate = new Date();
    
     var roomType = $("#select_roomTypes").val();
    	var email = "XXXXXXXX@gmail.com";
-  
-
-   
-	var booking = {"hotelId": hotelId,  "hotelRoomId": hotelRoomId, "noRooms": noRooms,"guests": [guests],
+   	
+   	
+   	
+   	var booking = {"hotelId": hotelId,  "hotelRoomId": hotelRoomId, "noRooms": noRooms,"guests": [guests],
 	     "checkInDate": checkInDate, "checkOutDate": checkOutDate, "bookedOnDate": bookedOnDate,
 	     "status": status, "price": price, "discount": discount,
 	     "customerMobile": customerMobile, "roomType": roomType, "email": email};
 	     
 	console.log(booking);
-	
-// define bookingId variable here
+  
+    // Display guest details modals
+    //for (var i = 0; i < noGuests; i++) {
+    $("#guestDetailsModal").modal();
+  
+    //}
+
 	// define bookingId variable here
 var bookingId;
 
 $.ajax({
     type: "POST",
     contentType: 'application/json',
-    url: "http://localhost:8484/booking",
+    url: "http://localhost:8484/bookings",
     data: JSON.stringify(booking),
     dataType: 'json',
     success: function(response) {
@@ -244,9 +244,13 @@ $.ajax({
         alert("Failed to submit booking details. Please try again.");
     }
 });
-
-   
+	
 
 });
 	
+
+
+
 });
+
+

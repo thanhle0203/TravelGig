@@ -25,25 +25,25 @@ public class GuestController {
 	@Autowired
 	GuestService guestService;
 
-	@PostMapping(value = "/guest")
+	@PostMapping(value = "/guests")
 	@ResponseBody
 	public Guest saveGuest(@RequestBody Guest guest) {
 		return guestService.saveGuest(guest);
 	}
 	
-	@GetMapping(value = "/guest")
+	@GetMapping(value = "/guests")
 	@ResponseBody
 	public List<Guest> getAllGuests() {
 	    return guestService.findAll();
 	}
 	
-	@DeleteMapping(value = "/guest/{id}")
+	@DeleteMapping(value = "/guests/{id}")
 	@ResponseBody
 	public void deleteGuest(@PathVariable int id) {
 		guestService.deleteGuest(id);
 	}
 
-	@PutMapping(value = "/guest/{id}")
+	@PutMapping(value = "/guests/{id}")
 	@ResponseBody
 	public Guest updateGuest(@PathVariable int id, @RequestBody Guest guest) {
 		guest.setGuestId(id);

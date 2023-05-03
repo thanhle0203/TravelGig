@@ -4,8 +4,9 @@ $(document).ready(function() {
         var userName = $("#username").val();
         var userPassword = $("#password").val();
         var email =  $("#email").val();
+        var mobile = $("#mobile").val();
         
-        var user = {"userName": userName, "userPassword": userPassword, "email": email};
+        var user = {"userName": userName, "userPassword": userPassword, "email": email, "mobile": mobile};
         
         $.ajax({
             type: "POST",

@@ -16,6 +16,7 @@
 <div class="container" style="margin-left:100px">
 <h1>Welcome to Travel Gig</h1>
 <h2>Search your desired hotel</h2>
+<a href="MyBooking.jsp">My Bookings</a> 
 </div>
 
 <div class="container border rounded" style="margin:auto;padding:50px;margin-top:50px;margin-bottom:50px">

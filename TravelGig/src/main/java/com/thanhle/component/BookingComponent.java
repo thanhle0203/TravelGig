@@ -28,7 +28,7 @@ public class BookingComponent {
 
 		RestTemplate restTemplate = new RestTemplate();
 
-		ResponseEntity<Object> responseEntity = restTemplate.postForEntity("http://localhost:8484/booking", request, Object.class);
+		ResponseEntity<Object> responseEntity = restTemplate.postForEntity("http://localhost:8484/bookings", request, Object.class);
 
 		Object object = (JsonNode) responseEntity.getBody();
 
@@ -46,7 +46,7 @@ public class BookingComponent {
 
 		RestTemplate restTemplate = new RestTemplate();
 
-		ResponseEntity<Object> responseEntity = restTemplate.postForEntity("http://localhost:8484/guest", request, Object.class);
+		ResponseEntity<Object> responseEntity = restTemplate.postForEntity("http://localhost:8484/guests", request, Object.class);
 
 		JsonNode object = (JsonNode) responseEntity.getBody();
 
@@ -85,8 +85,9 @@ public class BookingComponent {
 
 	    return bookingDetails;
 	}
+	
 
-	public JsonNode saveMailBooking(JsonNode json) {
+	public JsonNode getBooking(JsonNode json) {
 
 		HttpHeaders headers = new HttpHeaders();
 
@@ -96,12 +97,36 @@ public class BookingComponent {
 
 		RestTemplate restTemplate = new RestTemplate();
 
-		ResponseEntity<JsonNode> responseEntity = restTemplate.postForEntity("http://localhost:8484/booking", request, JsonNode.class);
+		//ResponseEntity<JsonNode> responseEntity = restTemplate.postForEntity("http://localhost:8484/bookings/{customerMobile}", request, JsonNode.class);
+		ResponseEntity<JsonNode> responseEntity = restTemplate.postForEntity("http://localhost:8484/bookings", request, JsonNode.class);
 
 		JsonNode object = responseEntity.getBody();
 
 		return object;
+		
 	}
+	
+	/*
+	public JsonNode getBookingByMobile(JsonNode json) {
+
+		HttpHeaders headers = new HttpHeaders();
+
+		headers.setContentType(MediaType.APPLICATION_JSON);		
+
+		HttpEntity<String> request = new HttpEntity<String>(json.toString(), headers);
+
+		RestTemplate restTemplate = new RestTemplate();
+
+		ResponseEntity<JsonNode> responseEntity = restTemplate.postForEntity("http://localhost:8484/bookings/{customerMobile}", request, JsonNode.class);
+		//ResponseEntity<JsonNode> responseEntity = restTemplate.postForEntity("http://localhost:8484/bookings", request, JsonNode.class);
+
+		JsonNode object = responseEntity.getBody();
+
+		return object;
+		
+	}
+	*/
+	
 
 
 

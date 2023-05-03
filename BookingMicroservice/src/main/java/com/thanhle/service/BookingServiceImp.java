@@ -10,7 +10,8 @@ import org.springframework.stereotype.Service;
 import com.thanhle.domain.Booking;
 import com.thanhle.domain.Guest;
 import com.thanhle.repository.BookingRepository;
-
+import java.util.*
+;
 
 @Service
 public class BookingServiceImp implements BookingService {
@@ -32,8 +33,7 @@ public class BookingServiceImp implements BookingService {
 	}
 
 	@Override
-	public Booking findByCustomerMobile(String customerMobile) {
-
+	public List<Booking> findByCustomerMobile(String customerMobile) {
 		return bookingRepository.findByCustomerMobile(customerMobile);
 	}
 	
@@ -60,13 +60,51 @@ public class BookingServiceImp implements BookingService {
 		
 	}
 
-	@Override
-	public Booking saveBooking(Booking booking) {
-		// TODO Auto-generated method stub
-		return bookingRepository.save(booking);
-	}
 
-	
+    @Override
+    public Booking saveBooking(Booking booking) {
+        return bookingRepository.save(booking);
+    }
+
+    @Override
+    public Booking saveUpcomingBooking(Booking booking) {
+        booking.setStatus("upcoming");
+        return bookingRepository.save(booking);
+    }
+
+    @Override
+    public Booking saveCompletedBooking(Booking booking) {
+        booking.setStatus("completed");
+        return bookingRepository.save(booking);
+    }
+
+    @Override
+    public Booking saveCancelledBooking(Booking booking) {
+        booking.setStatus("cancelled");
+        return bookingRepository.save(booking);
+    }
+
+    @Override
+    public List<Booking> getUpcomingBookings() {
+        return bookingRepository.findByStatusAndCheckInDateAfter("upcoming", new Date());
+    }
+
+    @Override
+    public List<Booking> getCompletedBookings() {
+        return bookingRepository.findByStatusAndCheckInDateBefore("upcoming", new Date());
+    }
+
+    @Override
+    public List<Booking> getCancelledBookings() {
+        return bookingRepository.findByStatus("cancelled");
+    }
+
+	//@SuppressWarnings("unchecked")
+	//@Override
+	//public List<Booking> getBookingsByMobileNo(String customerMobile) {
+		// TODO Auto-generated method stub
+		//return (List<Booking>) bookingRepository.findByCustomerMobile(customerMobile);;
+	//}
 
 
     

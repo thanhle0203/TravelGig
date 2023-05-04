@@ -57,57 +57,23 @@ public class WelcomeController {
 	}
 	
 
-	//@GetMapping(value = "/getBookings")
-	//public String myBookings(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Model model) {
+	@GetMapping(value = "/getBookings")
+	public String myBookings(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Model model) {
 		
-	    //return "getBookings";
-	//}
-
-	@GetMapping("/getBookings")
-	public String showMyBookings(Model model, Principal principal) {
-	    String username = principal.getName();
-	    User currentUser = userService.findByUserName(username);
-	    String mobile = currentUser.getMobile();
-	    model.addAttribute("mobile", mobile);
 	    return "getBookings";
 	}
-
 	
-	@GetMapping("/mybookings")
-    public List<Booking> getBookings(Principal principal) {
-        // get the currently logged in user
-       //Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-       String username = principal.getName();
-       //String username = authentication.getName();
-       User currentUser = userService.findByUserName(username);		
-       String userMobile = currentUser.getMobile();
-        // fetch all bookings for the logged in user
-       //List<Booking> bookings = bookingRepository.findByCustomerMobile(mobileNumber);
-       List<Booking> bookings = bookingService.findByCustomerMobile(userMobile);
-     
+	@GetMapping(value = "/review")
+    public String showReviewPage(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Model model) {
+       // Optional<Booking> booking = bookingRepository.findById(bookingId);
+        //if (booking == null) {
+            //// Handle error
+       // }
 
-        return bookings;
+       // model.addAttribute("booking", booking);
+        return "review";
     }
 
 
-    @PostMapping("/cancelBooking/{bookingId}")
-    public ResponseEntity<String> cancelBooking(@PathVariable int bookingId) {
-        // get the booking by ID
-        Optional<Booking> optionalBooking = bookingRepository.findByBookingId(bookingId);
-
-        if (!optionalBooking.isPresent()) {
-            return ResponseEntity.notFound().build();
-        }
-
-        Booking booking = optionalBooking.get();
-
-        // set the booking status to cancelled
-        booking.setStatus("cancelled");
-
-        // save the updated booking
-        bookingRepository.save(booking);
-
-        return ResponseEntity.ok("Booking cancelled successfully.");
-    }
 
 }

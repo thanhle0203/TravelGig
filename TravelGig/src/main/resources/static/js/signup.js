@@ -15,10 +15,12 @@ $(document).ready(function() {
             data: JSON.stringify(user),
             dataType: 'json',
             success: function(result) {
-    			alert("Sign up successful!");
-    			//alert(result);
-    			window.location.href = "/login";
-			}
+                alert("Sign up successful!");
+                window.location.href = "/login";
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                alert("Error signing up: " + jqXHR.responseText);
+            }
         });
     });
 });

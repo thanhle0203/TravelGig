@@ -1,14 +1,21 @@
 package com.thanhle.component;
 
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
 import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.thanhle.domain.Booking;
 import com.thanhle.dto.EmailDetails;
 import com.thanhle.service.EmailService;
 
@@ -53,6 +60,32 @@ public class BookingComponent {
 		return object;
 		
 	}
+	
+	/*
+	public List<Booking> saveGuestBookings(JsonNode json, String phoneNumber) {
+
+		RestTemplate restTemplate = new RestTemplate();
+
+		ResponseEntity<Object> responseEntity = restTemplate.getForEntity("http://localhost:8484/bookings/" + phoneNumber, Object.class);
+
+		JsonNode objects = (JsonNode) responseEntity.getBody();
+		
+		ObjectMapper objMap = new ObjectMapper();
+		JsonNode returnObj = objMap.convertValue(objects, JsonNode.class);
+
+		return returnObj;
+		
+	}
+	*/
+	
+	public List<Booking> saveGuestBookings(JsonNode json, String phoneNumber) {
+	    RestTemplate restTemplate = new RestTemplate();
+	    ResponseEntity<Booking[]> responseEntity = restTemplate.getForEntity("http://localhost:8484/bookings/" + phoneNumber, Booking[].class);
+	    Booking[] bookingsArray = responseEntity.getBody();
+	    List<Booking> bookings = Arrays.asList(bookingsArray);
+	    return bookings;
+	}
+
 	
 	public JsonNode sendBooking(JsonNode json) {
 

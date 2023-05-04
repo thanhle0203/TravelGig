@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
@@ -15,36 +17,40 @@
 
 <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"></script>
 
-
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="./js/hotel.js"></script>
-
-<style>
-	.my-bookings {
-	  position: absolute;
-	  top: 0;
-	  right: 0;
-	}
-  </style>
 
 </head>
 <body>
 <div class="container" style="margin-left:100px">
 <h1>Welcome to Travel Gig</h1>
-<h2>Search your desired hotel</h2>
-<%
-Object user = request.getAttribute("user");
-if (user != null) {
-%>
-<span>Welcome: <%=user%></span><a href="logout">Logout</a>
-<%} 
-else 
-{%> 
-	<a href="login">Login</a>
-<%}%>
+<h2>Search your desired hotel</h2> <br>
 
+<!-- <% Object user = request.getAttribute("user");
+   if (user != null) { %>
+      <span>Welcome: <%= user %></span>
+      <a href="logout">Logout</a>
+   <% } else { %>
+      <a href="login">Login</a>
+   <% } %> -->
 
-<h3>
+<c:if test="${not empty pageContext.request.userPrincipal}">
+	<h3>Welcome ${pageContext.request.userPrincipal.name}</h3>
+	<a href="logout" class="btn btn-secondary logout-btn">Logout</a>
+	<security:authorize access="hasRole('USER')">
+		<a href="/getBookings">My Bookings</a>
+		<button id='question-btn' class="btn">Questions</button>
+	</security:authorize>
+	<%-- Add this line to hide the login button --%>
+	<style> .login-btn { display: none; } </style>
+</c:if>
+<c:if test="${empty pageContext.request.userPrincipal}">
+	<%-- Add the class "login-btn" to the login button to target it with the CSS --%>
+	<a href="login" class="btn btn-primary login-btn">Login</a>
+	<!-- <style> .logout-btn { display: none; } </style> -->
+</c:if>
+
+<!-- <h3>
     <security:authorize access="isAuthenticated()">
         Welcome <span id="username"><security:authentication property="principal.username"/>${username}</span><br>
         <security:authorize access="hasRole('USER')">
@@ -53,7 +59,7 @@ else
 			
         </security:authorize>
     </security:authorize>
-</h3>
+</h3> -->
 
 
 <div class="container border rounded" style="margin:auto;padding:50px;margin-top:50px;margin-bottom:50px">

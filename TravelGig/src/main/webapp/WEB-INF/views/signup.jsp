@@ -17,7 +17,7 @@
         <div class='mt-5 d-flex justify-content-center'>
             <form action="signup" method="POST">
                 <h1>Sign Up</h1>
-                <br><br><br>
+                <br><br>
                 <div class="form-group">
                     <label>Please Enter Username:</label>
                     <input class="form-control" type="text" name="username" id="username">

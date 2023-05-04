@@ -1,23 +1,25 @@
-$(document).ready(function() {
-    // function to cancel a booking
+ // function to cancel a booking
     function cancelBooking(bookingId) {    
         // make AJAX call to change booking status to "cancelled"
         $.ajax({
             type: "POST",
-            url: "/cancelBooking/{bookingId}",
+            url: "/cancelBooking/" + bookingId,
             data: { bookingId: bookingId },
             success: function() {
                 // reload the page to display updated bookings
                 location.reload();
             }
         });
-    };
-    
+    }
+
+$(document).ready(function() {
+   
     $(function () {
         // Fetch the bookings of the logged in user
         // Ajax call to fetch the bookings
         $.ajax({
-            url: "/bookings/" + "${mobile}",
+            url: "/myBookings",
+            //url: "/mybookings",
             method: "GET",
             success: function(bookings) {
                 console.log(bookings);
@@ -36,6 +38,7 @@ $(document).ready(function() {
                     if (booking.status === "upcoming" && new Date(booking.checkInDate) > currentDate) {
                         upcomingBookings.push(booking);
                     } else if (booking.status === "completed" || (booking.status === "upcoming" && new Date(booking.checkInDate) <= currentDate)) {
+                        booking.status = "completed";
                         completedBookings.push(booking);
                     } else if (booking.status === "cancelled") {
                         cancelledBookings.push(booking);
@@ -68,7 +71,7 @@ $(document).ready(function() {
             $.each(bookings, function(index, booking) {
                 var cancelLinkHtml = "";
                 if (tabId === "upcomingBookings") {
-                    cancelLinkHtml = "<a href='/cancelBooking/' onclick='cancelBooking(" + booking.bookingId + ")'>Cancel</a>";
+                    cancelLinkHtml = "<a href='#' onclick='cancelBooking(" + booking.bookingId + ")' class='btn btn-danger text-white'>Cancel</a>";
                 }
                 tableHtml += "<tr><td>" + booking.bookingId + "</td><td>" + new Date(booking.checkInDate).toDateString() + "</td><td>" + new Date(booking.checkOutDate).toDateString() + "</td><td>" + booking.status + "</td><td>" + cancelLinkHtml + "</td></tr>";
             });

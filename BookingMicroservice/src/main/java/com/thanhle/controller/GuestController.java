@@ -37,11 +37,6 @@ public class GuestController {
 	    return guestService.findAll();
 	}
 	
-	@DeleteMapping(value = "/guests/{id}")
-	@ResponseBody
-	public void deleteGuest(@PathVariable int id) {
-		guestService.deleteGuest(id);
-	}
 
 	@PutMapping(value = "/guests/{id}")
 	@ResponseBody

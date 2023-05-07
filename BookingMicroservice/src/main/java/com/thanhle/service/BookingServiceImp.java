@@ -38,13 +38,8 @@ public class BookingServiceImp implements BookingService {
 	}
 	
 	@Override
-	public Booking findByBookingId(int bId) {
-		Optional<Booking> b = bookingRepository.findByBookingId(bId);
-		if(b.isPresent()) {
-			return b.get();
-		}else {
-			return null;
-		}
+	public List<Booking> findByBookingId(int bId) {
+		return bookingRepository.findByBookingId(bId);
 	}
 
 	@Override

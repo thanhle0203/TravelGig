@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.thanhle.domain.Hotel;
+import com.thanhle.domain.Review;
 import com.thanhle.repository.HotelRepository;
 
 @Service
@@ -20,6 +21,10 @@ public class IHotelService implements HotelService{
 		return hotelRepository.findByHotelNameLikeOrAddressLikeOrCityLikeOrStateLike(searchString, searchString, searchString, searchString);
 	}
 	
-	
+	@Override
+	public List<Review> getRatings(int hotelId) {
+	    return hotelRepository.findByHotelId(hotelId);
+	}
+
 	
 }

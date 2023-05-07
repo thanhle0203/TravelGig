@@ -111,22 +111,23 @@ public class GatewayController {
     @PostMapping("/cancelBooking/{bookingId}")
     public ResponseEntity<String> cancelBooking(@PathVariable int bookingId) {
         // get the booking by ID
-        Optional<Booking> optionalBooking = bookingRepository.findByBookingId(bookingId);
+        Optional<Booking> optionalBooking = bookingRepository.findById(bookingId);
 
-        if (!optionalBooking.isPresent()) {
-            return ResponseEntity.notFound().build();
+        if (optionalBooking.isPresent()) {
+            Booking booking = optionalBooking.get();
+            // set the booking status to cancelled
+            booking.setStatus("cancelled");
+            booking.getBookingId();
+            booking.getCheckInDate();
+            booking.getCheckOutDate();
+            // save the updated booking
+            bookingRepository.save(booking);
+            return ResponseEntity.ok("Booking cancelled successfully.");
+        } else {
+            return ResponseEntity.badRequest().body("Booking not found.");
         }
-
-        Booking booking = optionalBooking.get();
-
-        // set the booking status to cancelled
-        booking.setStatus("cancelled");
-
-        // save the updated booking
-        bookingRepository.save(booking);
-
-        return ResponseEntity.ok("Booking cancelled successfully.");
     }
+
     
     @GetMapping("/reviews")
     public String showReviewPages() {

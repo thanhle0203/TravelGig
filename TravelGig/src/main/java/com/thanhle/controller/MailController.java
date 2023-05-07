@@ -9,6 +9,7 @@ import com.thanhle.service.EmailService;
 import com.thanhle.service.UserService;
 
 import java.security.Principal;
+import java.util.List;
 import java.util.logging.LogManager;
 import java.util.logging.Logger;
 import javax.servlet.http.HttpServletRequest;
@@ -73,21 +74,22 @@ public class MailController {
      	User user = userService.findByUserName(username);
      	recipient = user.getEmail();
      		
-        Booking booking = bookingRepository.findByBookingId(bookingId).orElse(null);
+      //  Booking booking = ((User) bookingRepository.findByBookingId(bookingId)).orElse(null);
+        List<Booking> booking = bookingRepository.findByBookingId(bookingId);
 
         // Create email details object with booking details
         EmailDetails emailDetails = new EmailDetails();
         emailDetails.setRecipient(recipient);
-        emailDetails.setSubject("Booking Details for #" + booking.getBookingId());
+        emailDetails.setSubject("Booking Details for #" + ((Booking) booking).getBookingId());
         emailDetails.setMsgBody("Dear " + username + ",\n\n"
                 + "Here are your booking details:\n\n"
-                + "Booking ID: #" + booking.getBookingId() + "\n"
-                + " bookingHotelId: " + booking.getHotelId() + "\n"
-                + "Check-in Date: " + booking.getCheckInDate() + "\n"
-                + "Check-out Date: " + booking.getCheckOutDate() + "\n"
-                + "Room Type: " + booking.getRoomType() + "\n"
-                + "Number of Guests: " + booking.getGuests() + "\n"
-                + "Total Price: " + booking.getPrice() + "\n\n"
+                + "Booking ID: #" + ((Booking) booking).getBookingId() + "\n"
+                + " bookingHotelId: " + ((Booking) booking).getHotelId() + "\n"
+                + "Check-in Date: " + ((Booking) booking).getCheckInDate() + "\n"
+                + "Check-out Date: " + ((Booking) booking).getCheckOutDate() + "\n"
+                + "Room Type: " + ((Booking) booking).getRoomType() + "\n"
+                + "Number of Guests: " + ((Booking) booking).getGuests() + "\n"
+                + "Total Price: " + ((Booking) booking).getPrice() + "\n\n"
                 + "Thank you for choosing our hotel!");
 
         // Send the email

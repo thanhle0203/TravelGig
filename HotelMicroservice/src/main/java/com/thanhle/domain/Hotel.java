@@ -15,7 +15,7 @@ public class Hotel {
 	private String address;	
 	private String city;	
 	private String state;
-	private int starRating;
+	private double starRating;
 	private double averagePrice;
 	@ManyToMany
 	private Set<Amenities> amenities = new HashSet<>();
@@ -36,7 +36,7 @@ public class Hotel {
 		super();
 	}
 	
-	public Hotel(int hotelId, String hotelName, String address, String city, String state, int starRating,
+	public Hotel(int hotelId, String hotelName, String address, String city, String state, double starRating,
 			double averagePrice, Set<Amenities> amenities, double discount, String description, String email,
 			String mobile, String imageURL, int timesBooked, Set<HotelRoom> hotelRooms, Set<String> hotelAmenityNames) {
 		super();
@@ -116,10 +116,10 @@ public class Hotel {
 	public void setAddress(String address) {
 		this.address = address;
 	}
-	public int getStarRating() {
+	public double getStarRating() {
 		return starRating;
 	}
-	public void setStarRating(int starRating) {
+	public void setStarRating(double starRating) {
 		this.starRating = starRating;
 	}
 	public double getAveragePrice() {

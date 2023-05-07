@@ -13,7 +13,7 @@ public interface BookingService {
 	public void deleteBooking(int bookingId);
 	Booking saveBookings(Booking booking, Set<Guest>  guest);
 	Booking saveBooking(Booking booking);
-	public Booking findByBookingId(int bId);
+	public List<Booking> findByBookingId(int bId);
 	Booking saveUpcomingBooking(Booking booking);
 	Booking saveCompletedBooking(Booking booking);
 	Booking saveCancelledBooking(Booking booking);

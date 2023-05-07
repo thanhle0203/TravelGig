@@ -42,13 +42,19 @@ public class BookingController {
 	    return bookingService.getAll();
 	}
 	
-	@GetMapping(value = "/bookings/{customerMobile}")
+	@GetMapping(value = "/bookings/{bookingId}")
+	@ResponseBody
+	public List<Booking> getBookingsById(@PathVariable int bookingId) {
+	    return bookingService.findByBookingId(bookingId);
+	}
+	
+	@GetMapping(value = "/bookings/mobile/{customerMobile}")
 	@ResponseBody
 	public List<Booking> getBookingsByMobile(@PathVariable String customerMobile) {
 	    return bookingService.findByCustomerMobile(customerMobile);
 	}
 	
-	@DeleteMapping(value = "/bookings/{id}")
+	@PostMapping(value = "/bookings/deleteBooking/{id}")
 	@ResponseBody
 	public void deleteBooking(@PathVariable int id) {
 		bookingService.deleteBooking(id);
@@ -96,12 +102,7 @@ public class BookingController {
 	    return bookingService.getCompletedBookings();
 	}
 
-	@GetMapping(value = "/bookings/cancelled")
-	@ResponseBody
-	public List<Booking> getCancelledBookings() {
-	    // return a list of cancelled bookings
-	    return bookingService.getCancelledBookings();
-	}
+	
 	
 	
 

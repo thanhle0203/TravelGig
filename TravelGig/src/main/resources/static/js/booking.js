@@ -14,6 +14,29 @@
 
 $(document).ready(function() {
    
+  	// Handle the review button click event
+  $('#reviewBtn').click(function() {
+    // Show the review modal
+    $('#reviewModal').modal('show');
+  });
+
+  // Handle the review form submission
+  $('#reviewForm').submit(function(event) {
+    event.preventDefault();
+
+    // Get the review data
+    var rating = $('#rating').val();
+    var reviewText = $('#reviewText').val();
+
+    // TODO: Save the review to the database
+
+    // Hide the review modal
+    $('#reviewModal').modal('hide');
+
+    // Show a confirmation message
+    alert('Thank you for your review!');
+  });
+  
     $(function () {
         // Fetch the bookings of the logged in user
         // Ajax call to fetch the bookings
@@ -55,7 +78,11 @@ $(document).ready(function() {
             }
         });
     });
+    
+
+
    
+   /*
     function displayBookings(bookings, tabId) {
         var $tab = $("#" + tabId);
         $tab.empty();
@@ -82,4 +109,37 @@ $(document).ready(function() {
             $("<p>").text("No bookings to display").appendTo($tab);
         }
     }
+    */
+   function displayBookings(bookings, tabId) {
+    var $tab = $("#" + tabId);
+    $tab.empty();
+    if (bookings.length > 0) {
+        var tableHtml = "<table class='table table-striped'><thead><tr><th>Booking ID</th><th>Check-in Date</th><th>Check-out Date</th><th>Status</th>";
+        if (tabId === "upcomingBookings") {
+            tableHtml += "<th>Action</th>";
+        } else if (tabId === "completedBookings") {
+            tableHtml += "<th>Review</th>";
+        }
+        tableHtml += "</tr></thead><tbody>";
+
+        $.each(bookings, function(index, booking) {
+            var cancelLinkHtml = "";
+            var reviewBtnHtml = "";
+            if (tabId === "upcomingBookings") {
+                cancelLinkHtml = "<a href='#' onclick='cancelBooking(" + booking.bookingId + ")' class='btn btn-danger text-white'>Cancel</a>";
+            } else if (tabId === "completedBookings") {
+                //reviewBtnHtml = "<button id='reviewBtn' class='btn btn-primary' onclick='leaveReview(" + booking.bookingId + ")'>Leave a review</button>";
+            	reviewBtnHtml = "<button id='reviewBtn' class='btn btn-primary'>Leave a review</button>";
+            }
+            tableHtml += "<tr><td>" + booking.bookingId + "</td><td>" + new Date(booking.checkInDate).toDateString() + "</td><td>" + new Date(booking.checkOutDate).toDateString() + "</td><td>" + booking.status + "</td><td>" + cancelLinkHtml + reviewBtnHtml + "</td></tr>";
+        });
+
+        tableHtml += "</tbody></table>";
+        $tab.html(tableHtml);
+    } else {
+        $("<p>").text("No bookings to display").appendTo($tab);
+    }
+}
+
+	
 });

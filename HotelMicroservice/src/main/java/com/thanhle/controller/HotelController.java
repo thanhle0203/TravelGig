@@ -18,6 +18,7 @@ import com.thanhle.domain.Review;
 import com.thanhle.service.IHotelService;
 import com.thanhle.service.ReviewService;
 
+@CrossOrigin(origins = "http://localhost:8282") // Enable CORS for specific origin
 @RestController
 public class HotelController {
 
@@ -25,8 +26,6 @@ public class HotelController {
 	IHotelService hotelService;
 	@Autowired
 	ReviewService reviewService;
-	@Autowired
-	Review review;
 	
 	@CrossOrigin(origins = "http://localhost:8282") // Enable CORS for specific origin
 	@RequestMapping(value = "/searchHotel/{searchString}", method = RequestMethod.GET)
@@ -34,10 +33,10 @@ public class HotelController {
 		return hotelService.searchHotel(searchString);
 	}
 	
-	 @PostMapping("/reviews/{hotelId}")
-	    public ResponseEntity<String> createRating(@PathVariable int hotelId, @RequestBody HotelReviewRequest request) {
-	        review = reviewService.saveReview(hotelId, request);
-	        return ResponseEntity.ok("Rating created with ID: " + review.getReviewId());
-	    }
-	
+	@PostMapping("/hotel/reviews/{hotelId}")
+	public Hotel saveReviewByHotelId(@PathVariable Integer hotelId, @RequestBody Review review) {
+	    return hotelService.saveReviewByHotelId(hotelId, review);
+	}
+
+
 }

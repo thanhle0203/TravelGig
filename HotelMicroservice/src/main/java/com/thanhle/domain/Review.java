@@ -1,9 +1,12 @@
 package com.thanhle.domain;
 
+import java.util.List;
+
 import jakarta.persistence.*;
 
 
 @Entity
+@Table(name="reviews")
 public class Review {
 	
 	@Id
@@ -13,9 +16,7 @@ public class Review {
 	@ManyToOne
 	@JoinColumn(name="hotelId")
 	private Hotel hotel;
-	
-	
-	private String email;
+
 	private double rating;
 	private String review;
 	
@@ -23,10 +24,9 @@ public class Review {
 		super();
 	}
 
-	public Review(Hotel hotel, String email, double rating, String review) {
+	public Review(Hotel hotel, double rating, String review) {
 		super();
 		this.hotel = hotel;
-		this.email = email;
 		this.rating = rating;
 		this.review = review;
 	}
@@ -48,14 +48,7 @@ public class Review {
 	}
 
 
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
+	
 	public double getRating() {
 		return rating;
 	}

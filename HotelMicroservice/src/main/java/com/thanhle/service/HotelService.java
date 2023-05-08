@@ -8,5 +8,7 @@ import com.thanhle.domain.Review;
 public interface HotelService {
 	public List<Hotel> searchHotel(String searchString);
 
-	List<Review> getRatings(int hotelId);
+	public Hotel getHotelById(int hotelId);
+
+	Hotel saveReviewByHotelId(int hotelId, Review review);
 }

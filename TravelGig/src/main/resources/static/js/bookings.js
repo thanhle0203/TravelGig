@@ -83,6 +83,7 @@ jQuery(document).ready(function () {
 
       row.append(jQuery("<td>").append(cancelBtn));
     } else if (booking.status === "completed") {
+		/*
       var reviewBtn = jQuery("<button>")
   .addClass("btn btn-primary")
   .text("Leave a review")
@@ -92,7 +93,50 @@ jQuery(document).ready(function () {
     jQuery.noConflict();
    jQuery("#reviewModal").modal("show");
   });
+*/
 
+	var reviewBtn = jQuery("<button>")
+  .addClass("btn btn-primary")
+  .text("Leave a review")
+  .click(function (event) {
+    console.log("Modal button clicked");
+    event.preventDefault();
+    jQuery.noConflict();
+    jQuery("#reviewModal").modal("show");
+
+    // Save review data when the modal form is submitted
+    jQuery("#reviewForm").submit(function (event) {
+      event.preventDefault();
+
+	  //var hotelId = booking.hotel.hotelId;
+      var hotelId = booking.hotelId;
+      console.log(hotelId);
+      var rating = jQuery("#rating").val();
+      var reviewText = jQuery("#reviewText").val();
+
+	  var reviewData = { "rating": rating, "review": reviewText };
+	  console.log(reviewData);
+	  
+      jQuery.ajax({
+        type: "POST",
+        //url: "http://localhost:8383/reviews/" + hotelId,
+        //url: "http://localhost:8383/api/reviews/" + hotelId,
+        url: "http://localhost:8383/hotel/reviews/" + hotelId,
+        contentType: "application/json",
+        data: JSON.stringify(reviewData),
+        dataType: 'json',
+        success: function (data) {
+          console.log(data);
+          jQuery("#reviewModal").modal("hide");
+          location.reload();
+        },
+        error: function (xhr, status, error) {
+          console.error(xhr.responseText);
+        },
+      });
+    });
+    
+  });
 
 
       row.append(jQuery("<td>").text(booking.status));

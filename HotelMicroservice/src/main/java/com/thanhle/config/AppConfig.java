@@ -11,8 +11,15 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 
+import com.thanhle.domain.Review;
+
 @Configuration
 public class AppConfig {
+
+	@Bean
+    public Review review() {
+        return new Review();
+    }
 
 		
 	@Bean

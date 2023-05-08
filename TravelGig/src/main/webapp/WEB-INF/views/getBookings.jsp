@@ -120,7 +120,7 @@
                   <label for="reviewText">Review:</label>
                   <textarea class="form-control" id="reviewText" name="reviewText" rows="3"></textarea>
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary" id="btnModalReview">Submit</button>
               </form>
             </div>
           </div>

@@ -17,14 +17,14 @@ public class Review {
 	@JoinColumn(name="hotelId")
 	private Hotel hotel;
 
-	private double rating;
+	private String rating;
 	private String review;
 	
 	public Review() {
 		super();
 	}
 
-	public Review(Hotel hotel, double rating, String review) {
+	public Review(Hotel hotel, String rating, String review) {
 		super();
 		this.hotel = hotel;
 		this.rating = rating;
@@ -49,11 +49,11 @@ public class Review {
 
 
 	
-	public double getRating() {
+	public String getRating() {
 		return rating;
 	}
 
-	public void setRating(double rating) {
+	public void setRating(String rating) {
 		this.rating = rating;
 	}
 

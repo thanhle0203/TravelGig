@@ -5,9 +5,11 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.thanhle.controller.ReviewController;
 import com.thanhle.domain.Hotel;
 import com.thanhle.domain.Review;
 import com.thanhle.repository.HotelRepository;
+import com.thanhle.repository.ReviewRepository;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
@@ -19,8 +21,15 @@ public class IHotelService implements HotelService{
 	@Autowired
 	HotelRepository hotelRepository;
 	
-	@PersistenceContext
-    private EntityManager entityManager;
+	@Autowired
+	ReviewRepository reviewRepository;
+	
+	@Autowired 
+	ReviewService reviewService;
+	
+	@Autowired
+	ReviewController reviewController;
+	
 
 	@Override
 	public List<Hotel> searchHotel(String searchString) {
@@ -36,18 +45,22 @@ public class IHotelService implements HotelService{
 	}
 
 	@Override
-    public Hotel saveReviewByHotelId(int hotelId, Review review) {
-        Hotel hotel = hotelRepository.findByHotelId(hotelId);
-        // Update the starRating based on the new review
-        double totalRating = hotel.getStarRating() * hotel.getTimesBooked();
-        totalRating += review.getRating();
-        hotel.setTimesBooked(hotel.getTimesBooked() + 1);
-        hotel.setStarRating(totalRating / hotel.getTimesBooked());
+	public Hotel saveReviewByHotelId(int hotelId, Review review) {
+	    Hotel hotel = hotelRepository.findByHotelId(hotelId);
+	    // Update the starRating based on the new review
+	    List<Review> reviewData = reviewRepository.findReviewDataByHotelId(hotelId);
+	    double sum = 0.0;
+	    for (Review data : reviewData) {
+	        sum += Double.parseDouble(data.getRating());
+	    }
+	    double averageRating = Math.ceil(sum / reviewData.size());
+	    int starRating = (int)averageRating;
+	    // Save the review and update the hotel
+	    review.setHotel(hotel);
+	    reviewRepository.save(review);
+	    hotel.setStarRating(starRating);
+	    hotelRepository.save(hotel);
+	    return hotel;
+	}
 
-        // Save the review and update the hotel
-        //hotel.setStarRating(totalRating);
-        
-        return hotel;
-       
-    }
 }

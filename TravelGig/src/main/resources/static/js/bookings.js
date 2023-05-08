@@ -110,7 +110,6 @@ jQuery(document).ready(function () {
 
 	  //var hotelId = booking.hotel.hotelId;
       var hotelId = booking.hotelId;
-      console.log(hotelId);
       var rating = jQuery("#rating").val();
       var reviewText = jQuery("#reviewText").val();
 
@@ -119,8 +118,6 @@ jQuery(document).ready(function () {
 	  
       jQuery.ajax({
         type: "POST",
-        //url: "http://localhost:8383/reviews/" + hotelId,
-        //url: "http://localhost:8383/api/reviews/" + hotelId,
         url: "http://localhost:8383/hotel/reviews/" + hotelId,
         contentType: "application/json",
         data: JSON.stringify(reviewData),
@@ -151,11 +148,5 @@ jQuery(document).ready(function () {
 
 });
 
-/*
-$(document).on("click", "#reviewBtn", function() {
-  // Show the review modal
-  $("#reviewModal").modal("show");
-});
-*/
 
   

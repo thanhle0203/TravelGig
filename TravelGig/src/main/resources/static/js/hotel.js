@@ -230,7 +230,8 @@ $.ajax({
         $("#myModal").modal('hide');
 
         // Send booking details
-        $.post("http://localhost:8282/sendBookingDetails/" + bookingId, {}, function(response) {
+        //$.post("http://localhost:8282/sendBookingDetails/" + bookingId, {}, function(response) {
+		$.post("http://localhost:8282/sendBooking/" + bookingId, {}, function(response) {
             // Handle the response from the server
             console.log(response);
         }).fail(function(jqXHR, textStatus, errorThrown) {

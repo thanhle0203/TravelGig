@@ -66,17 +66,25 @@ public class GatewayController {
 		return hotelComponent.findHotelBySearchText(searchString);
 	}
     
+    @RequestMapping(value = "/saveBooking", method=RequestMethod.POST)
+    public ResponseEntity<JsonNode> saveBooking(@RequestBody JsonNode json) {
+    	JsonNode booking = bookingComponent.saveBooking(json);
+    	return new ResponseEntity<>(booking, HttpStatus.OK);
+    }
+    
     @RequestMapping(value = "/saveGuest", method=RequestMethod.POST)
     public ResponseEntity<JsonNode> saveGuest(@RequestBody JsonNode json) {
     	JsonNode guest =  bookingComponent.saveGuest(json);
     	return new ResponseEntity<>(guest, HttpStatus.OK);
     }
     
-    @RequestMapping(value = "/saveBooking", method=RequestMethod.POST)
-    public ResponseEntity<JsonNode> saveBooking(@RequestBody JsonNode json) {
-    	JsonNode booking = bookingComponent.saveBooking(json);
-    	return new ResponseEntity<>(booking, HttpStatus.OK);
-    }
+    @RequestMapping(value = "/getBookingsByPhone/{mobile}", method = RequestMethod.GET)
+	public JsonNode findBookingsByPhone(@PathVariable String mobile, Principal principal){
+		String username = principal.getName();
+		User user = userService.findByUserName(username);
+		mobile = user.getMobile();
+		return bookingComponent.findBookingsByPhone(mobile);
+	}
     
     @RequestMapping(value = "/getBooking", method=RequestMethod.GET)
     public ResponseEntity<JsonNode> getBooking(@RequestBody JsonNode json) {
@@ -84,16 +92,6 @@ public class GatewayController {
     	return new ResponseEntity<>(booking, HttpStatus.OK);
     }
     
-    @GetMapping("/mybookings")
-    public List<Booking> getMyBookings(@RequestBody JsonNode json, Principal principal) {
-        String username = principal.getName();
-        User currentUser = userService.findByUserName(username);
-        String mobile = currentUser.getMobile();
-
-        List<Booking> bookings = bookingComponent.saveGuestBookings(json, mobile);
-        return bookings;
-    }
-
     
     @GetMapping("/myBookings")
     public List<Booking> getBookings(Model model, Principal principal) {

@@ -18,50 +18,59 @@ jQuery(document).ready(function () {
     // Fetch the bookings of the logged in user
     // Ajax call to fetch the bookings
     jQuery.ajax({
-      url: "/myBookings",
-      //url: "/mybookings",
+      url: "/bookings",
       method: "GET",
       success: function (bookings) {
-        console.log(bookings);
-        // Group the bookings by status
-        var upcomingBookings = [];
-        var completedBookings = [];
-        var cancelledBookings = [];
-        var currentDate = new Date();
-
-        // Convert bookings to an array if it's not an array
-        if (!Array.isArray(bookings)) {
-          bookings = [bookings];
-        }
-
         jQuery.each(bookings, function (index, booking) {
-          if (
-            booking.status === "upcoming" &&
-            new Date(booking.checkInDate) > currentDate
-          ) {
-            upcomingBookings.push(booking);
-          } else if (
-            booking.status === "completed" ||
-            (booking.status === "upcoming" &&
-              new Date(booking.checkInDate) <= currentDate)
-          ) {
-            booking.status = "completed";
-            completedBookings.push(booking);
-          } else if (booking.status === "cancelled") {
-            cancelledBookings.push(booking);
-          }
-        });
+          var mobile = booking.customerMobile;
+          jQuery.ajax({
+            url: "/getBookingsByPhone/" + mobile,
+            method: "GET",
+            success: function (bookings) {
+              console.log(bookings);
+              // Group the bookings by status
+              var upcomingBookings = [];
+              var completedBookings = [];
+              var cancelledBookings = [];
+              var currentDate = new Date();
 
-        // Display the bookings under different tabs
-        displayBookings(upcomingBookings, "upcomingBookings");
-        displayBookings(completedBookings, "completedBookings");
-        displayBookings(cancelledBookings, "cancelledBookings");
-      },
-      error: function (xhr, status, error) {
-        console.error(xhr.responseText);
+              // Convert bookings to an array if it's not an array
+              if (!Array.isArray(bookings)) {
+                bookings = [bookings];
+              }
+
+              jQuery.each(bookings, function (index, booking) {
+                if (
+                  booking.status === "upcoming" &&
+                  new Date(booking.checkInDate) > currentDate
+                ) {
+                  upcomingBookings.push(booking);
+                } else if (
+                  booking.status === "completed" ||
+                  (booking.status === "upcoming" &&
+                    new Date(booking.checkInDate) <= currentDate)
+                ) {
+                  booking.status = "completed";
+                  completedBookings.push(booking);
+                } else if (booking.status === "cancelled") {
+                  cancelledBookings.push(booking);
+                }
+              });
+
+              // Display the bookings under different tabs
+              displayBookings(upcomingBookings, "upcomingBookings");
+              displayBookings(completedBookings, "completedBookings");
+              displayBookings(cancelledBookings, "cancelledBookings");
+            },
+            error: function (xhr, status, error) {
+              console.error(xhr.responseText);
+            },
+          });
+        });
       },
     });
   });
+
   
   function displayBookings(bookings, tableId) {
   var tableBody = jQuery("#" + tableId + " tbody");
@@ -82,33 +91,30 @@ jQuery(document).ready(function () {
         });
 
       row.append(jQuery("<td>").append(cancelBtn));
+      
+      // Add a support button for upcoming bookings
+      var supportBtn = jQuery("<button>")
+      	.addClass("btn btn-primary")
+		.text("Support")
+		.click(function () {
+			// Redirect user to support page with the booking the booking details
+			window.locatoin.href = "/support?bookingId=" + booking.bookingId;
+		});
+		row.append(jQuery("<td>").append(supportBtn));
+      
     } else if (booking.status === "completed") {
-		/*
-      var reviewBtn = jQuery("<button>")
-  .addClass("btn btn-primary")
-  .text("Leave a review")
-  .click(function (event) {
-    console.log("Modal button clicked");
-    event.preventDefault();
-    jQuery.noConflict();
-   jQuery("#reviewModal").modal("show");
-  });
-*/
-
-	var reviewBtn = jQuery("<button>")
-  .addClass("btn btn-primary")
-  .text("Leave a review")
-  .click(function (event) {
-    console.log("Modal button clicked");
-    event.preventDefault();
-    jQuery.noConflict();
-    jQuery("#reviewModal").modal("show");
+	var reviewBtn = jQuery("<button>")	
+  		.addClass("btn btn-primary")
+  		.text("Leave a review")
+  		.click(function (event) {
+    		event.preventDefault();
+    		jQuery.noConflict();
+   			jQuery("#reviewModal").modal("show");
 
     // Save review data when the modal form is submitted
     jQuery("#reviewForm").submit(function (event) {
       event.preventDefault();
 
-	  //var hotelId = booking.hotel.hotelId;
       var hotelId = booking.hotelId;
       var rating = jQuery("#rating").val();
       var reviewText = jQuery("#reviewText").val();

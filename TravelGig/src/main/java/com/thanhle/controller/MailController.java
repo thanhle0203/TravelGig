@@ -1,5 +1,7 @@
 package com.thanhle.controller;
 
+import com.fasterxml.jackson.databind.JsonNode;
+import com.thanhle.component.BookingComponent;
 import com.thanhle.domain.Booking;
 import com.thanhle.domain.User;
 import com.thanhle.dto.EmailDetails;
@@ -28,9 +30,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
-@Controller
+@RestController
 @SessionAttributes("user")
 public class MailController {
+	@Autowired
+	private BookingComponent bookingComponent;
 	
 	@Autowired 
 	private User user;
@@ -97,7 +101,39 @@ public class MailController {
 
         return result;
     }
+    
+    @PostMapping(value = "/sendBooking/{bookingId}")
+    public String sendMailBooking(@RequestBody JsonNode json, @PathVariable int bookingId) {
+        JsonNode booking = bookingComponent.getBooking(json);
+        String result;
+        String recipient;
 
+        // Get the email of the logged in user
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        String email = auth.getName(); //get logged in email
 
-   
+        if (booking != null && booking.get("email").asText().equals(email)) {
+            recipient = email;
+            EmailDetails emailDetails = new EmailDetails();
+            // Create email details object with booking details
+            emailDetails.setRecipient(recipient);
+            emailDetails.setSubject("Booking Details for #" + booking.get("bookingId").asText());
+            emailDetails.setMsgBody("Dear " + booking.get("guestName").asText() + ",\n\n"
+                    + "Here are your booking details:\n\n"
+                    + "Booking ID: #" + booking.get("bookingId").asText() + "\n"
+                    + "Check-in Date: " + booking.get("checkInDate").asText() + "\n"
+                    + "Check-out Date: " + booking.get("checkOutDate").asText() + "\n"
+                    + "No. of Rooms: " + booking.get("noRooms").asText() + "\n"
+                    + "Total Price: " + booking.get("price").asText() + "\n\n"
+                    + "Thank you for choosing our hotel!");
+
+            // Send the email
+            result = emailService.sendSimpleMail(emailDetails);
+        } else {
+            result = "Error: Booking not found or unauthorized access";
+        }
+
+        return result;
+    }
+
 }

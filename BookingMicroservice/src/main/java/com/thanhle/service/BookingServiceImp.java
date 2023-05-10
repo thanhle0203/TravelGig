@@ -1,8 +1,8 @@
 package com.thanhle.service;
-import java.util.List;
 
+import java.util.Date;
+import java.util.List;
 import java.util.Optional;
-import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -10,51 +10,27 @@ import org.springframework.stereotype.Service;
 import com.thanhle.domain.Booking;
 import com.thanhle.domain.Guest;
 import com.thanhle.repository.BookingRepository;
-import java.util.*
-;
 
 @Service
 public class BookingServiceImp implements BookingService {
 
-	@Autowired
+    @Autowired
     private BookingRepository bookingRepository;
 
-	@Override
-	public List<Booking> getAll() {
-		
-		return bookingRepository.findAll();
-	}
+    @Override
+    public List<Booking> getAll() {
+        return bookingRepository.findAll();
+    }
 
-	@Override
-	public Booking saveBookings(Booking b, Set<Guest> g) {
-		b.setGuests(g);
-		Booking booking = bookingRepository.save(b);
-		return booking;
-	}
+    @Override
+    public List<Booking> findByCustomerMobile(String customerMobile) {
+        return bookingRepository.findByCustomerMobile(customerMobile);
+    }
 
-	@Override
-	public List<Booking> findByCustomerMobile(String customerMobile) {
-		return bookingRepository.findByCustomerMobile(customerMobile);
-	}
-	
-	@Override
-	public List<Booking> findByBookingId(int bId) {
-		return bookingRepository.findByBookingId(bId);
-	}
-
-	@Override
-	public void deleteBooking(int bookingId) {
-		Optional<Booking> optionalBooking = bookingRepository.findGuestsByBookingId(bookingId);
-		
-		if (optionalBooking.isPresent()) {
-			bookingRepository.delete(optionalBooking.get());
-		}
-		else {
-			throw new RuntimeException("Booking with id " + bookingId + " not found");
-		}
-		
-	}
-
+    @Override
+    public List<Booking> findByBookingId(int bId) {
+        return bookingRepository.findByBookingId(bId);
+    }
 
     @Override
     public Booking saveBooking(Booking booking) {
@@ -63,13 +39,25 @@ public class BookingServiceImp implements BookingService {
 
     @Override
     public Booking saveUpcomingBooking(Booking booking) {
-        booking.setStatus("upcoming");
+        Date checkInDate = booking.getCheckInDate();
+        Date checkOutDate = booking.getCheckOutDate();
+        Date currentDate = new Date();
+
+        if (checkInDate.after(currentDate) || (checkInDate.before(currentDate) && checkOutDate.after(currentDate))) {
+            booking.setStatus("upcoming");
+        }
         return bookingRepository.save(booking);
     }
 
     @Override
     public Booking saveCompletedBooking(Booking booking) {
-        booking.setStatus("completed");
+        Date checkInDate = booking.getCheckInDate();
+        Date checkOutDate = booking.getCheckOutDate();
+        Date currentDate = new Date();
+
+        if (checkOutDate.before(currentDate)) {
+            booking.setStatus("completed");
+        }
         return bookingRepository.save(booking);
     }
 
@@ -80,28 +68,8 @@ public class BookingServiceImp implements BookingService {
     }
 
     @Override
-    public List<Booking> getUpcomingBookings() {
-        return bookingRepository.findByStatusAndCheckInDateAfter("upcoming", new Date());
-    }
-
-    @Override
-    public List<Booking> getCompletedBookings() {
-        return bookingRepository.findByStatusAndCheckInDateBefore("upcoming", new Date());
-    }
-
-    @Override
     public List<Booking> getCancelledBookings() {
         return bookingRepository.findByStatus("cancelled");
     }
 
-	//@SuppressWarnings("unchecked")
-	//@Override
-	//public List<Booking> getBookingsByMobileNo(String customerMobile) {
-		// TODO Auto-generated method stub
-		//return (List<Booking>) bookingRepository.findByCustomerMobile(customerMobile);;
-	//}
-
-
-    
-	
 }

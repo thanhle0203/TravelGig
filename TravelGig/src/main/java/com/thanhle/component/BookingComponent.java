@@ -61,56 +61,30 @@ public class BookingComponent {
 		
 	}
 	
-	public JsonNode sendBooking(JsonNode json) {
-	    // get booking details from BookingMicroservice
-	    String bookingId = json.get("bookingId").asText();
-	    RestTemplate restTemplate = new RestTemplate();
-	    ResponseEntity<JsonNode> responseEntity = restTemplate.getForEntity(
-	        "http://localhost:8484/bookings/" + bookingId, JsonNode.class);
-	    JsonNode bookingDetails = responseEntity.getBody();
-
-	    // prepare email message with booking details
-	    String msgBody = "Dear " + json.get("guestName").asText() + ",\n\n"
-	            + "Your booking details are as follows:\n\n"
-	            + "Booking ID: " + bookingDetails.get("bookingId").asText() + "\n"
-	            + "Check-in Date: " + bookingDetails.get("checkInDate").asText() + "\n"
-	            + "Check-out Date: " + bookingDetails.get("checkOutDate").asText() + "\n"
-	            + "No. of Rooms: " + bookingDetails.get("noRooms").asText() + "\n"
-	            + "Total Price: " + bookingDetails.get("price").asText() + "\n\n"
-	            + "Thank you for choosing our hotel. We look forward to serving you!\n\n"
-	            + "Best regards,\n"
-	            + "The Hotel Team";
-
-	    // send email using emailService
-	    EmailDetails emailDetails = new EmailDetails();
-	    emailDetails.setRecipient(json.get("email").asText());
-	    emailDetails.setSubject("Booking Confirmation");
-	    emailDetails.setMsgBody(msgBody);
-	    
-	    emailService.sendSimpleMail(emailDetails);
-
-	    return bookingDetails;
-	}
 	
-
-	public JsonNode getBooking(JsonNode json) {
-
-		HttpHeaders headers = new HttpHeaders();
-
-		headers.setContentType(MediaType.APPLICATION_JSON);		
-
-		HttpEntity<String> request = new HttpEntity<String>(json.toString(), headers);
-
+	public JsonNode getBookingId(String bookingId) {
 		RestTemplate restTemplate = new RestTemplate();
-		ResponseEntity<JsonNode> responseEntity = restTemplate.postForEntity("http://localhost:8484/bookings", request, JsonNode.class);
+		ResponseEntity<Object> responseEntity = restTemplate
+				.getForEntity("http://localhost:8484/bookings/" + bookingId, Object.class);
+		Object objects = responseEntity.getBody();
 
-		JsonNode object = responseEntity.getBody();
-
-		return object;
+		ObjectMapper mapper = new ObjectMapper();
+		JsonNode returnObj = mapper.convertValue(objects, JsonNode.class);
+		return returnObj;
 		
 	}
-	
-	
+	/*
+	public JsonNode findBookingsByPhones(String mobile) {
+		RestTemplate restTemplate = new RestTemplate();
+		ResponseEntity<Object> responseEntity = restTemplate
+				.getForEntity("http://localhost:8484/bookings/mobiles/" + mobile, Object.class);
+		Object objects = responseEntity.getBody();
+
+		ObjectMapper mapper = new ObjectMapper();
+		JsonNode returnObj = mapper.convertValue(objects, JsonNode.class);
+		return returnObj;
+	}
+	*/
 	public JsonNode findBookingsByPhone(String mobile) {
 		RestTemplate restTemplate = new RestTemplate();
 		ResponseEntity<Object> responseEntity = restTemplate
@@ -122,7 +96,26 @@ public class BookingComponent {
 		return returnObj;
 	}
 	
+	public JsonNode findUpcomingBookingsByPhone(String mobile) {
+		RestTemplate restTemplate = new RestTemplate();
+		ResponseEntity<Object> responseEntity = restTemplate
+				.getForEntity("http://localhost:8484/bookings/upcomingMobile/" + mobile, Object.class);
+		Object objects = responseEntity.getBody();
 
+		ObjectMapper mapper = new ObjectMapper();
+		JsonNode returnObj = mapper.convertValue(objects, JsonNode.class);
+		return returnObj;
+	}
 
+	public JsonNode findCompletedBookingsByPhone(String mobile) {
+		RestTemplate restTemplate = new RestTemplate();
+		ResponseEntity<Object> responseEntity = restTemplate
+				.getForEntity("http://localhost:8484/bookings/completedMobile/" + mobile, Object.class);
+		Object objects = responseEntity.getBody();
+
+		ObjectMapper mapper = new ObjectMapper();
+		JsonNode returnObj = mapper.convertValue(objects, JsonNode.class);
+		return returnObj;
+	}
 
 }

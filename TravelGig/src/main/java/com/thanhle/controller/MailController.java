@@ -12,6 +12,7 @@ import com.thanhle.service.UserService;
 
 import java.security.Principal;
 import java.util.List;
+import java.util.Optional;
 import java.util.logging.LogManager;
 import java.util.logging.Logger;
 import javax.servlet.http.HttpServletRequest;
@@ -20,6 +21,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -66,52 +68,59 @@ public class MailController {
     }
 
     @PostMapping(value = "/sendBookingDetails/{bookingId}")
-    public String sendMail(@PathVariable int bookingId) {
+    public String sendMail(@PathVariable int bookingId, Model model, Principal principal) {
         String result;
-        
         String recipient;
         String username;
 
-     // Get the logged in user
-     	Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-     	username = auth.getName(); //get logged in username
-     	User user = userService.findByUserName(username);
-     	recipient = user.getEmail();
-     		
-      //  Booking booking = ((User) bookingRepository.findByBookingId(bookingId)).orElse(null);
-        List<Booking> booking = bookingRepository.findByBookingId(bookingId);
+        // Get the logged in user
+        username = principal.getName();
+        User user = userService.findByUserName(username);
+        model.addAttribute("username", username);
+        recipient = user.getEmail();
 
-        // Create email details object with booking details
-        EmailDetails emailDetails = new EmailDetails();
-        emailDetails.setRecipient(recipient);
-        emailDetails.setSubject("Booking Details for #" + ((Booking) booking).getBookingId());
-        emailDetails.setMsgBody("Dear " + username + ",\n\n"
-                + "Here are your booking details:\n\n"
-                + "Booking ID: #" + ((Booking) booking).getBookingId() + "\n"
-                + " bookingHotelId: " + ((Booking) booking).getHotelId() + "\n"
-                + "Check-in Date: " + ((Booking) booking).getCheckInDate() + "\n"
-                + "Check-out Date: " + ((Booking) booking).getCheckOutDate() + "\n"
-                + "Room Type: " + ((Booking) booking).getRoomType() + "\n"
-                + "Number of Guests: " + ((Booking) booking).getGuests() + "\n"
-                + "Total Price: " + ((Booking) booking).getPrice() + "\n\n"
-                + "Thank you for choosing our hotel!");
+        // Get the booking by ID
+        Optional<Booking> optionalBooking = bookingRepository.findById(bookingId);
 
-        // Send the email
-        result = emailService.sendSimpleMail(emailDetails);
+        if (optionalBooking.isPresent()) {
+            Booking booking = optionalBooking.get();
+
+            // Create email details object with booking details
+            EmailDetails emailDetails = new EmailDetails();
+            emailDetails.setRecipient(recipient);
+            emailDetails.setSubject("Booking Details for #" + booking.getBookingId());
+            emailDetails.setMsgBody("Dear " + username + ",\n\n"
+                    + "Here are your booking details:\n\n"
+                    + "Booking ID: #" + booking.getBookingId() + "\n"
+                    + "Hotel ID: " + booking.getHotelId() + "\n"
+                    + "Check-in Date: " + booking.getCheckInDate() + "\n"
+                    + "Check-out Date: " + booking.getCheckOutDate() + "\n"
+                    + "Room Type: " + booking.getRoomType() + "\n"
+                    + "Number of Guests: " + booking.getGuests() + "\n"
+                    + "Total Price: " + booking.getPrice() + "\n\n"
+                    + "Thank you for choosing our hotel!");
+
+            // Send the email
+            result = emailService.sendSimpleMail(emailDetails);
+        } else {
+            result = "Booking not found";
+        }
 
         return result;
     }
+
     
     @PostMapping(value = "/sendBooking/{bookingId}")
-    public String sendMailBooking(@RequestBody JsonNode json, @PathVariable int bookingId) {
-        JsonNode booking = bookingComponent.getBooking(json);
+    public String sendMailBooking(@RequestBody JsonNode json, @PathVariable String bookingId, Model model, Principal principal) {
+        JsonNode booking = bookingComponent.getBookingId(bookingId);
         String result;
         String recipient;
 
         // Get the email of the logged in user
-        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        String email = auth.getName(); //get logged in email
-
+        String username = principal.getName();
+        User user = userService.findByUserName(username);
+        model.addAttribute("username", username);
+        String email = user.getEmail();
         if (booking != null && booking.get("email").asText().equals(email)) {
             recipient = email;
             EmailDetails emailDetails = new EmailDetails();
@@ -135,5 +144,6 @@ public class MailController {
 
         return result;
     }
+
 
 }

@@ -16,14 +16,9 @@ import java.util.Optional;
 public interface BookingRepository extends JpaRepository<Booking, Integer> {
 
     List<Booking> findByCustomerMobile(String customerMobile);
-    Booking findByBookedOnDate (Date bookedOnDate);
-	Optional<Booking> findGuestsByBookingId(int bookingId);
-	//Optional<Booking> findByBookingId(int bId);
-	List<Booking> findByStatusAndCheckInDateAfter(String string, Date date);
-	List<Booking> findByStatusAndCheckInDateBefore(String string, Date date);
 	List<Booking> findByStatus(String string);
 	List<Booking> findAll();
-    List<Booking> findByBookingId(int bId);
+    List<Booking> findByBookingId(int bookingId);
 }
 
 

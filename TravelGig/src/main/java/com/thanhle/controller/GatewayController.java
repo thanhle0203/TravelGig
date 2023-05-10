@@ -78,20 +78,39 @@ public class GatewayController {
     	return new ResponseEntity<>(guest, HttpStatus.OK);
     }
     
-    @RequestMapping(value = "/getBookingsByPhone/{mobile}", method = RequestMethod.GET)
-	public JsonNode findBookingsByPhone(@PathVariable String mobile, Principal principal){
+    /*
+    @RequestMapping(value = "/getBookingsByPhones/{mobile}", method = RequestMethod.GET)
+	public JsonNode findBookingsByPhones(@PathVariable String mobile, Principal principal){
 		String username = principal.getName();
 		User user = userService.findByUserName(username);
 		mobile = user.getMobile();
 		return bookingComponent.findBookingsByPhone(mobile);
 	}
+	*/
     
-    @RequestMapping(value = "/getBooking", method=RequestMethod.GET)
-    public ResponseEntity<JsonNode> getBooking(@RequestBody JsonNode json) {
-    	JsonNode booking = bookingComponent.getBooking(json);
-    	return new ResponseEntity<>(booking, HttpStatus.OK);
-    }
+    @RequestMapping(value = "/getUpComingBookingsByPhone/{mobile}", method = RequestMethod.GET)
+	public JsonNode findUpComingBookingsByPhone(@PathVariable String mobile, Principal principal){
+		String username = principal.getName();
+		User user = userService.findByUserName(username);
+		mobile = user.getMobile();
+		return bookingComponent.findUpcomingBookingsByPhone(mobile);
+	}
     
+    @RequestMapping(value = "/getCompletedBookingsByPhone/{mobile}", method = RequestMethod.GET)
+   	public JsonNode findCompletedBookingsByPhone(@PathVariable String mobile, Principal principal){
+   		String username = principal.getName();
+   		User user = userService.findByUserName(username);
+   		mobile = user.getMobile();
+   		return bookingComponent.findCompletedBookingsByPhone(mobile);
+   	}
+    
+    @RequestMapping(value = "/getBookingsByPhone/{mobile}", method = RequestMethod.GET)
+   	public JsonNode findBookingsByPhone(@PathVariable String mobile, Principal principal){
+   		String username = principal.getName();
+   		User user = userService.findByUserName(username);
+   		mobile = user.getMobile();
+   		return bookingComponent.findBookingsByPhone(mobile);
+   	}
     
     @GetMapping("/myBookings")
     public List<Booking> getBookings(Model model, Principal principal) {
@@ -105,40 +124,5 @@ public class GatewayController {
         return bookings;
     }
   
-
-    @PostMapping("/cancelBooking/{bookingId}")
-    public ResponseEntity<String> cancelBooking(@PathVariable int bookingId) {
-        // get the booking by ID
-        Optional<Booking> optionalBooking = bookingRepository.findById(bookingId);
-
-        if (optionalBooking.isPresent()) {
-            Booking booking = optionalBooking.get();
-            // set the booking status to cancelled
-            booking.setStatus("cancelled");
-            booking.getBookingId();
-            booking.getCheckInDate();
-            booking.getCheckOutDate();
-            // save the updated booking
-            bookingRepository.save(booking);
-            return ResponseEntity.ok("Booking cancelled successfully.");
-        } else {
-            return ResponseEntity.badRequest().body("Booking not found.");
-        }
-    }
-
-    
-    @GetMapping("/reviews")
-    public String showReviewPages() {
-       // Optional<Booking> booking = bookingRepository.findById(bookingId);
-        //if (booking == null) {
-            // Handle error
-        //}
-
-        //model.addAttribute("booking", booking);
-        return "review";
-    }
-    
-    
-   
 
 }

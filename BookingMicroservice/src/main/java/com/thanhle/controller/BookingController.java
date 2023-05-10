@@ -9,8 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 @Controller
 @CrossOrigin(origins = "http://localhost:8282")
@@ -22,13 +21,6 @@ public class BookingController {
     @Autowired
     GuestService guestService;
 
-	//@PostMapping(value = "/bookings")
-	//@ResponseBody
-	//public Booking saveBookings(@RequestBody Booking booking, @RequestParam Set<Guest> guests) {
-		//Guest guest = guestService.getGuestById(guestId);
-		//return bookingService.saveBookings(booking, guests);
-	//}
-	
 	@PostMapping(value = "/bookings")
 	@ResponseBody
 	public Booking saveBooking(@RequestBody Booking booking) {
@@ -53,33 +45,34 @@ public class BookingController {
 	public List<Booking> getBookingsByMobile(@PathVariable String customerMobile) {
 	    return bookingService.findByCustomerMobile(customerMobile);
 	}
-	
-	@PostMapping(value = "/bookings/deleteBooking/{id}")
+	/*
+	@GetMapping(value = "/bookings/mobiles/{customerMobile}")
 	@ResponseBody
-	public void deleteBooking(@PathVariable int id) {
-		bookingService.deleteBooking(id);
+	public List<Booking> getBookingsByMobiles(@PathVariable String customerMobile) {
+	    List<Booking> bookings = bookingService.findByCustomerMobile(customerMobile);
+	    List<Booking> upcomingBookings = new ArrayList<>();
+	    List<Booking> completedBookings = new ArrayList<>();
+	    Date currentDate = new Date();
+	    for (Booking booking : bookings) {
+	    	Date checkInDate = booking.getCheckInDate();
+            Date checkOutDate = booking.getCheckOutDate();
+	        if (booking.getStatus().equals("upcoming")) {        
+	            if (checkInDate.after(currentDate) || (checkInDate.before(currentDate) && checkOutDate.after(currentDate))) {
+	                upcomingBookings.add(booking);
+	            }
+	        } else if (booking.getStatus().equals("completed")) {
+	            if (checkOutDate.before(currentDate)) {
+	                completedBookings.add(booking);
+	            }
+	        }
+	    }
+	    if (upcomingBookings.isEmpty() && completedBookings.isEmpty()) {
+	        return null;
+	    }
+	    return upcomingBookings.isEmpty() ? completedBookings : upcomingBookings;
 	}
 
-	//@PutMapping(value = "/booking/{id}")
-	//@ResponseBody
-	//public Booking updateBooking(@PathVariable int id, @RequestBody Booking booking) {
-		//booking.setBookingId(id);
-		//return bookingService.saveBooking(booking, guests);
-	//}
-	
-	@PostMapping(value = "/bookings/upcoming")
-	@ResponseBody
-	public Booking saveUpcomingBooking(@RequestBody Booking booking) {
-	    // save the booking to the upcoming bookings list
-	    return bookingService.saveUpcomingBooking(booking);
-	}
-
-	@PostMapping(value = "/bookings/completed")
-	@ResponseBody
-	public Booking saveCompletedBooking(@RequestBody Booking booking) {
-	    // save the booking to the completed bookings list
-	    return bookingService.saveCompletedBooking(booking);
-	}
+	*/
 
 	@PostMapping(value = "/bookings/cancelled")
 	@ResponseBody
@@ -88,22 +81,53 @@ public class BookingController {
 	    return bookingService.saveCancelledBooking(booking);
 	}
 
-	@GetMapping(value = "/bookings/upcoming")
+	@GetMapping(value = "/bookings/cancelled")
 	@ResponseBody
-	public List<Booking> getUpcomingBookings() {
-	    // return a list of upcoming bookings
-	    return bookingService.getUpcomingBookings();
+	public List<Booking> saveCancelledBookings() {
+	    // save the booking to the cancelled bookings list
+	    return bookingService.getCancelledBookings();
+	}
+	
+	@GetMapping(value = "/bookings/upcomingMobile/{customerMobile}")
+	@ResponseBody
+	public List<Booking> getUpcomingBookingsByMobile(@PathVariable String customerMobile) {
+	    List<Booking> bookings = bookingService.findByCustomerMobile(customerMobile);
+	    List<Booking> upcomingBookings = new ArrayList<>();
+	    Date currentDate = new Date();
+	    for (Booking booking : bookings) {
+	        Date checkInDate = booking.getCheckInDate();
+	        Date checkOutDate = booking.getCheckOutDate();
+	        if (booking.getStatus().equals("upcoming")) {        
+	            if (checkInDate.after(currentDate) || (checkInDate.before(currentDate) && checkOutDate.after(currentDate))) {
+	                upcomingBookings.add(booking);
+	            }
+	        } 
+	    }
+	    if (upcomingBookings.isEmpty()) {
+	        return null;
+	    }
+	    return upcomingBookings;
 	}
 
-	@GetMapping(value = "/bookings/completed")
+	@GetMapping(value = "/bookings/completedMobile/{customerMobile}")
 	@ResponseBody
-	public List<Booking> getCompletedBookings() {
-	    // return a list of completed bookings
-	    return bookingService.getCompletedBookings();
+	public List<Booking> getCompletedBookingsByMobile(@PathVariable String customerMobile) {
+	    List<Booking> bookings = bookingService.findByCustomerMobile(customerMobile);
+	    List<Booking> completedBookings = new ArrayList<>();
+	    Date currentDate = new Date();
+	    for (Booking booking : bookings) {
+	        Date checkOutDate = booking.getCheckOutDate();
+	        if (booking.getStatus().equals("completed")) {        
+	            if (checkOutDate.before(currentDate)) {
+	                completedBookings.add(booking);
+	            }
+	        } 
+	    }
+	    if (completedBookings.isEmpty()) {
+	        return null;
+	    }
+	    return completedBookings;
 	}
 
 	
-	
-	
-
 }

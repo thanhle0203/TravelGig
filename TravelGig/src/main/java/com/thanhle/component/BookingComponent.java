@@ -117,5 +117,23 @@ public class BookingComponent {
 		JsonNode returnObj = mapper.convertValue(objects, JsonNode.class);
 		return returnObj;
 	}
+	
+	public JsonNode saveCancelBooking(JsonNode json) {
+
+		HttpHeaders headers = new HttpHeaders();
+
+		headers.setContentType(MediaType.APPLICATION_JSON);		
+
+		HttpEntity<String> request = new HttpEntity<String>(json.toString(), headers);
+
+		RestTemplate restTemplate = new RestTemplate();
+
+		ResponseEntity<Object> responseEntity = restTemplate.postForEntity("http://localhost:8484/bookings/cancelled", request, Object.class);
+
+		Object object = (JsonNode) responseEntity.getBody();
+
+		return (JsonNode) object;
+		
+	}
 
 }

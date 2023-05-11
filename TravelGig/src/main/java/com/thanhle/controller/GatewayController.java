@@ -88,29 +88,50 @@ public class GatewayController {
 	}
 	*/
     
-    @RequestMapping(value = "/getUpComingBookingsByPhone/{mobile}", method = RequestMethod.GET)
-	public JsonNode findUpComingBookingsByPhone(@PathVariable String mobile, Principal principal){
-		String username = principal.getName();
-		User user = userService.findByUserName(username);
-		mobile = user.getMobile();
-		return bookingComponent.findUpcomingBookingsByPhone(mobile);
-	}
-    
-    @RequestMapping(value = "/getCompletedBookingsByPhone/{mobile}", method = RequestMethod.GET)
-   	public JsonNode findCompletedBookingsByPhone(@PathVariable String mobile, Principal principal){
-   		String username = principal.getName();
-   		User user = userService.findByUserName(username);
-   		mobile = user.getMobile();
-   		return bookingComponent.findCompletedBookingsByPhone(mobile);
-   	}
-    
+  
     @RequestMapping(value = "/getBookingsByPhone/{mobile}", method = RequestMethod.GET)
    	public JsonNode findBookingsByPhone(@PathVariable String mobile, Principal principal){
    		String username = principal.getName();
    		User user = userService.findByUserName(username);
    		mobile = user.getMobile();
+   		
    		return bookingComponent.findBookingsByPhone(mobile);
    	}
+    
+    @RequestMapping(value = "/getUpComingBookingsByPhone/{mobile}", method = RequestMethod.GET)
+  	public JsonNode findUpComingBookingsByPhone(@PathVariable String mobile, Principal principal){
+  		String username = principal.getName();
+  		User user = userService.findByUserName(username);
+  		mobile = user.getMobile();
+  		
+  		return bookingComponent.findUpcomingBookingsByPhone(mobile);
+  	}
+      
+    @RequestMapping(value = "/getCompletedBookingsByPhone/{mobile}", method = RequestMethod.GET)
+    public JsonNode findCompletedBookingsByPhone(@PathVariable String mobile, Principal principal){
+    	String username = principal.getName();
+     	User user = userService.findByUserName(username);
+     	mobile = user.getMobile();
+     	
+     	return bookingComponent.findCompletedBookingsByPhone(mobile);
+    }
+    
+    @RequestMapping(value = "/saveCancelBooking", method=RequestMethod.POST)
+    public ResponseEntity<JsonNode> saveCancelBooking(@RequestBody JsonNode json) {
+    	JsonNode booking = bookingComponent.saveCancelBooking(json);
+    	return new ResponseEntity<>(booking, HttpStatus.OK);
+    }
+    
+    @RequestMapping(value = "/getCancelledBookingsByPhone/{mobile}", method = RequestMethod.GET)
+    public JsonNode findCancelledBookingsByPhone(@PathVariable String mobile, Principal principal){
+        String username = principal.getName();
+        User user = userService.findByUserName(username);
+        mobile = user.getMobile();
+        
+        return bookingComponent.findBookingsByPhone(mobile);
+    }
+
+    /*
     
     @GetMapping("/myBookings")
     public List<Booking> getBookings(Model model, Principal principal) {
@@ -123,6 +144,6 @@ public class GatewayController {
      
         return bookings;
     }
-  
+  */
 
 }

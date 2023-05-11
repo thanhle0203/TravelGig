@@ -119,7 +119,7 @@ public class BookingController {
 	        Date checkOutDate = booking.getCheckOutDate();
 	        if (booking.getStatus().equals("completed")) {        
 	            if (checkOutDate.before(currentDate)) {
-	                completedBookings.add(booking);
+	            	completedBookings.add(booking);
 	            }
 	        } 
 	    }

@@ -18,50 +18,59 @@ jQuery(document).ready(function () {
     // Fetch the bookings of the logged in user
     // Ajax call to fetch the bookings
     jQuery.ajax({
-      url: "/myBookings",
-      //url: "/getBookingsByPhone/mobile/",
+      url: "/bookings",
       method: "GET",
       success: function (bookings) {
-        console.log(bookings);
-        // Group the bookings by status
-        var upcomingBookings = [];
-        var completedBookings = [];
-        var cancelledBookings = [];
-        var currentDate = new Date();
-
-        // Convert bookings to an array if it's not an array
-        if (!Array.isArray(bookings)) {
-          bookings = [bookings];
-        }
-
         jQuery.each(bookings, function (index, booking) {
-          if (
-            booking.status === "upcoming" &&
-            new Date(booking.checkInDate) > currentDate
-          ) {
-            upcomingBookings.push(booking);
-          } else if (
-            booking.status === "completed" ||
-            (booking.status === "upcoming" &&
-              new Date(booking.checkInDate) <= currentDate)
-          ) {
-            booking.status = "completed";
-            completedBookings.push(booking);
-          } else if (booking.status === "cancelled") {
-            cancelledBookings.push(booking);
-          }
-        });
+          var mobile = booking.customerMobile;
+          jQuery.ajax({
+            url: "/getBookingsByPhone/" + mobile,
+            method: "GET",
+            success: function (bookings) {
+              console.log(bookings);
+              // Group the bookings by status
+              var upcomingBookings = [];
+              var completedBookings = [];
+              var cancelledBookings = [];
+              var currentDate = new Date();
 
-        // Display the bookings under different tabs
-        displayBookings(upcomingBookings, "upcomingBookings");
-        displayBookings(completedBookings, "completedBookings");
-        displayBookings(cancelledBookings, "cancelledBookings");
-      },
-      error: function (xhr, status, error) {
-        console.error(xhr.responseText);
+              // Convert bookings to an array if it's not an array
+              if (!Array.isArray(bookings)) {
+                bookings = [bookings];
+              }
+
+              jQuery.each(bookings, function (index, booking) {
+                if (
+                  booking.status === "upcoming" &&
+                  new Date(booking.checkInDate) > currentDate
+                ) {
+                  upcomingBookings.push(booking);
+                } else if (
+                  booking.status === "completed" ||
+                  (booking.status === "upcoming" &&
+                    new Date(booking.checkInDate) <= currentDate)
+                ) {
+                  booking.status = "completed";
+                  completedBookings.push(booking);
+                } else if (booking.status === "cancelled") {
+                  cancelledBookings.push(booking);
+                }
+              });
+
+              // Display the bookings under different tabs
+              displayBookings(upcomingBookings, "upcomingBookings");
+              displayBookings(completedBookings, "completedBookings");
+              displayBookings(cancelledBookings, "cancelledBookings");
+            },
+            error: function (xhr, status, error) {
+              console.error(xhr.responseText);
+            },
+          });
+        });
       },
     });
   });
+
   
   function displayBookings(bookings, tableId) {
   var tableBody = jQuery("#" + tableId + " tbody");

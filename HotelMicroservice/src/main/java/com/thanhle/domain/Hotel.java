@@ -3,7 +3,9 @@ package com.thanhle.domain;
 import jakarta.persistence.*;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
+import java.util.ArrayList;
 
 
 @Entity
@@ -25,6 +27,9 @@ public class Hotel {
 	private String mobile;
 	private String imageURL;	
 	private int timesBooked;
+	
+	//@OneToMany(mappedBy="hotel")
+	//private List<Review> reviews = new ArrayList<>();
 	
 	@OneToMany
 	private Set<HotelRoom> hotelRooms = new HashSet<>();
@@ -56,6 +61,7 @@ public class Hotel {
 		this.timesBooked = timesBooked;
 		this.hotelRooms = hotelRooms;
 		this.hotelAmenityNames = hotelAmenityNames;
+		//this.reviews = reviews;
 	}
 
 	public String getCity() {
@@ -158,4 +164,13 @@ public class Hotel {
 	public void setImageURL(String imageURL) {
 		this.imageURL = imageURL;
 	}
+	
+	 //public List<Review> getReviews() {
+	        //return reviews;
+	    //}
+
+	    //public void setReviews(List<Review> reviews) {
+	        //this.reviews = reviews;
+	   // }
+	
 }

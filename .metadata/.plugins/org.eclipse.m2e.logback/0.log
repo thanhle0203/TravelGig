@@ -7853,3 +7853,881 @@ Caused by: org.apache.maven.model.building.ModelBuildingException: 1 problem was
 2023-05-10 22:22:40,098 [Worker-52: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
 2023-05-10 22:58:32,080 [Worker-53: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
 2023-05-10 22:58:32,203 [Worker-53: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 6 resources
+2023-05-10 22:58:32,227 [Worker-53: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-05-10 23:07:28,284 [Worker-66: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-10 23:07:28,286 [Worker-66: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-10 23:07:28,293 [Worker-66: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-05-10 23:07:39,993 [Worker-63: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-10 23:07:39,994 [Worker-63: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-10 23:07:40,002 [Worker-63: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-05-10 23:08:58,204 [Worker-66: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-10 23:08:58,205 [Worker-66: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-10 23:08:58,214 [Worker-66: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-05-10 23:09:16,647 [Worker-65: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-10 23:09:16,649 [Worker-65: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-10 23:09:16,658 [Worker-65: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-05-10 23:24:45,499 [Worker-70: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2023-05-10 23:24:45,545 [Worker-70: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2023-05-10 23:24:45,550 [Worker-70: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\BookingMicroservice\src\test\resources
+2023-05-10 23:24:59,534 [Worker-71: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2023-05-10 23:24:59,544 [Worker-71: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2023-05-10 23:24:59,549 [Worker-71: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\BookingMicroservice\src\test\resources
+2023-05-10 23:25:26,576 [Worker-68: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2023-05-10 23:25:26,584 [Worker-68: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2023-05-10 23:25:26,589 [Worker-68: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\BookingMicroservice\src\test\resources
+2023-05-10 23:26:29,339 [Worker-68: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-10 23:26:29,348 [Worker-68: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 6 resources
+2023-05-10 23:26:29,364 [Worker-68: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-05-10 23:28:01,202 [Worker-71: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-10 23:28:01,211 [Worker-71: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 6 resources
+2023-05-10 23:28:01,222 [Worker-71: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-05-10 23:31:19,418 [Worker-68: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-10 23:31:19,427 [Worker-68: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 6 resources
+2023-05-10 23:31:19,441 [Worker-68: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-05-10 23:32:49,221 [Worker-73: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-10 23:32:49,231 [Worker-73: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 6 resources
+2023-05-10 23:32:49,261 [Worker-73: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-05-10 23:33:20,220 [Worker-74: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-10 23:33:20,229 [Worker-74: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 6 resources
+2023-05-10 23:33:20,241 [Worker-74: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-05-10 23:41:00,293 [Worker-78: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-10 23:41:00,295 [Worker-78: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-10 23:41:00,302 [Worker-78: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-05-10 23:41:09,485 [Worker-78: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-10 23:41:09,486 [Worker-78: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-10 23:41:09,494 [Worker-78: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-05-10 23:42:23,078 [Worker-80: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-10 23:42:23,079 [Worker-80: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-10 23:42:23,088 [Worker-80: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-05-10 23:44:16,705 [Worker-72: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-10 23:44:16,707 [Worker-72: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-10 23:44:16,714 [Worker-72: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-05-10 23:45:12,488 [Worker-72: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-10 23:45:12,490 [Worker-72: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-10 23:45:12,499 [Worker-72: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-05-10 23:47:49,363 [Worker-81: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-10 23:47:49,364 [Worker-81: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-10 23:47:49,380 [Worker-81: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-05-10 23:50:47,539 [Worker-86: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-10 23:50:47,552 [Worker-86: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 6 resources
+2023-05-10 23:50:47,566 [Worker-86: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-05-10 23:56:44,969 [Worker-81: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-10 23:56:44,970 [Worker-81: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-10 23:56:44,978 [Worker-81: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-05-11 00:02:32,056 [Worker-92: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-11 00:02:32,058 [Worker-92: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-11 00:02:32,066 [Worker-92: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-05-11 00:03:47,725 [Worker-91: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-11 00:03:47,726 [Worker-91: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-11 00:03:47,734 [Worker-91: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-05-11 00:04:58,910 [Worker-90: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-11 00:04:58,911 [Worker-90: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-11 00:04:58,919 [Worker-90: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-05-11 00:06:30,082 [Worker-90: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-11 00:06:30,084 [Worker-90: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-11 00:06:30,092 [Worker-90: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-05-11 00:06:40,891 [Worker-91: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-11 00:06:40,892 [Worker-91: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-11 00:06:40,900 [Worker-91: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-05-11 00:07:05,223 [Worker-94: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-11 00:07:05,224 [Worker-94: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-11 00:07:05,232 [Worker-94: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-05-11 00:13:51,381 [Worker-96: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-11 00:13:51,382 [Worker-96: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-11 00:13:51,391 [Worker-96: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-05-11 00:19:47,858 [Worker-98: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-11 00:19:47,859 [Worker-98: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-11 00:19:47,868 [Worker-98: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-05-11 00:30:01,775 [Worker-102: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2023-05-11 00:30:01,794 [Worker-102: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2023-05-11 00:30:01,799 [Worker-102: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\BookingMicroservice\src\test\resources
+2023-05-11 00:30:36,312 [Worker-98: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2023-05-11 00:30:36,350 [Worker-98: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2023-05-11 00:30:36,387 [Worker-98: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\BookingMicroservice\src\test\resources
+2023-05-11 00:31:27,844 [Worker-102: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2023-05-11 00:31:27,875 [Worker-102: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2023-05-11 00:31:27,880 [Worker-102: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\BookingMicroservice\src\test\resources
+2023-05-11 00:31:40,081 [Worker-102: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2023-05-11 00:31:40,089 [Worker-102: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2023-05-11 00:31:40,094 [Worker-102: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\BookingMicroservice\src\test\resources
+2023-05-11 00:34:02,531 [Worker-102: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2023-05-11 00:34:02,539 [Worker-102: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2023-05-11 00:34:02,543 [Worker-102: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\BookingMicroservice\src\test\resources
+2023-05-11 00:34:12,155 [Worker-102: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2023-05-11 00:34:12,163 [Worker-102: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2023-05-11 00:34:12,170 [Worker-102: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\BookingMicroservice\src\test\resources
+2023-05-11 00:40:50,738 [Worker-107: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2023-05-11 00:40:50,748 [Worker-107: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2023-05-11 00:40:50,753 [Worker-107: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\BookingMicroservice\src\test\resources
+2023-05-11 00:42:59,044 [Worker-108: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2023-05-11 00:42:59,054 [Worker-108: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2023-05-11 00:42:59,060 [Worker-108: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\BookingMicroservice\src\test\resources
+2023-05-11 00:51:56,197 [Worker-109: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-11 00:51:56,198 [Worker-109: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-11 00:51:56,205 [Worker-109: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-05-11 00:53:51,401 [Worker-114: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2023-05-11 00:53:51,412 [Worker-114: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2023-05-11 00:53:51,417 [Worker-114: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\BookingMicroservice\src\test\resources
+2023-05-11 00:54:31,122 [Worker-112: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2023-05-11 00:54:31,133 [Worker-112: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2023-05-11 00:54:31,139 [Worker-112: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\BookingMicroservice\src\test\resources
+2023-05-11 02:19:53,002 [Worker-124: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2023-05-11 02:19:53,013 [Worker-124: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2023-05-11 02:19:53,020 [Worker-124: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\BookingMicroservice\src\test\resources
+2023-05-11 02:20:38,708 [Worker-121: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-11 02:20:38,709 [Worker-121: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-11 02:20:38,717 [Worker-121: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-05-11 02:31:34,584 [Worker-125: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2023-05-11 02:31:34,595 [Worker-125: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2023-05-11 02:31:34,600 [Worker-125: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\BookingMicroservice\src\test\resources
+2023-05-11 02:32:09,581 [Worker-124: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2023-05-11 02:32:09,593 [Worker-124: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2023-05-11 02:32:09,598 [Worker-124: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\BookingMicroservice\src\test\resources
+2023-05-11 02:34:21,771 [Worker-126: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2023-05-11 02:34:21,782 [Worker-126: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2023-05-11 02:34:21,787 [Worker-126: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\BookingMicroservice\src\test\resources
+2023-05-11 02:34:51,246 [Worker-124: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2023-05-11 02:34:51,257 [Worker-124: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2023-05-11 02:34:51,262 [Worker-124: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\BookingMicroservice\src\test\resources
+2023-05-11 02:36:44,878 [Worker-128: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-11 02:36:44,905 [Worker-128: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 6 resources
+2023-05-11 02:36:44,920 [Worker-128: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-05-11 02:38:25,226 [Worker-128: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-11 02:38:25,243 [Worker-128: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 6 resources
+2023-05-11 02:38:25,256 [Worker-128: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-05-11 02:38:39,233 [Worker-128: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-11 02:38:39,242 [Worker-128: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 6 resources
+2023-05-11 02:38:39,252 [Worker-128: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-05-11 02:38:45,785 [Worker-130: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-11 02:38:45,794 [Worker-130: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 6 resources
+2023-05-11 02:38:45,805 [Worker-130: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-05-11 02:39:43,361 [Worker-128: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-11 02:39:43,371 [Worker-128: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 6 resources
+2023-05-11 02:39:43,382 [Worker-128: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-05-11 02:40:04,790 [Worker-130: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-11 02:40:04,799 [Worker-130: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 6 resources
+2023-05-11 02:40:04,810 [Worker-130: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-05-11 02:41:29,042 [Worker-129: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-11 02:41:29,043 [Worker-129: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-11 02:41:29,053 [Worker-129: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-05-11 02:47:06,957 [Worker-133: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-11 02:47:06,958 [Worker-133: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-11 02:47:06,966 [Worker-133: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-05-11 02:48:38,489 [Worker-127: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-11 02:48:38,491 [Worker-127: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-11 02:48:38,502 [Worker-127: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-05-11 10:00:22,520 [Worker-1: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2023-05-11 10:03:30,201 [Worker-6: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2023-05-11 10:03:30,234 [Worker-6: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2023-05-11 10:03:30,244 [Worker-6: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\BookingMicroservice\src\test\resources
+2023-05-11 10:03:35,646 [Worker-6: Building] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/BookingMicroservice: com.thanhle:BookingMicroservice:0.0.1-SNAPSHOT with classifier  to /BookingMicroservice/target/classes
+2023-05-11 10:03:35,650 [Worker-6: Building] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/HotelMicroservice: com.thanhle:HotelMicroservice:0.0.1-SNAPSHOT with classifier  to /HotelMicroservice/target/classes
+2023-05-11 10:03:36,126 [Worker-6: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-11 10:03:36,157 [Worker-6: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 6 resources
+2023-05-11 10:03:36,249 [Worker-6: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-05-11 10:05:44,453 [Worker-1: Launching gigTravel - GigTravelApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/BookingMicroservice: com.thanhle:BookingMicroservice:0.0.1-SNAPSHOT with classifier null to /BookingMicroservice/target/classes
+2023-05-11 10:05:44,456 [Worker-1: Launching gigTravel - GigTravelApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/HotelMicroservice: com.thanhle:HotelMicroservice:0.0.1-SNAPSHOT with classifier null to /HotelMicroservice/target/classes
+2023-05-11 10:05:44,934 [Worker-1: Launching gigTravel - GigTravelApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/BookingMicroservice: com.thanhle:BookingMicroservice:0.0.1-SNAPSHOT with classifier null to /BookingMicroservice/target/classes
+2023-05-11 10:05:44,937 [Worker-1: Launching gigTravel - GigTravelApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/HotelMicroservice: com.thanhle:HotelMicroservice:0.0.1-SNAPSHOT with classifier null to /HotelMicroservice/target/classes
+2023-05-11 10:05:45,424 [Worker-1: Launching gigTravel - GigTravelApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/BookingMicroservice: com.thanhle:BookingMicroservice:0.0.1-SNAPSHOT with classifier null to /BookingMicroservice/target/classes
+2023-05-11 10:05:45,427 [Worker-1: Launching gigTravel - GigTravelApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/HotelMicroservice: com.thanhle:HotelMicroservice:0.0.1-SNAPSHOT with classifier null to /HotelMicroservice/target/classes
+2023-05-11 10:10:50,112 [Worker-12: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-11 10:10:50,114 [Worker-12: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-11 10:10:50,150 [Worker-12: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-05-11 10:10:57,172 [Worker-14: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-11 10:10:57,173 [Worker-14: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-11 10:10:57,187 [Worker-14: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-05-11 10:11:36,328 [Worker-15: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-11 10:11:36,328 [Worker-15: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-11 10:11:36,337 [Worker-15: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-05-11 10:15:00,141 [Worker-19: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-11 10:15:00,141 [Worker-19: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-11 10:15:00,150 [Worker-19: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-05-11 10:20:59,080 [Worker-17: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-11 10:20:59,129 [Worker-17: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 6 resources
+2023-05-11 10:20:59,143 [Worker-17: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-05-11 10:21:48,553 [Worker-17: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-11 10:21:48,567 [Worker-17: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 6 resources
+2023-05-11 10:21:48,582 [Worker-17: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-05-11 10:22:06,387 [Worker-24: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-11 10:22:06,397 [Worker-24: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 6 resources
+2023-05-11 10:22:06,412 [Worker-24: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-05-11 10:29:17,962 [Worker-25: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2023-05-11 10:29:17,973 [Worker-25: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2023-05-11 10:29:17,979 [Worker-25: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\BookingMicroservice\src\test\resources
+2023-05-11 10:37:07,296 [Worker-31: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2023-05-11 10:37:07,321 [Worker-31: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2023-05-11 10:37:07,328 [Worker-31: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\BookingMicroservice\src\test\resources
+2023-05-11 10:37:45,988 [Worker-31: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2023-05-11 10:37:46,012 [Worker-31: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2023-05-11 10:37:46,019 [Worker-31: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\BookingMicroservice\src\test\resources
+2023-05-11 10:38:06,092 [Worker-24: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2023-05-11 10:38:06,102 [Worker-24: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2023-05-11 10:38:06,110 [Worker-24: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\BookingMicroservice\src\test\resources
+2023-05-11 10:41:55,290 [Worker-33: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-11 10:41:55,291 [Worker-33: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-11 10:41:55,304 [Worker-33: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-05-11 11:21:32,320 [Worker-34: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-11 11:21:32,321 [Worker-34: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-11 11:21:32,331 [Worker-34: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-05-11 11:30:36,120 [Worker-38: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-11 11:30:36,121 [Worker-38: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-11 11:30:36,129 [Worker-38: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-05-11 11:37:30,722 [Worker-35: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-11 11:37:30,723 [Worker-35: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-11 11:37:30,733 [Worker-35: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-05-11 11:38:07,646 [Worker-36: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-11 11:38:07,647 [Worker-36: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-11 11:38:07,658 [Worker-36: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-05-11 11:39:29,808 [Worker-42: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-11 11:39:29,809 [Worker-42: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-11 11:39:29,819 [Worker-42: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-05-11 11:57:47,929 [Worker-48: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-11 11:57:47,930 [Worker-48: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-11 11:57:47,939 [Worker-48: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-05-11 12:00:03,761 [Worker-40: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-11 12:00:03,762 [Worker-40: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-11 12:00:03,773 [Worker-40: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-05-11 12:01:20,450 [Worker-51: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-11 12:01:20,451 [Worker-51: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-11 12:01:20,461 [Worker-51: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-05-11 12:01:42,289 [Worker-50: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-11 12:01:42,290 [Worker-50: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-11 12:01:42,298 [Worker-50: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-05-11 12:06:00,997 [Worker-51: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-11 12:06:00,998 [Worker-51: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-11 12:06:01,009 [Worker-51: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-05-11 12:06:09,192 [Worker-51: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-11 12:06:09,194 [Worker-51: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-11 12:06:09,202 [Worker-51: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-05-11 12:06:18,093 [Worker-51: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-11 12:06:18,094 [Worker-51: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-11 12:06:18,106 [Worker-51: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-05-11 13:17:03,289 [Worker-59: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-11 13:17:03,291 [Worker-59: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-11 13:17:03,302 [Worker-59: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-05-11 13:29:02,543 [Worker-67: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-11 13:29:02,544 [Worker-67: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-11 13:29:02,553 [Worker-67: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-05-11 13:34:57,177 [Worker-66: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-11 13:34:57,178 [Worker-66: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-11 13:34:57,187 [Worker-66: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-05-11 13:40:13,954 [Worker-73: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-11 13:40:13,956 [Worker-73: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-11 13:40:13,964 [Worker-73: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-05-11 13:46:58,899 [Worker-75: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-11 13:46:58,900 [Worker-75: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-11 13:46:58,907 [Worker-75: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-05-11 14:04:01,270 [Worker-79: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-11 14:04:01,272 [Worker-79: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-11 14:04:01,284 [Worker-79: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-05-11 14:04:06,367 [Worker-79: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-11 14:04:06,367 [Worker-79: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-11 14:04:06,376 [Worker-79: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-05-11 14:08:18,006 [Worker-84: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-11 14:08:18,007 [Worker-84: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-11 14:08:18,019 [Worker-84: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-05-11 14:14:05,360 [Worker-79: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-11 14:14:05,361 [Worker-79: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-11 14:14:05,372 [Worker-79: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-05-11 14:33:35,296 [Worker-86: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-11 14:33:35,296 [Worker-86: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-11 14:33:35,303 [Worker-86: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-05-11 18:26:38,177 [Worker-85: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-11 18:26:38,178 [Worker-85: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-11 18:26:38,186 [Worker-85: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-05-11 18:28:47,661 [Worker-93: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-11 18:28:47,662 [Worker-93: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-11 18:28:47,670 [Worker-93: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-05-11 18:31:17,756 [Worker-85: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-11 18:31:17,860 [Worker-85: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-11 18:31:17,866 [Worker-85: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\HotelMicroservice\src\test\resources
+2023-05-11 18:33:57,539 [Worker-85: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-11 18:33:57,555 [Worker-85: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-11 18:33:57,561 [Worker-85: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\HotelMicroservice\src\test\resources
+2023-05-11 18:35:44,235 [Worker-95: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-11 18:35:44,236 [Worker-95: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-11 18:35:44,244 [Worker-95: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-05-11 18:49:55,373 [Worker-96: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-11 18:49:55,374 [Worker-96: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-11 18:49:55,382 [Worker-96: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-05-11 18:50:42,065 [Worker-100: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-11 18:50:42,066 [Worker-100: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-11 18:50:42,075 [Worker-100: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-05-11 18:50:59,904 [Worker-96: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-11 18:50:59,905 [Worker-96: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-11 18:50:59,914 [Worker-96: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-05-11 19:09:43,946 [Worker-105: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-11 19:09:43,970 [Worker-105: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-11 19:09:43,974 [Worker-105: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\HotelMicroservice\src\test\resources
+2023-05-11 19:09:49,216 [Worker-106: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-11 19:09:49,235 [Worker-106: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-11 19:09:49,241 [Worker-106: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\HotelMicroservice\src\test\resources
+2023-05-11 19:10:12,167 [Worker-106: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-11 19:10:12,174 [Worker-106: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-11 19:10:12,178 [Worker-106: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\HotelMicroservice\src\test\resources
+2023-05-11 19:10:21,953 [Worker-108: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-11 19:10:21,963 [Worker-108: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-11 19:10:21,968 [Worker-108: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\HotelMicroservice\src\test\resources
+2023-05-11 19:10:30,469 [Worker-104: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-11 19:10:30,478 [Worker-104: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-11 19:10:30,484 [Worker-104: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\HotelMicroservice\src\test\resources
+2023-05-11 19:10:47,363 [Worker-106: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-11 19:10:47,424 [Worker-106: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-11 19:10:47,430 [Worker-106: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\HotelMicroservice\src\test\resources
+2023-05-11 19:11:01,068 [Worker-104: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-11 19:11:01,078 [Worker-104: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-11 19:11:01,085 [Worker-104: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\HotelMicroservice\src\test\resources
+2023-05-11 19:11:44,807 [Worker-106: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-11 19:11:44,816 [Worker-106: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-11 19:11:44,821 [Worker-106: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\HotelMicroservice\src\test\resources
+2023-05-11 19:13:27,521 [Worker-105: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-11 19:13:27,530 [Worker-105: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-11 19:13:27,535 [Worker-105: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\HotelMicroservice\src\test\resources
+2023-05-11 19:13:41,351 [Worker-108: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-11 19:13:41,357 [Worker-108: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-11 19:13:41,361 [Worker-108: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\HotelMicroservice\src\test\resources
+2023-05-11 19:17:36,591 [Worker-105: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-11 19:17:36,601 [Worker-105: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 7 resources
+2023-05-11 19:17:36,616 [Worker-105: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-05-11 20:05:09,832 [Worker-107: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-11 20:05:09,889 [Worker-107: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 7 resources
+2023-05-11 20:05:09,912 [Worker-107: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-05-11 20:07:09,723 [Worker-107: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-11 20:07:09,736 [Worker-107: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 7 resources
+2023-05-11 20:07:09,750 [Worker-107: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-05-11 20:07:27,518 [Worker-109: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-11 20:07:27,549 [Worker-109: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 7 resources
+2023-05-11 20:07:27,565 [Worker-109: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-05-11 20:07:44,824 [Worker-107: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-11 20:07:44,835 [Worker-107: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 7 resources
+2023-05-11 20:07:44,850 [Worker-107: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-05-11 20:09:19,086 [Worker-114: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-11 20:09:19,096 [Worker-114: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 7 resources
+2023-05-11 20:09:19,111 [Worker-114: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-05-11 20:14:46,873 [Worker-112: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-11 20:14:46,889 [Worker-112: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-11 20:14:46,894 [Worker-112: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\HotelMicroservice\src\test\resources
+2023-05-11 21:46:20,041 [Worker-123: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-11 21:46:20,042 [Worker-123: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-11 21:46:20,051 [Worker-123: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-05-11 21:47:47,868 [Worker-124: Launching HotelMicroservice - HotelMicroserviceApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-11 21:47:47,932 [Worker-124: Launching HotelMicroservice - HotelMicroserviceApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-11 21:47:47,938 [Worker-124: Launching HotelMicroservice - HotelMicroserviceApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\HotelMicroservice\src\test\resources
+2023-05-11 21:48:49,168 [Worker-126: Launching gigTravel - GigTravelApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/BookingMicroservice: com.thanhle:BookingMicroservice:0.0.1-SNAPSHOT with classifier null to /BookingMicroservice/target/classes
+2023-05-11 21:48:49,170 [Worker-126: Launching gigTravel - GigTravelApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/HotelMicroservice: com.thanhle:HotelMicroservice:0.0.1-SNAPSHOT with classifier null to /HotelMicroservice/target/classes
+2023-05-11 21:48:49,620 [Worker-126: Launching gigTravel - GigTravelApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/BookingMicroservice: com.thanhle:BookingMicroservice:0.0.1-SNAPSHOT with classifier null to /BookingMicroservice/target/classes
+2023-05-11 21:48:49,622 [Worker-126: Launching gigTravel - GigTravelApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/HotelMicroservice: com.thanhle:HotelMicroservice:0.0.1-SNAPSHOT with classifier null to /HotelMicroservice/target/classes
+2023-05-11 21:48:50,063 [Worker-126: Launching gigTravel - GigTravelApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/BookingMicroservice: com.thanhle:BookingMicroservice:0.0.1-SNAPSHOT with classifier null to /BookingMicroservice/target/classes
+2023-05-11 21:48:50,064 [Worker-126: Launching gigTravel - GigTravelApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/HotelMicroservice: com.thanhle:HotelMicroservice:0.0.1-SNAPSHOT with classifier null to /HotelMicroservice/target/classes
+2023-05-11 21:53:16,779 [Worker-126: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-11 21:53:16,780 [Worker-126: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-11 21:53:16,788 [Worker-126: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-05-11 21:53:59,179 [Worker-126: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-11 21:53:59,226 [Worker-126: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 7 resources
+2023-05-11 21:53:59,241 [Worker-126: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-05-11 22:07:59,342 [Worker-130: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-11 22:07:59,343 [Worker-130: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-11 22:07:59,351 [Worker-130: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-05-11 22:11:41,650 [Worker-123: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-11 22:11:41,651 [Worker-123: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-11 22:11:41,660 [Worker-123: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-05-11 22:16:46,154 [Worker-134: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-11 22:16:46,203 [Worker-134: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-11 22:16:46,207 [Worker-134: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\HotelMicroservice\src\test\resources
+2023-05-11 22:16:55,294 [Worker-123: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-11 22:16:55,305 [Worker-123: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-11 22:16:55,309 [Worker-123: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\HotelMicroservice\src\test\resources
+2023-05-11 22:19:03,152 [Worker-137: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-11 22:19:03,159 [Worker-137: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-11 22:19:03,165 [Worker-137: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\HotelMicroservice\src\test\resources
+2023-05-11 22:19:31,560 [Worker-137: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-11 22:19:31,595 [Worker-137: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-11 22:19:31,602 [Worker-137: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\HotelMicroservice\src\test\resources
+2023-05-11 22:19:46,802 [Worker-140: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-11 22:19:46,808 [Worker-140: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-11 22:19:46,813 [Worker-140: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\HotelMicroservice\src\test\resources
+2023-05-11 22:19:59,088 [Worker-137: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-11 22:19:59,097 [Worker-137: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-11 22:19:59,104 [Worker-137: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\HotelMicroservice\src\test\resources
+2023-05-11 22:20:38,584 [Worker-141: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-11 22:20:38,593 [Worker-141: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-11 22:20:38,602 [Worker-141: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\HotelMicroservice\src\test\resources
+2023-05-11 22:25:28,190 [Worker-140: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-11 22:25:28,202 [Worker-140: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-11 22:25:28,208 [Worker-140: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\HotelMicroservice\src\test\resources
+2023-05-11 22:29:21,439 [Worker-134: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-11 22:29:21,451 [Worker-134: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 7 resources
+2023-05-11 22:29:21,465 [Worker-134: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-05-11 22:31:19,107 [Worker-140: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-11 22:31:19,118 [Worker-140: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 7 resources
+2023-05-11 22:31:19,157 [Worker-140: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-05-11 22:32:54,009 [Worker-140: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-11 22:32:54,022 [Worker-140: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 7 resources
+2023-05-11 22:32:54,035 [Worker-140: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-05-11 22:35:52,515 [Worker-140: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-11 22:35:52,516 [Worker-140: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-11 22:35:52,524 [Worker-140: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-05-11 22:45:13,960 [Worker-147: Launching gigTravel - GigTravelApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/BookingMicroservice: com.thanhle:BookingMicroservice:0.0.1-SNAPSHOT with classifier null to /BookingMicroservice/target/classes
+2023-05-11 22:45:13,963 [Worker-147: Launching gigTravel - GigTravelApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/HotelMicroservice: com.thanhle:HotelMicroservice:0.0.1-SNAPSHOT with classifier null to /HotelMicroservice/target/classes
+2023-05-11 22:45:14,403 [Worker-147: Launching gigTravel - GigTravelApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/BookingMicroservice: com.thanhle:BookingMicroservice:0.0.1-SNAPSHOT with classifier null to /BookingMicroservice/target/classes
+2023-05-11 22:45:14,404 [Worker-147: Launching gigTravel - GigTravelApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/HotelMicroservice: com.thanhle:HotelMicroservice:0.0.1-SNAPSHOT with classifier null to /HotelMicroservice/target/classes
+2023-05-11 22:45:14,867 [Worker-147: Launching gigTravel - GigTravelApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/BookingMicroservice: com.thanhle:BookingMicroservice:0.0.1-SNAPSHOT with classifier null to /BookingMicroservice/target/classes
+2023-05-11 22:45:14,869 [Worker-147: Launching gigTravel - GigTravelApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/HotelMicroservice: com.thanhle:HotelMicroservice:0.0.1-SNAPSHOT with classifier null to /HotelMicroservice/target/classes
+2023-05-11 22:57:36,118 [Worker-3: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-11 22:57:36,118 [Worker-3: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-11 22:57:36,127 [Worker-3: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-05-11 22:59:56,180 [Worker-154: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-11 22:59:56,222 [Worker-154: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 7 resources
+2023-05-11 22:59:56,240 [Worker-154: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-05-11 23:00:06,555 [Worker-3: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-11 23:00:06,581 [Worker-3: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 7 resources
+2023-05-11 23:00:06,592 [Worker-3: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-05-11 23:00:10,101 [Worker-3: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-11 23:00:10,126 [Worker-3: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 7 resources
+2023-05-11 23:00:10,141 [Worker-3: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-05-11 23:09:53,201 [Worker-158: Launching gigTravel - GigTravelApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/BookingMicroservice: com.thanhle:BookingMicroservice:0.0.1-SNAPSHOT with classifier null to /BookingMicroservice/target/classes
+2023-05-11 23:09:53,203 [Worker-158: Launching gigTravel - GigTravelApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/HotelMicroservice: com.thanhle:HotelMicroservice:0.0.1-SNAPSHOT with classifier null to /HotelMicroservice/target/classes
+2023-05-11 23:09:53,720 [Worker-158: Launching gigTravel - GigTravelApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/BookingMicroservice: com.thanhle:BookingMicroservice:0.0.1-SNAPSHOT with classifier null to /BookingMicroservice/target/classes
+2023-05-11 23:09:53,721 [Worker-158: Launching gigTravel - GigTravelApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/HotelMicroservice: com.thanhle:HotelMicroservice:0.0.1-SNAPSHOT with classifier null to /HotelMicroservice/target/classes
+2023-05-11 23:09:54,138 [Worker-158: Launching gigTravel - GigTravelApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/BookingMicroservice: com.thanhle:BookingMicroservice:0.0.1-SNAPSHOT with classifier null to /BookingMicroservice/target/classes
+2023-05-11 23:09:54,139 [Worker-158: Launching gigTravel - GigTravelApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/HotelMicroservice: com.thanhle:HotelMicroservice:0.0.1-SNAPSHOT with classifier null to /HotelMicroservice/target/classes
+2023-05-11 23:13:17,460 [Worker-158: Launching gigTravel - GigTravelApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/BookingMicroservice: com.thanhle:BookingMicroservice:0.0.1-SNAPSHOT with classifier null to /BookingMicroservice/target/classes
+2023-05-11 23:13:17,463 [Worker-158: Launching gigTravel - GigTravelApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/HotelMicroservice: com.thanhle:HotelMicroservice:0.0.1-SNAPSHOT with classifier null to /HotelMicroservice/target/classes
+2023-05-11 23:13:17,884 [Worker-158: Launching gigTravel - GigTravelApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/BookingMicroservice: com.thanhle:BookingMicroservice:0.0.1-SNAPSHOT with classifier null to /BookingMicroservice/target/classes
+2023-05-11 23:13:17,886 [Worker-158: Launching gigTravel - GigTravelApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/HotelMicroservice: com.thanhle:HotelMicroservice:0.0.1-SNAPSHOT with classifier null to /HotelMicroservice/target/classes
+2023-05-11 23:13:18,298 [Worker-158: Launching gigTravel - GigTravelApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/BookingMicroservice: com.thanhle:BookingMicroservice:0.0.1-SNAPSHOT with classifier null to /BookingMicroservice/target/classes
+2023-05-11 23:13:18,299 [Worker-158: Launching gigTravel - GigTravelApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/HotelMicroservice: com.thanhle:HotelMicroservice:0.0.1-SNAPSHOT with classifier null to /HotelMicroservice/target/classes
+2023-05-11 23:14:29,475 [Worker-153: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-11 23:14:29,476 [Worker-153: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-11 23:14:29,482 [Worker-153: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-05-11 23:24:29,068 [Worker-166: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-11 23:24:29,077 [Worker-166: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-11 23:24:29,080 [Worker-166: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\HotelMicroservice\src\test\resources
+2023-05-11 23:29:07,456 [Worker-167: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-11 23:29:07,465 [Worker-167: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-11 23:29:07,494 [Worker-167: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\HotelMicroservice\src\test\resources
+2023-05-11 23:31:58,703 [Worker-170: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-11 23:31:58,732 [Worker-170: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-11 23:31:58,737 [Worker-170: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\HotelMicroservice\src\test\resources
+2023-05-11 23:32:24,774 [Worker-164: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-11 23:32:24,790 [Worker-164: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-11 23:32:24,795 [Worker-164: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\HotelMicroservice\src\test\resources
+2023-05-11 23:33:18,056 [Worker-167: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-11 23:33:18,065 [Worker-167: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-11 23:33:18,070 [Worker-167: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\HotelMicroservice\src\test\resources
+2023-05-11 23:36:13,097 [Worker-170: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-11 23:36:13,109 [Worker-170: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-11 23:36:13,116 [Worker-170: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\HotelMicroservice\src\test\resources
+2023-05-11 23:36:34,051 [Worker-174: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-11 23:36:34,058 [Worker-174: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-11 23:36:34,063 [Worker-174: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\HotelMicroservice\src\test\resources
+2023-05-11 23:39:11,035 [Worker-160: Launching gigTravel - GigTravelApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/BookingMicroservice: com.thanhle:BookingMicroservice:0.0.1-SNAPSHOT with classifier null to /BookingMicroservice/target/classes
+2023-05-11 23:39:11,037 [Worker-160: Launching gigTravel - GigTravelApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/HotelMicroservice: com.thanhle:HotelMicroservice:0.0.1-SNAPSHOT with classifier null to /HotelMicroservice/target/classes
+2023-05-11 23:39:11,474 [Worker-160: Launching gigTravel - GigTravelApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/BookingMicroservice: com.thanhle:BookingMicroservice:0.0.1-SNAPSHOT with classifier null to /BookingMicroservice/target/classes
+2023-05-11 23:39:11,476 [Worker-160: Launching gigTravel - GigTravelApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/HotelMicroservice: com.thanhle:HotelMicroservice:0.0.1-SNAPSHOT with classifier null to /HotelMicroservice/target/classes
+2023-05-11 23:39:11,894 [Worker-160: Launching gigTravel - GigTravelApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/BookingMicroservice: com.thanhle:BookingMicroservice:0.0.1-SNAPSHOT with classifier null to /BookingMicroservice/target/classes
+2023-05-11 23:39:11,896 [Worker-160: Launching gigTravel - GigTravelApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/HotelMicroservice: com.thanhle:HotelMicroservice:0.0.1-SNAPSHOT with classifier null to /HotelMicroservice/target/classes
+2023-05-11 23:46:15,591 [Worker-177: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-11 23:46:15,599 [Worker-177: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-11 23:46:15,603 [Worker-177: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\HotelMicroservice\src\test\resources
+2023-05-11 23:46:38,189 [Worker-160: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-11 23:46:38,200 [Worker-160: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-11 23:46:38,204 [Worker-160: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\HotelMicroservice\src\test\resources
+2023-05-11 23:46:46,621 [Worker-177: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-11 23:46:46,629 [Worker-177: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-11 23:46:46,634 [Worker-177: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\HotelMicroservice\src\test\resources
+2023-05-11 23:49:01,154 [Worker-171: Launching gigTravel - GigTravelApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/BookingMicroservice: com.thanhle:BookingMicroservice:0.0.1-SNAPSHOT with classifier null to /BookingMicroservice/target/classes
+2023-05-11 23:49:01,157 [Worker-171: Launching gigTravel - GigTravelApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/HotelMicroservice: com.thanhle:HotelMicroservice:0.0.1-SNAPSHOT with classifier null to /HotelMicroservice/target/classes
+2023-05-11 23:49:01,570 [Worker-171: Launching gigTravel - GigTravelApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/BookingMicroservice: com.thanhle:BookingMicroservice:0.0.1-SNAPSHOT with classifier null to /BookingMicroservice/target/classes
+2023-05-11 23:49:01,572 [Worker-171: Launching gigTravel - GigTravelApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/HotelMicroservice: com.thanhle:HotelMicroservice:0.0.1-SNAPSHOT with classifier null to /HotelMicroservice/target/classes
+2023-05-11 23:49:01,991 [Worker-171: Launching gigTravel - GigTravelApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/BookingMicroservice: com.thanhle:BookingMicroservice:0.0.1-SNAPSHOT with classifier null to /BookingMicroservice/target/classes
+2023-05-11 23:49:01,993 [Worker-171: Launching gigTravel - GigTravelApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/HotelMicroservice: com.thanhle:HotelMicroservice:0.0.1-SNAPSHOT with classifier null to /HotelMicroservice/target/classes
+2023-05-11 23:59:40,272 [Worker-160: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-11 23:59:40,285 [Worker-160: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-11 23:59:40,290 [Worker-160: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\HotelMicroservice\src\test\resources
+2023-05-12 00:00:26,215 [Worker-184: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-12 00:00:26,238 [Worker-184: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-12 00:00:26,243 [Worker-184: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\HotelMicroservice\src\test\resources
+2023-05-12 00:01:21,354 [Worker-183: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-12 00:01:21,428 [Worker-183: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-12 00:01:21,434 [Worker-183: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\HotelMicroservice\src\test\resources
+2023-05-12 00:03:46,607 [Worker-187: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-12 00:03:46,615 [Worker-187: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-12 00:03:46,623 [Worker-187: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\HotelMicroservice\src\test\resources
+2023-05-12 00:04:28,571 [Worker-188: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-12 00:04:28,589 [Worker-188: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-12 00:04:28,593 [Worker-188: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\HotelMicroservice\src\test\resources
+2023-05-12 00:06:52,341 [Worker-189: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-12 00:06:52,351 [Worker-189: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-12 00:06:52,357 [Worker-189: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\HotelMicroservice\src\test\resources
+2023-05-12 00:07:23,546 [Worker-186: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-12 00:07:23,556 [Worker-186: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-12 00:07:23,559 [Worker-186: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\HotelMicroservice\src\test\resources
+2023-05-12 00:07:54,833 [Worker-160: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-12 00:07:54,854 [Worker-160: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-12 00:07:54,859 [Worker-160: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\HotelMicroservice\src\test\resources
+2023-05-12 00:09:27,354 [Worker-186: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-12 00:09:27,364 [Worker-186: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-12 00:09:27,369 [Worker-186: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\HotelMicroservice\src\test\resources
+2023-05-12 00:09:39,933 [Worker-193: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-12 00:09:39,940 [Worker-193: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-12 00:09:39,946 [Worker-193: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\HotelMicroservice\src\test\resources
+2023-05-12 00:19:59,054 [Worker-197: Launching gigTravel - GigTravelApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/BookingMicroservice: com.thanhle:BookingMicroservice:0.0.1-SNAPSHOT with classifier null to /BookingMicroservice/target/classes
+2023-05-12 00:19:59,057 [Worker-197: Launching gigTravel - GigTravelApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/HotelMicroservice: com.thanhle:HotelMicroservice:0.0.1-SNAPSHOT with classifier null to /HotelMicroservice/target/classes
+2023-05-12 00:19:59,502 [Worker-197: Launching gigTravel - GigTravelApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/BookingMicroservice: com.thanhle:BookingMicroservice:0.0.1-SNAPSHOT with classifier null to /BookingMicroservice/target/classes
+2023-05-12 00:19:59,504 [Worker-197: Launching gigTravel - GigTravelApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/HotelMicroservice: com.thanhle:HotelMicroservice:0.0.1-SNAPSHOT with classifier null to /HotelMicroservice/target/classes
+2023-05-12 00:19:59,914 [Worker-197: Launching gigTravel - GigTravelApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/BookingMicroservice: com.thanhle:BookingMicroservice:0.0.1-SNAPSHOT with classifier null to /BookingMicroservice/target/classes
+2023-05-12 00:19:59,916 [Worker-197: Launching gigTravel - GigTravelApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/HotelMicroservice: com.thanhle:HotelMicroservice:0.0.1-SNAPSHOT with classifier null to /HotelMicroservice/target/classes
+2023-05-12 00:25:48,722 [Worker-196: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-12 00:25:48,731 [Worker-196: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-12 00:25:48,734 [Worker-196: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\HotelMicroservice\src\test\resources
+2023-05-12 00:29:16,887 [Worker-205: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-12 00:29:16,894 [Worker-205: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-12 00:29:16,897 [Worker-205: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\HotelMicroservice\src\test\resources
+2023-05-12 00:30:06,244 [Worker-202: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-12 00:30:06,254 [Worker-202: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-12 00:30:06,258 [Worker-202: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\HotelMicroservice\src\test\resources
+2023-05-12 00:30:14,960 [Worker-204: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-12 00:30:14,966 [Worker-204: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-12 00:30:14,970 [Worker-204: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\HotelMicroservice\src\test\resources
+2023-05-12 00:31:56,187 [Worker-203: Launching gigTravel - GigTravelApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/BookingMicroservice: com.thanhle:BookingMicroservice:0.0.1-SNAPSHOT with classifier null to /BookingMicroservice/target/classes
+2023-05-12 00:31:56,189 [Worker-203: Launching gigTravel - GigTravelApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/HotelMicroservice: com.thanhle:HotelMicroservice:0.0.1-SNAPSHOT with classifier null to /HotelMicroservice/target/classes
+2023-05-12 00:31:56,608 [Worker-203: Launching gigTravel - GigTravelApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/BookingMicroservice: com.thanhle:BookingMicroservice:0.0.1-SNAPSHOT with classifier null to /BookingMicroservice/target/classes
+2023-05-12 00:31:56,609 [Worker-203: Launching gigTravel - GigTravelApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/HotelMicroservice: com.thanhle:HotelMicroservice:0.0.1-SNAPSHOT with classifier null to /HotelMicroservice/target/classes
+2023-05-12 00:31:57,067 [Worker-203: Launching gigTravel - GigTravelApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/BookingMicroservice: com.thanhle:BookingMicroservice:0.0.1-SNAPSHOT with classifier null to /BookingMicroservice/target/classes
+2023-05-12 00:31:57,069 [Worker-203: Launching gigTravel - GigTravelApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/HotelMicroservice: com.thanhle:HotelMicroservice:0.0.1-SNAPSHOT with classifier null to /HotelMicroservice/target/classes
+2023-05-12 00:35:34,412 [Worker-208: Launching gigTravel - GigTravelApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/BookingMicroservice: com.thanhle:BookingMicroservice:0.0.1-SNAPSHOT with classifier null to /BookingMicroservice/target/classes
+2023-05-12 00:35:34,414 [Worker-208: Launching gigTravel - GigTravelApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/HotelMicroservice: com.thanhle:HotelMicroservice:0.0.1-SNAPSHOT with classifier null to /HotelMicroservice/target/classes
+2023-05-12 00:35:35,076 [Worker-208: Launching gigTravel - GigTravelApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/BookingMicroservice: com.thanhle:BookingMicroservice:0.0.1-SNAPSHOT with classifier null to /BookingMicroservice/target/classes
+2023-05-12 00:35:35,078 [Worker-208: Launching gigTravel - GigTravelApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/HotelMicroservice: com.thanhle:HotelMicroservice:0.0.1-SNAPSHOT with classifier null to /HotelMicroservice/target/classes
+2023-05-12 00:35:35,521 [Worker-208: Launching gigTravel - GigTravelApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/BookingMicroservice: com.thanhle:BookingMicroservice:0.0.1-SNAPSHOT with classifier null to /BookingMicroservice/target/classes
+2023-05-12 00:35:35,523 [Worker-208: Launching gigTravel - GigTravelApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/HotelMicroservice: com.thanhle:HotelMicroservice:0.0.1-SNAPSHOT with classifier null to /HotelMicroservice/target/classes
+2023-05-12 00:45:23,427 [Worker-204: Launching gigTravel - GigTravelApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/BookingMicroservice: com.thanhle:BookingMicroservice:0.0.1-SNAPSHOT with classifier null to /BookingMicroservice/target/classes
+2023-05-12 00:45:23,429 [Worker-204: Launching gigTravel - GigTravelApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/HotelMicroservice: com.thanhle:HotelMicroservice:0.0.1-SNAPSHOT with classifier null to /HotelMicroservice/target/classes
+2023-05-12 00:45:23,859 [Worker-204: Launching gigTravel - GigTravelApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/BookingMicroservice: com.thanhle:BookingMicroservice:0.0.1-SNAPSHOT with classifier null to /BookingMicroservice/target/classes
+2023-05-12 00:45:23,861 [Worker-204: Launching gigTravel - GigTravelApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/HotelMicroservice: com.thanhle:HotelMicroservice:0.0.1-SNAPSHOT with classifier null to /HotelMicroservice/target/classes
+2023-05-12 00:45:24,281 [Worker-204: Launching gigTravel - GigTravelApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/BookingMicroservice: com.thanhle:BookingMicroservice:0.0.1-SNAPSHOT with classifier null to /BookingMicroservice/target/classes
+2023-05-12 00:45:24,283 [Worker-204: Launching gigTravel - GigTravelApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/HotelMicroservice: com.thanhle:HotelMicroservice:0.0.1-SNAPSHOT with classifier null to /HotelMicroservice/target/classes
+2023-05-12 00:55:44,311 [Worker-215: Launching gigTravel - GigTravelApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/BookingMicroservice: com.thanhle:BookingMicroservice:0.0.1-SNAPSHOT with classifier null to /BookingMicroservice/target/classes
+2023-05-12 00:55:44,313 [Worker-215: Launching gigTravel - GigTravelApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/HotelMicroservice: com.thanhle:HotelMicroservice:0.0.1-SNAPSHOT with classifier null to /HotelMicroservice/target/classes
+2023-05-12 00:55:44,725 [Worker-215: Launching gigTravel - GigTravelApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/BookingMicroservice: com.thanhle:BookingMicroservice:0.0.1-SNAPSHOT with classifier null to /BookingMicroservice/target/classes
+2023-05-12 00:55:44,727 [Worker-215: Launching gigTravel - GigTravelApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/HotelMicroservice: com.thanhle:HotelMicroservice:0.0.1-SNAPSHOT with classifier null to /HotelMicroservice/target/classes
+2023-05-12 00:55:45,150 [Worker-215: Launching gigTravel - GigTravelApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/BookingMicroservice: com.thanhle:BookingMicroservice:0.0.1-SNAPSHOT with classifier null to /BookingMicroservice/target/classes
+2023-05-12 00:55:45,153 [Worker-215: Launching gigTravel - GigTravelApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/HotelMicroservice: com.thanhle:HotelMicroservice:0.0.1-SNAPSHOT with classifier null to /HotelMicroservice/target/classes
+2023-05-12 00:58:30,743 [Worker-206: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-12 00:58:30,744 [Worker-206: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-12 00:58:30,751 [Worker-206: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-05-12 01:00:34,615 [Worker-217: Launching gigTravel - GigTravelApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/BookingMicroservice: com.thanhle:BookingMicroservice:0.0.1-SNAPSHOT with classifier null to /BookingMicroservice/target/classes
+2023-05-12 01:00:34,617 [Worker-217: Launching gigTravel - GigTravelApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/HotelMicroservice: com.thanhle:HotelMicroservice:0.0.1-SNAPSHOT with classifier null to /HotelMicroservice/target/classes
+2023-05-12 01:00:35,103 [Worker-217: Launching gigTravel - GigTravelApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/BookingMicroservice: com.thanhle:BookingMicroservice:0.0.1-SNAPSHOT with classifier null to /BookingMicroservice/target/classes
+2023-05-12 01:00:35,105 [Worker-217: Launching gigTravel - GigTravelApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/HotelMicroservice: com.thanhle:HotelMicroservice:0.0.1-SNAPSHOT with classifier null to /HotelMicroservice/target/classes
+2023-05-12 01:00:35,584 [Worker-217: Launching gigTravel - GigTravelApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/BookingMicroservice: com.thanhle:BookingMicroservice:0.0.1-SNAPSHOT with classifier null to /BookingMicroservice/target/classes
+2023-05-12 01:00:35,586 [Worker-217: Launching gigTravel - GigTravelApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/HotelMicroservice: com.thanhle:HotelMicroservice:0.0.1-SNAPSHOT with classifier null to /HotelMicroservice/target/classes
+2023-05-12 01:10:22,085 [Worker-217: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-12 01:10:22,099 [Worker-217: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-12 01:10:22,103 [Worker-217: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\HotelMicroservice\src\test\resources
+2023-05-12 01:10:27,211 [Worker-222: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-12 01:10:27,220 [Worker-222: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-12 01:10:27,224 [Worker-222: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\HotelMicroservice\src\test\resources
+2023-05-12 01:11:18,344 [Worker-223: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-12 01:11:18,352 [Worker-223: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-12 01:11:18,357 [Worker-223: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\HotelMicroservice\src\test\resources
+2023-05-12 01:14:33,029 [Worker-217: Launching gigTravel - GigTravelApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/BookingMicroservice: com.thanhle:BookingMicroservice:0.0.1-SNAPSHOT with classifier null to /BookingMicroservice/target/classes
+2023-05-12 01:14:33,031 [Worker-217: Launching gigTravel - GigTravelApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/HotelMicroservice: com.thanhle:HotelMicroservice:0.0.1-SNAPSHOT with classifier null to /HotelMicroservice/target/classes
+2023-05-12 01:14:33,433 [Worker-217: Launching gigTravel - GigTravelApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/BookingMicroservice: com.thanhle:BookingMicroservice:0.0.1-SNAPSHOT with classifier null to /BookingMicroservice/target/classes
+2023-05-12 01:14:33,434 [Worker-217: Launching gigTravel - GigTravelApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/HotelMicroservice: com.thanhle:HotelMicroservice:0.0.1-SNAPSHOT with classifier null to /HotelMicroservice/target/classes
+2023-05-12 01:14:33,842 [Worker-217: Launching gigTravel - GigTravelApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/BookingMicroservice: com.thanhle:BookingMicroservice:0.0.1-SNAPSHOT with classifier null to /BookingMicroservice/target/classes
+2023-05-12 01:14:33,844 [Worker-217: Launching gigTravel - GigTravelApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/HotelMicroservice: com.thanhle:HotelMicroservice:0.0.1-SNAPSHOT with classifier null to /HotelMicroservice/target/classes
+2023-05-12 07:48:32,846 [Worker-231: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-12 07:48:32,890 [Worker-231: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-12 07:48:32,896 [Worker-231: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\HotelMicroservice\src\test\resources
+2023-05-12 07:48:50,064 [Worker-233: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-12 07:48:50,098 [Worker-233: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-12 07:48:50,103 [Worker-233: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\HotelMicroservice\src\test\resources
+2023-05-12 07:58:19,094 [Worker-235: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-12 07:58:19,103 [Worker-235: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-12 07:58:19,107 [Worker-235: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\HotelMicroservice\src\test\resources
+2023-05-12 08:01:46,551 [Worker-235: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-12 08:01:46,557 [Worker-235: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-12 08:01:46,562 [Worker-235: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\HotelMicroservice\src\test\resources
+2023-05-12 08:04:40,449 [Worker-240: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-12 08:04:40,458 [Worker-240: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-12 08:04:40,494 [Worker-240: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\HotelMicroservice\src\test\resources
+2023-05-12 08:06:41,502 [Worker-226: Launching gigTravel - GigTravelApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/BookingMicroservice: com.thanhle:BookingMicroservice:0.0.1-SNAPSHOT with classifier null to /BookingMicroservice/target/classes
+2023-05-12 08:06:41,504 [Worker-226: Launching gigTravel - GigTravelApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/HotelMicroservice: com.thanhle:HotelMicroservice:0.0.1-SNAPSHOT with classifier null to /HotelMicroservice/target/classes
+2023-05-12 08:06:41,908 [Worker-226: Launching gigTravel - GigTravelApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/BookingMicroservice: com.thanhle:BookingMicroservice:0.0.1-SNAPSHOT with classifier null to /BookingMicroservice/target/classes
+2023-05-12 08:06:41,910 [Worker-226: Launching gigTravel - GigTravelApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/HotelMicroservice: com.thanhle:HotelMicroservice:0.0.1-SNAPSHOT with classifier null to /HotelMicroservice/target/classes
+2023-05-12 08:06:42,458 [Worker-226: Launching gigTravel - GigTravelApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/BookingMicroservice: com.thanhle:BookingMicroservice:0.0.1-SNAPSHOT with classifier null to /BookingMicroservice/target/classes
+2023-05-12 08:06:42,460 [Worker-226: Launching gigTravel - GigTravelApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/HotelMicroservice: com.thanhle:HotelMicroservice:0.0.1-SNAPSHOT with classifier null to /HotelMicroservice/target/classes
+2023-05-12 08:08:22,648 [Worker-237: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-12 08:08:22,649 [Worker-237: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-12 08:08:22,656 [Worker-237: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-05-12 08:31:07,727 [Worker-226: Launching gigTravel - GigTravelApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/BookingMicroservice: com.thanhle:BookingMicroservice:0.0.1-SNAPSHOT with classifier null to /BookingMicroservice/target/classes
+2023-05-12 08:31:07,729 [Worker-226: Launching gigTravel - GigTravelApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/HotelMicroservice: com.thanhle:HotelMicroservice:0.0.1-SNAPSHOT with classifier null to /HotelMicroservice/target/classes
+2023-05-12 08:31:08,181 [Worker-226: Launching gigTravel - GigTravelApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/BookingMicroservice: com.thanhle:BookingMicroservice:0.0.1-SNAPSHOT with classifier null to /BookingMicroservice/target/classes
+2023-05-12 08:31:08,184 [Worker-226: Launching gigTravel - GigTravelApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/HotelMicroservice: com.thanhle:HotelMicroservice:0.0.1-SNAPSHOT with classifier null to /HotelMicroservice/target/classes
+2023-05-12 08:31:08,719 [Worker-226: Launching gigTravel - GigTravelApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/BookingMicroservice: com.thanhle:BookingMicroservice:0.0.1-SNAPSHOT with classifier null to /BookingMicroservice/target/classes
+2023-05-12 08:31:08,721 [Worker-226: Launching gigTravel - GigTravelApplication] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/HotelMicroservice: com.thanhle:HotelMicroservice:0.0.1-SNAPSHOT with classifier null to /HotelMicroservice/target/classes
+2023-05-12 08:39:16,263 [Worker-238: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-12 08:39:16,276 [Worker-238: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-12 08:39:16,280 [Worker-238: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\HotelMicroservice\src\test\resources
+2023-05-12 08:39:30,746 [Worker-238: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-12 08:39:30,756 [Worker-238: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-12 08:39:30,759 [Worker-238: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\HotelMicroservice\src\test\resources
+2023-05-12 08:47:30,731 [Worker-253: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-12 08:47:30,732 [Worker-253: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-12 08:47:30,740 [Worker-253: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-05-12 08:47:37,645 [Worker-254: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-12 08:47:37,665 [Worker-254: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-12 08:47:37,674 [Worker-254: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-05-12 08:52:12,048 [Worker-257: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-12 08:52:12,058 [Worker-257: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-12 08:52:12,063 [Worker-257: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\HotelMicroservice\src\test\resources
+2023-05-12 08:55:38,921 [Worker-235: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-12 08:55:38,940 [Worker-235: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-12 08:55:38,945 [Worker-235: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\HotelMicroservice\src\test\resources
+2023-05-12 08:57:00,628 [Worker-254: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-12 08:57:00,642 [Worker-254: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-12 08:57:00,647 [Worker-254: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\HotelMicroservice\src\test\resources
+2023-05-12 09:02:50,401 [Worker-259: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-12 09:02:50,402 [Worker-259: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-12 09:02:50,409 [Worker-259: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-05-12 09:06:04,109 [Worker-259: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-12 09:06:04,109 [Worker-259: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-12 09:06:04,121 [Worker-259: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-05-12 09:26:32,571 [Worker-262: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-12 09:26:32,572 [Worker-262: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-12 09:26:32,580 [Worker-262: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-05-12 09:47:00,079 [Worker-270: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-12 09:47:00,079 [Worker-270: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-12 09:47:00,087 [Worker-270: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-05-12 10:06:51,465 [Worker-277: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-12 10:06:51,488 [Worker-277: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-12 10:06:51,492 [Worker-277: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-05-12 10:07:22,302 [Worker-278: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-12 10:07:22,327 [Worker-278: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 7 resources
+2023-05-12 10:07:22,342 [Worker-278: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-05-12 10:13:48,450 [Worker-282: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-12 10:13:48,451 [Worker-282: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-12 10:13:48,459 [Worker-282: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-05-12 10:55:08,393 [Worker-290: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-12 10:55:08,394 [Worker-290: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-12 10:55:08,404 [Worker-290: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-05-12 10:55:19,365 [Worker-291: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-12 10:55:19,367 [Worker-291: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-12 10:55:19,375 [Worker-291: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-05-12 10:56:05,358 [Worker-290: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-12 10:56:05,359 [Worker-290: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-12 10:56:05,372 [Worker-290: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-05-12 10:56:33,392 [Worker-287: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-12 10:56:33,393 [Worker-287: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-12 10:56:33,404 [Worker-287: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\src\test\resources
+2023-05-12 11:01:13,457 [Worker-289: Updating Maven Dependencies] ERROR o.e.m.c.i.p.r.ProjectRegistryRefreshJob - Resource '/BookingMicroservice/pom.xml' does not exist.
+org.eclipse.core.internal.resources.ResourceException: Resource '/BookingMicroservice/pom.xml' does not exist.
+	at org.eclipse.core.internal.resources.Resource.checkExists(Resource.java:330)
+	at org.eclipse.core.internal.resources.Resource.checkAccessible(Resource.java:204)
+	at org.eclipse.core.internal.resources.Resource.deleteMarkers(Resource.java:810)
+	at org.eclipse.m2e.core.internal.markers.MavenMarkerManager.deleteMarkers(MavenMarkerManager.java:250)
+	at org.eclipse.m2e.core.internal.markers.MavenMarkerManager.deleteMarkers(MavenMarkerManager.java:244)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.readMavenProjectFacades(ProjectRegistryManager.java:736)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:390)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:362)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob.lambda$4(ProjectRegistryRefreshJob.java:154)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:394)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:275)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:214)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1097)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob.lambda$0(ProjectRegistryRefreshJob.java:153)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:394)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:275)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:214)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob.run(ProjectRegistryRefreshJob.java:106)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: java.lang.Exception: Resource '/BookingMicroservice/pom.xml' does not exist.
+	at org.eclipse.core.internal.resources.ResourceException.provideStackTrace(ResourceException.java:42)
+	at org.eclipse.core.internal.resources.ResourceException.<init>(ResourceException.java:38)
+	... 19 common frames omitted
+2023-05-12 11:01:25,695 [Worker-296: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.thanhle:BookingMicroservice:0.0.1-SNAPSHOT @ C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\ThanhBookingMicroservice\pom.xml.
+2023-05-12 11:01:29,606 [Worker-296: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.thanhle:gigTravel:0.0.1-SNAPSHOT @ C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\pom.xml.
+2023-05-12 11:01:31,713 [Worker-296: Building] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/ThanhBookingMicroservice: com.thanhle:BookingMicroservice:0.0.1-SNAPSHOT with classifier  to /ThanhBookingMicroservice/target/classes
+2023-05-12 11:01:31,714 [Worker-296: Building] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/HotelMicroservice: com.thanhle:HotelMicroservice:0.0.1-SNAPSHOT with classifier  to /HotelMicroservice/target/classes
+2023-05-12 11:01:34,010 [Worker-301: Download sources and javadoc] ERROR o.e.m.j.internal.DownloadSourcesJob - Could not download sources for com.thanhle:BookingMicroservice:0.0.1-SNAPSHOT
+org.eclipse.core.runtime.CoreException: Could not resolve artifact com.thanhle:BookingMicroservice:jar:sources:0.0.1-SNAPSHOT
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.lambda$6(MavenImpl.java:584)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:394)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:228)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:214)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.resolve(MavenImpl.java:553)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.resolve(MavenImpl.java:538)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.download(DownloadSourcesJob.java:308)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.downloadAttachments(DownloadSourcesJob.java:282)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.downloadMaven(DownloadSourcesJob.java:252)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.downloadFilesAndPopulateToUpdate(DownloadSourcesJob.java:220)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.lambda$0(DownloadSourcesJob.java:149)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:394)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:275)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:214)
+	at org.eclipse.m2e.core.embedder.IMaven.execute(IMaven.java:294)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.run(DownloadSourcesJob.java:149)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+2023-05-12 11:01:43,090 [Worker-296: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2023-05-12 11:01:43,125 [Worker-296: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2023-05-12 11:01:43,132 [Worker-296: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\ThanhBookingMicroservice\src\test\resources
+2023-05-12 11:01:51,219 [Worker-298: Updating Maven Dependencies] ERROR o.e.m.c.i.p.r.ProjectRegistryRefreshJob - Resource '/HotelMicroservice/pom.xml' does not exist.
+org.eclipse.core.internal.resources.ResourceException: Resource '/HotelMicroservice/pom.xml' does not exist.
+	at org.eclipse.core.internal.resources.Resource.checkExists(Resource.java:330)
+	at org.eclipse.core.internal.resources.Resource.checkAccessible(Resource.java:204)
+	at org.eclipse.core.internal.resources.Resource.deleteMarkers(Resource.java:810)
+	at org.eclipse.m2e.core.internal.markers.MavenMarkerManager.deleteMarkers(MavenMarkerManager.java:250)
+	at org.eclipse.m2e.core.internal.markers.MavenMarkerManager.deleteMarkers(MavenMarkerManager.java:244)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.readMavenProjectFacades(ProjectRegistryManager.java:736)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:390)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:362)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob.lambda$4(ProjectRegistryRefreshJob.java:154)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:394)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:275)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:214)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1097)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob.lambda$0(ProjectRegistryRefreshJob.java:153)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:394)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:275)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:214)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob.run(ProjectRegistryRefreshJob.java:106)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: java.lang.Exception: Resource '/HotelMicroservice/pom.xml' does not exist.
+	at org.eclipse.core.internal.resources.ResourceException.provideStackTrace(ResourceException.java:42)
+	at org.eclipse.core.internal.resources.ResourceException.<init>(ResourceException.java:38)
+	... 19 common frames omitted
+2023-05-12 11:02:01,054 [Worker-306: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.thanhle:HotelMicroservice:0.0.1-SNAPSHOT @ C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\ThanhHotelMicroservice\pom.xml.
+2023-05-12 11:02:02,533 [Worker-306: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.thanhle:gigTravel:0.0.1-SNAPSHOT @ C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\TravelGig\pom.xml.
+2023-05-12 11:02:02,817 [Worker-306: Building] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/ThanhBookingMicroservice: com.thanhle:BookingMicroservice:0.0.1-SNAPSHOT with classifier  to /ThanhBookingMicroservice/target/classes
+2023-05-12 11:02:02,819 [Worker-306: Building] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/ThanhHotelMicroservice: com.thanhle:HotelMicroservice:0.0.1-SNAPSHOT with classifier  to /ThanhHotelMicroservice/target/classes
+2023-05-12 11:02:05,437 [Worker-298: Download sources and javadoc] ERROR o.e.m.j.internal.DownloadSourcesJob - Could not download javadoc for com.thanhle:BookingMicroservice:0.0.1-SNAPSHOT
+org.eclipse.core.runtime.CoreException: Could not resolve artifact com.thanhle:BookingMicroservice:jar:javadoc:0.0.1-SNAPSHOT
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.lambda$6(MavenImpl.java:584)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:394)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:228)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:214)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.resolve(MavenImpl.java:553)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.resolve(MavenImpl.java:538)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.download(DownloadSourcesJob.java:308)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.downloadAttachments(DownloadSourcesJob.java:294)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.downloadMaven(DownloadSourcesJob.java:252)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.downloadFilesAndPopulateToUpdate(DownloadSourcesJob.java:220)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.lambda$0(DownloadSourcesJob.java:149)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:394)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:275)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:214)
+	at org.eclipse.m2e.core.embedder.IMaven.execute(IMaven.java:294)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.run(DownloadSourcesJob.java:149)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+2023-05-12 11:02:05,466 [Worker-298: Download sources and javadoc] ERROR o.e.m.j.internal.DownloadSourcesJob - Could not download sources for com.thanhle:HotelMicroservice:0.0.1-SNAPSHOT
+org.eclipse.core.runtime.CoreException: Could not resolve artifact com.thanhle:HotelMicroservice:jar:sources:0.0.1-SNAPSHOT
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.lambda$6(MavenImpl.java:584)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:394)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:228)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:214)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.resolve(MavenImpl.java:553)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.resolve(MavenImpl.java:538)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.download(DownloadSourcesJob.java:308)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.downloadAttachments(DownloadSourcesJob.java:282)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.downloadMaven(DownloadSourcesJob.java:252)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.downloadFilesAndPopulateToUpdate(DownloadSourcesJob.java:220)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.lambda$0(DownloadSourcesJob.java:149)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:394)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:275)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:214)
+	at org.eclipse.m2e.core.embedder.IMaven.execute(IMaven.java:294)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.run(DownloadSourcesJob.java:149)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+2023-05-12 11:02:07,104 [Worker-306: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-12 11:02:07,166 [Worker-306: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-12 11:02:07,177 [Worker-306: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\ThanhHotelMicroservice\src\test\resources
+2023-05-12 11:02:29,541 [Worker-297: Updating Maven Dependencies] ERROR o.e.m.c.i.p.r.ProjectRegistryRefreshJob - Resource '/TravelGig/pom.xml' does not exist.
+org.eclipse.core.internal.resources.ResourceException: Resource '/TravelGig/pom.xml' does not exist.
+	at org.eclipse.core.internal.resources.Resource.checkExists(Resource.java:330)
+	at org.eclipse.core.internal.resources.Resource.checkAccessible(Resource.java:204)
+	at org.eclipse.core.internal.resources.Resource.deleteMarkers(Resource.java:810)
+	at org.eclipse.m2e.core.internal.markers.MavenMarkerManager.deleteMarkers(MavenMarkerManager.java:250)
+	at org.eclipse.m2e.core.internal.markers.MavenMarkerManager.deleteMarkers(MavenMarkerManager.java:244)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.readMavenProjectFacades(ProjectRegistryManager.java:736)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:390)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.refresh(ProjectRegistryManager.java:362)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob.lambda$4(ProjectRegistryRefreshJob.java:154)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:394)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:275)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:214)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1097)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob.lambda$0(ProjectRegistryRefreshJob.java:153)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:394)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:275)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:214)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob.run(ProjectRegistryRefreshJob.java:106)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: java.lang.Exception: Resource '/TravelGig/pom.xml' does not exist.
+	at org.eclipse.core.internal.resources.ResourceException.provideStackTrace(ResourceException.java:42)
+	at org.eclipse.core.internal.resources.ResourceException.<init>(ResourceException.java:38)
+	... 19 common frames omitted
+2023-05-12 11:02:37,321 [Worker-295: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.thanhle:gigTravel:0.0.1-SNAPSHOT @ C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\ThanhTravelGig\pom.xml.
+2023-05-12 11:02:38,160 [Worker-295: Building] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/ThanhBookingMicroservice: com.thanhle:BookingMicroservice:0.0.1-SNAPSHOT with classifier  to /ThanhBookingMicroservice/target/classes
+2023-05-12 11:02:38,161 [Worker-295: Building] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/ThanhHotelMicroservice: com.thanhle:HotelMicroservice:0.0.1-SNAPSHOT with classifier  to /ThanhHotelMicroservice/target/classes
+2023-05-12 11:02:41,881 [Worker-295: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-12 11:02:41,907 [Worker-295: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 3 resources
+2023-05-12 11:02:41,944 [Worker-295: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\ThanhTravelGig\src\test\resources
+2023-05-12 11:02:45,274 [Worker-294: Download sources and javadoc] ERROR o.e.m.j.internal.DownloadSourcesJob - Could not download javadoc for com.thanhle:HotelMicroservice:0.0.1-SNAPSHOT
+org.eclipse.core.runtime.CoreException: Could not resolve artifact com.thanhle:HotelMicroservice:jar:javadoc:0.0.1-SNAPSHOT
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.lambda$6(MavenImpl.java:584)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:394)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:228)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:214)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.resolve(MavenImpl.java:553)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.resolve(MavenImpl.java:538)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.download(DownloadSourcesJob.java:308)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.downloadAttachments(DownloadSourcesJob.java:294)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.downloadMaven(DownloadSourcesJob.java:252)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.downloadFilesAndPopulateToUpdate(DownloadSourcesJob.java:220)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.lambda$0(DownloadSourcesJob.java:149)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:394)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:275)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:214)
+	at org.eclipse.m2e.core.embedder.IMaven.execute(IMaven.java:294)
+	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.run(DownloadSourcesJob.java:149)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+2023-05-12 11:07:27,532 [Worker-311: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2023-05-12 11:07:27,538 [Worker-311: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2023-05-12 11:07:27,543 [Worker-311: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\ThanhBookingMicroservice\src\test\resources
+2023-05-12 11:07:47,111 [Worker-305: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2023-05-12 11:07:47,123 [Worker-305: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2023-05-12 11:07:47,128 [Worker-305: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\ThanhBookingMicroservice\src\test\resources
+2023-05-12 11:08:06,319 [Worker-311: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2023-05-12 11:08:06,330 [Worker-311: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2023-05-12 11:08:06,336 [Worker-311: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\ThanhBookingMicroservice\src\test\resources
+2023-05-12 11:08:53,115 [Worker-305: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-12 11:08:53,120 [Worker-305: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-12 11:08:53,156 [Worker-305: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\ThanhHotelMicroservice\src\test\resources
+2023-05-12 11:09:07,483 [Worker-311: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-12 11:09:07,493 [Worker-311: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-12 11:09:07,499 [Worker-311: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\ThanhHotelMicroservice\src\test\resources
+2023-05-12 11:09:14,556 [Worker-311: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-12 11:09:14,566 [Worker-311: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-12 11:09:14,571 [Worker-311: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\ThanhHotelMicroservice\src\test\resources
+2023-05-12 11:09:32,397 [Worker-305: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-12 11:09:32,405 [Worker-305: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-12 11:09:32,412 [Worker-305: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\ThanhHotelMicroservice\src\test\resources
+2023-05-12 11:09:59,524 [Worker-315: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-12 11:09:59,543 [Worker-315: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-12 11:09:59,548 [Worker-315: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\ThanhHotelMicroservice\src\test\resources
+2023-05-12 11:11:07,344 [Worker-315: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-12 11:11:07,351 [Worker-315: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 3 resources
+2023-05-12 11:11:07,368 [Worker-315: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\ThanhTravelGig\src\test\resources
+2023-05-12 11:11:13,727 [Worker-298: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-12 11:11:13,783 [Worker-298: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 3 resources
+2023-05-12 11:11:13,794 [Worker-298: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\ThanhTravelGig\src\test\resources
+2023-05-12 11:11:47,134 [Worker-298: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-12 11:11:47,143 [Worker-298: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 3 resources
+2023-05-12 11:11:47,153 [Worker-298: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\ThanhTravelGig\src\test\resources
+2023-05-12 11:22:36,538 [Worker-317: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource
+2023-05-12 11:22:36,539 [Worker-317: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-05-12 11:22:36,553 [Worker-317: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\thanh\Documents\workspace-spring-tool-suite-4-4.18.0.RELEASE\ThanhTravelGig\src\test\resources
+2023-05-12 11:22:42,396 [Worker-315: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource

@@ -2,6 +2,7 @@ package com.thanhle.controller;
 
 import com.thanhle.domain.Booking;
 import com.thanhle.domain.Guest;
+import com.thanhle.repository.BookingRepository;
 import com.thanhle.service.BookingService;
 import com.thanhle.service.GuestService;
 
@@ -17,6 +18,9 @@ public class BookingController {
 
     @Autowired
     BookingService bookingService;
+    
+    @Autowired
+    BookingRepository bookingRepository;
     
     @Autowired
     GuestService guestService;
@@ -74,19 +78,6 @@ public class BookingController {
 
 	*/
 
-	@PostMapping(value = "/bookings/cancelled")
-	@ResponseBody
-	public Booking saveCancelledBooking(@RequestBody Booking booking) {
-	    // save the booking to the cancelled bookings list
-	    return bookingService.saveCancelledBooking(booking);
-	}
-
-	@GetMapping(value = "/bookings/cancelled")
-	@ResponseBody
-	public List<Booking> saveCancelledBookings() {
-	    // save the booking to the cancelled bookings list
-	    return bookingService.getCancelledBookings();
-	}
 	
 	@GetMapping(value = "/bookings/upcomingMobile/{customerMobile}")
 	@ResponseBody
@@ -97,11 +88,11 @@ public class BookingController {
 	    for (Booking booking : bookings) {
 	        Date checkInDate = booking.getCheckInDate();
 	        Date checkOutDate = booking.getCheckOutDate();
-	        if (booking.getStatus().equals("upcoming")) {        
-	            if (checkInDate.after(currentDate) || (checkInDate.before(currentDate) && checkOutDate.after(currentDate))) {
-	                upcomingBookings.add(booking);
-	            }
-	        } 
+	        
+	        // Check if the booking's checkInDate is after the current date or if the checkInDate is before the current date and the checkOutDate is after the current date
+	        if (checkInDate.after(currentDate) || (checkInDate.before(currentDate) && checkOutDate.after(currentDate))) {
+	            upcomingBookings.add(booking);
+	        }
 	    }
 	    if (upcomingBookings.isEmpty()) {
 	        return null;
@@ -117,11 +108,12 @@ public class BookingController {
 	    Date currentDate = new Date();
 	    for (Booking booking : bookings) {
 	        Date checkOutDate = booking.getCheckOutDate();
-	        if (booking.getStatus().equals("completed")) {        
-	            if (checkOutDate.before(currentDate)) {
-	            	completedBookings.add(booking);
-	            }
-	        } 
+	        
+	        // Check if the booking's checkOutDate is before the current date
+	        if (checkOutDate.before(currentDate)) {
+	            booking.setStatus("completed");
+	            completedBookings.add(booking);
+	        }
 	    }
 	    if (completedBookings.isEmpty()) {
 	        return null;
@@ -129,5 +121,35 @@ public class BookingController {
 	    return completedBookings;
 	}
 
+
+	/*
+	@PostMapping(value = "/bookings/cancelledBooking/{bookingId}")
+	@ResponseBody
+	public List<Booking> saveCancelledBooking(@RequestBody Booking booking, @PathVariable int bookingId) {
+	    // save the booking to the cancelled bookings list
+	    return bookingService.findByBookingId(bookingId);
+	}
+	*/
+	@PostMapping(value = "/bookings/cancelledBooking/{bookingId}")
+	@ResponseBody
+	public Booking saveCancelledBooking(@PathVariable int bookingId) {
+	    Optional<Booking> optionalBooking = bookingRepository.findById(bookingId);
+	    if (optionalBooking.isPresent()) {
+	        Booking booking = optionalBooking.get();
+	        booking.setStatus("cancelled");
+	        return bookingService.saveBooking(booking);
+	    }
+	    // Handle the case when the booking is not found
+	    // You can throw an exception, return a specific response, or handle it according to your business logic
+	    return null;
+	}
+
+
+	@GetMapping(value = "/bookings/getCancelledBooking/{customerMobile}")
+	@ResponseBody
+	public List<Booking> saveCancelledBookings() {
+	    // save the booking to the cancelled bookings list
+	    return bookingService.getCancelledBookings();
+	}
 	
 }

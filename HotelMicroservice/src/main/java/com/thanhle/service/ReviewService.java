@@ -14,12 +14,7 @@ public interface ReviewService {
 
 	Review saveReviewByHotel(int hotelId, Review re);
 
+	//List<Review> getReviewsByHotelId(int hotelId);
 	
-	/*
-	List<Object[]> getReviewDataByHotelId(int hotelId);
 
-	public List<String> getReviewCommentsByHotelId(int hotelId);
-
-	double getAverageRatingByHotelId(int hotelId);
-	*/
 }

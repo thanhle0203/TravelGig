@@ -59,12 +59,14 @@ public class GatewayController {
    @Autowired
    EmailService emailService;
     
-    @RequestMapping(value = "/searchHotelByName/{searchString}", method = RequestMethod.GET)
-	public JsonNode searchHotel(@PathVariable String searchString, Principal principal){
+
+    @RequestMapping(value = "/searchHotelByName/{searchText}", method = RequestMethod.GET)
+	public JsonNode searchHotel(@PathVariable String searchText, Principal principal){
 		String username = principal.getName();
 		System.out.println("Welcome -----------------" + username);
-		return hotelComponent.findHotelBySearchText(searchString);
+		return hotelComponent.findHotelBySearchText(searchText);
 	}
+	
     
     @RequestMapping(value = "/saveBooking", method=RequestMethod.POST)
     public ResponseEntity<JsonNode> saveBooking(@RequestBody JsonNode json) {
@@ -116,19 +118,30 @@ public class GatewayController {
      	return bookingComponent.findCompletedBookingsByPhone(mobile);
     }
     
-    @RequestMapping(value = "/saveCancelBooking", method=RequestMethod.POST)
-    public ResponseEntity<JsonNode> saveCancelBooking(@RequestBody JsonNode json) {
-    	JsonNode booking = bookingComponent.saveCancelBooking(json);
-    	return new ResponseEntity<>(booking, HttpStatus.OK);
-    }
     
-    @RequestMapping(value = "/getCancelledBookingsByPhone/{mobile}", method = RequestMethod.GET)
+    @RequestMapping(value = "/saveCancelBooking/{bookingId}", method = RequestMethod.POST)
+    public ResponseEntity<JsonNode> saveCancelBooking(@PathVariable String bookingId) {
+        JsonNode booking = bookingComponent.saveCancelBooking(bookingId);
+        return new ResponseEntity<>(booking, HttpStatus.OK);
+    }
+
+    
+    @RequestMapping(value = "/getCancelledBooking/{mobile}", method = RequestMethod.GET)
     public JsonNode findCancelledBookingsByPhone(@PathVariable String mobile, Principal principal){
         String username = principal.getName();
         User user = userService.findByUserName(username);
         mobile = user.getMobile();
         
-        return bookingComponent.findBookingsByPhone(mobile);
+        return bookingComponent.findCancelBookingsByPhone(mobile);
+    }
+    
+    @RequestMapping(value = "/reviews/{hotelId}", method = RequestMethod.GET)
+    public JsonNode findReviews(@PathVariable String hotelId, Principal principal){
+        String username = principal.getName();
+        User user = userService.findByUserName(username);
+        //mobile = user.getMobile();
+        
+        return bookingComponent.findReviewsByHotelId(hotelId);
     }
 
     /*

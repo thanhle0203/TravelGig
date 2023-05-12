@@ -12,9 +12,10 @@ public interface BookingService {
 	public List<Booking> findByCustomerMobile(String customerMobile);
 	Booking saveBooking(Booking booking);
 	public List<Booking> findByBookingId(int bId);
-	Booking saveUpcomingBooking(Booking booking);
-	Booking saveCompletedBooking(Booking booking);
+	
 	Booking saveCancelledBooking(Booking booking);
 	List<Booking> getCancelledBookings();
 	//List<Booking> getBookingsByMobileNo(String mobileNumber);
+	List<Booking> getUpcomingdBookings();
+	List<Booking> getCompleteddBookings();
 }

@@ -1,6 +1,6 @@
 package com.thanhle.domain;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 @Entity
 public class Driver {

@@ -20,7 +20,7 @@ public class Plan {
     private Double totalPrice;
 
     @ManyToOne
-    private AutoInsurance autoInsurance;
+    private IAutoInsurance autoInsurance;
 
     // Constructors, getters and setters...
 
@@ -81,11 +81,11 @@ public class Plan {
         this.totalPrice = totalPrice;
     }
 
-    public AutoInsurance getAutoInsurance() {
+    public IAutoInsurance getAutoInsurance() {
         return autoInsurance;
     }
 
-    public void setAutoInsurance(AutoInsurance autoInsurance) {
+    public void setAutoInsurance(IAutoInsurance autoInsurance) {
         this.autoInsurance = autoInsurance;
     }
 }

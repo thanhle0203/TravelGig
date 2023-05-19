@@ -13,8 +13,8 @@
 </head>
 <body>
     <div class="container">
-        <h1>Auto Insurance</h1>
-        <form id="detailsForm">
+        <h1>Enter Vehicle Information</h1>
+        <form id="vehicleForm">
             <div class="form-group">
                 <label for="vin">Vehicle Identification Number (VIN):</label>
                 <input type="text" class="form-control" id="vin" name="vin">

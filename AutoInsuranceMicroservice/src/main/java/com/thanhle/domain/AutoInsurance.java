@@ -1,7 +1,13 @@
 package com.thanhle.domain;
 
-import jakarta.persistence.*;
 import java.util.List;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
+import jakarta.persistence.JoinColumn;
 
 @Entity
 public class AutoInsurance {
@@ -9,33 +15,28 @@ public class AutoInsurance {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    private int collisionDeductible;
+    private int uninsuredMotoristDeductible;
+    private double totalPrice;
+    private Boolean selected; // Add this field
 
-    private String name;
+    @OneToOne
+    @JoinColumn(name = "plan_id")
+    private AutoPlan autoPlan;
 
-    private String type;
-
-    @Column(length = 2000)
-    private String description;
-
-    private Double maximumCoverage;
-
-    private Double minimumPremium;
-
-    @OneToMany(mappedBy = "autoInsurance", cascade = CascadeType.ALL)
-    private List<Plan> plans;
-
-    // Constructors, getters and setters...
-
-    public AutoInsurance() {}
-
-    public AutoInsurance(String name, String type, String description, Double maximumCoverage, Double minimumPremium) {
-        this.name = name;
-        this.type = type;
-        this.description = description;
-        this.maximumCoverage = maximumCoverage;
-        this.minimumPremium = minimumPremium;
+    // constructors
+    public AutoInsurance() {
     }
 
+    public AutoInsurance(int collisionDeductible, int uninsuredMotoristDeductible, AutoPlan autoPlan, double totalPrice, Boolean selected) {
+        this.collisionDeductible = collisionDeductible;
+        this.uninsuredMotoristDeductible = uninsuredMotoristDeductible;
+        this.autoPlan = autoPlan;
+        this.totalPrice = totalPrice;
+        this.selected = selected;
+    }
+
+    // getters and setters
     public Long getId() {
         return id;
     }
@@ -44,51 +45,46 @@ public class AutoInsurance {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public int getCollisionDeductible() {
+        return collisionDeductible;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setCollisionDeductible(int collisionDeductible) {
+        this.collisionDeductible = collisionDeductible;
     }
 
-    public String getType() {
-        return type;
+    public int getUninsuredMotoristDeductible() {
+        return uninsuredMotoristDeductible;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setUninsuredMotoristDeductible(int uninsuredMotoristDeductible) {
+        this.uninsuredMotoristDeductible = uninsuredMotoristDeductible;
     }
 
-    public String getDescription() {
-        return description;
+    public AutoPlan getAutoPlan() {
+        return autoPlan;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setAutoPlan(AutoPlan autoPlan) {
+		this.autoPlan = autoPlan;
+		
+	}
+
+    public double getTotalPrice() {
+    	return totalPrice;
+    }
+    
+	public void setTotalPrice(double totalPrice) {
+		this.totalPrice = totalPrice;	
+	}
+	
+	public Boolean getSelected() {
+        return this.selected;
     }
 
-    public Double getMaximumCoverage() {
-        return maximumCoverage;
+    public void setSelected(Boolean selected) {
+        this.selected = selected;
     }
 
-    public void setMaximumCoverage(Double maximumCoverage) {
-        this.maximumCoverage = maximumCoverage;
-    }
-
-    public Double getMinimumPremium() {
-        return minimumPremium;
-    }
-
-    public void setMinimumPremium(Double minimumPremium) {
-        this.minimumPremium = minimumPremium;
-    }
-
-    public List<Plan> getPlans() {
-        return plans;
-    }
-
-    public void setPlans(List<Plan> plans) {
-        this.plans = plans;
-    }
+	
 }

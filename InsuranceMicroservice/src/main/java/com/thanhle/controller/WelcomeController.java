@@ -33,12 +33,12 @@ public class WelcomeController {
 	
 	@RequestMapping(value = "/auto")
 	public String auto(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
-	    return "auto";
+	    return "vehicleInfo";
 	}
 	
-	@RequestMapping(value = "/insurerInfo")
+	@RequestMapping(value = "/driverInfo")
 	public String insurerInfo(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
-	    return "insurerInfo";
+	    return "driverInfo";
 	}
 
 
@@ -48,10 +48,18 @@ public class WelcomeController {
 	   return "autoInsurancePlans";
 	}
 	
+	@GetMapping(value = "/autoInsurancePlan")
+	public String autoInsurancePlan(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
+		
+	   return "autoInsurancePlan";
+	}
+	
 	@GetMapping(value = "/autoConfirmationPlan")
 	public String autoConfirmationPlan(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
 		
 	   return "autoConfirmationPlan";
 	}
+	
+
 
 }

@@ -14,6 +14,7 @@ public class MyCustomDsl extends AbstractHttpConfigurer<MyCustomDsl, HttpSecurit
 		// must be done in the init method
 		
 		http.csrf().disable();
+	
 	}
 
 	public MyCustomDsl flag(boolean value) {

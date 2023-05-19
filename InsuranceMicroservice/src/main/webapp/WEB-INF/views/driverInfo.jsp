@@ -8,12 +8,12 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <!-- Include jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="./js/insurerInfo.js"></script>
+    <script src="./js/driverInfo.js"></script>
 </head>
 <body>
     <div class="container">
-        <h1>Insurer Information</h1>
-        <form id="insurerForm">
+        <h1>Enter Driver Information</h1>
+        <form id="driverForm">
             <div class="form-group">
                 <label for="zipCode">Zip Code:</label>
                 <input type="text" class="form-control" id="zipCode" name="zipCode">

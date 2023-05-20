@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" 
-    pageEncoding="ISO-8859-1" %>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,17 +11,17 @@
 
     <!-- jQuery script to fetch data and populate the plan details -->
     <script src="./js/autoInsurancePlan.js"></script>
+
+
 </head>
 <body>
     <div class="container">
         <h1>Select Auto Insurance Plan</h1>
-        <form id="planForm">
+        <form id="planForm" action="/autoConfirmationPlan" method="post">
             <div class="row">
                 <!-- The plan details will be loaded dynamically here -->
             </div>
         </form>
     </div>
-
-    
 </body>
 </html>

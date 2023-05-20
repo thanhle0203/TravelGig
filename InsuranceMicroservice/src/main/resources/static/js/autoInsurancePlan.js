@@ -1,12 +1,13 @@
 $(document).ready(function() {
     $.ajax({
-        url: 'http://localhost:8383/api/auto-plans', // replace with your actual API endpoint
+        url: 'http://localhost:8383/api/auto-plans',
         type: 'GET',
         success: function(data) {
             var planContainer = $(".row");
             data.forEach(function(plan) {
-                var planForm = $("<form></form>").attr("action", "/autoConfirmationPlan").attr("method", "POST");
                 var planDiv = $("<div class='col-md-4 form-group' style='background-color: #f2f2f2; padding: 20px; border-radius: 10px;'></div>");
+                //var planForm = $("<form></form>").attr("action", "/autoConfirmationPlan").attr("method", "POST");
+                var planForm = $("<form></form>").attr("action", "http://localhost:8383/api/auto-insurances/saveSelectedPlan").attr("method", "POST");
                 var planTitle = $("<h4></h4>").text(plan.name + " - " + plan.type);
                 var planDescription = $("<p></p>").text(plan.description);
                 var basePriceLabel = $("<label></label>").text('Base Price:');
@@ -34,6 +35,46 @@ $(document).ready(function() {
 
                 // Append planForm to planContainer
                 planContainer.append(planForm);
+
+                // Handle form submission
+                planForm.on('submit', function(e) {
+                    e.preventDefault();
+
+                    var selectedPlanForm = $(this);
+                    var selectedPlan = {
+                        autoPlan: {
+                            name: selectedPlanForm.find("[name='plan']").val()
+                        },
+                        collisionDeductible: parseInt(selectedPlanForm.find("[name='collisionDeductible']").val()),
+                        uninsuredMotoristDeductible: parseInt(selectedPlanForm.find("[name='uninsuredMotoristDeductible']").val()),
+                        selected: true
+                    };
+
+                    $.ajax({
+                        url: 'http://localhost:8383/api/auto-insurances/saveSelectedPlan',
+                        type: 'POST',
+                        contentType: 'application/json',
+                        data: JSON.stringify(selectedPlan),
+                        success: function(response) {
+                            // If the server's response contains a confirmation message, display that message
+                            if (response.message) {
+                                alert(response.message);
+                                // Redirect to the confirmation page
+                                window.location.href = '/autoConfirmationPlan';
+                            } else {
+                                alert("Error selecting the plan. Please try again later.");
+                            }
+                        },
+                        //error: function() {
+                            //alert("Error selecting the plan. Please try again later.");
+                        //}
+                        error: function(xhr, status, error) {
+    console.log(xhr.responseText); // Log the response from the server
+    alert("Error selecting the plan. Please try again later.");
+}
+
+                    });
+                });
             });
         },
         error: function() {
@@ -41,3 +82,4 @@ $(document).ready(function() {
         }
     });
 });
+

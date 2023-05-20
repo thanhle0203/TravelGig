@@ -10,4 +10,6 @@ public interface AutoInsuranceRepository extends JpaRepository<AutoInsurance, Lo
 
 	List<AutoInsurance> findBySelectedTrue();
 
+	AutoInsurance findByAutoPlanIdAndSelectedTrue(Long autoPlanId);
+
 }

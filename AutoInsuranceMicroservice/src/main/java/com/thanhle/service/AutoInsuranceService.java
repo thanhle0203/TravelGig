@@ -11,7 +11,8 @@ public interface AutoInsuranceService {
     AutoInsurance saveAutoInsurance(AutoInsurance autoInsurance);
     void deleteAutoInsurance(Long id);
     List<AutoInsurance> getSelectedPlan(); 
-	AutoInsurance saveSelectedPlan(AutoInsurance autoInsurance, AutoPlan autoPlan, int collisionDeductible,
-			int uninsuredMotoristDeductible);
 	AutoInsurance saveOrUpdate(AutoInsurance autoInsurance);
+	AutoInsurance saveSelectedPlan(AutoInsurance autoInsurance);
+
+	AutoInsurance getSelectedPlanByAutoId(Long planAutoId);
 }

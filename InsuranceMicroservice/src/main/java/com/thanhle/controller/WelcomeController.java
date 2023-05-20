@@ -5,6 +5,7 @@ import java.security.Principal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -55,11 +56,28 @@ public class WelcomeController {
 	}
 	
 	@GetMapping(value = "/autoConfirmationPlan")
+	public String autoConfirmationPlans(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
+		
+	   return "autoConfirmationPlan";
+	}
+	
+	
+	@PostMapping(value = "/autoConfirmationPlan")
 	public String autoConfirmationPlan(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
 		
 	   return "autoConfirmationPlan";
 	}
 	
-
+	@PostMapping(value = "/autoConfirmation")
+	public String autoConfirmation(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
+		
+	   return "autoConfirmation";
+	}
+	
+	@GetMapping(value = "/autoConfirmation")
+	public String autoConfirmations(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
+		
+	   return "autoConfirmation";
+	}
 
 }

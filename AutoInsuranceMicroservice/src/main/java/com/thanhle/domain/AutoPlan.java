@@ -14,13 +14,13 @@ public class AutoPlan {
     private String name;
     private String type;
     private String description;
-    private Double basePrice;
+    private double basePrice;
 
     // constructors
     public AutoPlan() {
     }
 
-    public AutoPlan(String name, String type, String description, Double basePrice) {
+    public AutoPlan(String name, String type, String description, double basePrice) {
         this.name = name;
         this.type = type;
         this.description = description;
@@ -60,11 +60,23 @@ public class AutoPlan {
         this.description = description;
     }
 
-    public Double getBasePrice() {
+    public double getBasePrice() {
         return basePrice;
     }
 
-    public void setBasePrice(Double basePrice) {
+    public void setBasePrice(double basePrice) {
         this.basePrice = basePrice;
+    }
+    
+    // Factory method to create an AutoPlan instance from a name string
+    public static AutoPlan fromString(String name) {
+        if (name.equals("ComprehensivePlan")) {
+            return new AutoPlan(name, "Full Coverage", "Comprehensive coverage including collision, liability, uninsured motorist protection, and roadside assistance. Ideal for new, high-value cars.", 2000);
+        } else if (name.equals("PlusPlan")) {
+            return new AutoPlan(name, "Partial Coverage", "Balanced coverage including collision and liability protection. Suitable for medium-value cars or drivers wanting a balance between cost and coverage.", 1500);
+        } else if (name.equals("BasicPlan")) {
+            return new AutoPlan(name, "Basic Coverage", "Minimum coverage meeting state requirements, typically including liability coverage only. Suitable for older, low-value cars or drivers needing economical options.", 1000);
+        }
+        return null;
     }
 }

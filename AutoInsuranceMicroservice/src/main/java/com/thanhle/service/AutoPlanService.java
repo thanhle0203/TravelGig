@@ -9,6 +9,7 @@ public interface AutoPlanService {
 	public AutoPlan getPlanById(Long id);
 	public AutoPlan savePlan(AutoPlan autoPlan);
 	public void deletePlan(Long id);
+	public AutoPlan findByName(String name);
 	
 
 }

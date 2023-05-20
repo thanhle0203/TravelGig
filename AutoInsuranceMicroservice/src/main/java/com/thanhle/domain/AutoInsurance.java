@@ -2,6 +2,8 @@ package com.thanhle.domain;
 
 import java.util.List;
 
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -18,10 +20,13 @@ public class AutoInsurance {
     private int collisionDeductible;
     private int uninsuredMotoristDeductible;
     private double totalPrice;
-    private Boolean selected; // Add this field
+    
+    @Column(nullable = false)
+    private Boolean selected; 
 
-    @OneToOne
-    @JoinColumn(name = "plan_id")
+
+    @OneToOne(cascade = CascadeType.PERSIST)
+    @JoinColumn()
     private AutoPlan autoPlan;
 
     // constructors
@@ -37,7 +42,7 @@ public class AutoInsurance {
     }
 
     // getters and setters
-    public Long getId() {
+    public long getId() {
         return id;
     }
 

@@ -1,56 +1,119 @@
-/*
-$(document).ready(function() {
-// Handle button click
-     $("#planForm").submit(function(e) {
-        e.preventDefault(); // prevent form from submitting the default way
-        window.location.href = '/autoConfirmationPlan';
-     });
-});
-*/ 
 
+    $(document).ready(function() {
+        // Submit form on button click
+        $("button[type='submit']").on("click", function(e) {
+            e.preventDefault();
+            //var planAutoId = $(this).data("plan-auto-id"); // Get the planAutoId from the data attribute
+            var selectedPlanName = $(this).val();
+            $("#planForm").append('<input type="hidden" name="selectedPlanName" value="' + selectedPlanName + '">');
+        	//$("#planForm").append('<input type="hidden" name="planAutoId" value="' + planAutoId + '">'); // Append the planAutoId as a hidden input field
+        	$("#planForm").submit();
+        });
 
-$(document).ready(function() {
-    $('#planForm').on('submit', function(event) {
-        event.preventDefault(); // prevent the form from submitting normally
+        // Handle form submission
+        $("#planForm").on("submit", function(e) {
+            e.preventDefault();
 
-        var selectedPlan = $('button[type=submit][clicked=true]').val();
-        var collisionDeductible;
-        var uninsuredMotoristDeductible;
+            var selectedPlan = $("button[type='submit']").val();
+            var collisionDeductible = parseInt($("#collisionDeductible").val());
+            var uninsuredMotoristDeductible = parseInt($("#uninsuredMotoristDeductible").val());
 
-        // Get the selected deductibles based on the selected plan
-        switch (selectedPlan) {
-            case 'PlanA':
-                collisionDeductible = $('#collisionDeductibleA').val();
-                uninsuredMotoristDeductible = $('#uninsuredMotoristDeductibleA').val();
-                break;
-            case 'PlanB':
-                collisionDeductible = $('#collisionDeductibleB').val();
-                break;
-            case 'PlanC':
-                // Plan C does not have deductibles
-                break;
+            // Create the data object
+            var data = {
+                autoPlan: selectedPlan,
+                collisionDeductible: collisionDeductible,
+                uninsuredMotoristDeductible: uninsuredMotoristDeductible
+            };
+
+            // Send the AJAX request
+            $.ajax({
+                url: "http://localhost:8383/api/auto-insurances/saveSelectedPlan",
+                type: "POST",
+                contentType: "application/json",
+                data: JSON.stringify(data),
+                
+               success: function(response) {
+    // Handle success response here
+    console.log("Selected plan saved successfully:", response);
+
+    // Get the autoPlan object from the response
+    var autoPlan = response.autoPlan;
+    if (autoPlan) {
+        var planAutoId = autoPlan.id;
+
+        // Send the AJAX request to retrieve the confirmed plan details
+        $.ajax({
+            url: "http://localhost:8383/api/auto-insurances/selected-plans/" + planAutoId,
+            type: "GET",
+            
+            /*
+            success: function(data) {
+    // Handle the success response and display the plan confirmation details
+    var planConfirmation = $("#planConfirmation");
+
+    // Clear the existing content
+    planConfirmation.empty();
+
+    var planTitle = $("<h4></h4>").text(data.autoPlan.name + " - " + data.autoPlan.type);
+    var planDescription = $("<p></p>").text(data.autoPlan.description);
+    var basePrice = $("<h5></h5>").text('Base Price: $' + data.autoPlan.basePrice.toFixed(2) + '/year');
+    var collisionDeductible = $("<h5></h5>").text('Collision Deductible: $' + data.collisionDeductible.toFixed(2));
+    var uninsuredMotoristDeductible = $("<h5></h5>").text('Uninsured Motorist Deductible: $' + data.uninsuredMotoristDeductible.toFixed(2));
+    var totalPrice = $("<h5></h5>").text('Total Price: $' + data.totalPrice.toFixed(2) + '/year');
+
+    // Append these elements to the planConfirmation div
+   planConfirmation.append(planTitle, planDescription, basePrice, collisionDeductible, uninsuredMotoristDeductible, totalPrice);
+	},
+	*/
+		success: function(data) {
+    // Handle the success response and redirect to autoConfirmation.jsp with plan details
+    var planDetails = {
+        planTitle: data.autoPlan.name + " - " + data.autoPlan.type,
+        planDescription: data.autoPlan.description,
+        basePrice: data.autoPlan.basePrice.toFixed(2),
+        collisionDeductible: data.collisionDeductible.toFixed(2),
+        uninsuredMotoristDeductible: data.uninsuredMotoristDeductible.toFixed(2),
+        totalPrice: data.totalPrice.toFixed(2)
+    };
+
+    // Set planDetails as a request attribute
+    $.ajax({
+        url: "/autoConfirmation",
+        type: "POST",
+        data: planDetails,
+        success: function(response) {
+            // Redirect to autoConfirmation.jsp
+            window.location.href = "/autoConfirmation";
+        },
+        error: function(error) {
+            // Handle error response here
+            console.log("Error redirecting to autoConfirmation.jsp:", error);
+            // Show error message
         }
+    });
+},
 
-        // Build the data to send
-        var data = {
-            plan: selectedPlan,
-            collisionDeductible: collisionDeductible,
-            uninsuredMotoristDeductible: uninsuredMotoristDeductible
-        };
+            
+            error: function() {
+                alert("Error loading confirmed plan details. Please try again later.");
+            }
+        });
+    } else {
+        // Handle the case when autoPlan is undefined or null
+        alert("Error: Missing autoPlan object in the response.");
+    }
+},
 
-        // Send the data to the server
-        $.post('autoConfirmationPlan.jsp', data, function(response) {
-            // Handle the server response here
-            // For example, you could display a confirmation message
-            alert('Plan selected successfully!');
 
-            // Or redirect to another page
-            window.location.href = '/autoConfirmationPlan';
+                error: function(error) {
+                    // Handle error response here
+                    console.log("Error saving selected plan:", error);
+                    // Show error message
+                }
+                
+                
+                
+            });
         });
     });
 
-    $('button[type=submit]').click(function() {
-        $('button[type=submit]').removeAttr('clicked');
-        $(this).attr('clicked', 'true');
-    });
-});

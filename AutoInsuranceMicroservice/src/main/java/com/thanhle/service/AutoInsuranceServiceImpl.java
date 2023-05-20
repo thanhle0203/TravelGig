@@ -48,13 +48,12 @@ public class AutoInsuranceServiceImpl implements AutoInsuranceService {
     
     @Override
     public AutoInsurance saveSelectedPlan(AutoInsurance autoInsurance) {
-        // Extract the AutoPlan, collisionDeductible, and uninsuredMotoristDeductible from the autoInsurance object
         AutoPlan autoPlan = autoInsurance.getAutoPlan();
         if (autoPlan != null) {
             String planName = autoPlan.getName();
             if (planName.equalsIgnoreCase("Comprehensive Plan") || planName.equalsIgnoreCase("ComprehensivePlan")) {
                 autoPlan.setType("Full Coverage");
-                autoPlan.setDescription("Comprehensive coverage including collision, liability, uninsured motorist protection, and roadside assistance. Ideal for new, high-value cars.");
+                autoPlan.setDescription("Comprehensive coverage including collision, liability, uninsured motorist protection, medical bills, car rental, and roadside assistance. Ideal for new, high-value cars.");
                 autoPlan.setBasePrice(2000);
             } else if (planName.equalsIgnoreCase("Plus Plan") || planName.equalsIgnoreCase("PlusPlan")) {
                 autoPlan.setType("Partial Coverage");
@@ -70,22 +69,19 @@ public class AutoInsuranceServiceImpl implements AutoInsuranceService {
         int collisionDeductible = autoInsurance.getCollisionDeductible();
         int uninsuredMotoristDeductible = autoInsurance.getUninsuredMotoristDeductible();
 
-        // First, calculate the total price based on the selected deductibles
+        // Calculate the total price based on the selected deductibles
         double totalPrice = autoPlan.getBasePrice();
-        if (collisionDeductible == 1000 || uninsuredMotoristDeductible == 1000) {
-            // At least one deductible is 1000, so we increase the price by 1.1
-            totalPrice *= 1.1;
-        } else if (collisionDeductible == 1000 && uninsuredMotoristDeductible == 1000) {
-            totalPrice *= 1.2;
+        if (collisionDeductible == 1000 && uninsuredMotoristDeductible == 1000) {
+            totalPrice *= 1.2; 
+        } else if (collisionDeductible == 1000 || uninsuredMotoristDeductible == 1000) {
+            totalPrice *= 1.1; 
         }
 
         autoInsurance.setSelected(true);
         autoInsurance.setCollisionDeductible(collisionDeductible);
         autoInsurance.setUninsuredMotoristDeductible(uninsuredMotoristDeductible);
-        // Set the total price of the auto insurance
         autoInsurance.setTotalPrice(totalPrice);
 
-        // Then, save the auto insurance and return it
         return autoInsuranceRepository.save(autoInsurance);
     }
 

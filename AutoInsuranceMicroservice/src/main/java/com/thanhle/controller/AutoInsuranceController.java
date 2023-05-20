@@ -24,10 +24,12 @@ public class AutoInsuranceController {
         return new ResponseEntity<>(autoInsuranceService.getAllAutoInsurances(), HttpStatus.OK);
     }
 
+    /*
     @GetMapping("/{id}")
-    public ResponseEntity<AutoInsurance> getAutoInsuranceById(@PathVariable Long id) {
+    public ResponseEntity<AutoInsurancae> getAutoInsuranceById(@PathVariable Long id) {
         return new ResponseEntity<>(autoInsuranceService.getAutoInsuranceById(id), HttpStatus.OK);
     }
+    */
 
     @PostMapping
     public ResponseEntity<AutoInsurance> saveAutoInsurance(@RequestBody AutoInsurance autoInsurance) {
@@ -91,6 +93,7 @@ public class AutoInsuranceController {
     
     @PostMapping("/saveSelectedPlan")
     public ResponseEntity<AutoInsurance> saveSelectedPlan(@RequestBody AutoInsurance autoInsurance) {
+    
         AutoInsurance savedInsurance = autoInsuranceService.saveSelectedPlan(autoInsurance);
         if (savedInsurance != null) {
             return ResponseEntity.ok().body(savedInsurance);

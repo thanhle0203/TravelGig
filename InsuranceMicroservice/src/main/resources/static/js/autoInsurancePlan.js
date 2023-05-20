@@ -46,6 +46,7 @@ $(document).ready(function() {
                             name: selectedPlanForm.find("[name='plan']").val()
                         },
                         collisionDeductible: parseInt(selectedPlanForm.find("[name='collisionDeductible']").val()),
+               
                         uninsuredMotoristDeductible: parseInt(selectedPlanForm.find("[name='uninsuredMotoristDeductible']").val()),
                         selected: true
                     };

@@ -42,7 +42,7 @@ public class AutoInsurance {
     }
 
     // getters and setters
-    public long getId() {
+    public Long getId() {
         return id;
     }
 

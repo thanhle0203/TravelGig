@@ -19,6 +19,11 @@ public class AutoPlan {
     // constructors
     public AutoPlan() {
     }
+    
+    public AutoPlan(String name) {
+        this.name = name;
+    }
+
 
     public AutoPlan(String name, String type, String description, double basePrice) {
         this.name = name;
@@ -69,6 +74,7 @@ public class AutoPlan {
     }
     
     // Factory method to create an AutoPlan instance from a name string
+    /*
     public static AutoPlan fromString(String name) {
         if (name.equals("ComprehensivePlan")) {
             return new AutoPlan(name, "Full Coverage", "Comprehensive coverage including collision, liability, uninsured motorist protection, and roadside assistance. Ideal for new, high-value cars.", 2000);
@@ -79,4 +85,6 @@ public class AutoPlan {
         }
         return null;
     }
+    */
+  
 }

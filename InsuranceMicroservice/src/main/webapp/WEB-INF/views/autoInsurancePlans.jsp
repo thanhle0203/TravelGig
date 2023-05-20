@@ -19,64 +19,70 @@
             <div class="row">
                 <div class="col-md-4" style="background-color: #f2f2f2; padding: 20px; border-radius: 10px;">
                     <div class="form-group">
-                        <h4 id="name">Comprehensive Plan</h4>
-                        <h4 id="type">Full Coverage</h4>
-                        <p id="description">Comprehensive coverage including collision, liability, uninsured motorist protection, and roadside assistance. Ideal for new, high-value cars.</p>
-                        <label for="collisionDeductible">Collision Deductible:</label>
-                        <select id="collisionDeductible" name="collisionDeductible">
+                        <h4>Comprehensive Plan</h4>
+                        <h4>Full Coverage</h4>
+                        <p>Comprehensive coverage including collision, liability, uninsured motorist protection, and roadside assistance. Ideal for new, high-value cars.</p>
+                        <label for="collisionDeductible1">Collision Deductible:</label>
+                        <select id="collisionDeductible1" name="collisionDeductible1">
+                            <option value="0" selected>$0</option>
                             <option value="500">$500</option>
                             <option value="1000">$1000</option>
                         </select>
-                        <label for="uninsuredMotoristDeductible">Uninsured Motorist Protection Deductible:</label>
-                        <select id="uninsuredMotoristDeductible" name="uninsuredMotoristDeductible">
+                        <label for="uninsuredMotoristDeductible1">Uninsured Motorist Protection Deductible:</label>
+                        <select id="uninsuredMotoristDeductible1" name="uninsuredMotoristDeductible1">
+                            <option value="0" selected>$0</option>
                             <option value="500">$500</option>
                             <option value="1000">$1000</option>
                         </select>
-                        <h5 id="basePrice">Base Price: $2000/year</h5>
+                        
+                        <h5>Base Price: $2000/year</h5>
                         <BR>
                         </BR>
                         <br><br>
-                        <button type="submit" class="btn btn-primary" name="autoPlan" value="ComprehensivePlan" data-plan-auto-id="1">Select</button>
+                        <button type="button" class="btn btn-primary select-plan" data-plan="ComprehensivePlan">Select</button>
                     </div>
                 </div>
+
                 <div class="col-md-4" style="background-color: #d9d9d9; padding: 20px; border-radius: 10px;">
                     <div class="form-group">
-                        <h4 id="name">Plus Plan</h4>
-                        <h4 id="type">Partial Coverage</h4>
-                        <p id="description">Balanced coverage including collision and liability protection. Suitable for medium-value cars or drivers wanting a balance between cost and coverage.</p>
-                        <label for="collisionDeductible">Collision Deductible:</label>
-                        <select id="collisionDeductible" name="collisionDeductible">
-                            <option value="500">$500</option>
-                            <option value="1000">$1000</option>
-                        </select>
-                        <label for="uninsuredMotoristDeductible">Uninsured Motorist Protection Deductible:</label>
-                        <select id="uninsuredMotoristDeductible" name="uninsuredMotoristDeductible">
-                            <option value="500">$500</option>
-                            <option value="1000">$1000</option>
-                        </select>
-                        <h5 id="basePrice">Base Price: $1500/year</h5>
-                        <BR>
-                        </BR>
-                        <br><br>
-                        <button type="submit" class="btn btn-primary" name="autoPlan" value="PlusPlan" data-plan-auto-id="2">Select</button>
+                      <h4>Plus Plan</h4>
+                      <h4>Partial Coverage</h4>
+                      <p>Balanced coverage including collision                       and liability protection. Suitable for medium-value cars or drivers wanting a balance between cost and coverage.</p>
+                      <label for="collisionDeductible2">Collision Deductible:</label>
+                      <select id="collisionDeductible2" name="collisionDeductible2">
+                        <option value="0" selected>$0</option>
+                        <option value="500">$500</option>
+                        <option value="1000">$1000</option>
+                      </select>
+                      <label for="uninsuredMotoristDeductible2">Uninsured Motorist Protection Deductible:</label>
+                      <select id="uninsuredMotoristDeductible2" name="uninsuredMotoristDeductible2">
+                        <option value="0" selected>$0</option>
+                        <option value="500">$500</option>
+                        <option value="1000">$1000</option>
+                      </select>
+                      <h5>Base Price: $1500/year</h5>
+                      <BR></BR>
+                      <br><br>
+                      <button type="button" class="btn btn-primary select-plan" data-plan="PlusPlan">Select</button>
                     </div>
-                </div>
+                  </div>
+                  
                 <div class="col-md-4" style="background-color: #bfbfbf; padding: 20px; border-radius: 10px;">
                     <div class="form-group">
-                        <h4 id="name">Basic Plan</h4>
-                        <h4 id="type">Basic Coverage</h4>
-                        <p id="description">Minimum coverage meeting state requirements, typically including liability coverage only. Suitable for older, low-value cars or drivers needing economical options.</p>
+                        <h4>Basic Plan</h4>
+                        <h4>Basic Coverage</h4>
+                        <p>Minimum coverage meeting state requirements, typically including liability coverage only. Suitable for older, low-value cars or drivers needing economical options.</p>
                         
-                        <h5 id="basePrice">Base Price: $1000/year</h5>
+                        <h5>Base Price: $1000/year</h5>
                         <BR>
                         </BR>
                         <br><br>
-                        <button type="submit" class="btn btn-primary" name="autoPlan" value="PlusPlan" data-plan-auto-id="3">Select</button>
+                        <button type="button" class="btn btn-primary select-plan" data-plan="BasicPlan">Select</button>
                     </div>
                 </div>
             </div>
             <div id="planConfirmation">
-                
+
             </div>
         </form>
     </div>

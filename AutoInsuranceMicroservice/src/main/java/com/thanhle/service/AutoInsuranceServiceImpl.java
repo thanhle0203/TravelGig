@@ -51,45 +51,45 @@ public class AutoInsuranceServiceImpl implements AutoInsuranceService {
         // Extract the AutoPlan, collisionDeductible, and uninsuredMotoristDeductible from the autoInsurance object
         AutoPlan autoPlan = autoInsurance.getAutoPlan();
         if (autoPlan != null) {
-            if (autoPlan.getName().equals("Comprehensive Plan")) {
+            String planName = autoPlan.getName();
+            if (planName.equalsIgnoreCase("Comprehensive Plan") || planName.equalsIgnoreCase("ComprehensivePlan")) {
                 autoPlan.setType("Full Coverage");
                 autoPlan.setDescription("Comprehensive coverage including collision, liability, uninsured motorist protection, and roadside assistance. Ideal for new, high-value cars.");
                 autoPlan.setBasePrice(2000);
-            } else if (autoPlan.getName().equals("Plus Plan")) {
+            } else if (planName.equalsIgnoreCase("Plus Plan") || planName.equalsIgnoreCase("PlusPlan")) {
                 autoPlan.setType("Partial Coverage");
                 autoPlan.setDescription("Balanced coverage including collision and liability protection. Suitable for medium-value cars or drivers wanting a balance between cost and coverage.");
                 autoPlan.setBasePrice(1500);
-            } else if (autoPlan.getName().equals("Basic Plan")) {
+            } else if (planName.equalsIgnoreCase("Basic Plan") || planName.equalsIgnoreCase("BasicPlan")) {
                 autoPlan.setType("Basic Coverage");
                 autoPlan.setDescription("Minimum coverage meeting state requirements, typically including liability coverage only. Suitable for older, low-value cars or drivers needing economical options.");
                 autoPlan.setBasePrice(1000);
             }
         }
-        
+
         int collisionDeductible = autoInsurance.getCollisionDeductible();
         int uninsuredMotoristDeductible = autoInsurance.getUninsuredMotoristDeductible();
 
         // First, calculate the total price based on the selected deductibles
         double totalPrice = autoPlan.getBasePrice();
-        if (collisionDeductible == 1000 && uninsuredMotoristDeductible == 1000) {
-            // Both deductibles are 1000, so we increase the price by 1.2
-            totalPrice *= 1.2;
-        } else if (collisionDeductible == 1000 || uninsuredMotoristDeductible == 1000) {
-            // Only one deductible is 1000, so we increase the price by 1.1
+        if (collisionDeductible == 1000 || uninsuredMotoristDeductible == 1000) {
+            // At least one deductible is 1000, so we increase the price by 1.1
             totalPrice *= 1.1;
+        } else if (collisionDeductible == 1000 && uninsuredMotoristDeductible == 1000) {
+            totalPrice *= 1.2;
         }
 
+        autoInsurance.setSelected(true);
         autoInsurance.setCollisionDeductible(collisionDeductible);
         autoInsurance.setUninsuredMotoristDeductible(uninsuredMotoristDeductible);
-        autoInsurance.setSelected(true);
-
         // Set the total price of the auto insurance
         autoInsurance.setTotalPrice(totalPrice);
 
         // Then, save the auto insurance and return it
         return autoInsuranceRepository.save(autoInsurance);
     }
-    
+
+
     @Override
     public AutoInsurance getSelectedPlanByAutoId(Long planAutoId) {
         return autoInsuranceRepository.findByAutoPlanIdAndSelectedTrue(planAutoId);

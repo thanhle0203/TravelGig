@@ -45,7 +45,7 @@ $(document).ready(function() {
           url: "http://localhost:8383/api/auto-insurances/selected-plans/" + response.autoPlan.id,
           success: function(planDetails) {
             // Handle the success response
-            console.log("Fetched auto plan details successfully:", planDetails);
+           // console.log("Fetched auto plan details successfully:", planDetails);
             // update the UI with the plan details and total price
             /*
             $("#confirmation-details").html("<h2>Auto Plan Details</h2>" +

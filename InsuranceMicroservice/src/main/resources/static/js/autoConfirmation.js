@@ -12,4 +12,12 @@ $(document).ready(function() {
   $("#collisionDeductible").text(collisionDeductible);
   $("#uninsuredMotoristDeductible").text(uninsuredMotoristDeductible);
   $("#totalPrice").text(totalPrice);
+  
+  // Handle button click
+     $("#confirmButton").on("click", function(e) {
+        e.preventDefault(); // prevent form from submitting the default way
+       window.location.href = '/submitDocument';
+        //window.location.href = '/autoInsurancePlan';
+     
+     });
 });

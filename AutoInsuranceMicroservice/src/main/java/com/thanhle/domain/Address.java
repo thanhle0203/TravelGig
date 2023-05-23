@@ -16,23 +16,19 @@ public class Address {
     
     private String state;
     
-    private String zip;
-
-    @OneToOne(mappedBy = "address")
-    private Insurer insurer;
+    private String zipCode;
     
     public Address() {
     	super();
     }
     
-    public Address(Long id, String street, String city, String state, String zip, Insurer insurer) {
+    public Address(String street, String city, String state, String zipCode) {
     	super();
-        this.id = id;
         this.street = street;
         this.city = city;
         this.state = state;
-        this.zip = zip;
-        this.insurer = insurer;
+        this.zipCode = zipCode;
+      
     }
 
 
@@ -68,19 +64,12 @@ public class Address {
         this.state = state;
     }
 
-    public String getZip() {
-        return zip;
+    public String getZipCode() {
+        return zipCode;
     }
 
-    public void setZip(String zip) {
-        this.zip = zip;
+    public void setZip(String zipCode) {
+        this.zipCode = zipCode;
     }
 
-    public Insurer getInsurer() {
-        return insurer;
-    }
-
-    public void setInsurer(Insurer insurer) {
-        this.insurer = insurer;
-    }
 }

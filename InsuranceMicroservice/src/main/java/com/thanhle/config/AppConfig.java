@@ -21,6 +21,7 @@ public class AppConfig {
 		InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
 		viewResolver.setPrefix("/WEB-INF/views/");
 		viewResolver.setSuffix(".jsp");
+		//viewResolver.setSuffix(".jsp", ".png");
 		viewResolver.setViewClass(JstlView.class);
 		return viewResolver;
 	}

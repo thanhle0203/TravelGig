@@ -46,8 +46,8 @@ $(document).ready(function() {
           success: function(planDetails) {
             // Handle the success response
             console.log("Fetched auto plan details successfully:", planDetails);
-            // You can update the UI with the plan details and total price
-            // For example:
+            // update the UI with the plan details and total price
+            /*
             $("#confirmation-details").html("<h2>Auto Plan Details</h2>" +
               "<p>Plan Name: " + planDetails.autoPlan.name + "</p>" +
               "<p>Type: " + planDetails.autoPlan.type + "</p>" +
@@ -55,6 +55,20 @@ $(document).ready(function() {
               "<p>Collision Deductible: $" + planDetails.collisionDeductible + "</p>" +
               "<p>Uninsured Motorist Deductible: $" + planDetails.uninsuredMotoristDeductible + "</p>" +
               "<p>Total Price: $" + planDetails.totalPrice + "</p>");
+              */
+			 
+			 // Populate the modal body with the auto plan details
+            var modalBody = $("#confirmationModal").find(".modal-body");
+            modalBody.html("<h2>Auto Plan Details</h2>" +
+                "<p>Plan Name: " + planDetails.autoPlan.name + "</p>" +
+                "<p>Type: " + planDetails.autoPlan.type + "</p>" +
+                "<p>Description: " + planDetails.autoPlan.description + "</p>" +
+                "<p>Collision Deductible: $" + planDetails.collisionDeductible + "</p>" +
+                "<p>Uninsured Motorist Deductible: $" + planDetails.uninsuredMotoristDeductible + "</p>" +
+                "<p>Total Price: $" + planDetails.totalPrice + "</p>");
+            
+            // Open the modal
+            $("#confirmationModal").modal("show");
           },
           error: function(xhr, status, error) {
             // Handle the error response

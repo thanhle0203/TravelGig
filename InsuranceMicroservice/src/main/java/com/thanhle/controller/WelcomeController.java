@@ -79,5 +79,17 @@ public class WelcomeController {
 		
 	   return "autoConfirmation";
 	}
+	
+	@GetMapping(value = "/submitDocument")
+	public String submitDocument(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
+		
+	   return "submitDocument";
+	}
+	
+	@GetMapping(value = "/admin")
+	public String admin(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
+		
+	   return "admin";
+	}
 
 }

@@ -11,7 +11,11 @@
     <!-- Include Bootstrap JavaScript -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script src="./js/autoInsurancePlans.js"></script>
-    <style>
+    <!-- Include navbar.css -->
+   <link rel="stylesheet" href="/css/navbar.css">
+   <!-- Include footer.css -->
+   <link rel="stylesheet" href="/css/footer.css">
+    <style>    
         .card {
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
         }
@@ -30,8 +34,11 @@
     </style>
 </head>
 <body>
+    <!-- Include navbar.jsp -->
+    <jsp:include page="navbar.jsp" />
+
     <div class="container">
-        <h1 class="mt-5 mb-4">Select Auto Insurance Plan</h1>
+        <h1 class="mt-3 mb-4 mt-4">Select Auto Insurance Plan</h1>
         <div class="card-deck">
             <div class="card bg-light-gray">
                 <div class="card-body">
@@ -102,6 +109,10 @@
             </div>
         </div>
     </div>
+    
+    <!-- Include footer.jsp -->
+    <jsp:include page="footer.jsp" />
+
 </body>
 </html>
 

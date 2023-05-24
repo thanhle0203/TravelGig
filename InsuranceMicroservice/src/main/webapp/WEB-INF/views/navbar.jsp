@@ -14,7 +14,11 @@
                 <a class="nav-link" href="#">Manage Insurance</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Sign In</a>
+                <% if (request.getUserPrincipal() == null) { %>
+                    <a class="nav-link" href="/login">Sign In</a>
+                <% } else { %>
+                    <a class="nav-link" href="/logout">Log Out</a>
+                <% } %>
             </li>
         </ul>
     </div>

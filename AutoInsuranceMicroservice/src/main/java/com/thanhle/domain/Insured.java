@@ -17,28 +17,27 @@ public class Insured {
 
     private String phone;
     
-    @Lob
-    private byte[] driverLicense;
-
-
     private Integer drivingRecord;
 
     @OneToOne(cascade = CascadeType.ALL)
     private Address address;
+    
+    @OneToOne(cascade = CascadeType.ALL)
+    private Document document;
 
     public Insured() {
         super();
     }
 
-    public Insured(String name, String email, String dob, String phone, byte[] driverLicense, Integer drivingRecord, Address address) {
+    public Insured(String name, String email, String dob, String phone, Integer drivingRecord, Address address, Document document) {
         super();
         this.name = name;
         this.email = email;
         this.dob = dob;
         this.phone = phone;
-        this.driverLicense = driverLicense;
         this.drivingRecord = drivingRecord;
         this.address = address;
+        this.document = document;
     }
 
     public Long getId() {
@@ -81,13 +80,6 @@ public class Insured {
         this.phone = phone;
     }
 
-    public byte[] getDriverLicense() {
-        return driverLicense;
-    }
-
-    public void setDriverLicense(byte[] driverLicense) {
-        this.driverLicense = driverLicense;
-    }
 
     public Integer getDrivingRecord() {
         return drivingRecord;
@@ -103,5 +95,13 @@ public class Insured {
 
     public void setAddress(Address address) {
         this.address = address;
+    }
+    
+    public Document getDocuement() {
+    	return document;
+    }
+    
+    public void setDocument(Document document) {
+    	this.document = document;
     }
 }

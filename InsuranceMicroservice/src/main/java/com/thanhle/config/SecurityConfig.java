@@ -47,17 +47,45 @@ public class SecurityConfig {
 	
 
 
+	
 	@Bean 
 	public SecurityFilterChain apiFilterChain2(HttpSecurity http) throws Exception {
 		http
 		.apply(MyCustomDsl.customDsl()).flag(true).and()
 		.authorizeRequests().requestMatchers("/home/**", "", "/signup", "/login").permitAll().and()
-		//.authorizeRequests().requestMatchers(("/home")).hasAnyRole("USER", "ADMIN")
-		//.and().formLogin().loginPage("/login").defaultSuccessUrl("/welcome").permitAll();
-		.authorizeRequests().requestMatchers(("/welcome")).hasAnyRole("USER", "ADMIN")
-		.and().formLogin().loginPage("/login").defaultSuccessUrl("/home").permitAll();
+		.authorizeRequests().requestMatchers(("/")).hasAnyRole("USER", "ADMIN")
+		.and().formLogin().loginPage("/login").defaultSuccessUrl("/").permitAll()
+		.and()
+	        .logout()
+	            .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
+	            .logoutSuccessUrl("/home")
+	            .invalidateHttpSession(true)
+	            .deleteCookies("JSESSIONID")
+	            .permitAll();
 		return http.build();
 	}
 	
+	/*
+	protected void configure(HttpSecurity http) throws Exception {
+	    http
+	        .authorizeRequests()
+	            .antMatchers("/home/**", "", "/signup", "/login").permitAll()
+	            .antMatchers("/welcomes").hasAnyRole("USER", "ADMIN")
+	            .anyRequest().authenticated()
+	        .and()
+	        .formLogin()
+	            .loginPage("/login")
+	            .defaultSuccessUrl("/")
+	            .permitAll()
+	        .and()
+	        .logout()
+	            .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
+	            .logoutSuccessUrl("/home")
+	            .invalidateHttpSession(true)
+	            .deleteCookies("JSESSIONID")
+	            .permitAll();
+	}
+	*/
+
 
 }

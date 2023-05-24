@@ -52,7 +52,7 @@ public class SecurityConfig {
 		http
 		.apply(MyCustomDsl.customDsl()).flag(true).and()
 		.authorizeRequests().requestMatchers("/home/**", "", "/signup", "/login").permitAll().and()
-		.authorizeRequests().requestMatchers(("/home")).hasAnyRole("USER", "ADMIN")
+		.authorizeRequests().requestMatchers(("/welcome")).hasAnyRole("USER", "ADMIN")
 		.and().formLogin().loginPage("/login").defaultSuccessUrl("/welcome").permitAll();
 		return http.build();
 	}

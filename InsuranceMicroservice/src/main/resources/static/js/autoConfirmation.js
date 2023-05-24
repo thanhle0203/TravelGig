@@ -16,8 +16,7 @@ $(document).ready(function() {
   // Handle button click
      $("#confirmButton").on("click", function(e) {
         e.preventDefault(); // prevent form from submitting the default way
-       window.location.href = '/submitDocument';
-        //window.location.href = '/autoInsurancePlan';
+       window.location.href = '/insuredInfo';
      
      });
 });

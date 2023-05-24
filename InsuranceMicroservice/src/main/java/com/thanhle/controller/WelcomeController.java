@@ -20,8 +20,8 @@ public class WelcomeController {
 	    return "home";
 	}
 	
-	@RequestMapping(value = "/welcome")
-	public String welcome(Principal principal, Model model) {
+	@RequestMapping(value = {"/welcomes", "/"})
+	public String welcome(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Principal principal, Model model) {
 		if (principal != null) {
 			System.out.print("Welcome to Controller: " + principal.getName());
 			model.addAttribute("username", principal.getName());
@@ -29,6 +29,7 @@ public class WelcomeController {
 		else {
 			model.addAttribute("user", null);
 		}
+		
 		return "insurance";
 	}
 	
@@ -80,10 +81,16 @@ public class WelcomeController {
 	   return "autoConfirmation";
 	}
 	
-	@GetMapping(value = "/submitDocument")
+	@GetMapping(value = "/document")
 	public String submitDocument(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
 		
-	   return "submitDocument";
+	   return "document";
+	}
+	
+	@GetMapping(value = "/insuredInfo")
+	public String insuredInfo(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
+		
+	   return "insuredInfo";
 	}
 	
 	@GetMapping(value = "/admin")

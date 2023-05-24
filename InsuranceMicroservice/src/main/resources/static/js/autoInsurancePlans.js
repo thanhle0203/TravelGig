@@ -30,7 +30,8 @@ $(document).ready(function() {
     // Send an AJAX request to the server to save the selected plan
     $.ajax({
       type: "POST",
-      url: "http://localhost:8383/api/auto-insurances/saveSelectedPlan",
+      //url: "http://localhost:8383/api/auto-insurances/saveSelectedPlan",
+      url: "http://localhost:8282/savedPlan",
       contentType: "application/json",
       data: JSON.stringify(selectedPlan),
       success: function(response) {
@@ -42,7 +43,8 @@ $(document).ready(function() {
         // Fetch the details of the saved auto plan and total price
         $.ajax({
           type: "GET",
-          url: "http://localhost:8383/api/auto-insurances/selected-plans/" + response.autoPlan.id,
+          //url: "http://localhost:8383/api/auto-insurances/selected-plans/" + response.autoPlan.id,
+          url: "http://localhost:8282/autoPlan/" + response.autoPlan.id,
           success: function(planDetails) {
             // Handle the success response
            // console.log("Fetched auto plan details successfully:", planDetails);

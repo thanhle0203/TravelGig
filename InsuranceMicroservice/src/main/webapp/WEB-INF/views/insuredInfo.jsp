@@ -10,7 +10,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <!-- Include submitDocument.js -->
     <!-- <script src="${pageContext.request.contextPath}/js/submitDocument.js"></script> -->
-    <script src="./js/submitDocument.js"></script>
+    <script src="./js/insuredInfo.js"></script>
     <!-- Include navbar.css -->
     <link rel="stylesheet" href="/css/navbar.css">
     <!-- Include footer.css -->
@@ -39,7 +39,7 @@
         <div class="card">
             <div class="card-body">
                 <h2 class="card-title">Enter Information</h2>
-                <form id="documentForm" enctype="multipart/form-data">
+                <form id="documentForm" action="/api/insured" method="POST" enctype="multipart/form-data">
                     <div class="form-group">
                         <label for="name">Name:</label>
                         <input type="text" class="form-control" id="name" name="name" required>
@@ -92,13 +92,7 @@
                         <input type="file" class="form-control-file" id="driverLicense" name="driverLicense" required>
 
                     </div>
-
-                    <!-- <div class="form-group">
-                        <label for="driverLicense">Driver's License:</label>
-                        <input type="file" class="form-control-file" id="driverLicense" name="driverLicense" required>
-
-                    </div> -->
-                    <button type="submit" class="btn btn-primary btn-submit">Submit</button>
+                    <button type="submit" class="btn btn-primary" id="confirmButton">Submit</button>
                 </form>
             </div>
         </div>

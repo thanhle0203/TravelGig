@@ -1,6 +1,7 @@
 package com.thanhle.domain;
 
 import jakarta.persistence.*;
+import java.util.*;
 
 @Entity
 public class Insured {
@@ -25,11 +26,15 @@ public class Insured {
     @OneToOne(cascade = CascadeType.ALL)
     private Document document;
 
+    
+    @OneToOne(fetch = FetchType.LAZY, mappedBy = "insured", cascade = CascadeType.ALL)
+    private AutoInsurance autoInsurance;
+
     public Insured() {
         super();
     }
 
-    public Insured(String name, String email, String dob, String phone, Integer drivingRecord, Address address, Document document) {
+    public Insured(String name, String email, String dob, String phone, Integer drivingRecord, Address address, Document document, AutoInsurance autoInsurance) {
         super();
         this.name = name;
         this.email = email;
@@ -38,6 +43,7 @@ public class Insured {
         this.drivingRecord = drivingRecord;
         this.address = address;
         this.document = document;
+        this.autoInsurance = autoInsurance;
     }
 
     public Long getId() {
@@ -104,4 +110,25 @@ public class Insured {
     public void setDocument(Document document) {
     	this.document = document;
     }
+    
+ // Getter and setter for AutoInsurances
+
+    public AutoInsurance getAutoInsurance() {
+        return autoInsurance;
+    }
+
+    public void setAutoInsurance(AutoInsurance autoInsurance) {
+        this.autoInsurance = autoInsurance;
+    }
+    
+    @PrePersist
+    public void saveAssociatedAutoInsurance() {
+        if (autoInsurance != null) {
+            autoInsurance.setInsured(this);
+        }
+    }
+
+
+
+   
 }

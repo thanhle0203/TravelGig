@@ -12,4 +12,7 @@ public interface AutoInsuranceRepository extends JpaRepository<AutoInsurance, Lo
 
 	AutoInsurance findByAutoPlanIdAndSelectedTrue(Long autoPlanId);
 
+	AutoInsurance findByInsuredEmail(String email);
+    AutoInsurance findByInsuredPhone(String phone);
+
 }

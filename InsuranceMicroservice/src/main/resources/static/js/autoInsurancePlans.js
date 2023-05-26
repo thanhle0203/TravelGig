@@ -46,34 +46,6 @@ $(document).ready(function() {
           //url: "http://localhost:8383/api/auto-insurances/selected-plans/" + response.autoPlan.id,
           url: "http://localhost:8282/autoPlan/" + response.autoPlan.id,
           success: function(planDetails) {
-            // Handle the success response
-           // console.log("Fetched auto plan details successfully:", planDetails);
-            // update the UI with the plan details and total price
-            /*
-            $("#confirmation-details").html("<h2>Auto Plan Details</h2>" +
-              "<p>Plan Name: " + planDetails.autoPlan.name + "</p>" +
-              "<p>Type: " + planDetails.autoPlan.type + "</p>" +
-              "<p>Description: " + planDetails.autoPlan.description + "</p>" +
-              "<p>Collision Deductible: $" + planDetails.collisionDeductible + "</p>" +
-              "<p>Uninsured Motorist Deductible: $" + planDetails.uninsuredMotoristDeductible + "</p>" +
-              "<p>Total Price: $" + planDetails.totalPrice + "</p>");
-              */
-			 
-			 // Populate the modal body with the auto plan details
-			 /*
-            var modalBody = $("#confirmationModal").find(".modal-body");
-            modalBody.html("<h2>Auto Plan Details</h2>" +
-                "<p>Plan Name: " + planDetails.autoPlan.name + "</p>" +
-                "<p>Type: " + planDetails.autoPlan.type + "</p>" +
-                "<p>Description: " + planDetails.autoPlan.description + "</p>" +
-                "<p>Collision Deductible: $" + planDetails.collisionDeductible + "</p>" +
-                "<p>Uninsured Motorist Deductible: $" + planDetails.uninsuredMotoristDeductible + "</p>" +
-                "<p>Total Price: $" + planDetails.totalPrice + "</p>");
-            
-            // Open the modal
-            $("#confirmationModal").modal("show");
-            */
-            
             // Handle the success response and redirect to autoConfirmation.jsp with plan details
     		// Set planDetails as a request parameter in the URL
             var redirectUrl = "/autoConfirmation?planTitle=" + planDetails.autoPlan.name + " - " + planDetails.autoPlan.type +

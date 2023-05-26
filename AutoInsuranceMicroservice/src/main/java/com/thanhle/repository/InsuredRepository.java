@@ -7,4 +7,5 @@ import com.thanhle.domain.Insured;
 
 @Repository
 public interface InsuredRepository extends JpaRepository<Insured, Long> {
+	
 }

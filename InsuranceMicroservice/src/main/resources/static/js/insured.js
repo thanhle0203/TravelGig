@@ -1,45 +1,48 @@
 $(document).ready(function() {
+  // Retrieve the selected plan data from local storage
+  var selectedPlan = JSON.parse(localStorage.getItem("selectedPlan"));
+  if (selectedPlan) {
+    // Pre-fill the form fields with the selected plan data
+    $("#name").val(selectedPlan.name);
+    $("#email").val(selectedPlan.email);
+    $("#phone").val(selectedPlan.phone);
+    $("#dob").val(selectedPlan.dob);
+
+    // Check if the address property is defined
+    if (selectedPlan.address) {
+      $("#street").val(selectedPlan.address.street);
+      $("#city").val(selectedPlan.address.city);
+      $("#state").val(selectedPlan.address.state);
+      $("#zipCode").val(selectedPlan.address.zipCode);
+    }
+  }
+
   // Listen for form submission
   $("#documentForm").on("submit", function(e) {
     e.preventDefault(); // Prevent default form submission
 
-    // Get the form data and convert it to JSON
-    var formData = $(this).serializeArray();
-    var jsonData = {};
-    $.each(formData, function(index, field) {
-      jsonData[field.name] = field.value;
-    });
-    
-    // Create the address object and add it to the insured object
-    var addressData = {
-      street: jsonData.street,
-      city: jsonData.city,
-      state: jsonData.state,
-      zipCode: jsonData.zipCode
-    };
-    jsonData.address = addressData;
+    // Create a FormData object to store the form data
+    var formData = new FormData(this);
+
+    // Add the 'insured' parameter to the form data
+    formData.append("insured", JSON.stringify(selectedPlan));
 
     // Send the data to the server
     $.ajax({
       type: "POST",
       url: "http://localhost:8383/api/insured",
-      //contentType: "application/json",
-      	processData: false,
-  		contentType: false,
-      data: JSON.stringify(jsonData),
+      processData: false, // Prevent jQuery from processing the data
+      contentType: false, // Let the server handle the content type
+      data: formData,
       success: function(response) {
         // Handle the success response
         console.log("Document submitted successfully:", response);
-        // Handle button click
-     $("#confirmButton").on("click", function(e) {
-        e.preventDefault(); // prevent form from submitting the default way
-       window.location.href = '/document';
-     
-     });
+        // Redirect to the document page or perform any other necessary actions
       },
       error: function(xhr, status, error) {
         // Handle the error response
         console.error("Error submitting document:", error);
+        console.error("Response:", xhr.responseText);
         // You can display an error message or perform any other necessary actions here
       }
     });

@@ -2,6 +2,7 @@ package com.thanhle.service;
 
 import com.thanhle.domain.AutoInsurance;
 import com.thanhle.domain.AutoPlan;
+import com.thanhle.domain.Insured;
 import com.thanhle.repository.AutoInsuranceRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -27,6 +28,8 @@ public class AutoInsuranceServiceImpl implements AutoInsuranceService {
 
     @Override
     public AutoInsurance saveAutoInsurance(AutoInsurance autoInsurance) {
+   
+        
         return autoInsuranceRepository.save(autoInsurance);
     }
     
@@ -72,9 +75,10 @@ public class AutoInsuranceServiceImpl implements AutoInsuranceService {
         // Calculate the total price based on the selected deductibles
         double totalPrice = autoPlan.getBasePrice();
         if (collisionDeductible == 1000 && uninsuredMotoristDeductible == 1000) {
-            totalPrice *= 1.2; 
-        } else if (collisionDeductible == 1000 || uninsuredMotoristDeductible == 1000) {
-            totalPrice *= 1.1; 
+            totalPrice *= 1.2;
+        }
+        else if (collisionDeductible == 1000 || uninsuredMotoristDeductible == 1000) {
+            totalPrice *= 1.1;
         }
 
         autoInsurance.setSelected(true);

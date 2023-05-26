@@ -93,6 +93,12 @@ public class WelcomeController {
 	   return "insuredInfo";
 	}
 	
+	@GetMapping(value = "/insured")
+	public String insured(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
+		
+	   return "insured";
+	}
+	
 	@GetMapping(value = "/admin")
 	public String admin(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
 		

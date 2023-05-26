@@ -2,6 +2,7 @@ package com.thanhle.controller;
 
 import com.thanhle.domain.AutoInsurance;
 import com.thanhle.domain.AutoPlan;
+import com.thanhle.repository.AutoInsuranceRepository;
 import com.thanhle.service.AutoInsuranceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -18,6 +19,9 @@ import java.util.List;
 public class AutoInsuranceController {
     @Autowired
     private AutoInsuranceService autoInsuranceService;
+    
+    @Autowired
+    private AutoInsuranceRepository autoInsuranceRepository;
 
     @GetMapping
     public ResponseEntity<List<AutoInsurance>> getAllAutoInsurances() {
@@ -108,5 +112,17 @@ public class AutoInsuranceController {
     public ResponseEntity<Void> deleteAutoInsurance(@PathVariable Long id) {
         autoInsuranceService.deleteAutoInsurance(id);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
+    
+    @GetMapping("/autoInsurancesByEmail/{email}")
+    public ResponseEntity<AutoInsurance> getAutoInsurancesByEmail(@PathVariable String email) {
+        AutoInsurance insurances = autoInsuranceRepository.findByInsuredEmail(email);
+        return ResponseEntity.ok(insurances);
+    }
+
+    @GetMapping("/autoInsurancesByPhoneNumber/{phone}")
+    public ResponseEntity<AutoInsurance> getAutoInsurancesByPhoneNumber(@PathVariable String phone) {
+        AutoInsurance insurances = autoInsuranceRepository.findByInsuredPhone(phone);
+        return ResponseEntity.ok(insurances);
     }
 }

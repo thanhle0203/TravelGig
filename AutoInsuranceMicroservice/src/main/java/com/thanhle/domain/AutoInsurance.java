@@ -5,11 +5,13 @@ import java.util.List;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 
 @Entity
 public class AutoInsurance {
@@ -28,17 +30,22 @@ public class AutoInsurance {
     @OneToOne(cascade = CascadeType.PERSIST)
     @JoinColumn()
     private AutoPlan autoPlan;
+    
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn()
+    private Insured insured;
 
     // constructors
     public AutoInsurance() {
     }
 
-    public AutoInsurance(int collisionDeductible, int uninsuredMotoristDeductible, AutoPlan autoPlan, double totalPrice, Boolean selected) {
+    public AutoInsurance(int collisionDeductible, int uninsuredMotoristDeductible, AutoPlan autoPlan, double totalPrice, Boolean selected, Insured insured) {
         this.collisionDeductible = collisionDeductible;
         this.uninsuredMotoristDeductible = uninsuredMotoristDeductible;
         this.autoPlan = autoPlan;
         this.totalPrice = totalPrice;
         this.selected = selected;
+        this.insured = insured;
     }
 
     // getters and setters
@@ -89,6 +96,14 @@ public class AutoInsurance {
 
     public void setSelected(Boolean selected) {
         this.selected = selected;
+    }
+    
+    public Insured getInsured() {
+    	return insured;
+    }
+    
+    public void setInsured(Insured insured) {
+    	this.insured = insured;
     }
 
 	

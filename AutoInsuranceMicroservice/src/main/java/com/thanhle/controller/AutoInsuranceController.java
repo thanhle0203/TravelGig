@@ -26,6 +26,17 @@ public class AutoInsuranceController {
         List<AutoInsurance> autoInsurances = autoInsuranceService.getAllAutoInsurances();
         return ResponseEntity.ok(autoInsurances);
     }
+    
+    @GetMapping("/{id}")
+    public ResponseEntity<AutoInsurance> getAutoInsuranceById(@PathVariable Long id) {
+        AutoInsurance autoInsurance = autoInsuranceService.getAutoInsuranceById(id);
+        if (autoInsurance != null) {
+            return ResponseEntity.ok(autoInsurance);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
 
     @PostMapping
     public ResponseEntity<AutoInsurance> saveAutoInsurance(@RequestBody AutoInsurance autoInsurance) {

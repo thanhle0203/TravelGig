@@ -27,7 +27,8 @@ public class AutoInsurance {
     private Boolean selected; 
 
 
-    @OneToOne(cascade = CascadeType.PERSIST)
+    //@OneToOne(cascade = CascadeType.PERSIST)
+    @OneToOne()
     @JoinColumn()
     private AutoPlan autoPlan;
     

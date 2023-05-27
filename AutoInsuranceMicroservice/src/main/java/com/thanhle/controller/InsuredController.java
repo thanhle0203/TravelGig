@@ -80,7 +80,7 @@ public class InsuredController {
         }
     }
 
-    @GetMapping
+    @GetMapping("/getInsured")
     public ResponseEntity<List<Insured>> getAllInsured() {
         List<Insured> insuredList = insuredService.getAllInsured();
         return new ResponseEntity<>(insuredList, HttpStatus.OK);

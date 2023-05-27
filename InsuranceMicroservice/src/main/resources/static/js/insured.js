@@ -3,69 +3,92 @@ $(document).ready(function() {
   const urlParams = new URLSearchParams(window.location.search);
   var selectedPlanId = urlParams.get('autoInsurance_id');
 
-  // Populate the selected plan ID in the insured form
-  //$("#selectedPlanId").val(selectedPlanId);
+  // Fetch the details of the saved auto plan and total price
+  $.ajax({
+    type: "GET",
+    url: "http://localhost:8383/api/auto-insurances/" + selectedPlanId,
+    success: function(planDetails) {
+      var autoInsurance = planDetails; // Retrieve the autoInsurance object from the response
 
-  // Submit the form when the "Submit" button is clicked
-  $("#documentForm").on("submit", function(event) {
-    // Prevent the default form submission
-    event.preventDefault();
+      // Store the autoInsurance object in local storage
+      localStorage.setItem("autoInsuranceData", JSON.stringify(autoInsurance));
 
-    // Create a FormData object to store the form data
-    var formData = new FormData(this);
+      // Submit the form when the "Submit" button is clicked
+      $("#documentForm").on("submit", function(event) {
+        // Prevent the default form submission
+        event.preventDefault();
 
-    // Get the insured JSON data
-    var insuredData = {
-      name: $("#name").val(),
-      email: $("#email").val(),
-      phone: $("#phone").val(),
-      dob: $("#dob").val(),
-      address: {
-        street: $("#street").val(),
-        city: $("#city").val(),
-        state: $("#state").val(),
-        zipCode: $("#zipCode").val()
-      }, 
-      autoInsurance_id: $("#selectedPlanId").val(selectedPlanId)
-    };
+        // Create a FormData object to store the form data
+        var formData = new FormData(this);
 
-    // Convert the insured data to JSON and append it to the FormData
-    formData.append("insured", JSON.stringify(insuredData));
+        // Get the insured JSON data
+        var insuredData = {
+          name: $("#name").val(),
+          email: $("#email").val(),
+          phone: $("#phone").val(),
+          dob: $("#dob").val(),
+          address: {
+            street: $("#street").val(),
+            city: $("#city").val(),
+            state: $("#state").val(),
+            zipCode: $("#zipCode").val()
+          },
+          autoInsurance: {
+			  id: autoInsurance.id,
+			  totalPrice: autoInsurance.totalPrice,
+			  collisionDeductible: autoInsurance.collisionDeductible,
+			  uninsuredMotoristDeductible: autoInsurance.uninsuredMotoristDeductible,
+			  autoPlan: {
+    id: autoInsurance.autoPlan.id,
+    name: autoInsurance.autoPlan.name,
+    type: autoInsurance.autoPlan.type,
+    description: autoInsurance.autoPlan.description,
+    basePrice: autoInsurance.autoPlan.basePrice
+  }
 
-    // Append the autoInsurance_id to the FormData
-    //formData.append("autoInsurance_id", selectedPlanId);
+		  }
+        };
 
-    // Send the insured data to the server
-    $.ajax({
-      type: "POST",
-      url: "http://localhost:8383/api/insured",
-      data: formData,
-      processData: false,
-      contentType: false,
-      success: function(response) {
-        // Handle the success response
-        console.log("Insured data submitted successfully:", response);
+        // Convert the insured data to JSON and append it to the FormData
+        formData.append("insured", JSON.stringify(insuredData));
 
-        // Perform any additional actions or show a success message to the user
+        // Send the insured data to the server
+        $.ajax({
+          type: "POST",
+          url: "http://localhost:8383/api/insured",
+          data: formData,
+          processData: false,
+          contentType: false,
+          success: function(response) {
+            // Handle the success response
+            console.log("Insured data submitted successfully:", response);
 
-        // Clear the selected plan from local storage
-        localStorage.removeItem("selectedPlan");
+            // Perform any additional actions or show a success message to the user
 
-        // Redirect to the insured details page
-        // window.location.href = "/insured.jsp";
-      },
-      error: function(xhr, status, error) {
-        // Handle the error response
-        console.error("Error submitting insured data:", error);
-        // You can display an error message or perform any other necessary actions here
-      },
-      complete: function() {
-        // This function will be called regardless of success or error
-        // You can perform any cleanup or post-submission actions here
-      }
-    });
+            // Clear the selected plan from local storage
+            localStorage.removeItem("selectedPlan");
+
+            // Redirect to the insured details page
+            // window.location.href = "/insured.jsp";
+          },
+          error: function(xhr, status, error) {
+            // Handle the error response
+            console.error("Error submitting insured data:", error);
+            // You can display an error message or perform any other necessary actions here
+          },
+          complete: function() {
+            // This function will be called regardless of success or error
+            // You can perform any cleanup or post-submission actions here
+          }
+        });
+      });
+
+      // Add autocomplete attribute to form fields
+      // ...
+    },
+    error: function(xhr, status, error) {
+      console.error("Error fetching auto plan details:", error);
+      // Handle the error fetching the auto plan details
+    }
   });
-
-  // Add autocomplete attribute to form fields
-  // ...
 });

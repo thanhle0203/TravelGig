@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import java.util.*;
 
 @Entity
+@Table(name = "insured")
 public class Insured {
 
     @Id
@@ -27,8 +28,10 @@ public class Insured {
     private Document document;
 
     
-    @OneToOne(fetch = FetchType.LAZY, mappedBy = "insured", cascade = CascadeType.ALL)
+    @OneToOne()
+    @JoinColumn(name = "autoInsurance_id")
     private AutoInsurance autoInsurance;
+
 
     public Insured() {
         super();
@@ -44,7 +47,9 @@ public class Insured {
         this.address = address;
         this.document = document;
         this.autoInsurance = autoInsurance;
+   
     }
+
 
     public Long getId() {
         return id;
@@ -103,7 +108,7 @@ public class Insured {
         this.address = address;
     }
     
-    public Document getDocuement() {
+    public Document getDocument() {
     	return document;
     }
     
@@ -121,14 +126,5 @@ public class Insured {
         this.autoInsurance = autoInsurance;
     }
     
-    @PrePersist
-    public void saveAssociatedAutoInsurance() {
-        if (autoInsurance != null) {
-            autoInsurance.setInsured(this);
-        }
-    }
-
-
-
    
 }

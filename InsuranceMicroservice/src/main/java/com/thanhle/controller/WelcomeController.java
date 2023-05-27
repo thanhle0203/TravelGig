@@ -20,7 +20,7 @@ public class WelcomeController {
 	    return "home";
 	}
 	
-	@RequestMapping(value = {"/welcomes", "/"})
+	@RequestMapping(value = {"/welcome", "/"})
 	public String welcome(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Principal principal, Model model) {
 		if (principal != null) {
 			System.out.print("Welcome to Controller: " + principal.getName());
@@ -95,6 +95,12 @@ public class WelcomeController {
 	
 	@GetMapping(value = "/insured")
 	public String insured(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
+		
+	   return "insured";
+	}
+	
+	@PostMapping(value = "/insured")
+	public String insureds(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
 		
 	   return "insured";
 	}

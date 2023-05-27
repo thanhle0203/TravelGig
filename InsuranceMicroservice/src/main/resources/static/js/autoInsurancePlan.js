@@ -37,7 +37,7 @@ $(document).ready(function() {
         // Handle the success response
         console.log("Selected plan saved successfully:", response);
         // You can update the UI or perform any other necessary actions here
-        
+
         // Fetch the details of the saved auto plan and total price
         $.ajax({
           type: "GET",
@@ -50,7 +50,10 @@ $(document).ready(function() {
             localStorage.setItem("selectedPlan", JSON.stringify(selectedPlan));
 
             // Redirect to the autoConfirmation.jsp page
-            window.location.href = "/autoConfirmationPlan";
+            //window.location.href = "/autoConfirmationPlan";
+            window.location.href = "/autoConfirmationPlan?autoInsurance_id=" + response.id;
+
+            
           },
           error: function(xhr, status, error) {
             // Handle the error response

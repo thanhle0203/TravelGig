@@ -28,10 +28,18 @@
             margin-top: 20px;
         }
     </style>
+     <%-- Retrieve the autoInsuranceId parameter --%>
+     <%
+         String autoInsurance_id = request.getParameter("autoInsurance_id");
+         if (autoInsurance_id == null) {
+             autoInsurance_id = "";
+         }
+         System.out.println("Auto Insurance ID: " + autoInsurance_id);
+     %>
 </head>
 <body>
     <!-- Include navbar.jsp -->
-    <jsp:include page="navbar.jsp" />
+    <%@ include file="navbar.jsp" %>
 
     <div class="container">
         <h1 class="mt-5 mb-4">Submit Document</h1>
@@ -39,6 +47,7 @@
             <div class="card-body">
                 <h2 class="card-title">Enter Information</h2>
                 <form id="documentForm" action="/api/insured" method="POST" enctype="multipart/form-data">
+
                     <div class="form-group">
                         <label for="name">Name:</label>
                         <input type="text" class="form-control" id="name" name="name" required>
@@ -60,10 +69,10 @@
                                 <option value="AK">Alaska</option>
                                 <option value="AZ">Arizona</option>
                                 <option value="CA">California</option>
-                                <option value="CO">Colodo</option>
+                                <option value="CO">Colorado</option>
                                 <option value="FL">Florida</option>
-                                <option value="IL">Ilinos</option>
-                                <option value="NY">New York</option>                          
+                                <option value="IL">Illinois</option>
+                                <option value="NY">New York</option>
                                 <option value="TX">Texas</option>
                                 <!-- Include more states here -->
                             </select>
@@ -85,11 +94,12 @@
                         <label for="dob">Date of Birth:</label>
                         <input type="date" class="form-control" id="dob" name="dob" required>
                     </div>
-            
+
                     <div class="form-group">
                         <label for="driverLicense">Driver's License:</label>
                         <input type="file" class="form-control-file" id="driverLicense" name="driverLicense" required>
                     </div>
+                    <input type="hidden" id="selectedPlanId" name="selectedPlanId">
                     <button type="submit" class="btn btn-primary" id="confirmButton">Submit</button>
                 </form>
             </div>
@@ -97,6 +107,6 @@
     </div>
 
     <!-- Include footer.jsp -->
-    <jsp:include page="footer.jsp" />
+    <%@ include file="footer.jsp" %>
 </body>
 </html>

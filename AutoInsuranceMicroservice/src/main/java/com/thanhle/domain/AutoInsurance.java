@@ -31,10 +31,11 @@ public class AutoInsurance {
     @JoinColumn()
     private AutoPlan autoPlan;
     
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn()
+    @OneToOne
+    @JoinColumn(name = "insured_id")
     private Insured insured;
 
+   
     // constructors
     public AutoInsurance() {
     }
@@ -97,14 +98,16 @@ public class AutoInsurance {
     public void setSelected(Boolean selected) {
         this.selected = selected;
     }
-    
-    public Insured getInsured() {
-    	return insured;
-    }
-    
-    public void setInsured(Insured insured) {
-    	this.insured = insured;
-    }
 
+	public void setInsured(Insured insured) {
+		this.insured = insured;
+		
+	}
+    
+	public Insured getInsured() {
+		return insured;
+	}
+	
+	
 	
 }

@@ -68,7 +68,7 @@ public class Address {
         return zipCode;
     }
 
-    public void setZip(String zipCode) {
+    public void setZipCode(String zipCode) {
         this.zipCode = zipCode;
     }
 

@@ -105,6 +105,18 @@ public class WelcomeController {
 	   return "insured";
 	}
 	
+	@PostMapping(value = "/payment")
+	public String payment(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
+		
+	   return "payment";
+	}
+	
+	@GetMapping(value = "/payment")
+	public String payments(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
+		
+	   return "payment";
+	}
+	
 	@GetMapping(value = "/admin")
 	public String admin(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
 		

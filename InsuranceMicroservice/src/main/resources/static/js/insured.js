@@ -69,7 +69,7 @@ $(document).ready(function() {
             localStorage.removeItem("selectedPlan");
 
             // Redirect to the insured details page
-            // window.location.href = "/insured.jsp";
+            window.location.href = "/payment";
           },
           error: function(xhr, status, error) {
             // Handle the error response

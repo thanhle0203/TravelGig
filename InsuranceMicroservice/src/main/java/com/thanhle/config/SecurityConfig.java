@@ -53,7 +53,7 @@ public class SecurityConfig {
 		http
 		.apply(MyCustomDsl.customDsl()).flag(true).and()
 		.authorizeRequests().requestMatchers("/home/**", "", "/signup", "/login").permitAll().and()
-		.authorizeRequests().requestMatchers(("/welcome")).hasAnyRole("USER", "ADMIN")
+		.authorizeRequests().requestMatchers(("/")).hasAnyRole("USER", "ADMIN")
 		.and().formLogin().loginPage("/login").defaultSuccessUrl("/welcome").permitAll()
 		.and()
 	        .logout()

@@ -34,12 +34,13 @@
     <%@ include file="navbar.jsp" %>
 
     <div class="container">
-        <h1 class="mt-5 mb-4">Payment</h1>
+        <h3 class="mt-5 mb-4">Payment</h3>
         <div id="payment-details">
             <p class='card-text'><strong>Insured Name:</strong> <span id="insuredName"></span></p>
             <p class='card-text'><strong>Auto Insurance Plan:</strong> <span id="autoInsurancePlan"></span></p>
             <p class='card-text'><strong>Total Price:</strong> <span id="totalPrice"></span></p>
         </div>
+        <br>
         <!-- Payment form -->
         <form id="paymentForm" method="POST" action="/process-payment">
             <div class="form-group">

@@ -86,4 +86,15 @@ public class InsuredController {
         List<Insured> insuredList = insuredService.getAllInsured();
         return new ResponseEntity<>(insuredList, HttpStatus.OK);
     }
+    
+    @GetMapping("/getInsuredByEmail")
+    public ResponseEntity<Insured> getInsuredByEmail(@RequestParam("email") String email) {
+        Insured insured = insuredService.getInsuredByEmail(email);
+        if (insured != null) {
+            return new ResponseEntity<>(insured, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+
 }

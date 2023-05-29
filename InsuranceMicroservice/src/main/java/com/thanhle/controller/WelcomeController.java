@@ -20,15 +20,8 @@ public class WelcomeController {
 	    return "home";
 	}
 	
-	@RequestMapping(value = {"/welcome", "/"})
-	public String welcome(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Principal principal, Model model) {
-		if (principal != null) {
-			System.out.print("Welcome to Controller: " + principal.getName());
-			model.addAttribute("username", principal.getName());
-		}
-		else {
-			model.addAttribute("user", null);
-		}
+	@RequestMapping(value = "/welcome")
+	public String welcomepage(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
 		
 		return "insurance";
 	}
@@ -122,5 +115,27 @@ public class WelcomeController {
 		
 	   return "admin";
 	}
+	
+	@GetMapping("/manage-insurance")
+	public String manageInsurance(Model model) {
+	    // Add any necessary data to the model for rendering in the view
+	    return "manage-insurance";
+	}
+	
+	@GetMapping("/blog-insurance")
+	public String blogInsurance(Model model) {
+	    // Add any necessary data to the model for rendering in the view
+	    return "blog-insurance";
+	}
+	
+	@GetMapping("/contact")
+	public String contactInsurance(Model model) {
+	    // Add any necessary data to the model for rendering in the view
+	    return "contact";
+	}
 
+
+
+ 
+ 
 }

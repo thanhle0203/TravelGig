@@ -6,13 +6,25 @@ $(document).ready(function() {
         var email =  $("#email").val();
         var mobile = $("#mobile").val();
         
-        var user = {"userName": userName, "userPassword": userPassword, "email": email, "mobile": mobile};
+        // Perform password validation
+        if (userPassword === "") {
+            alert("Password cannot be empty");
+            return;
+        }
+        
+        var user = {
+			userName: userName, 
+        	userPassword: userPassword, 
+        	email: email, 
+        	mobile: mobile
+        };
         
         $.ajax({
             type: "POST",
             contentType: 'application/json',
             url: "http://localhost:8282/signup",
             data: JSON.stringify(user),
+            contentType: "application/json",
             dataType: 'json',
             success: function(result) {
                 alert("Sign up successful!");

@@ -34,25 +34,27 @@ $(document).ready(function() {
             zipCode: $("#zipCode").val()
           },
           autoInsurance: {
-			  id: autoInsurance.id,
-			  totalPrice: autoInsurance.totalPrice,
-			  collisionDeductible: autoInsurance.collisionDeductible,
-			  uninsuredMotoristDeductible: autoInsurance.uninsuredMotoristDeductible,
-			  autoPlan: {
-    id: autoInsurance.autoPlan.id,
-    name: autoInsurance.autoPlan.name,
-    type: autoInsurance.autoPlan.type,
-    description: autoInsurance.autoPlan.description,
-    basePrice: autoInsurance.autoPlan.basePrice
-  }
-
-		  }
+            id: autoInsurance.id,
+            totalPrice: autoInsurance.totalPrice,
+            collisionDeductible: autoInsurance.collisionDeductible,
+            uninsuredMotoristDeductible: autoInsurance.uninsuredMotoristDeductible,
+            autoPlan: {
+              id: autoInsurance.autoPlan.id,
+              name: autoInsurance.autoPlan.name,
+              type: autoInsurance.autoPlan.type,
+              description: autoInsurance.autoPlan.description,
+              basePrice: autoInsurance.autoPlan.basePrice
+            }
+          }
         };
+
+        // Store the insuredData object in local storage
+        localStorage.setItem("insured", JSON.stringify(insuredData));
 
         // Convert the insured data to JSON and append it to the FormData
         formData.append("insured", JSON.stringify(insuredData));
         formData.append("insuredData", JSON.stringify(insuredData));
-        console.log("Insured Data json: ", insuredData)
+        console.log("Insured Data json: ", insuredData);
 
         // Send the insured data to the server
         $.ajax({
@@ -68,7 +70,7 @@ $(document).ready(function() {
             // Perform any additional actions or show a success message to the user
 
             // Clear the selected plan from local storage
-            localStorage.removeItem("selectedPlan");
+            //localStorage.removeItem("selectedPlan");
 
             // Redirect to the insured details page
             window.location.href = "/payment";

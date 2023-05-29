@@ -13,8 +13,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.web.servlet.view.RedirectView;
 
@@ -58,20 +60,23 @@ public class UserController {
 		model.addAttribute("user", new User());
 		return "signup";
 	}
-
+	
 	@PostMapping(value = "/signup")
-	public RedirectView saveSignup(@ModelAttribute User user) {
-		try {
-			BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-			String hashedPassword = passwordEncoder.encode(user.getUserPassword());
-			user.setUserPassword(hashedPassword);
-			userService.save(user);
-			return new RedirectView("/login", true);
-		} catch (Exception e) {
-			e.printStackTrace();
-			return new RedirectView("/signup", true);
-		}
+	@ResponseBody
+	public RedirectView saveSignup(@RequestBody User user) {
+	    try {
+	        BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+	        String hashedPassword = passwordEncoder.encode(user.getUserPassword());
+	        user.setUserPassword(hashedPassword);
+	        userService.save(user);
+	        return new RedirectView("/login", true);
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	        return new RedirectView("/signup", true);
+	    }
 	}
+
+
 
 	@PostMapping(value = "/user/{username}")
 	public String getUserByUsername(@PathVariable String username, Model model) {

@@ -48,4 +48,10 @@ public class InsuredServiceImpl implements InsuredService {
     public List<Insured> getAllInsured() {
         return insuredRepository.findAll();
     }
+    
+    @Override
+    public Insured getInsuredByEmail(String email) {
+        return insuredRepository.findByEmail(email);
+    }
+
 }

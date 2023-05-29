@@ -27,7 +27,7 @@ public class Insured {
     @OneToOne(cascade = CascadeType.ALL)
     private Document document;
 
-    //@OneToOne(cascade = CascadeType.ALL)
+ 
     @OneToOne()
     @JoinColumn(name = "autoInsurance_id")
     private AutoInsurance autoInsurance;

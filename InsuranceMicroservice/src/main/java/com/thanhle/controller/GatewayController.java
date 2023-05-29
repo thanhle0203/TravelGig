@@ -14,13 +14,21 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.thanhle.component.InsuranceComponent;
-import com.thanhle.component.InsurerComponent;
+import com.thanhle.component.InsuredComponent;
+import com.thanhle.domain.User;
+import com.thanhle.service.UserService;
 
 @RestController
 public class GatewayController {
 	
 	@Autowired
 	InsuranceComponent insuranceComponent;
+	
+	@Autowired
+	InsuredComponent insuredComponent;
+	
+	@Autowired
+	UserService userService;
 	
 	@RequestMapping(value = "/savedPlan", method=RequestMethod.POST)
     public ResponseEntity<JsonNode> savePlan(@RequestBody JsonNode json) {
@@ -32,6 +40,28 @@ public class GatewayController {
 	public JsonNode searchPlan(@PathVariable String planAutoId, Principal principal){
 		//String username = principal.getName();
 		return insuranceComponent.findPlanId(planAutoId);
+	}
+	
+	@RequestMapping(value = "insured/savedInsured", method=RequestMethod.POST)
+    public ResponseEntity<JsonNode> saveInsured(@RequestBody JsonNode json) {
+    	JsonNode insured = insuredComponent.saveInsured(json);
+    	return new ResponseEntity<>(insured, HttpStatus.OK);
+    }
+	
+	@RequestMapping(value = "insured/getInsured", method = RequestMethod.GET)
+	public JsonNode getInsured(Principal principal){
+		String username = principal.getName();
+   		User user = userService.findByUserName(username);
+   		
+		return insuredComponent.getInsured();
+	}
+	
+	@RequestMapping(value = "insured/phone/{phone}", method = RequestMethod.GET)
+	public JsonNode getInsuredByPhone(@PathVariable String phone, Principal principal){
+		String username = principal.getName();
+   		User user = userService.findByUserName(username);
+   		phone = user.getMobile();
+		return insuredComponent.findInsuredByPhone(phone);
 	}
 
 

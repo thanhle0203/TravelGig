@@ -8,4 +8,5 @@ import com.thanhle.domain.Insured;
 @Repository
 public interface InsuredRepository extends JpaRepository<Insured, Long> {
 	Insured findByEmail(String email);
+	Insured findByPhone(String phone);
 }

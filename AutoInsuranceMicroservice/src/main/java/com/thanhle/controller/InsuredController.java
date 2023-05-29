@@ -81,20 +81,32 @@ public class InsuredController {
         }
     }
 
-    @GetMapping("/getInsured")
+    @GetMapping()
     public ResponseEntity<List<Insured>> getAllInsured() {
         List<Insured> insuredList = insuredService.getAllInsured();
         return new ResponseEntity<>(insuredList, HttpStatus.OK);
     }
     
-    @GetMapping("/getInsuredByEmail")
-    public ResponseEntity<Insured> getInsuredByEmail(@RequestParam("email") String email) {
-        Insured insured = insuredService.getInsuredByEmail(email);
+    @GetMapping("/email/{email}")
+    public ResponseEntity<Insured> getInsuredByEmail(@PathVariable String email) {
+        Insured insured = insuredService.getInsuredByEmail(email); 
+        
         if (insured != null) {
-            return new ResponseEntity<>(insured, HttpStatus.OK);
+            return ResponseEntity.ok(insured);
         } else {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            return ResponseEntity.notFound().build();
         }
     }
+    
+    @GetMapping("/phone/{phone}")
+    public ResponseEntity<Insured> getInsuredByPhone(@PathVariable String phone) {
+        Insured insured = insuredService.getInsuredByPhone(phone);
+        if (insured != null) {
+            return ResponseEntity.ok(insured);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
 
 }

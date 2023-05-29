@@ -9,4 +9,5 @@ public interface InsuredService {
     List<Insured> getAllInsured();
 	//Insured saveInsured(Insured insured, long autoInsuranceId);
 	Insured getInsuredByEmail(String email);
+	Insured getInsuredByPhone(String phone);
 }

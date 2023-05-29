@@ -53,5 +53,10 @@ public class InsuredServiceImpl implements InsuredService {
     public Insured getInsuredByEmail(String email) {
         return insuredRepository.findByEmail(email);
     }
+    
+    @Override
+    public Insured getInsuredByPhone(String phone) {
+        return insuredRepository.findByPhone(phone);
+    }
 
 }

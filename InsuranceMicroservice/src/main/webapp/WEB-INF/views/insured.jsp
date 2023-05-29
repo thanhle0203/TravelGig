@@ -107,6 +107,6 @@
     </div>
 
     <!-- Include footer.jsp -->
-    <%@ include file="footer.jsp" %>
+    <!-- <%@ include file="footer.jsp" %> -->
 </body>
 </html>

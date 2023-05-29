@@ -26,28 +26,23 @@ public class AutoInsurance {
     @Column(nullable = false)
     private Boolean selected; 
 
-
-    //@OneToOne(cascade = CascadeType.PERSIST)
+    //@OneToOne(cascade = CascadeType.ALL)
     @OneToOne()
-    @JoinColumn()
+    @JoinColumn(name = "autoPlan_id")
     private AutoPlan autoPlan;
     
-    @OneToOne
-    @JoinColumn(name = "insured_id")
-    private Insured insured;
-
-   
+  
     // constructors
     public AutoInsurance() {
     }
 
-    public AutoInsurance(int collisionDeductible, int uninsuredMotoristDeductible, AutoPlan autoPlan, double totalPrice, Boolean selected, Insured insured) {
+    public AutoInsurance(int collisionDeductible, int uninsuredMotoristDeductible, AutoPlan autoPlan, double totalPrice, Boolean selected) {
         this.collisionDeductible = collisionDeductible;
         this.uninsuredMotoristDeductible = uninsuredMotoristDeductible;
         this.autoPlan = autoPlan;
         this.totalPrice = totalPrice;
         this.selected = selected;
-        this.insured = insured;
+ 
     }
 
     // getters and setters
@@ -100,15 +95,5 @@ public class AutoInsurance {
         this.selected = selected;
     }
 
-	public void setInsured(Insured insured) {
-		this.insured = insured;
-		
-	}
-    
-	public Insured getInsured() {
-		return insured;
-	}
-	
-	
-	
+
 }

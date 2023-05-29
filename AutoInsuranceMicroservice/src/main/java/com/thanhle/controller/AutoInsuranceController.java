@@ -1,7 +1,10 @@
 package com.thanhle.controller;
 
 import com.thanhle.domain.AutoInsurance;
+import com.thanhle.domain.AutoPlan;
 import com.thanhle.service.AutoInsuranceService;
+import com.thanhle.service.AutoPlanService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -11,14 +14,17 @@ import java.util.List;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:8282")
+//@CrossOrigin(origins = "http://localhost:8080")
 @RequestMapping("/api/auto-insurances")
 public class AutoInsuranceController {
 
     private final AutoInsuranceService autoInsuranceService;
+    private final AutoPlanService autoPlanService;
 
     @Autowired
-    public AutoInsuranceController(AutoInsuranceService autoInsuranceService) {
+    public AutoInsuranceController(AutoInsuranceService autoInsuranceService, AutoPlanService autoPlanService) {
         this.autoInsuranceService = autoInsuranceService;
+        this.autoPlanService = autoPlanService;
     }
 
     @GetMapping
@@ -37,11 +43,38 @@ public class AutoInsuranceController {
         }
     }
 
-
+    /*
     @PostMapping
     public ResponseEntity<AutoInsurance> saveAutoInsurance(@RequestBody AutoInsurance autoInsurance) {
         AutoInsurance savedAutoInsurance = autoInsuranceService.saveAutoInsurance(autoInsurance);
         return ResponseEntity.status(HttpStatus.CREATED).body(savedAutoInsurance);
+    }
+    */
+    
+    @PostMapping()
+    public ResponseEntity<?> createAutoInsurance(@RequestBody AutoInsurance autoInsurance) {
+        try {
+            // Persist AutoPlan if it doesn't exist
+            AutoPlan autoPlan = autoInsurance.getAutoPlan();
+            if (autoPlan != null) {
+                AutoPlan existingAutoPlan = autoPlanService.findByName(autoPlan.getName());
+                if (existingAutoPlan == null) {
+                    autoPlan = autoPlanService.savePlan(autoPlan);
+                } else {
+                    autoPlan = existingAutoPlan;
+                }
+            }
+            
+            // Set AutoPlan for AutoInsurance
+            autoInsurance.setAutoPlan(autoPlan);
+            
+            // Save AutoInsurance
+            AutoInsurance savedAutoInsurance = autoInsuranceService.saveAutoInsurance(autoInsurance);
+            
+            return ResponseEntity.ok(savedAutoInsurance);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Failed to create auto insurance.");
+        }
     }
 
     @GetMapping("/selected-plans")

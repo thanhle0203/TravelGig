@@ -51,6 +51,8 @@ $(document).ready(function() {
 
         // Convert the insured data to JSON and append it to the FormData
         formData.append("insured", JSON.stringify(insuredData));
+        formData.append("insuredData", JSON.stringify(insuredData));
+        console.log("Insured Data json: ", insuredData)
 
         // Send the insured data to the server
         $.ajax({

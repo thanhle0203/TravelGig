@@ -1,9 +1,12 @@
 package com.thanhle.domain;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToOne;
 
 @Entity
 public class AutoPlan {
@@ -15,6 +18,11 @@ public class AutoPlan {
     private String type;
     private String description;
     private double basePrice;
+    
+    //@OneToOne(cascade = CascadeType.ALL)
+    //@OneToOne()
+   // @JoinColumn(name = "autoInsurance_id")
+    //private AutoInsurance autoInsurance;
 
     // constructors
     public AutoPlan() {

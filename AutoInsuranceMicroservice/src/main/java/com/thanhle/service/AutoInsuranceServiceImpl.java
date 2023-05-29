@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
+import javax.persistence.EntityManager;
 
 @Service
 public class AutoInsuranceServiceImpl implements AutoInsuranceService {
@@ -81,10 +82,14 @@ public class AutoInsuranceServiceImpl implements AutoInsuranceService {
             totalPrice *= 1.1;
         }
 
+        //autoInsurance.setAutoPlan(autoPlan);
         autoInsurance.setSelected(true);
         autoInsurance.setCollisionDeductible(collisionDeductible);
         autoInsurance.setUninsuredMotoristDeductible(uninsuredMotoristDeductible);
         autoInsurance.setTotalPrice(totalPrice);
+        
+        // Save the AutoInsurance object
+        //entityManager.persist(autoInsurance);
 
         return autoInsuranceRepository.save(autoInsurance);
     }

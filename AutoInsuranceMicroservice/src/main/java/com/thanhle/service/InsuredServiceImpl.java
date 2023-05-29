@@ -37,7 +37,7 @@ public class InsuredServiceImpl implements InsuredService {
                 insured.setAutoInsurance(existingAutoInsurance);
             } else {
                 // If there was no existing AutoInsurance, associate the new AutoInsurance with the insured
-                autoInsurance.setInsured(insured);
+      
                 insured.setAutoInsurance(autoInsurance);
             }
         }

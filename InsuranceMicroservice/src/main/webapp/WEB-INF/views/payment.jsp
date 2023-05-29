@@ -3,13 +3,11 @@
 <html>
 <head>
     <meta charset="ISO-8859-1">
-    <title>Payment Processing</title>
+    <title>Payment</title>
     <!-- Include Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <!-- Include jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <!-- Include Stripe.js -->
-    <script src="https://js.stripe.com/v3/"></script>
     <!-- Include payment.js -->
     <script src="./js/payment.js"></script>
     <!-- Include navbar.css -->
@@ -36,58 +34,38 @@
     <%@ include file="navbar.jsp" %>
 
     <div class="container">
-        <h1 class="mt-5 mb-4">Payment Processing</h1>
-        <div class="card">
-            <div class="card-body">
-                <h2 class="card-title">Enter Payment Details</h2>
-                <div class="form-group">
-                    <label for="insuredName">Insured Name:</label>
-                    <input type="text" class="form-control" id="insuredName" disabled>
-                </div>
-                <div class="form-group">
-                    <label for="autoPlan">Auto Plan:</label>
-                    <input type="text" class="form-control" id="autoPlan" disabled>
-                </div>
-                <div class="form-group">
-                    <label for="totalPrice">Total Price:</label>
-                    <input type="text" class="form-control" id="totalPrice" disabled>
-                </div>
-                <form id="paymentForm">
-                    <div class="form-group">
-                        <label for="cardNumber">Card Number:</label>
-                        <input type="text" class="form-control" id="cardNumber" required>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group col-md-6">
-                            <label for="expirationDate">Expiration Date:</label>
-                            <input type="text" class="form-control" id="expirationDate" placeholder="MM/YY" required>
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label for="cvc">CVC:</label>
-                            <input type="text" class="form-control" id="cvc" required>
-                        </div>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Pay</button>
-                </form>
-            </div>
+        <h1 class="mt-5 mb-4">Payment</h1>
+        <div id="payment-details">
+            <p class='card-text'><strong>Insured Name:</strong> <span id="insuredName"></span></p>
+            <p class='card-text'><strong>Auto Insurance Plan:</strong> <span id="autoInsurancePlan"></span></p>
+            <p class='card-text'><strong>Total Price:</strong> <span id="totalPrice"></span></p>
         </div>
+        <!-- Payment form -->
+        <form id="paymentForm" method="POST" action="/process-payment">
+            <div class="form-group">
+                <label for="cardNumber">Card Number:</label>
+                <input type="text" class="form-control" id="cardNumber" name="cardNumber" required>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="expiryDate">Expiry Date:</label>
+                    <input type="text" class="form-control" id="expiryDate" name="expiryDate" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="cvv">CVV:</label>
+                    <input type="text" class="form-control" id="cvv" name="cvv" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="nameOnCard">Name on Card:</label>
+                <input type="text" class="form-control" id="nameOnCard" name="nameOnCard" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Pay Now</button>
+        </form>
+        
     </div>
 
     <!-- Include footer.jsp -->
     <!-- <%@ include file="footer.jsp" %> -->
-
-    <script>
-        // Set the insured name, auto plan, and total price values
-        $(document).ready(function() {
-            var insuredData = JSON.parse(localStorage.getItem("insuredData"));
-            var insuredName = insuredData.name;
-            var autoPlanName = insuredData.autoInsurance.autoPlan.name;
-            var totalPrice = insuredData.autoInsurance.totalPrice;
-
-            $("#insuredName").val(insuredName);
-            $("#autoPlan").val(autoPlanName);
-            $("#totalPrice").val(totalPrice);
-        });
-    </script>
 </body>
 </html>

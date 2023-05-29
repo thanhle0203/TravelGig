@@ -19,6 +19,7 @@ import java.util.List;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:8282")
+//@CrossOrigin(origins = "http://localhost:8080")
 @RequestMapping("/api/insured")
 public class InsuredController {
 
@@ -65,7 +66,7 @@ public class InsuredController {
                         // Set any other fields that need to be updated
                     } else {
                         // If there was no existing AutoInsurance, associate the new AutoInsurance with the insured
-                        autoInsurance.setInsured(insured);
+                        //autoInsurance.setInsured(insured);
                         insured.setAutoInsurance(autoInsurance);
                     }
                 }

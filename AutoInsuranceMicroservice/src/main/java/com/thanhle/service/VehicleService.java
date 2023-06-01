@@ -22,5 +22,7 @@ public interface VehicleService {
 
 	List<String> findAllModels();
 
+	Vehicle findByMakeAndModelAndYear(String vehicleMake, String vehicleModel, int vehicleYear);
+
     // Add other methods as needed
 }

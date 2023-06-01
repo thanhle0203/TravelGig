@@ -37,13 +37,13 @@ $(document).ready(function() {
       // Populate the claims table with the received data
       response.forEach(function(claim) {
         var row = '<tr>' +
-          '<td>' + claim.id + '</td>' +
+          '<td><span class="claim-id">' + claim.id + '</span></td>' +
           '<td>' + claim.description + '</td>' +
           '<td>' + claim.status + '</td>' +
           '<td>' +
-          '<button onclick="updateClaimStatus(' + claim.id + ', \'approved\')">Approve</button>' +
-          '<button onclick="updateClaimStatus(' + claim.id + ', \'rejected\')">Reject</button>' +
-          '<button onclick="showRepairPriceDialog(' + claim.id + ')">Generate Repair Price</button>' +
+          '<button class="approve-btn">Approve</button>' +
+          '<button class="reject-btn">Reject</button>' +
+          '<button class="generate-price-btn">Generate Repair Price</button>' +
           '</td>' +
           '</tr>';
         
@@ -68,5 +68,23 @@ $(document).ready(function() {
     var repairPrice = $('#price').val();
     updateClaimRepairPrice(claimId, repairPrice);
     $('#repairPriceDialog').modal('hide');
+  });
+
+  // Handle click event for Approve button
+  $(document).on('click', '.approve-btn', function() {
+    var claimId = $(this).closest('tr').find('.claim-id').text();
+    updateClaimStatus(claimId, 'approved');
+  });
+
+  // Handle click event for Reject button
+  $(document).on('click', '.reject-btn', function() {
+    var claimId = $(this).closest('tr').find('.claim-id').text();
+    updateClaimStatus(claimId, 'rejected');
+  });
+
+  // Handle click event for Generate Repair Price button
+  $(document).on('click', '.generate-price-btn', function() {
+    var claimId = $(this).closest('tr').find('.claim-id').text();
+    showRepairPriceDialog(claimId);
   });
 });

@@ -14,15 +14,20 @@ public class Claim {
     private Long id;
 
     private LocalDate accidentDate;
+    
+    //@Column(unique = true)
     private String description;
+    
     private String status;
+    
     private double repairPrice;
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    //@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "vehicle_id")
     private Vehicle vehicle;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "claim_id")
     private List<ClaimImage> images = new ArrayList<>();
 

@@ -55,6 +55,12 @@ public class VehicleServiceImpl implements VehicleService {
 		return vehicleRepository.findByModels();
 	}
 
+	@Override
+	public Vehicle findByMakeAndModelAndYear(String vehicleMake, String vehicleModel, int vehicleYear) {
+		// TODO Auto-generated method stub
+		return vehicleRepository.findByMakeAndModelAndYear(vehicleMake, vehicleModel, vehicleYear);
+	}
+
     
     // Implement other methods as needed
 }

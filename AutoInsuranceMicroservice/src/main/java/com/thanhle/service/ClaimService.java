@@ -12,5 +12,6 @@ public interface ClaimService {
     
     void updateClaimStatus(Long claimId, String status);
     void updateClaimRepairPrice(Long claimId, double repairPrice);
+	Claim findByDescription(String description);
 
 }

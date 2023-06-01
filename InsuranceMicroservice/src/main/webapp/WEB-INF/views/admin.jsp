@@ -1,10 +1,12 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 
 <!DOCTYPE html>
 <html>
 <head>
   <title>Admin Dashboard</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="./js/admin.js"></script>
 </head>
@@ -15,7 +17,7 @@
     <table class="table mt-4">
       <thead>
         <tr>
-          <th>ID</th>
+          <th>Claim ID</th>
           <th>Description</th>
           <th>Status</th>
           <th>Action</th>
@@ -39,7 +41,7 @@
             <form id="repairPriceForm">
               <div class="form-group">
                 <label for="claimId">Claim ID:</label>
-                <input type="number" class="form-control" id="claimId" name="claimId" required>
+                <input type="number" class="form-control" id="claimId" name="claimId" required readonly>
               </div>
               <div class="form-group">
                 <label for="price">Repair Price:</label>

@@ -30,7 +30,7 @@ public class ClaimServiceImpl implements ClaimService {
     public Claim createClaim(Claim claim) {
         return claimRepository.save(claim);
     }
-    
+
     @Override
     public void updateClaimStatus(Long claimId, String status) {
         Optional<Claim> optionalClaim = claimRepository.findById(claimId);
@@ -38,7 +38,7 @@ public class ClaimServiceImpl implements ClaimService {
             Claim claim = optionalClaim.get();
             claim.setStatus(status);
             claimRepository.save(claim);
-        } 
+        }
     }
 
     @Override
@@ -48,11 +48,16 @@ public class ClaimServiceImpl implements ClaimService {
             Claim claim = optionalClaim.get();
             claim.setRepairPrice(repairPrice);
             claimRepository.save(claim);
-        } 
+        }
     }
 
     @Override
     public void deleteClaim(Long id) {
         claimRepository.deleteById(id);
+    }
+
+    @Override
+    public Claim findByDescription(String description) {
+        return claimRepository.findByDescription(description);
     }
 }

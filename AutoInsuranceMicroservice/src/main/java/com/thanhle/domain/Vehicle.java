@@ -21,10 +21,12 @@ public class Vehicle {
     private String model;
     
     private float value;
+    
+    //@Column(unique = true)
     private int year;
     
 
-    //@OneToMany(mappedBy = "vehicle", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    //@OneToMany(mappedBy = "vehicle", cascade = CascadeType.ALL)
     //private List<Claim> claims = new ArrayList<>();
 
     public Vehicle() {
@@ -82,12 +84,12 @@ public class Vehicle {
         this.year = year;
     }
 
-   // public List<Claim> getClaims() {
+    //public List<Claim> getClaims() {
         //return claims;
     //}
 
     //public void setClaims(List<Claim> claims) {
-       // this.claims = claims;
+        //this.claims = claims;
     //}
 
     //public void addClaim(Claim claim) {

@@ -43,10 +43,7 @@
                         <label for="vin">Vehicle Identification Number (VIN):</label>
                         <input type="text" class="form-control" id="vin" name="vin">
                     </div>
-                    <div class="form-group">
-                        <label for="year">Year:</label>
-                        <input type="number" class="form-control" id="year" name="year">
-                    </div>
+                    
                     <div class="form-group">
                         <label for="make">Make:</label>
                         <input type="text" class="form-control" id="make" name="make">
@@ -55,6 +52,10 @@
                         <label for="model">Model:</label>
                         <input type="text" class="form-control" id="model" name="model">
                     </div>
+                    <div class="form-group">
+                        <label for="year">Year:</label>
+                        <input type="number" class="form-control" id="year" name="year">
+                    </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
             </div>
@@ -62,6 +63,6 @@
     </div>
 
     <!-- Include footer.jsp -->
-    <jsp:include page="footer.jsp" />
+    <!-- <jsp:include page="footer.jsp" /> -->
 </body>
 </html>

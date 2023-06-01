@@ -13,6 +13,11 @@
             <li class="nav-item">
                 <a class="nav-link" href="/contact">Contact AFI</a>
             </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="/claim">Manage Claim</a>
+            </li>
+
             <li class="nav-item">
                 <a class="nav-link" href="/manage-insurance">Manage Insurance</a>
             </li>

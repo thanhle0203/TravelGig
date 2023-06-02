@@ -8,6 +8,8 @@ import com.thanhle.repository.VehicleRepository;
 import com.thanhle.service.ClaimService;
 import com.thanhle.service.VehicleService;
 
+import jakarta.servlet.http.HttpServletResponse;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -22,10 +24,11 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:8282")
+@CrossOrigin(origins = "http://localhost:8282", allowCredentials = "true")
 @RequestMapping("/api/claims")
 public class ClaimController {
 
@@ -184,16 +187,26 @@ public class ClaimController {
     public List<Claim> getAllClaims(@PathVariable String status) {
         return claimRepository.findByStatus(status);
     }
+    
+    @GetMapping("/{id}")
+    public Optional<Claim> getAllClaims(@PathVariable Long id) {
+        return claimRepository.findById(id);
+    }
 
-    @PutMapping("/{claimId}/status")
-    public ResponseEntity<String> updateClaimStatus(@PathVariable Long claimId, @RequestBody String status) {
+    @PutMapping("{claimId}/status")
+    public ResponseEntity<String> updateClaimStatus(@PathVariable Long claimId, @RequestBody String status, HttpServletResponse response) {
         claimService.updateClaimStatus(claimId, status);
+        response.setHeader("Access-Control-Allow-Credentials", "true"); // Add this line to set the 'Access-Control-Allow-Credentials' header
         return ResponseEntity.ok("Claim status updated successfully.");
     }
 
     @PutMapping("/{claimId}/repair-price")
-    public ResponseEntity<String> updateClaimRepairPrice(@PathVariable Long claimId, @RequestBody double repairPrice) {
+    public ResponseEntity<String> updateClaimRepairPrice(@PathVariable Long claimId, @RequestBody double repairPrice, HttpServletResponse response) {
         claimService.updateClaimRepairPrice(claimId, repairPrice);
+        response.setHeader("Access-Control-Allow-Credentials", "true"); // Add this line to set the 'Access-Control-Allow-Credentials' header
         return ResponseEntity.ok("Repair price updated successfully.");
     }
+
+    
+  
 }

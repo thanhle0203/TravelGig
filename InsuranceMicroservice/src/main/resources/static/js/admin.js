@@ -2,9 +2,14 @@ $(document).ready(function() {
   // Function to update claim status
   function updateClaimStatus(claimId, newStatus) {
     $.ajax({
-      url: 'http://localhost:8383/api/claims/' + claimId,
+      url: 'http://localhost:8383/api/claims/' + claimId + '/status',
       method: 'PUT',
-      data: { status: newStatus },
+      data: newStatus,
+      crossDomain: true,
+      xhrFields: {
+        withCredentials: true
+      },
+      contentType: 'text/plain', // Add this option
       success: function(response) {
         console.log('Claim status updated successfully.');
       },
@@ -19,7 +24,12 @@ $(document).ready(function() {
     $.ajax({
       url: 'http://localhost:8383/api/claims/' + claimId + '/repair-price',
       method: 'PUT',
-      data: { repairPrice: repairPrice },
+      data: JSON.stringify(repairPrice),
+      crossDomain: true,
+      xhrFields: {
+        withCredentials: true
+      },
+      contentType: 'application/json', // Set the content type to application/json
       success: function(response) {
         console.log('Repair price updated successfully.');
       },
@@ -39,14 +49,17 @@ $(document).ready(function() {
         var row = '<tr>' +
           '<td><span class="claim-id">' + claim.id + '</span></td>' +
           '<td>' + claim.description + '</td>' +
+          '<td>' + (claim.repairPrice ? claim.repairPrice.toFixed(2) : '') + '</td>' +
           '<td>' + claim.status + '</td>' +
           '<td>' +
-          '<button class="approve-btn">Approve</button>' +
-          '<button class="reject-btn">Reject</button>' +
-          '<button class="generate-price-btn">Generate Repair Price</button>' +
+          '<div class="btn-group" role="group" aria-label="Claim Actions">' +
+          '<button type="button" class="btn btn-success approve-btn">Approve</button>' +
+          '<button type="button" class="btn btn-danger reject-btn">Reject</button>' +
+          '<button type="button" class="btn btn-info generate-price-btn">Generate Repair Price</button>' +
+          '</div>' +
           '</td>' +
           '</tr>';
-        
+
         $('#claimsTableBody').append(row);
       });
     },

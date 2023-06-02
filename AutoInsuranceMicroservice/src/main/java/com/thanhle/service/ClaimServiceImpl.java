@@ -3,11 +3,13 @@ package com.thanhle.service;
 import com.thanhle.domain.Claim;
 import com.thanhle.repository.ClaimRepository;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 import java.util.List;
 import java.util.Optional;
 
 @Service
+@CrossOrigin(origins = "http://localhost:8282")
 public class ClaimServiceImpl implements ClaimService {
 
     private final ClaimRepository claimRepository;

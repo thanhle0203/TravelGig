@@ -4,10 +4,11 @@
 <html>
 <head>
   <title>Admin Dashboard</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  
   <script src="./js/admin.js"></script>
 </head>
 <body>
@@ -19,6 +20,7 @@
         <tr>
           <th>Claim ID</th>
           <th>Description</th>
+          <th>Repair Price</th>
           <th>Status</th>
           <th>Action</th>
         </tr>

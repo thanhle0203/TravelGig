@@ -51,38 +51,6 @@
     <!-- Include footer.jsp -->
     <jsp:include page="footer.jsp" />
 
-    <script>
-        // Retrieve the selected plan from local storage
-        var selectedPlan = JSON.parse(localStorage.getItem("selectedPlan"));
-
-        // Update the confirmation details in the HTML elements
-        $("#planName").text(selectedPlan.autoPlan.name);
-        $("#collisionDeductible").text("$" + selectedPlan.collisionDeductible);
-        $("#uninsuredMotoristDeductible").text("$" + selectedPlan.uninsuredMotoristDeductible);
-        $("#totalPrice").text("$" + (selectedPlan.totalPrice ? selectedPlan.totalPrice.toFixed(2) : ""));
-
-        // Set the values of the hidden form fields
-        $("#hiddenPlanName").val(selectedPlan.autoPlan.name);
-        $("#hiddenCollisionDeductible").val(selectedPlan.collisionDeductible);
-        $("#hiddenUninsuredMotoristDeductible").val(selectedPlan.uninsuredMotoristDeductible);
-        $("#hiddenTotalPrice").val(selectedPlan.totalPrice);
-
-        // Submit the form
-        $("#confirmationForm").submit(function(event) {
-            // Prevent the default form submission
-            event.preventDefault();
-
-            // Retrieve the autoInsuranceId from the URL query parameters
-            const urlParams = new URLSearchParams(window.location.search);
-            const autoInsurance_id = urlParams.get('autoInsurance_id');
-
-            // Set the autoInsuranceId as a query parameter in the form action URL
-            const formAction = "insured.jsp?autoInsuranceId=" + autoInsurance_id;
-            $("#confirmationForm").attr("action", formAction);
-
-            // Submit the form
-            this.submit();
-        });
-    </script>
+    
 </body>
 </html>

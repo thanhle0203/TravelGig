@@ -20,6 +20,12 @@ public class Insured {
     private String phone;
     
     private Integer drivingRecord;
+    
+    private String status;
+    
+    @OneToOne()
+    @JoinColumn(name = "vehicle_id")
+    private Vehicle vehicle;
 
     @OneToOne(cascade = CascadeType.ALL)
     private Address address;
@@ -35,9 +41,10 @@ public class Insured {
 
     public Insured() {
         super();
+        //this.vehicles = new ArrayList<>();
     }
 
-    public Insured(String name, String email, String dob, String phone, Integer drivingRecord, Address address, Document document, AutoInsurance autoInsurance) {
+    public Insured(String name, String email, String dob, String phone, Integer drivingRecord, Address address, Document document, AutoInsurance autoInsurance, Vehicle vehicle, String status) {
         super();
         this.name = name;
         this.email = email;
@@ -47,7 +54,8 @@ public class Insured {
         this.address = address;
         this.document = document;
         this.autoInsurance = autoInsurance;
-   
+        this.vehicle = vehicle;
+        this.status = status;
     }
 
 
@@ -124,6 +132,22 @@ public class Insured {
 
     public void setAutoInsurance(AutoInsurance autoInsurance) {
         this.autoInsurance = autoInsurance;
+    }
+    
+    public Vehicle getVehicle() {
+    	return vehicle;
+    }
+    
+    public void setVehicle(Vehicle vehicle) {
+    	this.vehicle = vehicle;
+    }
+    
+    public String getStatus() {
+    	return status;
+    }
+    
+    public void setStatus(String status) {
+    	this.status = status;
     }
     
    

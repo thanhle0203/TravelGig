@@ -3,11 +3,15 @@ package com.thanhle.service;
 import com.thanhle.domain.AutoInsurance;
 import com.thanhle.domain.Document;
 import com.thanhle.domain.Insured;
+import com.thanhle.domain.Vehicle;
 import com.thanhle.repository.AutoInsuranceRepository;
 import com.thanhle.repository.InsuredRepository;
+import com.thanhle.repository.VehicleRepository;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -15,11 +19,13 @@ public class InsuredServiceImpl implements InsuredService {
 
     private final AutoInsuranceRepository autoInsuranceRepository;
     private final InsuredRepository insuredRepository;
+    private final VehicleRepository vehicleRepository;
 
     @Autowired
-    public InsuredServiceImpl(AutoInsuranceRepository autoInsuranceRepository, InsuredRepository insuredRepository) {
+    public InsuredServiceImpl(AutoInsuranceRepository autoInsuranceRepository, InsuredRepository insuredRepository, VehicleRepository vehicleRepository) {
         this.autoInsuranceRepository = autoInsuranceRepository;
         this.insuredRepository = insuredRepository;
+        this.vehicleRepository = vehicleRepository;
     }
 
     @Override
@@ -36,12 +42,34 @@ public class InsuredServiceImpl implements InsuredService {
                 // Set any other fields that need to be updated
                 insured.setAutoInsurance(existingAutoInsurance);
             } else {
-                // If there was no existing AutoInsurance, associate the new AutoInsurance with the insured
-      
+                // If there was no existing AutoInsurance, associate the new AutoInsurance with the insured 
                 insured.setAutoInsurance(autoInsurance);
             }
         }
+        
+     // Retrieve the existing Vehicle associated with the insured
+        Vehicle vehicle = insured.getVehicle();
+
+        if (vehicle != null) {
+            Vehicle existingVehicle = vehicleRepository.findById(vehicle.getId()).orElse(null);
+            if (existingVehicle != null) {
+                // If an existing Vehicle is associated with the insured, update its fields
+                existingVehicle.setMake(vehicle.getMake());
+                existingVehicle.setModel(vehicle.getModel());
+                existingVehicle.setVin(vehicle.getVin());
+                existingVehicle.setYear(vehicle.getYear());
+                // Set any other fields that need to be updated
+                insured.setVehicle(existingVehicle);
+            } else {
+                // If there was no existing Vehicle, associate the new Vehicle with the insured
+                insured.setVehicle(vehicle);
+            }
+        }
+        
+        
+
         return insuredRepository.save(insured);
+
     }
 
     @Override

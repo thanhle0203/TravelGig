@@ -15,7 +15,11 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="/claim">Manage Claim</a>
+                <a class="nav-link" href="/claim">File Claim</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="/manage-claim">Manage Claim</a>
             </li>
 
             <li class="nav-item">

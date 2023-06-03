@@ -1,6 +1,11 @@
 $(document).ready(function() {
   // Listen for button clicks
   $(".select-plan").on("click", function() {
+	  
+	  // Retrieve the vehicle data from local storage
+	   var vehicleData = JSON.parse(localStorage.getItem("vehicleData"));
+
+
     // Get the selected plan and its details
     var planName = $(this).data("plan");
 
@@ -53,7 +58,7 @@ $(document).ready(function() {
         console.log("Selected plan saved successfully:", response);
         // Assign the autoPlan ID to the selectedPlan
         selectedPlan.autoPlan.id = response.id;
-
+		const vehicle_id = vehicleData.id;
         // Send another AJAX request to save the selected plan of AutoInsurance
         $.ajax({
           type: "POST",
@@ -74,9 +79,12 @@ $(document).ready(function() {
                 // Store the selected plan data in local storage
                 localStorage.setItem("selectedPlan", JSON.stringify(selectedPlan));
 
+				// Store the vehicle data in local storage
+                localStorage.setItem("vehicleData", JSON.stringify(vehicleData));
+                
                 // Redirect to the autoConfirmation.jsp page
                 //window.location.href = "/autoConfirmationPlan";
-                window.location.href = "/autoConfirmationPlan?autoInsurance_id=" + response.id;
+                window.location.href = "/autoConfirmationPlan?vehicle_id=" + vehicle_id + "&autoInsurance_id=" + response.id;
               },
               error: function(xhr, status, error) {
                 // Handle the error response

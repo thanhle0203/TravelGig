@@ -26,6 +26,11 @@ public class VehicleServiceImpl implements VehicleService {
     public Vehicle getVehicleById(Long id) {
         return vehicleRepository.findById(id).orElse(null);
     }
+    
+    @Override
+    public Vehicle getVehicleByVin(String vin) {
+        return vehicleRepository.findByVin(vin);
+    }
 
     @Override
     public List<String> findAllMakes() {

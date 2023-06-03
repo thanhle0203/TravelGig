@@ -12,33 +12,35 @@ public class Vehicle {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private int vin;
+    private String vin;
     
     //@Column(name = "make", unique = true)
     private String make;
     
     //@Column(name = "model", unique = true)
     private String model;
-    
-    private float value;
-    
+       
     //@Column(unique = true)
-    private int year;
+    private String year;
+    
     
 
     //@OneToMany(mappedBy = "vehicle", cascade = CascadeType.ALL)
     //private List<Claim> claims = new ArrayList<>();
+    
+    @OneToOne
+    private Insured insured;
+
 
     public Vehicle() {
         super();
     }
     
 
-    public Vehicle(int vin, String make, String model, float value, int year) {
+    public Vehicle(String vin, String make, String model, String year) {
     	this.vin = vin;
         this.make = make;
         this.model = model;
-        this.value = value;
         this.year = year;
     }
 
@@ -68,19 +70,12 @@ public class Vehicle {
         this.model = model;
     }
 
-    public float getValue() {
-        return value;
-    }
 
-    public void setValue(float value) {
-        this.value = value;
-    }
-
-    public int getYear() {
+    public String getYear() {
         return year;
     }
 
-    public void setYear(int year) {
+    public void setYear(String year) {
         this.year = year;
     }
 
@@ -97,11 +92,15 @@ public class Vehicle {
         //claim.setVehicle(this);
     //}
     
-    public int getVin() {
+    public String getVin() {
     	return vin;
     }
     
-    public void setVin(int vin) {
+    public void setVin(String vin) {
     	this.vin = vin;
     }
+
+
+
+	
 }

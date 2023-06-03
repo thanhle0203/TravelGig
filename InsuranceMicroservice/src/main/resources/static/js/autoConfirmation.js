@@ -1,4 +1,8 @@
 $(document).ready(function() {
+	
+   // Retrieve the vehicle data from local storage
+	   var vehicleData = JSON.parse(localStorage.getItem("vehicleData"));
+	   
   // Retrieve the plan details from the request attribute
   var planTitle = '<%= request.getAttribute("planTitle") %>';
   var planDescription = '<%= request.getAttribute("planDescription") %>';

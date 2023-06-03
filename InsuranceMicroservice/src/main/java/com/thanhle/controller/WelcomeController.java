@@ -139,6 +139,13 @@ public class WelcomeController {
 	    // Add any necessary data to the model for rendering in the view
 	    return "claim";
 	}
+	
+	@GetMapping("/manage-claim")
+	public String claimInsurances(Model model) {
+	    // Add any necessary data to the model for rendering in the view
+	    return "manage-claim";
+	}
+
 
  
  

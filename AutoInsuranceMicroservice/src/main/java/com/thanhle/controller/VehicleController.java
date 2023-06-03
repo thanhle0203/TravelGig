@@ -16,6 +16,7 @@ public class VehicleController {
 
     private final VehicleService vehicleService;
 
+
     @Autowired
     public VehicleController(VehicleService vehicleService) {
         this.vehicleService = vehicleService;
@@ -30,6 +31,16 @@ public class VehicleController {
     @GetMapping("/{id}")
     public ResponseEntity<Vehicle> getVehicleById(@PathVariable Long id) {
         Vehicle vehicle = vehicleService.getVehicleById(id);
+        if (vehicle != null) {
+            return ResponseEntity.ok(vehicle);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+    
+    @GetMapping("/getVin/{vin}")
+    public ResponseEntity<Vehicle> getVehicleByvin(@PathVariable String vin) {
+        Vehicle vehicle = vehicleService.getVehicleByVin(vin);
         if (vehicle != null) {
             return ResponseEntity.ok(vehicle);
         } else {

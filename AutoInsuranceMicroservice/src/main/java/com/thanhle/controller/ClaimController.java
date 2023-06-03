@@ -50,7 +50,7 @@ public class ClaimController {
                                              @RequestParam("description") String description,
                                              @RequestParam("vehicleMake") String vehicleMake,
                                              @RequestParam("vehicleModel") String vehicleModel,
-                                             @RequestParam("vehicleYear") int vehicleYear) {
+                                             @RequestParam("vehicleYear") String vehicleYear) {
 
         // Check if the claim with the same description already exists
         //Claim existingClaim = claimService.findByDescription(description);

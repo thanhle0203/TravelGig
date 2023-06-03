@@ -24,5 +24,7 @@ public interface VehicleService {
 
 	Vehicle findByMakeAndModelAndYear(String vehicleMake, String vehicleModel, int vehicleYear);
 
+	Vehicle getVehicleByVin(String vin);
+
     // Add other methods as needed
 }

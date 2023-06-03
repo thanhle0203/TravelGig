@@ -1,7 +1,12 @@
 $(document).ready(function() {
+	// Retrieve the vehicle data from local storage
+	var vehicleData = JSON.parse(localStorage.getItem("vehicleData"));
+	   
   // Retrieve the selected plan ID from the URL query parameter
   const urlParams = new URLSearchParams(window.location.search);
   var selectedPlanId = urlParams.get('autoInsurance_id');
+  var vehicleId = urlParams.get('vehicle_id');
+  var vehicle_id = urlParams.get('vehicle_id');
 
   // Fetch the details of the saved auto plan and total price
   $.ajax({
@@ -20,8 +25,9 @@ $(document).ready(function() {
 
         // Create a FormData object to store the form data
         var formData = new FormData(this);
-
+        
         // Get the insured JSON data
+        /*
         var insuredData = {
           name: $("#name").val(),
           email: $("#email").val(),
@@ -47,14 +53,58 @@ $(document).ready(function() {
             }
           }
         };
+        */
+
+        // Get the insured JSON data
+        var insuredData = {
+          name: $("#name").val(),
+          email: $("#email").val(),
+          phone: $("#phone").val(),
+          dob: $("#dob").val(),
+          address: {
+            street: $("#street").val(),
+            city: $("#city").val(),
+            state: $("#state").val(),
+            zipCode: $("#zipCode").val()
+          },
+          autoInsurance: {
+            id: autoInsurance.id,
+            totalPrice: autoInsurance.totalPrice,
+            collisionDeductible: autoInsurance.collisionDeductible,
+            uninsuredMotoristDeductible: autoInsurance.uninsuredMotoristDeductible,
+            autoPlan: {
+              id: autoInsurance.autoPlan.id,
+              name: autoInsurance.autoPlan.name,
+              type: autoInsurance.autoPlan.type,
+              description: autoInsurance.autoPlan.description,
+              basePrice: autoInsurance.autoPlan.basePrice
+            }
+          },   
+          vehicle: {
+			  id: vehicleData.id,
+			  make: vehicleData.make,
+			  model: vehicleData.model,
+			  vin: vehicleData.vin,
+			  year: vehicleData.year
+		  }
+		  
+		  //vehicleData: JSON.stringify(vehicleData) // Convert the vehicleData to JSON string
+        };
+
 
         // Store the insuredData object in local storage
         localStorage.setItem("insured", JSON.stringify(insuredData));
+        
+        // Add the vehicle data to the form data
+		//formData.append("vehicleData", JSON.stringify(vehicleData));
 
         // Convert the insured data to JSON and append it to the FormData
         formData.append("insured", JSON.stringify(insuredData));
-        formData.append("insuredData", JSON.stringify(insuredData));
+        
+        //formData.append("insuredData", JSON.stringify(insuredData));
+        //formData.append("insuredData", JSON.stringify(insuredData));
         console.log("Insured Data json: ", insuredData);
+     
 
         // Send the insured data to the server
         $.ajax({

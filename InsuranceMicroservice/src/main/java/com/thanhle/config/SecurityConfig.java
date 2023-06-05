@@ -9,6 +9,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityCustomizer;
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -17,75 +18,61 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.access.expression.WebExpressionAuthorizationManager;
+import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
 
-	@Autowired
-	UserDetailsService userDetailsService;
-	
+    @Autowired
+    UserDetailsService userDetailsService;
 
-	@Bean
-	public PasswordEncoder passwordEncoder() {
-		return new BCryptPasswordEncoder();
-	}
-	
-//	@Bean
-//	public UserDetailsService userDetailsService() {
-//		UserDetails user =
-//			 User.withDefaultPasswordEncoder()
-//				.username("user")
-//				.password("password")
-//				.roles("USER")
-//				.build();
-//
-//		return new InMemoryUserDetailsManager(user);
-//	}
-	
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
 
+    @Bean
+    public SecurityFilterChain apiFilterChain2(HttpSecurity http) throws Exception {
+        http
+            .apply(MyCustomDsl.customDsl()).flag(true)
+            .and()
+            .authorizeRequests()
+                .requestMatchers("/home/**", "", "/signup", "/login").permitAll()
+               // .requestMatchers("/admin").hasRole("ADMIN")
+                //.anyRequest().authenticated()
+            .and()
+            .formLogin()
+                .loginPage("/login")
+                .successHandler(roleBasedSuccessHandler())
+                .permitAll()
+            .and()
+            .logout()
+                .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
+                .logoutSuccessUrl("/home")
+                .invalidateHttpSession(true)
+                .deleteCookies("JSESSIONID")
+                .permitAll();
 
-	
-	@Bean 
-	public SecurityFilterChain apiFilterChain2(HttpSecurity http) throws Exception {
-		http
-		.apply(MyCustomDsl.customDsl()).flag(true).and()
-		.authorizeRequests().requestMatchers("/home/**", "", "/signup", "/login").permitAll().and()
-		.authorizeRequests().requestMatchers(("/")).hasAnyRole("USER", "ADMIN")
-		.and().formLogin().loginPage("/login").defaultSuccessUrl("/welcome").permitAll()
-		.and()
-	        .logout()
-	            .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
-	            .logoutSuccessUrl("/home")
-	            .invalidateHttpSession(true)
-	            .deleteCookies("JSESSIONID")
-	            .permitAll();
-		return http.build();
-	}
-	
-	/*
-	protected void configure(HttpSecurity http) throws Exception {
-	    http
-	        .authorizeRequests()
-	            .antMatchers("/home/**", "", "/signup", "/login").permitAll()
-	            .antMatchers("/welcomes").hasAnyRole("USER", "ADMIN")
-	            .anyRequest().authenticated()
-	        .and()
-	        .formLogin()
-	            .loginPage("/login")
-	            .defaultSuccessUrl("/")
-	            .permitAll()
-	        .and()
-	        .logout()
-	            .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
-	            .logoutSuccessUrl("/home")
-	            .invalidateHttpSession(true)
-	            .deleteCookies("JSESSIONID")
-	            .permitAll();
-	}
-	*/
+        return http.build();
+    }
 
+    private AuthenticationSuccessHandler roleBasedSuccessHandler() {
+        return (request, response, authentication) -> {
+            for (GrantedAuthority auth : authentication.getAuthorities()) {
+                if (auth.getAuthority().equals("ADMIN")) {
+                    response.sendRedirect("/admin");
+                    return;
+                }
+            }
+            response.sendRedirect("/welcome");
+        };
+    }
 
 }

@@ -10,4 +10,5 @@ public interface InsuredService {
 	//Insured saveInsured(Insured insured, long autoInsuranceId);
 	Insured getInsuredByEmail(String email);
 	Insured getInsuredByPhone(String phone);
+	void updateInsuredStatus(Long insuredId, String status);
 }

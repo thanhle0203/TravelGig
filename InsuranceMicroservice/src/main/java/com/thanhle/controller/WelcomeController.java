@@ -2,6 +2,8 @@ package com.thanhle.controller;
 
 import java.security.Principal;
 
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -110,11 +112,41 @@ public class WelcomeController {
 	   return "payment";
 	}
 	
+	/*
 	@GetMapping(value = "/admin")
-	public String admin(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
+	public String admin(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse,  Model model) {
 		
 	   return "admin";
 	}
+	*/
+	
+	/*
+	@GetMapping(value = "/admin")
+	public String admin(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Principal principal) {
+	    String loggedInUsername = principal.getName();
+	    // Check if the logged-in user has the ADMIN role
+	    // You can replace this condition with your actual logic to check the user's role
+	    if (loggedInUsername != null && loggedInUsername.equals("admin")) {
+	        return "admin";
+	    } else {
+	        // Redirect or show an error page for unauthorized access
+	        return "redirect:/accessDeniedPage";
+	    }
+	}
+	*/
+	
+	@GetMapping(value = "/admin")
+	public String admin() {
+	    Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+	    if (authentication != null && authentication.getAuthorities().stream()
+	            .anyMatch(auth -> auth.getAuthority().equals("ADMIN"))) {
+	        return "admin";
+	    } else {
+	        // Redirect or show an error page for unauthorized access
+	        return "redirect:/accessDeniedPage";
+	    }
+	}
+
 	
 	@GetMapping("/manage-insurance")
 	public String manageInsurance(Model model) {

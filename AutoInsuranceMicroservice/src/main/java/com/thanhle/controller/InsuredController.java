@@ -11,6 +11,8 @@ import com.thanhle.service.DocumentService;
 import com.thanhle.service.InsuredService;
 import com.thanhle.service.VehicleService;
 
+import jakarta.servlet.http.HttpServletResponse;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -22,7 +24,7 @@ import java.io.IOException;
 import java.util.*;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:8282")
+@CrossOrigin(origins = "http://localhost:8282", allowCredentials = "true")
 @RequestMapping("/api/insured")
 public class InsuredController {
 
@@ -133,5 +135,12 @@ public class InsuredController {
         } else {
             return ResponseEntity.notFound().build();
         }
+    }
+    
+    @PutMapping("{insuredId}/status")
+    public ResponseEntity<String> updateClaimStatus(@PathVariable Long insuredId, @RequestBody String status, HttpServletResponse response) {
+        insuredService.updateInsuredStatus(insuredId, status);
+        response.setHeader("Access-Control-Allow-Credentials", "true"); // Add this line to set the 'Access-Control-Allow-Credentials' header
+        return ResponseEntity.ok("Insured status updated successfully.");
     }
 }

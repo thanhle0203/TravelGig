@@ -1,6 +1,7 @@
 package com.thanhle.service;
 
 import com.thanhle.domain.AutoInsurance;
+import com.thanhle.domain.Claim;
 import com.thanhle.domain.Document;
 import com.thanhle.domain.Insured;
 import com.thanhle.domain.Vehicle;
@@ -13,6 +14,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class InsuredServiceImpl implements InsuredService {
@@ -86,5 +88,16 @@ public class InsuredServiceImpl implements InsuredService {
     public Insured getInsuredByPhone(String phone) {
         return insuredRepository.findByPhone(phone);
     }
+
+	@Override
+	public void updateInsuredStatus(Long insuredId, String status) {
+		Optional<Insured> optionalInsured = insuredRepository.findById(insuredId);
+        if (optionalInsured.isPresent()) {
+            Insured insured = optionalInsured.get();
+            insured.setStatus(status);
+            insuredRepository.save(insured);
+        }
+		
+	}
 
 }

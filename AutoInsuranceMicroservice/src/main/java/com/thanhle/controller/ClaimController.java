@@ -23,6 +23,7 @@ import java.nio.file.StandardCopyOption;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Base64;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
@@ -92,6 +93,54 @@ public class ClaimController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
         }
     }
+    
+ // Helper method to save the uploaded images
+    private List<ClaimImage> saveImages(MultipartFile[] images) {
+        List<ClaimImage> imageUrls = new ArrayList<>();
+        String uploadDir = "src/main/resources/static/images/claims/";
+
+        File directory = new File(uploadDir);
+        if (!directory.exists()) {
+            directory.mkdirs();
+        }
+
+        for (MultipartFile image : images) {
+            // Check if the image already exists in the list based on filename or content
+            boolean isDuplicate = imageUrls.stream().anyMatch(existingImage ->
+                {
+					try {
+						return existingImage.getFilename().equals(image.getOriginalFilename()) || Arrays.equals(existingImage.getData(), image.getBytes());
+					} catch (IOException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+					return false;
+				}
+            );
+
+            if (isDuplicate) {
+                continue; // Skip saving the duplicate image
+            }
+
+            String filename = UUID.randomUUID().toString() + "_" + image.getOriginalFilename();
+
+            try {
+                Path filePath = Path.of(uploadDir, filename);
+                Files.copy(image.getInputStream(), filePath, StandardCopyOption.REPLACE_EXISTING);
+
+                byte[] imageData = image.getBytes();
+                //String base64ImageData = Base64.getEncoder().encodeToString(imageData); // Encode the image data as Base64
+                //imageUrls.add(new ClaimImage(filename, base64ImageData));
+                imageUrls.add(new ClaimImage(filename, imageData));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+        return imageUrls;
+    }
+
+
 
     // Helper method to save the uploaded images
     /*
@@ -128,6 +177,7 @@ public class ClaimController {
 	*/
     
  // Helper method to save the uploaded images
+    /*
     private List<ClaimImage> saveImages(MultipartFile[] images) {
         List<ClaimImage> imageUrls = new ArrayList<>();
         String uploadDir = "src/main/resources/static/images/claims/"; // Specify the desired location to save the images
@@ -176,6 +226,7 @@ public class ClaimController {
 
         return imageUrls;
     }
+    */
 
 
     @GetMapping

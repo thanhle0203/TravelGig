@@ -108,9 +108,14 @@
         	<groupId>org.springframework</groupId>
         		<artifactId>spring-context-support</artifactId>
     	</dependency>
-    	
 
-    	
+
+
+		<dependency>
+			<groupId>com.thanhle</groupId>
+			<artifactId>AutoInsuranceMicroservice</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 	</dependencies>
 
 	<build>

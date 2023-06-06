@@ -18,37 +18,73 @@ $(document).ready(function() {
         .done(function(response) {
           var insuredData = response;
           var autoInsuranceData = response.autoInsurance;
+          var vehicleData = response.vehicle;
 
           // Display insured information
           var insuredInfo = `
-            <h4>Name: ${insuredData.name}</h4>
-            <p>Address: ${insuredData.address.street}, ${insuredData.address.city}, ${insuredData.address.state}, ${insuredData.address.zipCode}</p>
+            <h4>Name: ${insuredData.name}</h4>         
             <p>Phone: ${insuredData.phone}</p>
             <p>Email: ${insuredData.email}</p>
+            <p>Address: ${insuredData.address.street}, ${insuredData.address.city}, ${insuredData.address.state}, ${insuredData.address.zipCode}</p>
           `;
           $("#insuredInfo").html(insuredInfo);
+
+          // Display vehicle information
+          var vehicleInfo = `
+          	<h4>VIN: ${insuredData.vehicle.vin}</h4>
+            <p>Make: ${insuredData.vehicle.make}</p>
+            <p>Model: ${insuredData.vehicle.model}</p>       
+            <p>Year: ${insuredData.vehicle.year}</p>
+          `;
+          $("#vehicleInfo").html(vehicleInfo);
 
           // Display auto insurance plan information
           var autoInsuranceInfo = `
             <h4>Auto Insurance Plan: ${autoInsuranceData.autoPlan.name}</h4>
-            <p>Total Price: $${autoInsuranceData.totalPrice} /year</p>
             <p>Collision Deductible: $${autoInsuranceData.collisionDeductible}</p>
             <p>Uninsured Motorist Deductible: $${autoInsuranceData.uninsuredMotoristDeductible}</p>
+            <h4>Total Price: $${autoInsuranceData.totalPrice} /year</h4>
           `;
           $("#autoInsuranceInfo").html(autoInsuranceInfo);
+
+          // Display insured status
+          var insuredStatus = `
+            <p>Status: ${insuredData.status}</p>
+          `;
+          $("#insuredStatus").html(insuredStatus);
+
+          // Check if insured has an approved status
+          if (insuredData.status === "approved") {
+            // Display the "Pay" button
+            var payButton = `
+              <button class="btn btn-primary" id="payButton">Pay</button>
+            `;
+            $("#payButtonContainer").html(payButton);
+
+            // Handle the click event for the "Pay" button
+            $("#payButton").click(function() {
+              // Perform the necessary actions when the button is clicked
+              // For example, you can redirect the user to the payment page
+              window.location.href = "/payment?insuredId=" + insuredData.id;
+            });
+          }
         })
         .fail(function(xhr, status, error) {
           // Handle the failure case
           console.log("Error fetching insured data:", error);
           $("#insuredInfo").html("<p>Error fetching insured data.</p>");
+          $("#vehicleInfo").html("");
           $("#autoInsuranceInfo").html("");
+          $("#insuredStatus").html("");
         });
     },
     error: function(xhr, status, error) {
       // Handle the failure case
       console.log("Error fetching insured data:", error);
       $("#insuredInfo").html("<p>Error fetching insured data.</p>");
+      $("#vehicleInfo").html("");
       $("#autoInsuranceInfo").html("");
+      $("#insuredStatus").html("");
     }
   });
 });

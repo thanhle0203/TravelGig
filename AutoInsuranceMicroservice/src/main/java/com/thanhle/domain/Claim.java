@@ -21,6 +21,8 @@ public class Claim {
     private String status;
     
     private double repairPrice;
+    
+    private String phone;
 
     //@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @ManyToOne(cascade = CascadeType.ALL)
@@ -28,20 +30,20 @@ public class Claim {
     private Vehicle vehicle;
 
     @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "claim_id")
     private List<ClaimImage> images = new ArrayList<>();
 
     public Claim() {
         super();
     }
 
-    public Claim(LocalDate accidentDate, String description, String status, Vehicle vehicle, List<ClaimImage> images, double repairPrice) {
+    public Claim(LocalDate accidentDate, String description, String status, Vehicle vehicle, List<ClaimImage> images, double repairPrice, String phone) {
         this.accidentDate = accidentDate;
         this.description = description;
         this.status = status;
         this.vehicle = vehicle;
         this.images = images;
         this.repairPrice = repairPrice;
+        this.phone = phone;
     }
 
     // Getters and setters
@@ -77,6 +79,14 @@ public class Claim {
     public void setStatus(String status) {
         this.status = status;
     }
+    
+    public String getPhone() {
+    	return phone;
+    }
+    
+    public void setPhone(String phone) {
+    	this.phone = phone;
+    }
 
     public Vehicle getVehicle() {
         return vehicle;
@@ -105,4 +115,6 @@ public class Claim {
     public void setRepairPrice(double repairPrice) {
     	this.repairPrice = repairPrice;
     }
+    
+    
 }

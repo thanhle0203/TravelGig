@@ -83,7 +83,7 @@ $(document).ready(function() {
         e.preventDefault();
 
         var formData = new FormData(this);
-
+	
         // Get the file inputs
         var files = $('#image')[0].files;
 
@@ -92,18 +92,6 @@ $(document).ready(function() {
             formData.append('image', files[i]);
         }
 
-        // Add accident date, description, vehicle make, model, and year to formData
-        //var accidentDate = $('#accidentDate').val();
-        //var description = $('#description').val();
-        //var vehicleMake = $('#vehicleMake').val();
-        //var vehicleModel = $('#vehicleModel').val();
-        //var vehicleYear = $('#vehicleYear').val();
-
-        //formData.append('accidentDate', accidentDate);
-        //formData.append('description', description);
-        //formData.append('vehicleMake', vehicleMake);
-        //formData.append('vehicleModel', vehicleModel);
-        //formData.append('vehicleYear', vehicleYear);
 
         $.ajax({
             url: 'http://localhost:8383/api/claims',
@@ -118,9 +106,16 @@ $(document).ready(function() {
                 $('#vehicleMake').empty();
                 $('#vehicleModel').empty();
                 $('#vehicleYear').empty();
-                // Reload the vehicle makes and years
-                //loadVehicleMakes();
-                //loadVehicleYears();
+ 
+                
+                var claimId = response.id;
+                $.post("http://localhost:8282/sendClaimDetails/" + claimId, {}, function(response) {
+            // Handle the response from the server
+            console.log(response);
+        }).fail(function(jqXHR, textStatus, errorThrown) {
+            // Handle the error case
+            console.log("Failed to send booking details: " + errorThrown);
+        });
             },
             error: function(xhr, status, error) {
                 alert('Error submitting claim: ' + error);

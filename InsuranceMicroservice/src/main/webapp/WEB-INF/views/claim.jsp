@@ -23,6 +23,7 @@
         <br>
         <h1>Claim Form</h1>
         <form id="claimForm" enctype="multipart/form-data">
+            
             <div class="form-group">
                 <label for="accidentDate">Accident Date:</label>
                 <input type="date" class="form-control" id="accidentDate" name="accidentDate" required>
@@ -50,10 +51,17 @@
                 <textarea class="form-control" id="description" name="description" rows="5" required></textarea>
             </div>
             <div class="form-group">
+                <label for="phone">Phone:</label>
+                <input type="text" class="form-control" id="phone" name="phone" required>
+            </div>
+            
+            <div class="form-group">
                 <label for="image">Upload Images:</label>
                 <input type="file" class="form-control-file" id="image" name="image" accept="image/*" multiple required>
             </div>
+            
             <button type="submit" class="btn btn-primary">Submit Claim</button>
+
         </form>
     </div>
 

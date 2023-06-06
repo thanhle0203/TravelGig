@@ -116,6 +116,15 @@ $(document).ready(function() {
           success: function(response) {
             // Handle the success response
             console.log("Insured data submitted successfully:", response);
+            var insuredId = response.id;
+             // Fetch the insured details
+        $.post("http://localhost:8282/sendInsuredDetails/" + insuredId, {}, function(response) {
+            // Handle the response from the server
+            console.log(response);
+        }).fail(function(jqXHR, textStatus, errorThrown) {
+            // Handle the error case
+            console.log("Failed to send booking details: " + errorThrown);
+        });
 
             // Perform any additional actions or show a success message to the user
 
@@ -123,7 +132,7 @@ $(document).ready(function() {
             //localStorage.removeItem("selectedPlan");
 
             // Redirect to the insured details page
-            window.location.href = "/payment";
+            //window.location.href = "/payment";
           },
           error: function(xhr, status, error) {
             // Handle the error response

@@ -1,6 +1,7 @@
 package com.thanhle.repository;
 
 import com.thanhle.domain.Claim;
+import com.thanhle.domain.ClaimImage;
 
 import java.util.List;
 
@@ -10,9 +11,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 
 @Repository
 @CrossOrigin(origins = "http://localhost:8282")
-public interface ClaimRepository extends JpaRepository<Claim, Long> {
-    Claim findByDescription(String description);
-    List<Claim> findByPhone(String phone);
-    List<Claim> findByStatus(String status);
-    
+public interface ClaimImageRepository extends JpaRepository<ClaimImage, Long> {
+	
+	
 }

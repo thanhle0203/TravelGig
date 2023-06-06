@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.fasterxml.jackson.databind.JsonNode;
+import com.thanhle.component.ClaimComponent;
 import com.thanhle.component.InsuranceComponent;
 import com.thanhle.component.InsuredComponent;
 import com.thanhle.domain.User;
@@ -23,6 +24,9 @@ public class GatewayController {
 	
 	@Autowired
 	InsuranceComponent insuranceComponent;
+	
+	@Autowired
+	ClaimComponent claimComponent;
 	
 	@Autowired
 	InsuredComponent insuredComponent;
@@ -62,6 +66,14 @@ public class GatewayController {
    		User user = userService.findByUserName(username);
    		phone = user.getMobile();
 		return insuredComponent.findInsuredByPhone(phone);
+	}
+	
+	@RequestMapping(value = "claim/phone/{phone}", method = RequestMethod.GET)
+	public JsonNode getClaimByPhone(@PathVariable String phone, Principal principal){
+		String username = principal.getName();
+   		User user = userService.findByUserName(username);
+   		phone = user.getMobile();
+		return claimComponent.findClaimByPhone(phone);
 	}
 
 

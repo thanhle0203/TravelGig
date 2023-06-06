@@ -32,8 +32,26 @@
             <div class="card-body">
                 <h2 class="card-title">Insured Information</h2>
                 <div id="insuredInfo"></div>
+
+                <h2 class="card-title">Vehicle Information</h2>
+                <table class="table table-bordered">
+                    <tbody id="vehicleInfo"></tbody>
+                </table>
+
                 <h2 class="card-title">Auto Insurance Plan</h2>
                 <div id="autoInsuranceInfo"></div>
+
+                <br>
+
+                <h2 class="card-title">Insured Status</h2>
+                <div id="insuredStatus"></div>
+
+                <br>
+
+                <div id="payButtonContainer"></div> 
+
+                <br>
+                
             </div>
         </div>
     </div>

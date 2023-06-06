@@ -68,7 +68,11 @@ $(document).ready(function() {
       response.forEach(function(claim) {
         var row = '<tr>' +
           '<td><span class="claim-id">' + claim.id + '</span></td>' +
+          '<td>' + claim.phone + '</td>' +
           '<td>' + claim.accidentDate + '</td>' +
+          '<td>' + claim.vehicle.make + '</td>' +
+          '<td>' + claim.vehicle.model + '</td>' +
+          '<td>' + claim.vehicle.year + '</td>' +
           '<td>' + claim.description + '</td>' +
           '</td>' +
         '<td><img class="vehicle-damage-img" src="' + claim.images[0].data + '"  width="30" height="30"></td>' +

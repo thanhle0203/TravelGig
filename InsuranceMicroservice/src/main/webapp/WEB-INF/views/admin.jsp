@@ -12,6 +12,7 @@
 <body>
   <!-- Include navbar.jsp -->
   <%@ include file="navbar.jsp" %>
+
   <div class="container">
     <h1 class="mt-5">Admin Dashboard</h1>
   
@@ -33,7 +34,11 @@
           <thead>
             <tr>
               <th>Claim ID</th>
+              <th>Claim Phone Number</th>
               <th>Accident Date</th>
+              <th>Vehicle Make</th>
+              <th>Vehicle Model</th>
+              <th>Vehicle Year</th>
               <th>Description</th>
               <th>Vehicle Damage Image</th>
               <th>Repair Price</th>

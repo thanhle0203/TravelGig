@@ -5,15 +5,14 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.client.RestTemplate;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 @Component
-public class InsuredComponent {
-	public JsonNode saveInsured(JsonNode json) {
+public class ClaimComponent {
+	public JsonNode saveClaim(JsonNode json) {
 
 		HttpHeaders headers = new HttpHeaders();
 
@@ -23,7 +22,7 @@ public class InsuredComponent {
 
 		RestTemplate restTemplate = new RestTemplate();
 
-		ResponseEntity<Object> responseEntity = restTemplate.postForEntity("http://localhost:8383/api/insured", request, Object.class);
+		ResponseEntity<Object> responseEntity = restTemplate.postForEntity("http://localhost:8383/api/claims", request, Object.class);
 
 		Object object = (JsonNode) responseEntity.getBody();
 
@@ -31,9 +30,9 @@ public class InsuredComponent {
 		
 	}
 	
-	public JsonNode getInsured() {
+	public JsonNode getClaim() {
         RestTemplate restTemplate = new RestTemplate();
-        ResponseEntity<Object> responseEntity = restTemplate.getForEntity("http://localhost:8383/api/insured", Object.class);
+        ResponseEntity<Object> responseEntity = restTemplate.getForEntity("http://localhost:8383/api/claims", Object.class);
 
         Object objects = responseEntity.getBody();
 
@@ -41,10 +40,9 @@ public class InsuredComponent {
         JsonNode returnObj = mapper.convertValue(objects, JsonNode.class);
         return returnObj;
     }
-	
-	public JsonNode findInsuredByPhone(String phone) {
+	public JsonNode findClaimByPhone(String phone) {
         RestTemplate restTemplate = new RestTemplate();
-        ResponseEntity<Object> responseEntity = restTemplate.getForEntity("http://localhost:8383/api/insured/phone/" + phone, Object.class);
+        ResponseEntity<Object> responseEntity = restTemplate.getForEntity("http://localhost:8383/api/claims/phone/" + phone, Object.class);
 
         Object objects = responseEntity.getBody();
 
@@ -52,6 +50,4 @@ public class InsuredComponent {
         JsonNode returnObj = mapper.convertValue(objects, JsonNode.class);
         return returnObj;
     }
-	
-	
 }

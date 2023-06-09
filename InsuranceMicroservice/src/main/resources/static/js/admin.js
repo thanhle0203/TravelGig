@@ -74,10 +74,24 @@ $(document).ready(function() {
           '<td>' + claim.vehicle.model + '</td>' +
           '<td>' + claim.vehicle.year + '</td>' +
           '<td>' + claim.description + '</td>' +
-          '</td>' +
-        '<td><img class="vehicle-damage-img" src="' + claim.images[0].data + '"  width="30" height="30"></td>' +
+          '<td>'; // Start the column for vehicle damage images
         
-          '<td>' + '$' + (claim.repairPrice ? claim.repairPrice.toFixed(2) : '') + '</td>' +
+        // Loop through the images and add them to the row
+        $.each(claim.images, function(index, image) {
+             row += '<img class="vehicle-damage-img" src="' + image.data + '"  width="30" height="30">';
+        });
+        
+        // Loop through the images and add them to the row
+        /*
+  $.each(claim.images, function(index, image) {
+    row += '<a href="' + image.url + '" target="_blank">' + image.filename + '</a>';
+    if (index !== claim.images.length - 1) {
+      row += ', ';
+    }
+  });
+	*/
+        row += '</td>' +
+          '<td>' + (claim.repairPrice ? '$' + claim.repairPrice.toFixed(2) : '') + '</td>' +
           '<td>' + claim.status + '</td>' +
           '<td>' +
           '<div class="btn-group" role="group" aria-label="Claim Actions">' +
@@ -108,24 +122,19 @@ $(document).ready(function() {
           '<td>' + insured.name + '</td>' +
           '<td>' + insured.email + '</td>' +
           '<td>' + insured.phone + '</td>' +
-          '</td>' +
-        '<td><img class="driver-license-img" src="' + insured.document.driverLicense + '"  width="30" height="30"></td>' +
-        
+          '<td><img class="driver-license-img" src="' + insured.document.driverLicense + '"  width="30" height="30"></td>' +
           '<td>' + insured.vehicle.make + '</td>' +
           '<td>' + insured.vehicle.model + '</td>' +
           '<td>' + insured.vehicle.year + '</td>' +
-          
           '<td>' + insured.autoInsurance.autoPlan.name + '</td>' +
           '<td>' + '$' + insured.autoInsurance.totalPrice + '</td>' +
           '<td>' + insured.status + '</td>' +
           '<td>' +
-        '<div class="btn-group" role="group" aria-label="Insured Actions">' +
-        '<button type="button" class="btn btn-success approve-btn">Approve</button>' +
-        '<button type="button" class="btn btn-danger reject-btn">Reject</button>' +
-        '</div>' +
-        '</td>' +
-        '</tr>';
-        
+          '<div class="btn-group" role="group" aria-label="Insured Actions">' +
+          '<button type="button" class="btn btn-success approve-btn">Approve</button>' +
+          '<button type="button" class="btn btn-danger reject-btn">Reject</button>' +
+          '</div>' +
+          '</td>' +
           '</tr>';
 
         $('#insuredTableBody').append(row);
@@ -168,36 +177,36 @@ $(document).ready(function() {
     var claimId = $(this).closest('tr').find('.claim-id').text();
     showRepairPriceDialog(claimId);
   });
-  
+
   // Handle click event for Vehicle Damage image
-$(document).on('click', '.vehicle-damage-img', function() {
-  var imgData = $(this).attr('src');
-  if (imgData && imgData !== 'undefined') { // Check if the image data is defined
-    var imgSrc = 'data:image/png;base64,' + imgData;
-    $('#vehicleDamageImage').attr('src', imgSrc);
-    $('#vehicleDamageModal').modal('show');
-  }
-});
+  $(document).on('click', '.vehicle-damage-img', function() {
+    var imgData = $(this).attr('src');
+    if (imgData && imgData !== 'undefined') { // Check if the image data is defined
+      var imgSrc = 'data:image/png;base64,' + imgData;
+      $('#vehicleDamageImage').attr('src', imgSrc);
+      $('#vehicleDamageModal').modal('show');
+    }
+  });
   
-  // Handle click event for Approve button
+  
+  
+// Handle click event for Approve button
   $(document).on('click', '.approve-btn', function() {
     var insuredId = $(this).closest('tr').find('.insured-id').text();
     updateInsuredStatus(insuredId, 'approved');
   });
 
   // Handle click event for Reject button
-  $(document).on('click', '.rejected-btn', function() {
+  $(document).on('click', '.reject-btn', function() {
     var insuredId = $(this).closest('tr').find('.insured-id').text();
     updateInsuredStatus(insuredId, 'rejected');
   });
-  
- // Handle click event for Driver License image
+
+  // Handle click event for Driver License image
   $(document).on('click', '.driver-license-img', function() {
     var imgData = $(this).attr('src'); // Assuming the byte data is already encoded as Base64
     var imgSrc = 'data:image/png;base64,' + imgData;
     $('#driverLicenseImage').attr('src', imgSrc);
     $('#driverLicenseModal').modal('show');
   });
-
-  
 });

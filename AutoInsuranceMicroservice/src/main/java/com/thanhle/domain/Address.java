@@ -18,6 +18,8 @@ public class Address {
     
     private String zipCode;
     
+    private String email;
+    
     public Address() {
     	super();
     }
@@ -71,5 +73,10 @@ public class Address {
     public void setZipCode(String zipCode) {
         this.zipCode = zipCode;
     }
+
+	public String getEmail() {
+		// TODO Auto-generated method stub
+		return email;
+	}
 
 }

@@ -59,14 +59,17 @@ public class AutoInsuranceServiceImpl implements AutoInsuranceService {
                 autoPlan.setType("Full Coverage");
                 autoPlan.setDescription("Comprehensive coverage including collision, liability, uninsured motorist protection, medical bills, car rental, and roadside assistance. Ideal for new, high-value cars.");
                 autoPlan.setBasePrice(2000);
+          
             } else if (planName.equalsIgnoreCase("Plus Plan") || planName.equalsIgnoreCase("PlusPlan")) {
                 autoPlan.setType("Partial Coverage");
                 autoPlan.setDescription("Balanced coverage including collision and liability protection. Suitable for medium-value cars or drivers wanting a balance between cost and coverage.");
                 autoPlan.setBasePrice(1500);
+          
             } else if (planName.equalsIgnoreCase("Basic Plan") || planName.equalsIgnoreCase("BasicPlan")) {
                 autoPlan.setType("Basic Coverage");
                 autoPlan.setDescription("Minimum coverage meeting state requirements, typically including liability coverage only. Suitable for older, low-value cars or drivers needing economical options.");
                 autoPlan.setBasePrice(1000);
+               
             }
         }
 
@@ -76,10 +79,10 @@ public class AutoInsuranceServiceImpl implements AutoInsuranceService {
         // Calculate the total price based on the selected deductibles
         double totalPrice = autoPlan.getBasePrice();
         if (collisionDeductible == 1000 && uninsuredMotoristDeductible == 1000) {
-            totalPrice *= 1.2;
+            totalPrice *= 0.8;
         }
         else if (collisionDeductible == 1000 || uninsuredMotoristDeductible == 1000) {
-            totalPrice *= 1.1;
+            totalPrice *= 0.9;
         }
 
         //autoInsurance.setAutoPlan(autoPlan);

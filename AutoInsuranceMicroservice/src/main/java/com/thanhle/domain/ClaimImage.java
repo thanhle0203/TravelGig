@@ -17,17 +17,19 @@ public class ClaimImage {
     @Column(name = "data")
     private byte[] data;
 
-    // Constructors, getters, and setters
-
+    @Transient
+    private String url; 
+    
     // Constructors
 
     public ClaimImage() {
     	super();
     }
 
-    public ClaimImage(String filename, byte[] data) {
+    public ClaimImage(String filename, byte[] data, String url) {
         this.filename = filename;
         this.data = data;
+        this.url = url;
     }
 
 	public Long getId() {
@@ -55,7 +57,11 @@ public class ClaimImage {
 		this.data = data;
 	}
 
-    // Getters and setters
+	public String getUrl() {
+        return url;
+    }
 
-    // ...
+    public void setUrl(String url) {
+        this.url = url;
+    }
 }

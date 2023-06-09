@@ -3,8 +3,10 @@ package com.thanhle.controller;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.thanhle.domain.Claim;
 import com.thanhle.domain.Insured;
+import com.thanhle.domain.PaymentData;
 import com.thanhle.repository.ClaimRepository;
 import com.thanhle.repository.InsuredRepository;
+import com.thanhle.repository.PaymentDataRepository;
 import com.thanhle.domain.User;
 import com.thanhle.dto.EmailDetails;
 import com.thanhle.repository.UserRepository;
@@ -52,6 +54,8 @@ public class MailController {
     @Autowired
     UserService userService;
     
+    @Autowired
+    PaymentDataRepository paymentDataRepository;
 
     @PostMapping(value = "/sendInsuredDetails/{insuredId}")
     public String sendMail(@PathVariable Long insuredId, Model model, Principal principal) {
@@ -143,6 +147,43 @@ public class MailController {
     }
 
     
-    
+    @PostMapping(value = "/sendPaymentDetails/{paymentId}")
+    public String sendPayment(@PathVariable Long paymentId, Model model, Principal principal) {
+        String result;
+        String recipient;
+        String username;
+
+        // Get the logged in user
+        username = principal.getName();
+        User user = userRepository.findByUserName(username);
+        model.addAttribute("username", username);
+        recipient = user.getEmail();
+
+        // Get the booking by ID
+        Optional<PaymentData> optionalPaymentData = paymentDataRepository.findById(paymentId);
+
+        if (optionalPaymentData .isPresent()) {
+            PaymentData payment = optionalPaymentData.get();
+
+            // Create email details object with booking details
+            EmailDetails emailDetails = new EmailDetails();
+            emailDetails.setRecipient(recipient);
+            emailDetails.setSubject("Payment Details for #" + payment.getId());
+            emailDetails.setMsgBody("Dear " + username + ",\n\n"
+                    + "Here are your payment details:\n\n"
+                    + "Payment ID #: " + payment.getId() + "\n"
+                    + "Payment Name: " + payment.getNameOnCard() + "\n"               
+                    + "Card Number: " + payment.getCardNumber() + "\n"
+                    + "Payment Amount: $" + payment.getTotalAmount() + "\n"
+                    + "Thank you for choosing AFI!");
+
+            // Send the email
+            result = emailService.sendSimpleMail(emailDetails);
+        } else {
+            result = "Payment not found";
+        }
+
+        return result;
+    }
 
 }

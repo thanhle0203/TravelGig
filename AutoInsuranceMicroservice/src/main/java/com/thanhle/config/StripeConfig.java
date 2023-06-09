@@ -7,11 +7,14 @@ import com.stripe.Stripe;
 
 @Configuration
 public class StripeConfig {
-	@Value("${stripe.api.key}")
-	private String stripeApiKey;
-	
-	public StripeConfig() {
-		Stripe.apiKey = stripeApiKey;
-	}
+    @Value("${stripe.api.secretKey}")
+    private String stripeApiKey;
 
+    public StripeConfig() {
+        Stripe.apiKey = stripeApiKey;
+    }
+
+    public String getStripeApiKey() {
+        return stripeApiKey;
+    }
 }

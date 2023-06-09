@@ -49,7 +49,7 @@ public class ClaimController {
     }
 
     @PostMapping
-    public ResponseEntity<Claim> createClaim(@RequestParam("images") MultipartFile[] images,
+    public ResponseEntity<Claim> createClaim(@RequestParam("image") MultipartFile[] images,
                                              @RequestParam("accidentDate") LocalDate accidentDate,
                                              @RequestParam("description") String description,
                                              @RequestParam("phone") String phone,
@@ -84,6 +84,7 @@ public class ClaimController {
         }
     }
 
+   
     private List<ClaimImage> saveImages(MultipartFile[] images) {
         List<ClaimImage> claimImages = new ArrayList<>();
         String uploadDir = "src/main/resources/static/images/claims/";
@@ -114,6 +115,43 @@ public class ClaimController {
 
         return claimImages;
     }
+    
+    
+    /*
+    private List<ClaimImage> saveImages(MultipartFile[] images) {
+        List<ClaimImage> claimImages = new ArrayList<>();
+        String uploadDir = "src/main/resources/static/images/claims/";
+
+        File directory = new File(uploadDir);
+        if (!directory.exists()) {
+            directory.mkdirs();
+        }
+
+        for (MultipartFile image : images) {
+            String filename = UUID.randomUUID().toString() + "_" + image.getOriginalFilename();
+
+            try {
+                Path filePath = Path.of(uploadDir, filename);
+                Files.copy(image.getInputStream(), filePath, StandardCopyOption.REPLACE_EXISTING);
+
+                byte[] imageData = image.getBytes();
+
+                ClaimImage claimImage = new ClaimImage();
+                claimImage.setFilename(filename);
+                claimImage.setData(imageData);
+
+                // Set the URL for the claim image
+                claimImage.setUrl("http://localhost:8282/images/claims/" + filename);
+
+                claimImages.add(claimImageRepository.save(claimImage));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+        return claimImages;
+    }
+	*/
 
     @GetMapping
     public ResponseEntity<List<Claim>> getAllClaims() {

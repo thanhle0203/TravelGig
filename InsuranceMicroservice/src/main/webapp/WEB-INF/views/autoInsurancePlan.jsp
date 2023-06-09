@@ -59,7 +59,7 @@
                             <option value="500" selected>$500</option>
                             <option value="1000">$1000</option>
                         </select>
-                        <h5 class="mt-4">Base Price: $2000/year</h5>
+                        <h5 class="mt-4">Base Price: $20/year</h5>
                         <button type="button" class="btn btn-primary select-plan mt-4" data-plan="ComprehensivePlan">Select</button>
                     </div>
                 </div>
@@ -78,7 +78,7 @@
                             <option value="500" selected>$500</option>
                             <option value="1000">$1000</option>
                         </select>
-                        <h5 class="mt-4">Base Price: $1500/year</h5>
+                        <h5 class="mt-4">Base Price: $15/year</h5>
                         <button type="button" class="btn btn-primary select-plan mt-4" data-plan="PlusPlan">Select</button>
                     </div>
                 </div>
@@ -87,7 +87,7 @@
                         <h4 class="card-title">Basic Plan</h4>
                         <h4 class="card-subtitle mb-3">Basic Coverage</h4>
                         <p class="card-text">Minimum coverage meeting state requirements, typically including liability coverage only. Suitable for older, low-value cars or drivers needing economical options.</p>
-                        <h5 class="mt-4">Base Price: $1000/year</h5>
+                        <h5 class="mt-4">Base Price: $10/year</h5>
                         <button type="button" class="btn btn-primary select-plan mt-4" data-plan="BasicPlan">Select</button>
                     </div>
                 </div>

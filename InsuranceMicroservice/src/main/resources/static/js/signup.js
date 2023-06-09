@@ -24,8 +24,6 @@ $(document).ready(function() {
             contentType: 'application/json',
             url: "http://localhost:8282/signup",
             data: JSON.stringify(user),
-            contentType: "application/json",
-            dataType: 'json',
             success: function(result) {
                 alert("Sign up successful!");
                 window.location.href = "/login";

@@ -41,7 +41,7 @@
               <th>Vehicle Year</th>
               <th>Description</th>
               <th>Vehicle Damage Image</th>
-              <th>Repair Price</th>
+              <th>Estimated Price</th>
               <th>Status</th>
               <th>Action</th>
             </tr>
@@ -55,7 +55,7 @@
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title">Enter Repair Price</h5>
+                <h5 class="modal-title">Enter Estimated Price</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>

@@ -16,6 +16,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.thanhle.component.ClaimComponent;
 import com.thanhle.component.InsuranceComponent;
 import com.thanhle.component.InsuredComponent;
+import com.thanhle.component.PaymentComponent;
 import com.thanhle.domain.User;
 import com.thanhle.service.UserService;
 
@@ -33,6 +34,9 @@ public class GatewayController {
 	
 	@Autowired
 	UserService userService;
+	
+	@Autowired
+	PaymentComponent paymentComponent;
 	
 	@RequestMapping(value = "/savedPlan", method=RequestMethod.POST)
     public ResponseEntity<JsonNode> savePlan(@RequestBody JsonNode json) {
@@ -74,6 +78,28 @@ public class GatewayController {
    		User user = userService.findByUserName(username);
    		phone = user.getMobile();
 		return claimComponent.findClaimByPhone(phone);
+	}
+	
+	@RequestMapping(value = "payment/savedPayment", method=RequestMethod.POST)
+    public ResponseEntity<JsonNode> savePayment(@RequestBody JsonNode json) {
+    	JsonNode payment = paymentComponent.savePayment(json);
+    	return new ResponseEntity<>(payment, HttpStatus.OK);
+    }
+	
+	@RequestMapping(value = "payment/getPayment", method = RequestMethod.GET)
+	public JsonNode getPayment(Principal principal){
+		String username = principal.getName();
+   		User user = userService.findByUserName(username);
+   		
+		return paymentComponent.getPayment();
+	}
+	
+	@RequestMapping(value = "paymentPolicy/phone/{phone}", method = RequestMethod.GET)
+	public JsonNode getPaymentByPhone(@PathVariable String phone, Principal principal){
+		String username = principal.getName();
+   		User user = userService.findByUserName(username);
+   		phone = user.getMobile();
+		return paymentComponent.findPaymentByPhone(phone);
 	}
 
 

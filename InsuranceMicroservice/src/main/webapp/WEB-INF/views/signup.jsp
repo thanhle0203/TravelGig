@@ -15,7 +15,7 @@
     </head>
     <body style='height: 100vh' class='w-100'>
         <div class='mt-5 d-flex justify-content-center'>
-            <form action='signup' method='POST'>
+            <form action='login.jsp' method='POST'>
                 <h1>Sign Up</h1>
                 <br><br>
                 <div class="form-group">

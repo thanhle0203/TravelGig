@@ -1,10 +1,5 @@
 package com.thanhle.domain;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-
 import jakarta.persistence.*;
 
 @Entity
@@ -13,24 +8,34 @@ public class PaymentData {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String cardNumber;
-    private String expirationMonth;
-    private String expirationYear;
-    private String cvc;
-    
+    private String expiryDate;
+    private String cvv;
+    private String nameOnCard;
+    private double totalAmount;
+    private String paymentMethod;
+    private String phone;
+
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "address_id")
     private Address billingAddress;
+    
+	private String receiptUrl;
 
     public PaymentData() {
         super();
     }
 
-    public PaymentData(String cardNumber, String expirationMonth, String expirationYear, String cvc, Address billingAddress) {
+    public PaymentData(String paymentMethod, String cardNumber, String expiryDate, String cvv, String nameOnCard, double totalAmount, Address billingAddress, String phone, String receiptUrl) {
+        this.paymentMethod = paymentMethod;
         this.cardNumber = cardNumber;
-        this.expirationMonth = expirationMonth;
-        this.expirationYear = expirationYear;
-        this.cvc = cvc;
+        this.expiryDate = expiryDate;
+        this.cvv = cvv;
+        this.nameOnCard = nameOnCard;
+        this.totalAmount = totalAmount;
         this.billingAddress = billingAddress;
+        this.phone = phone;
+        this.receiptUrl = receiptUrl;
+        
     }
 
     // Getters and setters
@@ -51,28 +56,36 @@ public class PaymentData {
         this.cardNumber = cardNumber;
     }
 
-    public String getExpirationMonth() {
-        return expirationMonth;
+    public String getExpiryDate() {
+        return expiryDate;
     }
 
-    public void setExpirationMonth(String expirationMonth) {
-        this.expirationMonth = expirationMonth;
+    public void setExpiryDate(String expiryDate) {
+        this.expiryDate = expiryDate;
     }
 
-    public String getExpirationYear() {
-        return expirationYear;
+    public String getCvv() {
+        return cvv;
     }
 
-    public void setExpirationYear(String expirationYear) {
-        this.expirationYear = expirationYear;
+    public void setCvv(String cvv) {
+        this.cvv = cvv;
     }
 
-    public String getCvc() {
-        return cvc;
+    public String getNameOnCard() {
+        return nameOnCard;
     }
 
-    public void setCvc(String cvc) {
-        this.cvc = cvc;
+    public void setNameOnCard(String nameOnCard) {
+        this.nameOnCard = nameOnCard;
+    }
+
+    public double getTotalAmount() {
+        return totalAmount;
+    }
+
+    public void setTotalAmount(double totalAmount) {
+        this.totalAmount = totalAmount;
     }
 
     public Address getBillingAddress() {
@@ -82,4 +95,29 @@ public class PaymentData {
     public void setBillingAddress(Address billingAddress) {
         this.billingAddress = billingAddress;
     }
+
+    public String getPaymentMethod() {
+        return paymentMethod;
+    }
+
+    public void setPaymentMethod(String paymentMethod) {
+        this.paymentMethod = paymentMethod;
+    }
+    
+    public String getPhone() {
+    	return phone;
+    }
+    
+    public void setPhone(String phone) {
+    	this.phone = phone;
+    }
+    
+    public String getReceiptUrl() {
+    	return receiptUrl;
+    }
+
+	public void setReceiptUrl(String receiptUrl) {
+		this.receiptUrl = receiptUrl;
+		
+	}
 }

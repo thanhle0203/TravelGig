@@ -30,6 +30,7 @@ public class Claim {
     private Vehicle vehicle;
 
     @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "claim_id")
     private List<ClaimImage> images = new ArrayList<>();
 
     public Claim() {

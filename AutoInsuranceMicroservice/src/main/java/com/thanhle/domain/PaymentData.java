@@ -14,12 +14,15 @@ public class PaymentData {
     private double totalAmount;
     private String paymentMethod;
     private String phone;
+    
+    @Column(length = 1000)
+   	private String receiptUrl;
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "address_id")
     private Address billingAddress;
     
-	private String receiptUrl;
+   
 
     public PaymentData() {
         super();

@@ -62,4 +62,21 @@ public class ClaimServiceImpl implements ClaimService {
     public Claim findByDescription(String description) {
         return claimRepository.findByDescription(description);
     }
+
+    @Override
+    public void updateClaim(Claim claim) {
+        Optional<Claim> optionalClaim = claimRepository.findById(claim.getId());
+        if (optionalClaim.isPresent()) {
+            Claim existingClaim = optionalClaim.get();
+            existingClaim.setAccidentDate(claim.getAccidentDate());
+            existingClaim.setDescription(claim.getDescription());
+            existingClaim.setStatus(claim.getStatus());
+            existingClaim.setRepairPrice(claim.getRepairPrice());
+            existingClaim.setPhone(claim.getPhone());
+            existingClaim.setVehicle(claim.getVehicle());
+            existingClaim.setImages(claim.getImages());
+            claimRepository.save(existingClaim);
+        }
+    }
+
 }

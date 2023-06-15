@@ -33,6 +33,7 @@
                     <th>Status</th>
                     <th>Phone Number</th>
                     <th>Images</th>
+                    <th>Claim PDf File</th>
                 </tr>
             </thead>
             <tbody>

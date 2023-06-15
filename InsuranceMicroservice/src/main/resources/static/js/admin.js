@@ -12,6 +12,9 @@ $(document).ready(function() {
       contentType: 'text/plain', // Add this option
       success: function(response) {
         console.log('Claim status updated successfully.');
+        
+        // Retrieve the updated claims data and reload the table
+      	retrieveClaimsDataAndReloadTable();
       },
       error: function(xhr, status, error) {
         console.error(error);
@@ -32,12 +35,57 @@ $(document).ready(function() {
       contentType: 'text/plain', // Add this option
       success: function(response) {
         console.log('Insured status updated successfully.');
+        // Retrieve the updated insured data and reload the table
+      	retrieveInsuredDataAndReloadTable();
       },
       error: function(xhr, status, error) {
         console.error(error);
       }
     });
   }
+  
+  // Function to retrieve the updated insured data and reload the table
+function retrieveInsuredDataAndReloadTable() {
+  $.ajax({
+    url: 'http://localhost:8383/api/insured',
+    method: 'GET',
+    success: function(response) {
+      // Clear the existing insured table
+      $('#insuredTableBody').empty();
+
+      // Populate the insured table with the received data
+      response.forEach(function(insured) {
+        var row = '<tr>' +
+          '<td><span class="insured-id">' + insured.id + '</span></td>' +
+          '<td>' + insured.name + '</td>' +
+          '<td>' + insured.email + '</td>' +
+          '<td>' + insured.phone + '</td>' +
+          '<td><img class="driver-license-img" src="' + insured.document.driverLicense + '"  width="30" height="30"></td>' +
+          '<td>' + insured.vehicle.make + '</td>' +
+          '<td>' + insured.vehicle.model + '</td>' +
+          '<td>' + insured.vehicle.year + '</td>' +
+          '<td>' + insured.autoInsurance.autoPlan.name + '</td>' +
+          '<td>' + '$' + insured.autoInsurance.totalPrice + '</td>' +
+          '<td>' + insured.status + '</td>' +
+          '<td>' +
+          '<div class="btn-group" role="group" aria-label="Insured Actions">' +
+          '<button type="button" class="btn btn-success approve-btn">Approve</button>' +
+          '<button type="button" class="btn btn-danger reject-btn">Reject</button>' +
+          '</div>' +
+          '</td>' +
+          '</tr>';
+
+        $('#insuredTableBody').append(row);
+      });
+    },
+    error: function(xhr, status, error) {
+      console.error(error);
+    }
+  });
+}
+
+// Fetch insured data from the backend API and populate the insured table
+retrieveInsuredDataAndReloadTable();
 
   // Function to update claim with repair price
   function updateClaimRepairPrice(claimId, repairPrice) {
@@ -52,12 +100,63 @@ $(document).ready(function() {
       contentType: 'application/json', // Set the content type to application/json
       success: function(response) {
         console.log('Repair price updated successfully.');
+        
+        // Retrieve the updated claims data and reload the table
+      	retrieveClaimsDataAndReloadTable();
       },
       error: function(xhr, status, error) {
         console.error(error);
       }
     });
   }
+  
+  // Function to retrieve the updated claims data and reload the table
+function retrieveClaimsDataAndReloadTable() {
+  $.ajax({
+    url: 'http://localhost:8383/api/claims',
+    method: 'GET',
+    success: function(response) {
+      // Clear the existing claims table
+      $('#claimsTableBody').empty();
+
+      // Populate the claims table with the received data
+      response.forEach(function(claim) {
+        var row = '<tr>' +
+          '<td><span class="claim-id">' + claim.id + '</span></td>' +
+          '<td>' + claim.phone + '</td>' +
+          '<td>' + claim.accidentDate + '</td>' +
+          '<td>' + claim.vehicle.make + '</td>' +
+          '<td>' + claim.vehicle.model + '</td>' +
+          '<td>' + claim.vehicle.year + '</td>' +
+          '<td>' + claim.description + '</td>' +
+          '<td>'; // Start the column for vehicle damage images
+
+        // Loop through the images and add them to the row
+        $.each(claim.images, function(index, image) {
+          row += '<img class="vehicle-damage-img" src="' + image.data + '"  width="30" height="30">';
+        });
+
+        row += '</td>' +
+          '<td>' + (claim.repairPrice ? '$' + claim.repairPrice.toFixed(2) : '') + '</td>' +
+          '<td>' + claim.status + '</td>' +
+          '<td>' +
+          '<div class="btn-group" role="group" aria-label="Claim Actions">' +
+          '<button type="button" class="btn btn-success approve-btn">Approve</button>' +
+          '<button type="button" class="btn btn-danger reject-btn">Reject</button>' +
+          '<button type="button" class="btn btn-info generate-price-btn">Generate Repair Price</button>' +
+          '</div>' +
+          '</td>' +
+          '</tr>';
+
+        $('#claimsTableBody').append(row);
+      });
+    },
+    error: function(xhr, status, error) {
+      console.error(error);
+    }
+  });
+}
+
 
   // Fetch claims data from the backend API
   $.ajax({

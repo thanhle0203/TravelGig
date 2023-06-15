@@ -11,10 +11,15 @@ import com.thanhle.service.VehicleService;
 
 import jakarta.servlet.http.HttpServletResponse;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.http.ContentDisposition;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.http.HttpHeaders;
 
 import java.io.File;
 import java.io.IOException;
@@ -29,11 +34,18 @@ import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
+import com.itextpdf.text.Document;
+import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.pdf.PdfWriter;
+import java.io.ByteArrayOutputStream;
+
+
 @RestController
 @CrossOrigin(origins = "http://localhost:8282", allowCredentials = "true")
 @RequestMapping("/api/claims")
 public class ClaimController {
-
+	private final Logger logger = LoggerFactory.getLogger(ClaimController.class);
     private final ClaimRepository claimRepository;
     private final ClaimService claimService;
     private final VehicleService vehicleService;
@@ -195,4 +207,67 @@ public class ClaimController {
         claimService.deleteClaim(id);
         return ResponseEntity.ok("Claim deleted successfully.");
     }
+    
+    @PostMapping("/upload/{claimId}")
+    public ResponseEntity<Claim> uploadImages(@PathVariable Long claimId, @RequestParam("image") MultipartFile[] images) {
+      Claim claim = claimService.getClaimById(claimId);
+
+      if (claim != null) {
+        List<ClaimImage> claimImages = saveImages(images);
+        claim.getImages().addAll(claimImages);
+        claimService.updateClaim(claim);
+
+        return ResponseEntity.ok(claim);
+      } else {
+        return ResponseEntity.notFound().build();
+      }
+    }
+    
+    
+    @GetMapping("/{claimId}/generate-pdf")
+    public ResponseEntity<byte[]> generateClaimPdf(@PathVariable Long claimId) {
+        Claim claim = claimService.getClaimById(claimId);
+
+        if (claim != null && claim.getStatus().equals("approved")) {
+            byte[] pdfFile = generatePdf(claim);
+
+            HttpHeaders headers = new HttpHeaders();
+            headers.setContentType(MediaType.APPLICATION_PDF);
+            headers.setContentDisposition(ContentDisposition.builder("attachment").filename("claim.pdf").build());
+
+            return ResponseEntity.ok().headers(headers).body(pdfFile);
+        } else {
+            return ResponseEntity.badRequest().build();
+        }
+    }
+
+    private byte[] generatePdf(Claim claim) {
+        try (ByteArrayOutputStream outputStream = new ByteArrayOutputStream()) {
+            Document document = new Document();
+            PdfWriter writer = PdfWriter.getInstance(document, outputStream);
+
+            document.open();
+            document.add(new Paragraph("Claim ID: " + claim.getId()));
+            document.add(new Paragraph("Date of Accident: " + claim.getAccidentDate()));
+            document.add(new Paragraph("Vehicle VIN: " + claim.getVehicle().getId()));
+            document.add(new Paragraph("Vehicle Make: " + claim.getVehicle().getMake()));
+            document.add(new Paragraph("Vehicle Model: " + claim.getVehicle().getModel()));
+            document.add(new Paragraph("Vehicle Year: " + claim.getVehicle().getYear()));
+            document.add(new Paragraph("Phone Number: " + claim.getPhone()));
+            document.add(new Paragraph("Repair Price: $" + claim.getRepairPrice()));
+        
+
+            document.close();
+            writer.close();
+
+            logger.info("PDF generated successfully for claim: {}", claim.getId());
+
+            return outputStream.toByteArray();
+        } catch (DocumentException | IOException e) {
+            logger.error("Error generating PDF for claim: {}", claim.getId(), e);
+            e.printStackTrace();
+            return null;
+        }
+    }
+
 }

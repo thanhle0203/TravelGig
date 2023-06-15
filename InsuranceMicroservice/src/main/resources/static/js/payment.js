@@ -44,6 +44,7 @@ $(document).ready(function() {
     var zipCode = $("#zipCode").val();
     var email = $("#email").val();
     var phone = $("#phone").val();
+    //var receiptUrl;
 	
     // Perform any necessary validation on the form fields
 
@@ -63,6 +64,8 @@ $(document).ready(function() {
         email: email
       },
       phone: phone
+      //,
+      //receiptUrl: receiptUrl
     };
 
     // Send the payment data to the server for processing
@@ -86,13 +89,19 @@ $(document).ready(function() {
         $.post("http://localhost:8282/sendPaymentDetails/" + paymentId, {}, function(response) {
             // Handle the response from the server
             console.log(response);
-           window.location.href = "/paymentConfirmation?payment_id=" + paymentId;
+           //window.location.href = "/paymentConfirmation?payment_id=" + paymentId;
+          
+    
+
+        // Redirect to the receipt URL
+        //window.location.href = response.receiptUrl;
         }).fail(function(jqXHR, textStatus, errorThrown) {
             // Handle the error case
             console.log("Failed to send booking details: " + errorThrown);
         });
         
-        //window.location.href = "/paymentConfirmation?payment_id="+response.id;
+        window.location.href = response.receiptUrl;
+
       },
       error: function(xhr, status, error) {
         // Handle the error response

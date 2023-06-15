@@ -49,6 +49,7 @@ public class PaymentController {
         System.out.println("CVV: " + paymentData.getCvv());
         System.out.println("Name on Card: " + paymentData.getNameOnCard());
         System.out.println("Total Amount: " + paymentData.getTotalAmount());
+        System.out.println("Receipt URL: " + paymentData.getReceiptUrl());
 
         // Log the billing address
         Address billingAddress = paymentData.getBillingAddress();
@@ -146,17 +147,38 @@ public class PaymentController {
         PaymentData savedPaymentData = paymentDataService.savePaymentData(paymentData);
         
         if (paymentSuccessful) {
+        	// Check if there is an associated charge and retrieve the receipt URL
+            if (associatedCharge != null) {
+                savedPaymentData.setReceiptUrl(associatedCharge.getReceiptUrl());
+            } else {
+                // Handle the case where there is no associated charge or receipt URL
+                savedPaymentData.setReceiptUrl(null);
+                System.out.println("No receipt URL available for the payment.");
+            }
+            
+            // Save the payment data with the updated receipt URL
+            savedPaymentData = paymentDataService.savePaymentData(savedPaymentData);
+            
         	// Send the receipt email to the customer
             PaymentIntentUpdateParams.Builder updateParamsBuilder = PaymentIntentUpdateParams.builder()
-                    .setReceiptEmail(paymentData.getBillingAddress().getEmail());
+                    .setReceiptEmail(savedPaymentData.getBillingAddress().getEmail())
+               
+                    //.setReceiptEmail(savedPaymentData.getReceiptUrl())
+                    ;
+            
             PaymentIntentUpdateParams updateParams = updateParamsBuilder.build();
             paymentIntent.update(updateParams);
 
             // Return the payment receipt URL in the response
-            savedPaymentData.setReceiptUrl(associatedCharge.getReceiptUrl());
+            //savedPaymentData.setReceiptUrl(associatedCharge.getReceiptUrl());
+            
+
+         
+            System.out.println("Receipt URL: " + savedPaymentData.getReceiptUrl());
             
             //return ResponseEntity.ok("Payment processed successfully");
             return new ResponseEntity<>(savedPaymentData, HttpStatus.CREATED);
+        
         } else {
             // Perform any necessary actions for a failed payment
             //return new ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Payment processing failed");

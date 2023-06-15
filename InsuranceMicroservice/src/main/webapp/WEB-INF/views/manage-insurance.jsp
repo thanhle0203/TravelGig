@@ -51,6 +51,9 @@
                 <div id="payButtonContainer"></div> 
 
                 <br>
+
+                <!-- Add the "Generate PDF" button -->
+                <div id="generatePdfButtonContainer"></div>
                 
             </div>
         </div>

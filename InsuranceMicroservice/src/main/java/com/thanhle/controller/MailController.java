@@ -175,6 +175,7 @@ public class MailController {
                     + "Payment Name: " + payment.getNameOnCard() + "\n"               
                     + "Card Number: " + payment.getCardNumber() + "\n"
                     + "Payment Amount: $" + payment.getTotalAmount() + "\n"
+                    + "Receipt URL: " + payment.getReceiptUrl() + "\n"
                     + "Thank you for choosing AFI!");
 
             // Send the email

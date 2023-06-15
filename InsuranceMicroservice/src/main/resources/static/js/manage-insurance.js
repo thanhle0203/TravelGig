@@ -68,6 +68,22 @@ $(document).ready(function() {
               window.location.href = "/payment?insuredId=" + insuredData.id;
             });
           }
+          
+          // Display insured status
+var insuredStatus = `
+    <p>Status: ${insuredData.status}</p>
+`;
+$("#insuredStatus").html(insuredStatus);
+
+// Check if insured has an approved status
+if (insuredData.status === "approved") {
+    // Display the "Generate PDF" button
+    var generatePdfButton = `
+        <button class="btn btn-primary" id="generatePdfButton" data-insured-id="${insuredData.id}">Generate PDF</button>
+    `;
+    $("#generatePdfButtonContainer").html(generatePdfButton);
+}
+
         })
         .fail(function(xhr, status, error) {
           // Handle the failure case
@@ -87,4 +103,37 @@ $(document).ready(function() {
       $("#insuredStatus").html("");
     }
   });
+  
+  // Function to handle the click event on the "Generate PDF" button
+    $(document).on('click', '#generatePdfButton', function() {
+        // Retrieve the insured ID from the page
+        var insuredId = $(this).data('insured-id');
+
+        // Send the AJAX request to generate the PDF file
+        $.ajax({
+            url: 'http://localhost:8282/api/insured/' + insuredId + '/generate-pdf',
+            type: 'GET',
+            responseType: 'blob',
+            success: function(response) {
+                if (response && response.size > 0) {
+                    var blob = new Blob([response], { type: 'application/pdf' });
+                    var url = URL.createObjectURL(blob);
+
+                    // Create a link element and simulate a click to initiate the download
+                    var link = document.createElement('a');
+                    link.href = url;
+                    link.download = 'insurance.pdf';
+                    link.click();
+
+                    // Clean up the temporary URL
+                    URL.revokeObjectURL(url);
+                } else {
+                    console.error('Error generating PDF: Invalid response');
+                }
+            },
+            error: function(xhr, status, error) {
+                console.error('Error generating PDF: ' + error);
+            }
+        });
+    });
 });

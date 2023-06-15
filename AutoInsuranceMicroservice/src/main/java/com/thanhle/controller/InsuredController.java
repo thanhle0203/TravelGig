@@ -6,14 +6,16 @@ import com.thanhle.domain.Document;
 import com.thanhle.domain.Insured;
 import com.thanhle.domain.Vehicle;
 import com.thanhle.repository.AutoInsuranceRepository;
+import com.thanhle.repository.InsuredRepository;
 import com.thanhle.repository.VehicleRepository;
 import com.thanhle.service.DocumentService;
 import com.thanhle.service.InsuredService;
 import com.thanhle.service.VehicleService;
 
 import jakarta.servlet.http.HttpServletResponse;
-
+import org.springframework.http.HttpHeaders;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ContentDisposition;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -22,12 +24,18 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
 import java.util.*;
+//import com.itextpdf.text.Document;
+import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.pdf.PdfWriter;
+import java.io.ByteArrayOutputStream;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:8282", allowCredentials = "true")
 @RequestMapping("/api/insured")
 public class InsuredController {
-
+	
+	private final InsuredRepository insuredRepository;
     private final InsuredService insuredService;
     private final VehicleService vehicleService;
     private final VehicleRepository vehicleRepository;
@@ -35,9 +43,10 @@ public class InsuredController {
     private final AutoInsuranceRepository autoInsuranceRepository;
 
     @Autowired
-    public InsuredController(InsuredService insuredService, DocumentService documentService,
+    public InsuredController(InsuredRepository insuredRepository, InsuredService insuredService, DocumentService documentService,
                              AutoInsuranceRepository autoInsuranceRepository, VehicleService vehicleService, VehicleRepository vehicleRepository) {
-        this.insuredService = insuredService;
+        this.insuredRepository = insuredRepository;
+    	this.insuredService = insuredService;
         this.documentService = documentService;
         this.autoInsuranceRepository = autoInsuranceRepository;
         this.vehicleService = vehicleService;
@@ -143,4 +152,48 @@ public class InsuredController {
         response.setHeader("Access-Control-Allow-Credentials", "true"); // Add this line to set the 'Access-Control-Allow-Credentials' header
         return ResponseEntity.ok("Insured status updated successfully.");
     }
+    
+    @GetMapping("/{insuredId}/generate-pdf")
+    public ResponseEntity<byte[]> generateInsurancePdf(@PathVariable Long insuredId) {
+        Insured insured = insuredRepository.getById(insuredId);
+
+        if (insured != null && insured.getStatus().equals("approved")) {
+            byte[] pdfFile = generatePdf(insured);
+
+            if (pdfFile != null) {
+                HttpHeaders headers = new HttpHeaders();
+                headers.setContentType(MediaType.APPLICATION_PDF);
+                headers.setContentDisposition(ContentDisposition.builder("attachment").filename("insurance.pdf").build());
+
+                return ResponseEntity.ok().headers(headers).body(pdfFile);
+            }
+        }
+
+        return ResponseEntity.badRequest().build();
+    }
+
+    private byte[] generatePdf(Insured insured) {
+        // Generate the PDF content for the insured
+        // You can use a PDF library like iText or Apache PDFBox to generate the PDF content here
+
+        // Example using iText:
+        try (ByteArrayOutputStream outputStream = new ByteArrayOutputStream()) {
+            com.itextpdf.text.Document document = new com.itextpdf.text.Document();
+            PdfWriter writer = PdfWriter.getInstance(document, outputStream);
+
+            document.open();
+            document.add(new Paragraph("Insured ID: " + insured.getId()));
+            document.add(new Paragraph("Name: " + insured.getName()));
+            document.add(new Paragraph("Phone: " + insured.getPhone()));
+            // Add more insured data to the PDF as needed
+
+            // No need to call document.close() or writer.close()
+
+            return outputStream.toByteArray();
+        } catch (DocumentException | IOException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
 }

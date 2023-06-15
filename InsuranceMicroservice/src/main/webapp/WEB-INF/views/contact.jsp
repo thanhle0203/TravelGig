@@ -33,10 +33,19 @@
     <%@ include file="navbar.jsp" %>
 
     <div class="container">
-        <h1 class="mt-5 mb-4">Contact AFI</h1>
+        <h1 class="mt-5 mb-4">Contact Us</h1>
+        <div class="card">
+            
+            <div class="card-body">
+                <h3 class="card-title">Contact Numbers</h3>
+                <p>Customer Service: 1-777-888-9999</p>
+            </div>
+        </div>
+        <br>
         <div class="card">
             <div class="card-body">
-                <h2 class="card-title">Send us a message</h2>
+                
+                <h3 class="card-title">Send us a message</h3>
                 <form id="contactForm" action="/api/contact" method="POST">
 
                     <div class="form-group">
